@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -38,6 +44,21 @@ const Header = () => {
                 {link.label}
               </a>
             ))}
+            
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 link-underline outline-none">
+                Events
+                <ChevronDown className="w-4 h-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="bg-background border border-foreground/10 shadow-lg z-50">
+                <DropdownMenuItem className="cursor-pointer hover:bg-muted">
+                  <a href="#events-public" className="w-full">Public</a>
+                </DropdownMenuItem>
+                <DropdownMenuItem className="cursor-pointer hover:bg-muted">
+                  <a href="#events-private" className="w-full">Private</a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           <div className="flex items-center gap-4">
@@ -88,11 +109,33 @@ const Header = () => {
               {link.label}
             </a>
           ))}
+          <div 
+            className={`flex flex-col items-center gap-4 transition-all duration-500 ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            style={{ transitionDelay: '300ms' }}
+          >
+            <span className="font-serif text-3xl text-foreground">Events</span>
+            <div className="flex gap-6">
+              <a 
+                href="#events-public"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-lg text-muted-foreground hover:text-clay transition-colors duration-300"
+              >
+                Public
+              </a>
+              <a 
+                href="#events-private"
+                onClick={() => setMobileMenuOpen(false)}
+                className="text-lg text-muted-foreground hover:text-clay transition-colors duration-300"
+              >
+                Private
+              </a>
+            </div>
+          </div>
           <a 
             href="#booking"
             onClick={() => setMobileMenuOpen(false)}
             className={`mt-4 px-10 py-4 border border-foreground/20 text-foreground hover:border-clay hover:text-clay transition-all duration-500 ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-            style={{ transitionDelay: '300ms' }}
+            style={{ transitionDelay: '400ms' }}
           >
             Book a Session
           </a>
