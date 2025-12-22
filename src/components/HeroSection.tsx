@@ -69,16 +69,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      
-      {/* Scroll indicator */}
-      <div className={`absolute bottom-10 left-1/2 -translate-x-1/2 transition-all duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: '1200ms' }}>
-        <a href="#philosophy" className="flex flex-col items-center gap-3 group">
-          <span className="text-xs text-muted-foreground tracking-widest uppercase group-hover:text-clay transition-colors duration-300">Scroll</span>
-          <div className="relative w-5 h-8 border border-foreground/20 rounded-full group-hover:border-clay/50 transition-colors duration-300">
-            <div className="absolute top-2 left-1/2 -translate-x-1/2 w-1 h-2 bg-foreground/40 rounded-full animate-bounce" />
-          </div>
-        </a>
-      </div>
     </section>
   );
 };
