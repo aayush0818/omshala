@@ -1,0 +1,105 @@
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X } from "lucide-react";
+
+const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { href: "#practices", label: "Practices" },
+    { href: "#philosophy", label: "About" },
+    { href: "#booking", label: "Schedule" },
+  ];
+
+  return (
+    <>
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-background/95 backdrop-blur-md shadow-sm' : 'bg-transparent'}`}>
+        <nav className="container mx-auto px-6 py-5 flex items-center justify-between">
+          <Link to="/" className="font-serif text-xl tracking-tight text-foreground hover:text-clay transition-colors duration-300">
+            OmShala
+          </Link>
+          
+          <div className="hidden md:flex items-center gap-12">
+            {navLinks.map((link) => (
+              <a 
+                key={link.href}
+                href={link.href} 
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 link-underline"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-4">
+            <a 
+              href="#booking" 
+              className="hidden md:inline-block px-6 py-2.5 text-sm border border-foreground/20 hover:border-clay hover:text-clay transition-all duration-300"
+            >
+              Book
+            </a>
+            
+            <button 
+              className="md:hidden p-2 text-foreground hover:text-clay transition-colors duration-300"
+              onClick={() => setMobileMenuOpen(true)}
+              aria-label="Open menu"
+            >
+              <Menu className="w-5 h-5" />
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      {/* Mobile menu overlay */}
+      <div 
+        className={`fixed inset-0 z-50 bg-background transition-all duration-500 md:hidden ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+      >
+        <div className="container mx-auto px-6 py-5 flex justify-between items-center">
+          <Link to="/" className="font-serif text-xl tracking-tight text-foreground">
+            OmShala
+          </Link>
+          <button 
+            className="p-2 text-foreground hover:text-clay transition-colors duration-300"
+            onClick={() => setMobileMenuOpen(false)}
+            aria-label="Close menu"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
+        
+        <nav className="flex flex-col items-center justify-center h-[calc(100vh-100px)] gap-8">
+          {navLinks.map((link, index) => (
+            <a 
+              key={link.href}
+              href={link.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className={`font-serif text-3xl text-foreground hover:text-clay transition-all duration-500 ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              {link.label}
+            </a>
+          ))}
+          <a 
+            href="#booking"
+            onClick={() => setMobileMenuOpen(false)}
+            className={`mt-4 px-10 py-4 border border-foreground/20 text-foreground hover:border-clay hover:text-clay transition-all duration-500 ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            style={{ transitionDelay: '300ms' }}
+          >
+            Book a Session
+          </a>
+        </nav>
+      </div>
+    </>
+  );
+};
+
+export default Header;

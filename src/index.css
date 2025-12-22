@@ -1,0 +1,300 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* OmShala Zen Palette */
+    --background: 30 12% 94%; /* Bone White #F4F1EC */
+    --foreground: 20 12% 14%; /* Deep Charcoal Brown #2B2521 */
+
+    --card: 30 12% 94%;
+    --card-foreground: 20 12% 14%;
+
+    --popover: 30 12% 94%;
+    --popover-foreground: 20 12% 14%;
+
+    --primary: 20 12% 14%; /* Deep Charcoal */
+    --primary-foreground: 30 12% 94%;
+
+    --secondary: 100 13% 26%; /* Dark Earth Green #3E4A3A */
+    --secondary-foreground: 30 12% 94%;
+
+    --muted: 30 5% 64%; /* Ash Grey #A8A39D */
+    --muted-foreground: 20 8% 40%;
+
+    --accent: 24 35% 45%; /* Warm Clay #9A6A4F */
+    --accent-foreground: 30 12% 94%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 30 12% 94%;
+
+    --border: 30 10% 85%;
+    --input: 30 10% 85%;
+    --ring: 24 35% 45%;
+
+    --radius: 0.25rem;
+
+    /* Custom tokens */
+    --earth: 100 13% 26%;
+    --clay: 24 35% 45%;
+    --charcoal: 20 12% 14%;
+    --bone: 30 12% 94%;
+    --ash: 30 5% 64%;
+  }
+
+  .dark {
+    --background: 20 12% 14%;
+    --foreground: 30 12% 94%;
+
+    --card: 20 12% 14%;
+    --card-foreground: 30 12% 94%;
+
+    --popover: 20 12% 14%;
+    --popover-foreground: 30 12% 94%;
+
+    --primary: 30 12% 94%;
+    --primary-foreground: 20 12% 14%;
+
+    --secondary: 100 13% 26%;
+    --secondary-foreground: 30 12% 94%;
+
+    --muted: 20 8% 25%;
+    --muted-foreground: 30 8% 65%;
+
+    --accent: 24 35% 45%;
+    --accent-foreground: 30 12% 94%;
+
+    --border: 20 10% 22%;
+    --input: 20 10% 22%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight;
+  }
+
+  /* Grain texture overlay */
+  .grain {
+    position: relative;
+  }
+
+  .grain::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-fade-up {
+    animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-slow-reveal {
+    animation: slowReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 4s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+  .delay-700 { animation-delay: 700ms; }
+  .delay-800 { animation-delay: 800ms; }
+
+  /* Scroll-triggered animation states */
+  .scroll-hidden {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  .scroll-visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .scroll-scale-hidden {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  .scroll-scale-visible {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .scroll-left-hidden {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  .scroll-left-visible {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .scroll-right-hidden {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  .scroll-right-visible {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -15px hsl(var(--foreground) / 0.15);
+  }
+
+  .hover-glow {
+    transition: all 0.4s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px hsl(var(--clay) / 0.3);
+  }
+
+  /* Text underline animation */
+  .link-underline {
+    position: relative;
+  }
+
+  .link-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slowReveal {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulseSoft {
+    0%, 100% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-slow-reveal,
+  .animate-float,
+  .animate-pulse-soft,
+  .scroll-visible,
+  .scroll-scale-visible,
+  .scroll-left-visible,
+  .scroll-right-visible {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
