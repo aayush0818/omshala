@@ -21,9 +21,9 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { href: "#practices", label: "Practices" },
-    { href: "#philosophy", label: "About" },
-    { href: "#booking", label: "Schedule" },
+    { href: "/practices", label: "Practices", isRoute: true },
+    { href: "/about", label: "About", isRoute: true },
+    { href: "/contact", label: "Contact", isRoute: true },
   ];
 
   return (
@@ -36,13 +36,13 @@ const Header = () => {
           
           <div className="hidden md:flex items-center gap-12">
             {navLinks.map((link) => (
-              <a 
+              <Link 
                 key={link.href}
-                href={link.href} 
+                to={link.href} 
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 link-underline"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             
             <DropdownMenu>
@@ -62,12 +62,12 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <a 
-              href="#booking" 
+            <Link 
+              to="/contact" 
               className="hidden md:inline-block px-6 py-2.5 text-sm border border-foreground/20 hover:border-clay hover:text-clay transition-all duration-300"
             >
               Book
-            </a>
+            </Link>
             
             <button 
               className="md:hidden p-2 text-foreground hover:text-clay transition-colors duration-300"
@@ -99,15 +99,15 @@ const Header = () => {
         
         <nav className="flex flex-col items-center justify-center h-[calc(100vh-100px)] gap-8">
           {navLinks.map((link, index) => (
-            <a 
+            <Link 
               key={link.href}
-              href={link.href}
+              to={link.href}
               onClick={() => setMobileMenuOpen(false)}
               className={`font-serif text-3xl text-foreground hover:text-clay transition-all duration-500 ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <div 
             className={`flex flex-col items-center gap-4 transition-all duration-500 ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
@@ -131,14 +131,14 @@ const Header = () => {
               </Link>
             </div>
           </div>
-          <a 
-            href="#booking"
+          <Link 
+            to="/contact"
             onClick={() => setMobileMenuOpen(false)}
             className={`mt-4 px-10 py-4 border border-foreground/20 text-foreground hover:border-clay hover:text-clay transition-all duration-500 ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             style={{ transitionDelay: '400ms' }}
           >
             Book a Session
-          </a>
+          </Link>
         </nav>
       </div>
     </>

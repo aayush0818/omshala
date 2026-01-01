@@ -1,143 +1,126 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { User, Users, Heart, Building2, Sparkles, ArrowRight, Check } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Users, Heart, Building, Sparkles } from "lucide-react";
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const privateOfferings = [
   {
-    icon: Users,
-    title: "Private Sessions",
-    description: "One-on-one sound healing and breathwork tailored to your specific needs and intentions.",
-    features: ["Personalized assessment", "Custom session design", "Flexible scheduling", "Home visits available"],
+    icon: User,
+    title: "Individual Sessions",
+    description: "One-on-one healing experiences tailored to your unique journey.",
+    features: ["Personalized practice", "Flexible scheduling", "Private space"],
+    price: "From ₹4,000"
   },
   {
     icon: Heart,
-    title: "Couples & Families",
-    description: "Shared healing experiences designed to deepen connection and restore harmony.",
-    features: ["Couples sound baths", "Family meditation", "Relationship renewal", "Celebration rituals"],
+    title: "Couples & Partners",
+    description: "Deepen connection through shared healing experiences.",
+    features: ["Synchronized breathwork", "Partner sound bath", "Connection rituals"],
+    price: "From ₹5,500"
   },
   {
-    icon: Building,
+    icon: Users,
+    title: "Family & Friends",
+    description: "Intimate group sessions in a private setting.",
+    features: ["Groups of 4-8", "Customized experience", "Bonding activities"],
+    price: "From ₹8,000"
+  },
+  {
+    icon: Building2,
     title: "Corporate Wellness",
-    description: "Bring mindfulness to your workplace with tailored programs for teams and organizations.",
-    features: ["Team building sessions", "Stress management", "Office wellness programs", "Executive retreats"],
+    description: "Workplace wellness programs for teams.",
+    features: ["On-site sessions", "Team building", "Stress management"],
+    price: "Custom pricing"
   },
   {
     icon: Sparkles,
     title: "Special Occasions",
-    description: "Create meaningful moments for birthdays, anniversaries, or life transitions.",
-    features: ["Birthday ceremonies", "Anniversary rituals", "Life transition support", "Memorial services"],
-  },
+    description: "Mark milestones with meaningful ceremonies.",
+    features: ["Bespoke design", "Meaningful rituals", "Photo-worthy setting"],
+    price: "Custom pricing"
+  }
 ];
 
 const EventsPrivate = () => {
   const [loaded, setLoaded] = useState(false);
-  const { ref, isVisible } = useScrollAnimation(0.1);
+  const { ref: offeringsRef, isVisible: offeringsVisible } = useScrollAnimation();
 
   useEffect(() => {
     setLoaded(true);
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background text-foreground">
       <Header />
-      <main>
-        {/* Hero Section */}
-        <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-charcoal text-bone overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal to-earth/30" />
-          <div className="absolute top-1/4 left-0 w-[600px] h-[300px] bg-clay/15 rounded-full blur-[150px]" />
-          
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-3xl">
-              <span className={`inline-block text-xs tracking-[0.25em] uppercase text-bone/60 transition-all duration-700 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                Personalized Experiences
-              </span>
-              
-              <h1 className={`mt-6 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight tracking-tight transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '200ms' }}>
-                Private Events
-              </h1>
-              
-              <p className={`mt-6 text-lg text-bone/70 font-light leading-relaxed max-w-xl transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '400ms' }}>
-                Curated healing experiences designed around your unique needs, 
-                timeline, and intentions. Available for individuals, groups, and organizations.
-              </p>
-            </div>
+      
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        <div className="absolute top-32 right-10 w-72 h-72 bg-clay/5 rounded-full blur-3xl" />
+        
+        <div className="container mx-auto px-6">
+          <div className={`max-w-3xl transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">Bespoke Experiences</span>
+            <h1 className="font-serif text-4xl md:text-6xl font-light leading-tight mb-6">
+              Private Events <span className="block text-clay">& Ceremonies</span>
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+              Intimate healing experiences crafted exclusively for you and your loved ones.
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Offerings Grid */}
-        <section ref={ref} className="py-20 md:py-32">
-          <div className="container mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {privateOfferings.map((offering, index) => (
-                <div
-                  key={offering.title}
-                  className={`group p-8 md:p-10 border border-foreground/10 hover:border-clay/30 hover:bg-muted/30 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-full border border-foreground/10 mb-6 group-hover:border-clay/50 group-hover:bg-clay/10 transition-all duration-500">
-                    <offering.icon className="w-6 h-6 text-clay group-hover:scale-110 transition-transform duration-500" />
+      <section ref={offeringsRef} className="py-20 md:py-32">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {privateOfferings.map((offering, index) => (
+              <div 
+                key={offering.title}
+                className={`group relative p-8 border border-foreground/10 hover:border-clay/30 transition-all duration-500 ${offeringsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                style={{ transitionDelay: `${index * 100}ms` }}
+              >
+                <div className="absolute top-0 left-0 w-8 h-8 border-l border-t border-clay/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 right-0 w-8 h-8 border-r border-b border-clay/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="p-3 border border-foreground/10 group-hover:border-clay/30 transition-colors duration-300">
+                    <offering.icon className="w-5 h-5 text-clay" />
                   </div>
-                  
-                  <h3 className="font-serif text-2xl text-foreground group-hover:text-clay transition-colors duration-300">
-                    {offering.title}
-                  </h3>
-                  
-                  <p className="mt-4 text-muted-foreground font-light leading-relaxed">
-                    {offering.description}
-                  </p>
-                  
-                  <ul className="mt-6 space-y-2">
-                    {offering.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-3 text-sm text-muted-foreground">
-                        <span className="w-1 h-1 rounded-full bg-clay" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                  <span className="text-sm text-clay">{offering.price}</span>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Inquiry Section */}
-        <section className="py-20 md:py-32 bg-muted">
-          <div className="container mx-auto px-6">
-            <div className="max-w-2xl mx-auto text-center">
-              <h2 className="font-serif text-3xl md:text-4xl font-light text-foreground">
-                Let's create something meaningful
-              </h2>
-              
-              <p className="mt-6 text-muted-foreground font-light leading-relaxed">
-                Every private event begins with a conversation. Share your vision, 
-                and we'll craft an experience that honors your intentions.
-              </p>
-              
-              <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a
-                  href="mailto:hello@omshala.com"
-                  className="group relative px-10 py-4 bg-foreground text-background text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl"
-                >
-                  <span className="relative z-10">Start a conversation</span>
-                  <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-                </a>
-                <a
-                  href="/events/public"
-                  className="px-10 py-4 border border-foreground/20 text-foreground text-sm tracking-wide hover:border-clay hover:text-clay transition-all duration-300"
-                >
-                  View public events
-                </a>
+                
+                <h3 className="font-serif text-xl mb-3 group-hover:text-clay transition-colors duration-300">{offering.title}</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6">{offering.description}</p>
+                
+                <ul className="space-y-2">
+                  {offering.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <Check className="w-4 h-4 text-clay flex-shrink-0" />{feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              
-              <p className="mt-10 text-sm text-muted-foreground/70">
-                Typical response time: 24-48 hours
-              </p>
-            </div>
+            ))}
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-32 bg-charcoal text-bone text-center">
+        <div className="container mx-auto px-6">
+          <h2 className="font-serif text-3xl md:text-4xl font-light mb-6">Let's Create Something Beautiful</h2>
+          <p className="text-bone/70 max-w-xl mx-auto mb-10">Every private experience begins with a conversation.</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="mailto:hello@omshala.com?subject=Private Event Inquiry" className="px-10 py-4 bg-bone text-charcoal hover:bg-clay hover:text-bone transition-all duration-300">
+              Start a Conversation
+            </a>
+            <Link to="/events/public" className="flex items-center justify-center gap-2 px-10 py-4 border border-bone/30 text-bone hover:bg-bone hover:text-charcoal transition-all duration-300">
+              View Public Events <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
