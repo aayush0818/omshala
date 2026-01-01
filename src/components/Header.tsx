@@ -51,11 +51,11 @@ const Header = () => {
                 <ChevronDown className="w-4 h-4" />
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background border border-foreground/10 shadow-lg z-50">
-                <DropdownMenuItem className="cursor-pointer hover:bg-muted">
-                  <a href="#events-public" className="w-full">Public</a>
+                <DropdownMenuItem className="cursor-pointer hover:bg-muted" asChild>
+                  <Link to="/events/public" className="w-full">Public</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer hover:bg-muted">
-                  <a href="#events-private" className="w-full">Private</a>
+                <DropdownMenuItem className="cursor-pointer hover:bg-muted" asChild>
+                  <Link to="/events/private" className="w-full">Private</Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
@@ -115,20 +115,20 @@ const Header = () => {
           >
             <span className="font-serif text-3xl text-foreground">Events</span>
             <div className="flex gap-6">
-              <a 
-                href="#events-public"
+              <Link 
+                to="/events/public"
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-lg text-muted-foreground hover:text-clay transition-colors duration-300"
               >
                 Public
-              </a>
-              <a 
-                href="#events-private"
+              </Link>
+              <Link 
+                to="/events/private"
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-lg text-muted-foreground hover:text-clay transition-colors duration-300"
               >
                 Private
-              </a>
+              </Link>
             </div>
           </div>
           <a 
