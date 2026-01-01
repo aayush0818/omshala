@@ -1,142 +1,138 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Clock, MapPin, Users, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Calendar, Clock, MapPin, Users } from "lucide-react";
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
-const publicEvents = [
+const upcomingEvents = [
   {
-    title: "Full Moon Sound Bath",
-    date: "January 13, 2026",
+    id: 1,
+    title: "New Moon Sound Bath",
+    day: "13",
+    month: "Jan",
     time: "7:00 PM - 9:00 PM",
-    location: "OmShala Studio, Bandra West",
-    spots: 12,
-    description: "Immerse yourself in the healing vibrations of crystal bowls, gongs, and chimes under the full moon's energy.",
+    location: "OmShala Studio",
+    spotsLeft: 4,
+    price: "₹1,800",
+    description: "Release and set intentions under the new moon's energy with a deeply restorative sound healing session.",
+    featured: true
   },
   {
-    title: "Breathwork Circle",
-    date: "January 20, 2026",
-    time: "6:30 PM - 8:00 PM",
-    location: "OmShala Studio, Bandra West",
-    spots: 8,
-    description: "A guided pranayama session designed to release tension, increase vitality, and restore inner calm.",
+    id: 2,
+    title: "Morning Breathwork Circle",
+    day: "18",
+    month: "Jan",
+    time: "6:30 AM - 8:00 AM",
+    location: "OmShala Studio",
+    spotsLeft: 6,
+    price: "₹1,200",
+    description: "Start your weekend with energizing breathwork practices to awaken vitality and clarity."
   },
   {
-    title: "New Moon Meditation",
-    date: "January 29, 2026",
-    time: "7:00 PM - 8:30 PM",
-    location: "OmShala Studio, Bandra West",
-    spots: 15,
-    description: "Set intentions and cultivate clarity through guided meditation aligned with the new moon cycle.",
+    id: 3,
+    title: "Full Moon Meditation",
+    day: "27",
+    month: "Jan",
+    time: "7:30 PM - 9:30 PM",
+    location: "Terrace Garden",
+    spotsLeft: 8,
+    price: "₹1,500",
+    description: "Gather under the full moon for a powerful group meditation and sound healing ceremony."
   },
   {
-    title: "Weekend Wellness Retreat",
-    date: "February 7-8, 2026",
-    time: "9:00 AM - 5:00 PM",
-    location: "Alibaug Retreat Center",
-    spots: 20,
-    description: "A two-day immersive experience combining sound healing, breathwork, yoga, and plant-based nourishment.",
-  },
+    id: 4,
+    title: "Sound & Stillness Retreat",
+    day: "8-9",
+    month: "Feb",
+    time: "Full Day",
+    location: "Nandi Hills Retreat",
+    spotsLeft: 3,
+    price: "₹8,500",
+    description: "A transformative weekend immersion featuring sound healing, breathwork, and nature connection."
+  }
 ];
 
 const EventsPublic = () => {
   const [loaded, setLoaded] = useState(false);
-  const { ref, isVisible } = useScrollAnimation(0.1);
+  const { ref: eventsRef, isVisible: eventsVisible } = useScrollAnimation();
 
   useEffect(() => {
     setLoaded(true);
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background text-foreground">
       <Header />
-      <main>
-        {/* Hero Section */}
-        <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-muted overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-background via-muted to-muted" />
-          <div className="absolute top-1/4 right-0 w-[600px] h-[300px] bg-clay/10 rounded-full blur-[150px]" />
-          
-          <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-3xl">
-              <span className={`inline-block text-xs tracking-[0.25em] uppercase text-muted-foreground transition-all duration-700 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                Community Gatherings
-              </span>
-              
-              <h1 className={`mt-6 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight tracking-tight text-foreground transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '200ms' }}>
-                Public Events
-              </h1>
-              
-              <p className={`mt-6 text-lg text-muted-foreground font-light leading-relaxed max-w-xl transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '400ms' }}>
-                Join our open sessions and connect with a community of mindful practitioners. 
-                All levels are welcome.
-              </p>
-            </div>
+      
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+        <div className="absolute top-20 right-20 w-80 h-80 bg-clay/5 rounded-full blur-3xl" />
+        
+        <div className="container mx-auto px-6">
+          <div className={`max-w-3xl transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">Community Gatherings</span>
+            <h1 className="font-serif text-4xl md:text-6xl font-light leading-tight mb-6">
+              Public Events <span className="block text-clay">& Ceremonies</span>
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+              Join our community for transformative group experiences.
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Events List */}
-        <section ref={ref} className="py-20 md:py-32">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto space-y-8">
-              {publicEvents.map((event, index) => (
-                <div
-                  key={event.title}
-                  className={`group p-8 md:p-10 border border-foreground/10 hover:border-clay/30 hover:bg-muted/50 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                  style={{ transitionDelay: `${index * 100}ms` }}
-                >
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
+      <section ref={eventsRef} className="py-20 md:py-32">
+        <div className="container mx-auto px-6 space-y-8">
+          {upcomingEvents.map((event, index) => (
+            <div 
+              key={event.id}
+              className={`group relative border border-foreground/10 hover:border-clay/30 transition-all duration-500 ${eventsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'} ${event.featured ? 'bg-muted/20' : ''}`}
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              <div className="absolute top-0 left-0 w-10 h-10 border-l border-t border-clay/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute bottom-0 right-0 w-10 h-10 border-r border-b border-clay/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              
+              <div className="flex flex-col md:flex-row">
+                <div className="flex-shrink-0 p-6 md:p-8 md:w-32 flex flex-row md:flex-col items-center justify-center md:border-r border-b md:border-b-0 border-foreground/5 bg-charcoal/5">
+                  <span className="font-serif text-3xl md:text-4xl text-clay mr-2 md:mr-0">{event.day}</span>
+                  <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">{event.month}</span>
+                </div>
+                
+                <div className="flex-1 p-6 md:p-8">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
                     <div className="flex-1">
-                      <h3 className="font-serif text-2xl md:text-3xl text-foreground group-hover:text-clay transition-colors duration-300">
-                        {event.title}
-                      </h3>
-                      <p className="mt-4 text-muted-foreground font-light leading-relaxed">
-                        {event.description}
-                      </p>
-                      
-                      <div className="mt-6 flex flex-wrap gap-4 text-sm text-muted-foreground">
-                        <span className="flex items-center gap-2">
-                          <Calendar className="w-4 h-4 text-clay" />
-                          {event.date}
-                        </span>
-                        <span className="flex items-center gap-2">
-                          <Clock className="w-4 h-4 text-clay" />
-                          {event.time}
-                        </span>
-                        <span className="flex items-center gap-2">
-                          <MapPin className="w-4 h-4 text-clay" />
-                          {event.location}
-                        </span>
-                        <span className="flex items-center gap-2">
-                          <Users className="w-4 h-4 text-clay" />
-                          {event.spots} spots
-                        </span>
+                      <h3 className="font-serif text-2xl md:text-3xl mb-3 group-hover:text-clay transition-colors duration-300">{event.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed mb-6 max-w-xl">{event.description}</p>
+                      <div className="flex flex-wrap gap-6 text-sm text-muted-foreground">
+                        <span className="flex items-center gap-2"><Clock className="w-4 h-4 text-clay" />{event.time}</span>
+                        <span className="flex items-center gap-2"><MapPin className="w-4 h-4 text-clay" />{event.location}</span>
+                        <span className="flex items-center gap-2"><Users className="w-4 h-4 text-clay" />{event.spotsLeft} spots left</span>
                       </div>
                     </div>
-                    
-                    <div className="md:text-right">
-                      <a
-                        href="#"
-                        className="inline-block px-8 py-3 border border-foreground/20 text-foreground text-sm tracking-wide hover:border-clay hover:text-clay hover:bg-clay/5 transition-all duration-300"
-                      >
-                        Reserve spot
+                    <div className="flex flex-col items-start lg:items-end gap-4">
+                      <span className="text-2xl font-serif text-clay">{event.price}</span>
+                      <a href={`mailto:hello@omshala.com?subject=Registration: ${event.title}`} className="flex items-center gap-2 px-6 py-3 border border-foreground/20 hover:border-clay hover:text-clay transition-all duration-300">
+                        Reserve Spot <ArrowRight className="w-4 h-4" />
                       </a>
                     </div>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
-            
-            <div className={`text-center mt-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '500ms' }}>
-              <p className="text-muted-foreground text-sm">
-                Can't find a suitable time?{" "}
-                <a href="/events/private" className="text-clay hover:underline">
-                  Request a private session
-                </a>
-              </p>
-            </div>
-          </div>
-        </section>
-      </main>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-20 md:py-32 bg-charcoal text-bone text-center">
+        <div className="container mx-auto px-6">
+          <h2 className="font-serif text-3xl md:text-4xl font-light mb-6">Looking for Something Private?</h2>
+          <p className="text-bone/70 max-w-xl mx-auto mb-10">We offer bespoke experiences for individuals, couples, and groups.</p>
+          <Link to="/events/private" className="inline-flex items-center gap-2 px-10 py-4 border border-bone/30 text-bone hover:bg-bone hover:text-charcoal transition-all duration-300">
+            Explore Private Events <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
