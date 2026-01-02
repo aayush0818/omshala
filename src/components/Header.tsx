@@ -23,7 +23,7 @@ const Header = () => {
   const navLinks = [
     { href: "/practices", label: "Practices", isRoute: true },
     { href: "/about", label: "About", isRoute: true },
-    { href: "/contact", label: "Contact", isRoute: true },
+    { href: "/schedule", label: "Schedule", isRoute: true },
   ];
 
   return (
@@ -63,7 +63,7 @@ const Header = () => {
 
           <div className="flex items-center gap-4">
             <Link 
-              to="/contact" 
+              to="/schedule" 
               className="hidden md:inline-block px-6 py-2.5 text-sm border border-foreground/20 hover:border-clay hover:text-clay transition-all duration-300"
             >
               Book
@@ -132,7 +132,7 @@ const Header = () => {
             </div>
           </div>
           <Link 
-            to="/contact"
+            to="/schedule"
             onClick={() => setMobileMenuOpen(false)}
             className={`mt-4 px-10 py-4 border border-foreground/20 text-foreground hover:border-clay hover:text-clay transition-all duration-500 ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             style={{ transitionDelay: '400ms' }}
