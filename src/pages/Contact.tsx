@@ -134,27 +134,28 @@ const Contact = () => {
       </section>
 
       {/* Contact Methods */}
-      <section ref={contactRef} className="py-20 border-b border-foreground/5 relative overflow-hidden">
+      <section ref={contactRef} className="py-24 md:py-32 border-b border-foreground/5 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-foreground/[0.02] to-transparent" />
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-clay/5 rounded-full blur-[60px] animate-float" />
         
         <div className="container mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {contactMethods.map((method, index) => (
               <a
                 key={method.label}
                 href={method.href}
-                className={`group text-center p-6 md:p-8 border border-foreground/10 hover:border-clay/30 hover:bg-muted/30 transition-all duration-500 relative ${contactVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+                className={`group text-center p-8 md:p-10 border border-foreground/10 hover:border-clay/30 hover:bg-muted/20 transition-all duration-500 relative ${contactVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                <div className="absolute top-0 left-0 w-4 h-4 border-l border-t border-clay/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="absolute bottom-0 right-0 w-4 h-4 border-r border-b border-clay/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute top-0 left-0 w-6 h-6 border-l border-t border-clay/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute bottom-0 right-0 w-6 h-6 border-r border-b border-clay/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                <div className="inline-flex items-center justify-center w-14 h-14 border border-foreground/10 group-hover:border-clay/30 mb-4 transition-colors duration-300">
-                  <method.icon className="w-5 h-5 text-clay" />
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full border border-foreground/10 group-hover:border-clay/50 group-hover:bg-clay/10 mb-6 transition-all duration-500">
+                  <method.icon className="w-5 h-5 text-clay group-hover:scale-110 transition-transform duration-500" />
                 </div>
-                <p className="text-xs tracking-[0.2em] uppercase text-foreground/60 mb-2">{method.label}</p>
+                <p className="text-xs tracking-[0.2em] uppercase text-foreground/60 mb-3">{method.label}</p>
                 <p className="text-foreground group-hover:text-clay transition-colors duration-300 font-medium">{method.value}</p>
-                <p className="text-xs text-muted-foreground mt-2">{method.description}</p>
+                <p className="text-xs text-muted-foreground mt-3 leading-relaxed">{method.description}</p>
               </a>
             ))}
           </div>
