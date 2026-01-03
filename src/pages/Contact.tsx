@@ -100,34 +100,38 @@ const Contact = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
-        {/* Background */}
+      {/* Hero Section - Matching landing page style */}
+      <section className="relative min-h-[70vh] overflow-hidden flex items-center justify-center">
+        {/* Background Image */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal to-earth/50" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-clay/10 rounded-full blur-[200px] -translate-y-1/2" />
+          <img 
+            src={abstractZen} 
+            alt="Serene abstract" 
+            className={`w-full h-full object-cover transition-all duration-[2s] ease-out ${loaded ? 'scale-100 opacity-100' : 'scale-110 opacity-0'}`}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
         </div>
         
-        {/* Floating elements */}
-        <div className="absolute top-1/3 left-10 w-1 h-20 bg-gradient-to-b from-clay/30 to-transparent animate-float" />
-        <div className="absolute top-1/4 right-20 w-1 h-16 bg-gradient-to-b from-bone/20 to-transparent animate-float" style={{ animationDelay: '1.5s' }} />
-        <div className="absolute bottom-1/4 left-0 w-32 h-px bg-gradient-to-r from-bone/10 to-transparent" />
-        <div className="absolute top-1/3 right-0 w-32 h-px bg-gradient-to-l from-bone/10 to-transparent" />
+        {/* Floating decorative elements */}
+        <div className="absolute top-1/4 left-10 w-1 h-20 bg-gradient-to-b from-clay/30 to-transparent animate-float" />
+        <div className="absolute top-1/3 right-16 w-1 h-16 bg-gradient-to-b from-clay/20 to-transparent animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-1/3 left-1/4 w-20 h-px bg-gradient-to-r from-transparent via-foreground/10 to-transparent animate-pulse-soft" />
         
-        <div className="container mx-auto px-6 relative z-10 pt-32 text-bone">
-          <div className={`max-w-2xl transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className={`w-px h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-8 transition-all duration-1000 delay-200 ${loaded ? 'opacity-100' : 'opacity-0'}`} />
+        <div className="container mx-auto px-6 relative z-10 pt-20">
+          <div className="max-w-3xl mx-auto text-center">
+            {/* Decorative line */}
+            <div className={`w-px h-16 bg-gradient-to-b from-transparent via-foreground/30 to-foreground/10 mx-auto mb-8 transition-all duration-1000 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`} />
             
-            <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">
+            <span className={`inline-block text-xs tracking-[0.25em] uppercase text-muted-foreground transition-all duration-700 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '200ms' }}>
               Get in Touch
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6">
-              Let's Begin
-              <span className="block mt-2 text-clay">Your Journey</span>
+            
+            <h1 className={`mt-8 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight tracking-tight text-foreground transition-all duration-1000 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '400ms' }}>
+              Let's begin your journey
             </h1>
-            <p className="text-lg text-bone/70 leading-relaxed max-w-xl">
-              Whether you're ready to book a session, have questions, or simply want to connect—
-              we're here to support you every step of the way.
+            
+            <p className={`mt-8 text-lg text-muted-foreground font-light leading-relaxed max-w-xl mx-auto transition-all duration-1000 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '600ms' }}>
+              Whether you're ready to book a session, have questions, or simply want to connect—we're here to support you.
             </p>
           </div>
         </div>
