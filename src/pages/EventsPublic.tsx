@@ -109,8 +109,8 @@ const EventsPublic = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+      {/* Hero Section - Matching landing page style */}
+      <section className="relative min-h-[80vh] overflow-hidden flex items-center justify-center">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
@@ -118,48 +118,44 @@ const EventsPublic = () => {
             alt="Sound healing ceremony" 
             className={`w-full h-full object-cover transition-all duration-[2s] ease-out ${loaded ? 'scale-100 opacity-100' : 'scale-110 opacity-0'}`}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/90 to-charcoal/60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-charcoal/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
         </div>
         
-        {/* Floating elements */}
-        <div className="absolute top-1/3 left-10 w-1 h-20 bg-gradient-to-b from-clay/30 to-transparent animate-float" />
-        <div className="absolute top-1/4 right-20 w-1 h-16 bg-gradient-to-b from-bone/20 to-transparent animate-float" style={{ animationDelay: '1.5s' }} />
-        <div className="absolute bottom-1/4 left-0 w-32 h-px bg-gradient-to-r from-bone/10 to-transparent" />
+        {/* Floating decorative elements */}
+        <div className="absolute top-1/4 left-10 w-1 h-20 bg-gradient-to-b from-clay/30 to-transparent animate-float" />
+        <div className="absolute top-1/3 right-16 w-1 h-16 bg-gradient-to-b from-clay/20 to-transparent animate-float" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-1/3 left-1/4 w-20 h-px bg-gradient-to-r from-transparent via-foreground/10 to-transparent animate-pulse-soft" />
         
-        {/* Gradient orbs */}
-        <div className="absolute top-1/4 right-1/3 w-64 h-64 bg-clay/10 rounded-full blur-[100px] animate-float" />
-        <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-earth/10 rounded-full blur-[80px] animate-float" style={{ animationDelay: '2s' }} />
-        
-        <div className="container mx-auto px-6 relative z-10 pt-32 text-bone">
-          <div className={`max-w-2xl transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className={`w-px h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-8 transition-all duration-1000 delay-200 ${loaded ? 'opacity-100' : 'opacity-0'}`} />
+        <div className="container mx-auto px-6 relative z-10 pt-20">
+          <div className="max-w-3xl mx-auto text-center">
+            {/* Decorative line */}
+            <div className={`w-px h-16 bg-gradient-to-b from-transparent via-foreground/30 to-foreground/10 mx-auto mb-8 transition-all duration-1000 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`} />
             
-            <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">
+            <span className={`inline-block text-xs tracking-[0.25em] uppercase text-muted-foreground transition-all duration-700 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '200ms' }}>
               Community Gatherings
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6">
-              Public Events
-              <span className="block mt-2 text-clay">& Ceremonies</span>
+            
+            <h1 className={`mt-8 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight tracking-tight text-foreground transition-all duration-1000 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '400ms' }}>
+              Public events & ceremonies
             </h1>
-            <p className="text-lg text-bone/70 leading-relaxed max-w-xl">
-              Join our community for transformative group experiences. From new moon sound baths 
-              to weekend retreats, each gathering is an opportunity to connect, heal, and grow together.
+            
+            <p className={`mt-8 text-lg text-muted-foreground font-light leading-relaxed max-w-xl mx-auto transition-all duration-1000 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '600ms' }}>
+              Join our community for transformative group experiences. From new moon sound baths to weekend retreats, each gathering is an opportunity to connect, heal, and grow together.
             </p>
             
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className={`mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-1000 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '800ms' }}>
               <a 
-                href="#events"
-                className="group relative px-8 py-4 bg-bone text-charcoal text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl"
+                href="#events" 
+                className="group relative px-10 py-4 bg-foreground text-background text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl"
               >
-                <span className="relative z-10 group-hover:text-bone transition-colors duration-500">View Upcoming Events</span>
+                <span className="relative z-10">View upcoming events</span>
                 <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
               </a>
               <Link 
-                to="/schedule"
-                className="px-8 py-4 border border-bone/30 text-bone hover:bg-bone hover:text-charcoal transition-all duration-300"
+                to="/schedule" 
+                className="px-10 py-4 border border-foreground/20 text-foreground text-sm tracking-wide hover:border-clay hover:text-clay transition-all duration-500 hover:bg-foreground/5"
               >
-                Regular Sessions
+                Regular sessions
               </Link>
             </div>
           </div>
