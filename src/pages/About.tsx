@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Heart, Leaf, Sun, Moon, Volume2, Wind, Award, BookOpen } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import guidePortrait from "@/assets/guide-portrait.jpg";
 import abstractZen from "@/assets/abstract-zen.jpg";
@@ -52,8 +53,9 @@ const About = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Header />
+    <PageTransition>
+      <div className="min-h-screen bg-background text-foreground">
+        <Header />
       
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
@@ -347,7 +349,8 @@ const About = () => {
       </section>
 
       <Footer />
-    </div>
+      </div>
+    </PageTransition>
   );
 };
 

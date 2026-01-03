@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { User, Users, Heart, Building2, Sparkles, ArrowRight, Check, Star, Quote } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import abstractZen from "@/assets/abstract-zen.jpg";
 
@@ -97,8 +98,9 @@ const EventsPrivate = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Header />
+    <PageTransition>
+      <div className="min-h-screen bg-background text-foreground">
+        <Header />
       
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
@@ -370,7 +372,8 @@ const EventsPrivate = () => {
       </section>
 
       <Footer />
-    </div>
+      </div>
+    </PageTransition>
   );
 };
 

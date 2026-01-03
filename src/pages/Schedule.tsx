@@ -4,6 +4,7 @@ import { Clock, MapPin, Users, ArrowRight, ChevronLeft, ChevronRight, CalendarDa
 import { format, addMonths, subMonths, startOfMonth, endOfMonth, eachDayOfInterval, isSameMonth, isSameDay, isToday, addDays } from "date-fns";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 // Mock schedule data - in real app this would come from a database
@@ -85,8 +86,9 @@ const Schedule = () => {
   const selectedDateSessions = selectedDate ? getSessionsForDate(selectedDate) : [];
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Header />
+    <PageTransition>
+      <div className="min-h-screen bg-background text-foreground">
+        <Header />
       
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
@@ -403,7 +405,8 @@ const Schedule = () => {
       </section>
 
       <Footer />
-    </div>
+      </div>
+    </PageTransition>
   );
 };
 
