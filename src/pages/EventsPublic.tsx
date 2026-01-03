@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Clock, MapPin, Users, ArrowRight, Calendar, Sparkles, Mail } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import heroBowl from "@/assets/hero-bowl.jpg";
 
@@ -106,8 +107,9 @@ const EventsPublic = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Header />
+    <PageTransition>
+      <div className="min-h-screen bg-background text-foreground">
+        <Header />
       
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
@@ -353,7 +355,8 @@ const EventsPublic = () => {
       </section>
 
       <Footer />
-    </div>
+      </div>
+    </PageTransition>
   );
 };
 

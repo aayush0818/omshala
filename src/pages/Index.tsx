@@ -7,22 +7,25 @@ import GuideSection from "@/components/GuideSection";
 import TestimonialSection from "@/components/TestimonialSection";
 import BookingSection from "@/components/BookingSection";
 import Footer from "@/components/Footer";
+import PageTransition from "@/components/PageTransition";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Header />
-      <main>
-        <HeroSection />
-        <PhilosophySection />
-        <PracticesSection />
-        <ExpectSection />
-        <GuideSection />
-        <TestimonialSection />
-        <BookingSection />
-      </main>
-      <Footer />
-    </div>
+    <PageTransition>
+      <div className="min-h-screen">
+        <Header />
+        <main>
+          <HeroSection />
+          <PhilosophySection />
+          <PracticesSection />
+          <ExpectSection />
+          <GuideSection />
+          <TestimonialSection />
+          <BookingSection />
+        </main>
+        <Footer />
+      </div>
+    </PageTransition>
   );
 };
 
