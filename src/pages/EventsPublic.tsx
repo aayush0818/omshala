@@ -272,34 +272,40 @@ const EventsPublic = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-20 md:py-28 bg-muted/20 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
+      <section className="py-28 md:py-36 bg-charcoal text-bone relative overflow-hidden">
+        {/* Decorative elements matching landing page */}
+        <div className="absolute top-20 -right-32 w-64 h-64 rounded-full border border-bone/5 animate-pulse-soft" />
+        <div className="absolute bottom-20 -left-32 w-96 h-96 rounded-full border border-bone/5 animate-pulse-soft" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-clay/5 rounded-full blur-[100px] animate-float" />
         
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-6 relative z-10">
           <div className="max-w-2xl mx-auto text-center">
-            <Calendar className="w-8 h-8 text-clay mx-auto mb-6" />
-            <h3 className="font-serif text-2xl md:text-3xl font-light mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full border border-bone/10 mb-8">
+              <Calendar className="w-6 h-6 text-clay" />
+            </div>
+            <span className="text-xs tracking-[0.3em] uppercase text-ash mb-6 block">Stay Connected</span>
+            <h3 className="font-serif text-3xl md:text-4xl font-light mb-6">
               Never Miss an Event
             </h3>
-            <p className="text-muted-foreground mb-8">
+            <div className="w-16 h-px bg-gradient-to-r from-transparent via-clay to-transparent mx-auto mb-8" />
+            <p className="text-bone/60 mb-10 leading-relaxed max-w-md mx-auto">
               Join our mailing list to be the first to know about upcoming events, workshops, and special offerings.
             </p>
-            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                className="flex-1 px-4 py-3 bg-transparent border border-foreground/10 focus:border-clay/50 focus:outline-none transition-colors duration-300"
+                className="flex-1 px-5 py-4 bg-transparent border border-bone/10 focus:border-clay/50 focus:outline-none transition-colors duration-300 text-bone placeholder:text-bone/40"
                 required
               />
               <button
                 type="submit"
-                className="group relative px-6 py-3 bg-foreground text-background text-sm tracking-wide overflow-hidden transition-all duration-500 flex items-center justify-center gap-2"
+                className="group relative px-8 py-4 bg-bone text-charcoal text-sm tracking-wide overflow-hidden transition-all duration-500 flex items-center justify-center gap-2"
               >
-                <span className="relative z-10">Subscribe</span>
-                <Mail className="w-4 h-4 relative z-10" />
+                <span className="relative z-10 group-hover:text-bone transition-colors duration-500">Subscribe</span>
+                <Mail className="w-4 h-4 relative z-10 group-hover:text-bone transition-colors duration-500" />
                 <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
               </button>
             </form>
@@ -308,31 +314,37 @@ const EventsPublic = () => {
       </section>
 
       {/* Private Events CTA */}
-      <section ref={ctaRef} className="py-28 md:py-40 bg-earth text-bone relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-earth via-earth to-charcoal/50" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-clay/10 rounded-full blur-[150px] animate-pulse-soft" />
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-bone/5 rounded-full blur-[100px] animate-pulse-soft" style={{ animationDelay: '2s' }} />
+      <section ref={ctaRef} className="py-28 md:py-40 relative overflow-hidden">
+        {/* Background gradient like landing page booking section */}
+        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal to-earth/30" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-clay/10 rounded-full blur-[200px] -translate-y-1/2" />
+        
+        {/* Decorative lines */}
+        <div className="absolute top-1/4 left-0 w-32 h-px bg-gradient-to-r from-bone/10 to-transparent" />
+        <div className="absolute bottom-1/4 right-0 w-32 h-px bg-gradient-to-l from-bone/10 to-transparent" />
         
         <div className={`container mx-auto px-6 text-center relative z-10 transition-all duration-1000 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light mb-6">
+          <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">Private Experiences</span>
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light mb-6 text-bone">
             Looking for Something Private?
           </h2>
-          <p className="text-bone/70 max-w-xl mx-auto mb-10 text-lg">
+          <div className="w-16 h-px bg-gradient-to-r from-transparent via-clay to-transparent mx-auto mb-8" />
+          <p className="text-bone/60 max-w-xl mx-auto mb-12 text-lg font-light leading-relaxed">
             We offer bespoke experiences for individuals, couples, families, and corporate groups. 
             Create a meaningful experience tailored just for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               to="/events/private" 
-              className="group inline-flex items-center gap-2 px-10 py-4 bg-bone text-charcoal text-sm tracking-wide overflow-hidden transition-all duration-500 relative"
+              className="group relative inline-flex items-center justify-center gap-2 px-14 py-5 bg-bone text-charcoal text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-bone/20"
             >
               <span className="relative z-10 group-hover:text-bone transition-colors duration-500">Explore Private Events</span>
-              <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
+              <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 group-hover:text-bone transition-all duration-300" />
               <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
             </Link>
             <Link 
               to="/contact"
-              className="px-10 py-4 border border-bone/30 text-bone hover:bg-bone hover:text-charcoal transition-all duration-300"
+              className="px-10 py-5 border border-bone/30 text-bone hover:bg-bone hover:text-charcoal transition-all duration-300"
             >
               Contact Us
             </Link>
