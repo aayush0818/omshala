@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { User, Users, Heart, Building2, Sparkles, ArrowRight, Check, Star, Quote } from "lucide-react";
+import { Heart, Cake, PartyPopper, Users, Sparkles, ArrowRight, Check, Quote } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -9,81 +9,71 @@ import abstractZen from "@/assets/abstract-zen.jpg";
 
 const privateOfferings = [
   {
-    icon: User,
-    title: "Individual Sessions",
-    tagline: "Your Personal Sanctuary",
-    description: "One-on-one healing experiences tailored to your unique journey. Whether you're navigating stress, seeking clarity, or simply craving deep rest, these sessions are crafted entirely around your needs.",
-    features: ["Personalized practice design", "Flexible scheduling", "Private, sacred space", "Pre-session consultation", "Follow-up integration support"],
-    idealFor: "Those seeking dedicated personal attention and customized healing work",
-    price: "From ₹4,000",
-    duration: "90-120 min"
+    icon: Heart,
+    title: "Weddings",
+    tagline: "A soulful pause amid celebration",
+    description: "An intimate sound healing ceremony for the bride, groom and inner circle — a moment of stillness and shared breath before or between the festivities. Crystal singing bowls and live ragas create a memory that stays with everyone present.",
+    features: ["Tuned to 435 Hz", "Live Indian classical ragas", "Soft lighting & cozy setup", "Aromas, blankets and pillows", "Guided breathwork & relaxation"],
+    idealFor: "Pre-wedding rituals, mehendi mornings, sangeet wind-downs, or post-wedding gratitude circles",
+    price: "On request",
+    duration: "60-90 min"
   },
   {
-    icon: Heart,
-    title: "Couples & Partners",
-    tagline: "Deepen Your Connection",
-    description: "Experience the profound intimacy of healing together. These sessions blend synchronized breathwork, partner sound baths, and connection rituals designed to deepen your bond and create shared memories.",
-    features: ["Synchronized breathwork", "Partner sound healing", "Connection rituals", "Shared intention setting", "Communication practices"],
-    idealFor: "Couples, partners, or close friends seeking to strengthen their connection",
-    price: "From ₹5,500",
-    duration: "90-120 min"
+    icon: Cake,
+    title: "Birthdays",
+    tagline: "Mark the year with intention",
+    description: "A truly memorable way to celebrate a special day — a sound bath shared with closest friends, between the laughter and high energy. A deeply soulful relaxation that everyone takes home with them.",
+    features: ["Hosted at your venue", "Cozy floor setup", "Soft lighting & aromatics", "Crystal bowls & live voice", "Suitable for all ages"],
+    idealFor: "Milestone birthdays, intimate celebrations, soul-circle gatherings",
+    price: "On request",
+    duration: "60-90 min"
+  },
+  {
+    icon: PartyPopper,
+    title: "Diwali & Festive Gatherings",
+    tagline: "A grounded moment within the festivities",
+    description: "An evening of light, breath and pure tone — the perfect counterpoint to a high-energy festive season. We design a setup that honours the occasion while offering everyone a few moments of true stillness.",
+    features: ["Festive aesthetic setup", "Optional mantra & ragas", "Group breathwork", "Sound immersion", "Closing circle"],
+    idealFor: "Diwali parties, year-end gatherings, intimate festive get-togethers",
+    price: "On request",
+    duration: "60-90 min"
   },
   {
     icon: Users,
-    title: "Family & Friends",
-    tagline: "Gather in Healing",
-    description: "Bring your loved ones together for an intimate group healing experience. Perfect for celebrations, reunions, or simply quality time that nourishes everyone's wellbeing.",
-    features: ["Groups of 4-12", "Customized experience", "Multi-generational friendly", "Bonding activities", "Collective healing"],
-    idealFor: "Families, friend groups, or small communities celebrating together",
-    price: "From ₹8,000",
-    duration: "2-3 hours"
-  },
-  {
-    icon: Building2,
-    title: "Corporate Wellness",
-    tagline: "Elevate Your Team",
-    description: "Invest in your team's wellbeing with workplace wellness programs. From stress management workshops to team-building sound baths, we bring transformative experiences to your organization.",
-    features: ["On-site or studio sessions", "Team building focus", "Stress management tools", "Scalable for any team size", "Ongoing program options"],
-    idealFor: "Companies, startups, and organizations prioritizing employee wellbeing",
-    price: "Custom pricing",
-    duration: "1-4 hours"
+    title: "Women's Forums & Baby Showers",
+    tagline: "Soft, intimate, deeply held",
+    description: "Sound healing has become a meaningful way to gather women in an emotionally intimate way — to pause, exhale, and connect beneath the surface. Especially loved for baby showers and women's circles.",
+    features: ["Held seated or lying down", "Aromas & cozy textures", "Voice & crystal bowls", "Optional intention sharing", "Trauma-aware facilitation"],
+    idealFor: "Baby showers, women's circles, soul gatherings, friendship celebrations",
+    price: "On request",
+    duration: "60-90 min"
   },
   {
     icon: Sparkles,
-    title: "Special Occasions",
-    tagline: "Mark Life's Moments",
-    description: "Transform milestones into meaningful ceremonies. Whether it's a birthday, anniversary, bachelorette, or life transition, we design bespoke rituals that honor your unique journey.",
-    features: ["Bespoke ceremony design", "Meaningful rituals", "Photo-worthy setting", "Custom elements", "Keepsake options"],
-    idealFor: "Birthdays, anniversaries, transitions, celebrations, and sacred milestones",
-    price: "Custom pricing",
-    duration: "2-4 hours"
+    title: "Bespoke Occasions",
+    tagline: "Anniversaries, milestones & more",
+    description: "Anniversaries, retirements, family reunions, healing circles — if there's a moment that calls for stillness and meaning, we'll design a sound healing experience around it.",
+    features: ["Fully bespoke design", "Choice of voice & instruments", "Custom ambience", "Pre-event consultation", "Optional keepsake recording"],
+    idealFor: "Any meaningful milestone that deserves more than a party",
+    price: "On request",
+    duration: "60-120 min"
   }
 ];
 
 const testimonials = [
   {
-    quote: "The couples session transformed our relationship. We learned to breathe together, to listen more deeply, and to create space for each other. It was the most meaningful anniversary gift we've ever given ourselves.",
-    author: "Ananya & Rohan",
-    context: "Couples Session"
-  },
-  {
-    quote: "Our team was skeptical at first, but the corporate wellness session exceeded every expectation. The energy shift was palpable—we left more connected and grounded than ever.",
-    author: "Vikram S., CEO",
-    context: "Corporate Wellness"
-  },
-  {
-    quote: "My 40th birthday sound bath was magical. Surrounded by my closest friends, guided through such a beautiful experience—it's a memory I'll treasure forever.",
-    author: "Priya M.",
-    context: "Special Occasion"
+    quote: "Pure sound pulls you inward and brings deep relaxation. In this state, the body is grounded, mind is open and emotions are free. Everything feels perfect, as it is.",
+    author: "Shrutika",
+    context: "Founder, Om Shala"
   }
 ];
 
 const processSteps = [
-  { number: "01", title: "Connect", description: "Reach out to share your vision. We'll have an initial conversation to understand your needs, preferences, and intentions." },
-  { number: "02", title: "Design", description: "We craft a bespoke experience tailored to your group, occasion, and desired outcomes. Every detail is considered." },
-  { number: "03", title: "Prepare", description: "We handle all logistics—space preparation, instruments, ambiance—so you can simply arrive and be present." },
-  { number: "04", title: "Experience", description: "Step into your private ceremony. We guide you through a transformative journey designed just for you." },
-  { number: "05", title: "Integrate", description: "Receive follow-up resources and support to help you carry the experience's benefits into daily life." }
+  { number: "01", title: "Connect", description: "Send us a message about the occasion, the size of the gathering, and the feeling you want to create." },
+  { number: "02", title: "Design", description: "We co-design the experience around your venue and intention — from soundscape to setup, lighting and aromatics." },
+  { number: "03", title: "Settle in", description: "Participants are seated or lying down in a calm environment. Soft lighting, cozy pillows and blankets, gentle aromas." },
+  { number: "04", title: "Soften", description: "Guided breathwork and relaxation help everyone arrive, let go, and absorb the subtle vibrations of sound." },
+  { number: "05", title: "Sound bath", description: "Crystal singing bowls tuned to 435 Hz, with live Indian classical ragas sung as lullabies for the soul." }
 ];
 
 const EventsPrivate = () => {
