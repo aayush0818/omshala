@@ -231,32 +231,32 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p className="text-lg">
-                  OmShala is designed to be an escape from the everyday—a place where the outside 
-                  world fades and inner exploration begins. Natural light, minimal distractions, 
-                  and carefully curated acoustics create the perfect environment for healing work.
+                  Om Shala is designed to feel like an exhale—soft lighting, warm textures, and
+                  carefully curated acoustics so the outside world can fade and inner exploration
+                  can begin.
                 </p>
                 <p>
-                  Every element of our space has been thoughtfully chosen: from the handwoven 
-                  textiles to the carefully sourced instruments from Nepal and Tibet. Each detail 
-                  supports your journey toward peace and presence.
+                  At the centre of every session are Crystal Singing Bowls tuned to 435 Hz—the
+                  frequency of nature—paired with live Indian classical ragas sung as lullabies
+                  for the soul.
                 </p>
                 <p>
-                  The moment you step through our doors, you'll feel the shift—a subtle invitation 
-                  to slow down, breathe deeper, and remember what matters most.
+                  The moment you settle in, the room invites you to slow down, breathe deeper,
+                  and surrender enough that meditation begins to happen on its own.
                 </p>
               </div>
               <div className="mt-12 flex flex-wrap gap-12">
                 <div className="text-center">
-                  <span className="text-4xl font-serif text-clay block">50+</span>
-                  <p className="text-sm text-muted-foreground mt-2">Healing Instruments</p>
+                  <span className="text-4xl font-serif text-clay block">435Hz</span>
+                  <p className="text-sm text-muted-foreground mt-2">Tuned crystal bowls</p>
                 </div>
                 <div className="text-center">
                   <span className="text-4xl font-serif text-clay block">1000+</span>
-                  <p className="text-sm text-muted-foreground mt-2">Sessions Held</p>
+                  <p className="text-sm text-muted-foreground mt-2">Participants held</p>
                 </div>
                 <div className="text-center">
-                  <span className="text-4xl font-serif text-clay block">∞</span>
-                  <p className="text-sm text-muted-foreground mt-2">Moments of Peace</p>
+                  <span className="text-4xl font-serif text-clay block">12+</span>
+                  <p className="text-sm text-muted-foreground mt-2">Years in practice</p>
                 </div>
               </div>
             </div>
