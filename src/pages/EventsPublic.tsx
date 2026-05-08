@@ -277,12 +277,12 @@ const EventsPublic = () => {
         <div className={`container mx-auto px-6 text-center relative z-10 transition-all duration-1000 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
           <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">Private Experiences</span>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light mb-6 text-bone">
-            Looking for Something Private?
+            Hosting a private gathering instead?
           </h2>
           <div className="w-16 h-px bg-gradient-to-r from-transparent via-clay to-transparent mx-auto mb-8" />
           <p className="text-bone/60 max-w-xl mx-auto mb-12 text-lg font-light leading-relaxed">
-            We offer bespoke experiences for individuals, couples, families, and corporate groups. 
-            Create a meaningful experience tailored just for you.
+            From weddings and birthdays to baby showers and Diwali parties — sound healing has
+            become a meaningful way to gather and exhale together.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
