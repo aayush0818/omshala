@@ -31,19 +31,12 @@ const formats = [
 
 const EventsPublic = () => {
   const [loaded, setLoaded] = useState(false);
-  const [email, setEmail] = useState('');
   const { ref: eventsRef, isVisible: eventsVisible } = useScrollAnimation();
   const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
 
   useEffect(() => {
     setLoaded(true);
   }, []);
-
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    window.location.href = `mailto:hello@omshala.com?subject=Newsletter Subscription&body=Please add ${email} to your newsletter list.`;
-    setEmail('');
-  };
 
   return (
     <PageTransition>
