@@ -119,12 +119,13 @@ const Practices = () => {
               Our Offerings
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6">
-              Practices for the
-              <span className="block mt-2 text-clay">Mind, Body & Soul</span>
+              Sound, Breath
+              <span className="block mt-2 text-clay">& Stillness</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Each practice is a doorway to deeper self-understanding. Whether through sound, breath, or stillness, 
-              discover the modality that speaks to your soul's journey.
+              Each practice is a way of softening the journey inward. Drawn from Nada Yoga — the
+              yoga of sound and music — and shaped to be simple, effective and accessible, with
+              no prior practice required.
             </p>
             
             <div className="mt-10 flex flex-wrap gap-4">
