@@ -1,93 +1,32 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Clock, MapPin, Users, ArrowRight, Calendar, Sparkles, Mail } from "lucide-react";
+import { Clock, MapPin, Users, ArrowRight, Calendar, Sparkles, Mail, Brain, Heart, Focus, Activity, Headphones, Building2 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import heroBowl from "@/assets/hero-bowl.jpg";
 
-const upcomingEvents = [
-  {
-    id: 1,
-    title: "New Moon Sound Bath",
-    subtitle: "Release & Intention Setting",
-    day: "13",
-    month: "Jan",
-    year: "2026",
-    time: "7:00 PM - 9:00 PM",
-    location: "OmShala Studio",
-    spotsTotal: 12,
-    spotsLeft: 4,
-    price: "₹1,800",
-    description: "Release what no longer serves you and set powerful intentions under the new moon's energy. This deeply restorative sound healing session features Tibetan singing bowls, crystal bowls, and guided visualization specifically designed for new moon energy.",
-    highlights: ["Intention setting ritual", "Full sound bath", "Guided meditation", "Herbal tea included"],
-    featured: true
-  },
-  {
-    id: 2,
-    title: "Morning Breathwork Circle",
-    subtitle: "Energize Your Weekend",
-    day: "18",
-    month: "Jan",
-    year: "2026",
-    time: "6:30 AM - 8:00 AM",
-    location: "OmShala Studio",
-    spotsTotal: 8,
-    spotsLeft: 6,
-    price: "₹1,200",
-    description: "Start your weekend with energizing breathwork practices to awaken vitality and clarity. Learn techniques you can practice at home to maintain energy and focus throughout your day.",
-    highlights: ["Dynamic breathwork", "Grounding practice", "Take-home techniques", "Light breakfast"],
-    featured: false
-  },
-  {
-    id: 3,
-    title: "Full Moon Meditation",
-    subtitle: "Gratitude & Illumination",
-    day: "27",
-    month: "Jan",
-    year: "2026",
-    time: "7:30 PM - 9:30 PM",
-    location: "Terrace Garden",
-    spotsTotal: 15,
-    spotsLeft: 8,
-    price: "₹1,500",
-    description: "Gather under the full moon for a powerful group meditation and sound healing ceremony. Experience the heightened energy of the full moon as we explore gratitude, release, and illumination.",
-    highlights: ["Outdoor setting", "Moon gazing", "Group energy healing", "Closing circle"],
-    featured: false
-  },
-  {
-    id: 4,
-    title: "Sound & Stillness Retreat",
-    subtitle: "Weekend Immersion",
-    day: "8-9",
-    month: "Feb",
-    year: "2026",
-    time: "Full Weekend",
-    location: "Nandi Hills Retreat",
-    spotsTotal: 12,
-    spotsLeft: 3,
-    price: "₹8,500",
-    description: "A transformative weekend immersion featuring sound healing, breathwork, meditation, and nature connection. Includes accommodation, all meals, and multiple sessions across two days.",
-    highlights: ["2 days immersion", "Nature walks", "Multiple sessions", "All meals included"],
-    featured: true
-  },
-  {
-    id: 5,
-    title: "Introduction to Sound Healing",
-    subtitle: "Workshop for Beginners",
-    day: "22",
-    month: "Feb",
-    year: "2026",
-    time: "10:00 AM - 1:00 PM",
-    location: "OmShala Studio",
-    spotsTotal: 10,
-    spotsLeft: 7,
-    price: "₹2,500",
-    description: "Curious about sound healing? This introductory workshop covers the science and art of vibrational therapy, with hands-on experience playing singing bowls. Perfect for beginners.",
-    highlights: ["Theory & science", "Hands-on practice", "Certificate of attendance", "Tea & snacks"],
-    featured: false
-  }
+const benefits = [
+  { icon: Activity, text: "Reduces stress and prevents burnout" },
+  { icon: Focus, text: "Improves focus, clarity and creativity" },
+  { icon: Heart, text: "Enhances emotional regulation under pressure" },
+  { icon: Brain, text: "Relaxes the nervous system" },
+  { icon: Sparkles, text: "Increases overall workplace wellbeing" },
+  { icon: Users, text: "Builds a calmer, more resilient team environment" },
+];
+
+const sessionFlow = [
+  { number: "01", title: "Gentle breathwork", desc: "To settle the nervous system and help everyone arrive." },
+  { number: "02", title: "Guided relaxation", desc: "To release mental and physical tension built up through the week." },
+  { number: "03", title: "Sound immersion", desc: "Crystal singing bowls tuned to 435 Hz align brain waves with the frequency of nature." },
+  { number: "04", title: "Optional voice", desc: "Live Indian classical ragas or mantras, when suitable for the group." },
+];
+
+const formats = [
+  { icon: Headphones, title: "Online", desc: "Joinable from desks or homes — ideal for distributed teams." },
+  { icon: Building2, title: "On-site", desc: "Hosted at your office or boardroom for in-person teams." },
+  { icon: Sparkles, title: "Offsites & retreats", desc: "Designed into leadership offsites and wellbeing retreats." },
 ];
 
 const EventsPublic = () => {
