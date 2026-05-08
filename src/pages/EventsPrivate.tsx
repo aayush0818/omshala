@@ -122,12 +122,13 @@ const EventsPrivate = () => {
               Bespoke Experiences
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6">
-              Private Events
-              <span className="block mt-2 text-clay">& Ceremonies</span>
+              A soulful way
+              <span className="block mt-2 text-clay">to gather</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Intimate healing experiences crafted exclusively for you and your loved ones. 
-              Every detail designed around your intentions, creating moments that transform and stay with you.
+              More and more people are choosing a mindful way to celebrate. Sound healing has
+              become a meaningful pause between the laughter and high energy — a deeply soulful
+              relaxation that turns a special day into an unforgettable one.
             </p>
             
             <div className="mt-10">
@@ -219,7 +220,7 @@ const EventsPrivate = () => {
                 </div>
                 
                 <a 
-                  href={`mailto:hello@omshala.com?subject=Private Event Inquiry: ${privateOfferings[activeOffering].title}`}
+                  href={`mailto:omshala.official@gmail.com?subject=Private Event Inquiry: ${privateOfferings[activeOffering].title}`}
                   className="group relative inline-block px-10 py-4 bg-foreground text-background text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl"
                 >
                   <span className="relative z-10 group-hover:text-background transition-colors duration-500">Start a Conversation</span>
@@ -343,10 +344,12 @@ const EventsPrivate = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
-              href="mailto:hello@omshala.com?subject=Private Event Inquiry" 
+              href="https://wa.me/917400361681?text=Hi%20Om%20Shala%2C%20I%27d%20like%20to%20organise%20a%20private%20sound%20healing%20experience."
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative inline-flex items-center gap-2 px-10 py-4 bg-bone text-charcoal text-sm tracking-wide overflow-hidden transition-all duration-500"
             >
-              <span className="relative z-10 group-hover:text-bone transition-colors duration-500">Start a Conversation</span>
+              <span className="relative z-10 group-hover:text-bone transition-colors duration-500">WhatsApp +91 74003 61681</span>
               <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
               <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
             </a>
@@ -354,7 +357,7 @@ const EventsPrivate = () => {
               to="/events/public" 
               className="inline-flex items-center justify-center gap-2 px-10 py-4 border border-bone/30 text-bone hover:bg-bone hover:text-charcoal transition-all duration-300"
             >
-              View Public Events
+              Corporate Events
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
