@@ -37,22 +37,25 @@ const GuideSection = () => {
               Your Guide
             </span>
             <h2 className={`mt-6 font-serif text-4xl md:text-5xl font-light transition-all duration-700 delay-100 ${contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              Shrutika Rao
+              Shrutika
             </h2>
             
             <div className={`mt-10 space-y-6 text-muted-foreground font-light leading-relaxed transition-all duration-700 delay-200 ${contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
               <p className="text-lg">
-                With over a decade of study in sound healing, breathwork, and meditation traditions, 
-                Shrutika creates a space where deep rest and transformation become possible.
+                Shrutika is a Meditation Teacher and Indian Classical Singer practicing Nada Yoga—
+                the yoga of sound and music—as a pathway to the inner life.
               </p>
               <p>
-                Trained in Tibetan singing bowl therapy, holotropic breathwork, and mindfulness-based 
-                stress reduction, her approach is gentle, grounded, and deeply intuitive.
+                She creates unique Sound Healing Experiences using Crystal Singing Bowls and the
+                instrument of Voice, supported by breathwork and guided relaxation. Her sessions
+                are designed to be simple, effective and accessible—without requiring effort,
+                belief systems, or prior practice.
               </p>
-              <p className="text-sm text-muted-foreground/70 pt-4 border-t border-border/30">
-                Certified through the International Sound Therapy Association and the Kripalu Center 
-                for Yoga & Health.
-              </p>
+              <blockquote className="pl-6 border-l-2 border-clay/40 italic text-foreground/80 text-base">
+                "Pure sound pulls you inward and brings deep relaxation. In this state, the body is
+                grounded, mind is open and emotions are free. Everything feels perfect, as it is."
+                <span className="block mt-2 text-xs not-italic text-muted-foreground tracking-[0.2em] uppercase">— Shrutika</span>
+              </blockquote>
             </div>
             
             <div className={`mt-10 transition-all duration-700 delay-300 ${contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
