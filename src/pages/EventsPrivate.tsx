@@ -302,13 +302,13 @@ const EventsPrivate = () => {
         
         <div className="container mx-auto px-6">
           <div className={`text-center mb-16 transition-all duration-700 ${testimonialsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="text-xs tracking-[0.3em] uppercase text-clay">Voices</span>
+            <span className="text-xs tracking-[0.3em] uppercase text-clay">In her words</span>
             <h2 className="mt-6 font-serif text-4xl md:text-5xl font-light">
-              What They're Saying
+              The intention behind every gathering
             </h2>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-1 gap-8 max-w-3xl mx-auto">
             {testimonials.map((testimonial, index) => (
               <div 
                 key={index}
