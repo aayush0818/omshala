@@ -17,16 +17,16 @@ const contactMethods = [
   {
     icon: Mail,
     label: "Email",
-    value: "hello@omshala.com",
-    href: "mailto:hello@omshala.com",
+    value: "omshala.official@gmail.com",
+    href: "mailto:omshala.official@gmail.com",
     description: "We respond within 24 hours"
   },
   {
     icon: Phone,
-    label: "Phone",
-    value: "+91 98765 43210",
-    href: "tel:+919876543210",
-    description: "Mon-Sat, 9am-7pm"
+    label: "WhatsApp",
+    value: "+91 74003 61681",
+    href: "https://wa.me/917400361681",
+    description: "Fastest way to reach us"
   },
   {
     icon: MapPin,
@@ -93,8 +93,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    window.location.href = `mailto:hello@omshala.com?subject=Inquiry: ${formData.interest || 'General'}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0A${formData.message}`;
+    window.location.href = `mailto:omshala.official@gmail.com?subject=Inquiry: ${formData.interest || 'General'}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0A${formData.message}`;
   };
 
   return (
@@ -286,8 +285,8 @@ const Contact = () => {
                 <div>
                   <h4 className="text-xs tracking-[0.2em] uppercase text-foreground/60 mb-4">Address</h4>
                   <p className="text-muted-foreground leading-relaxed">
-                    123 Serenity Lane, 2nd Floor<br />
-                    Bandra West, Mumbai 400050<br />
+                    Bandra West<br />
+                    Mumbai 400050<br />
                     Maharashtra, India
                   </p>
                 </div>
