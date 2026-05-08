@@ -285,19 +285,19 @@ const About = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className={`text-center mb-20 transition-all duration-1000 ${journeyVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <span className="text-xs tracking-[0.3em] uppercase text-clay">Our Journey</span>
+              <span className="text-xs tracking-[0.3em] uppercase text-clay">The Philosophy</span>
               <h2 className="mt-6 font-serif text-4xl md:text-5xl font-light">
-                How OmShala Came to Be
+                Why this practice
               </h2>
             </div>
             
             <div className="space-y-16">
               {[
-                { year: "2015", title: "The Seed", desc: "Shrutika's first transformative experience with sound healing in the Himalayas planted a seed that would grow into something beautiful." },
-                { year: "2017", title: "The Training", desc: "Years of intensive study across India and Nepal, learning from master practitioners and ancient traditions." },
-                { year: "2019", title: "The Vision", desc: "OmShala opens its doors—a dream realized of creating accessible healing spaces for modern seekers." },
-                { year: "2023", title: "The Community", desc: "What started as individual sessions has blossomed into a thriving community of practitioners and seekers." },
-                { year: "Now", title: "The Invitation", desc: "We continue to grow, learn, and hold space for all who seek healing, peace, and connection." }
+                { year: "01", title: "Soften", desc: "Meditation is not something you do — it is something that happens. The job is to simplify, soften and sweeten the process of going inward." },
+                { year: "02", title: "Surrender", desc: "Give yourself permission to let go so deeply that relaxation pulls you naturally back to your centre, where meditation begins." },
+                { year: "03", title: "Reset", desc: "We live in constant stimulation. This practice resets the nervous system regularly, before stress accumulates and disconnects mind from body." },
+                { year: "04", title: "Return", desc: "Instead of pushing through the week and crashing, you learn to return to balance — again and again." },
+                { year: "05", title: "Remember", desc: "Over time you sleep deeper, feel more, and understand yourself better. You begin to remember what was always there." }
               ].map((milestone, index) => (
                 <div 
                   key={milestone.year}
