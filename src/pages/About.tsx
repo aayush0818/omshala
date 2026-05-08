@@ -89,13 +89,13 @@ const About = () => {
               Our Story
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6">
-              Where Ancient Wisdom
-              <span className="block mt-2 text-clay">Meets Modern Seekers</span>
+              A Practice of
+              <span className="block mt-2 text-clay">Profound Relaxation</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              OmShala was born from a simple truth: in our fast-paced world, 
-              we need sacred spaces to return to ourselves. Here, time slows, 
-              breath deepens, and healing becomes possible.
+              Om Shala is the first studio in Bombay dedicated to Sound Healing—a quiet space
+              built around the principle that relaxation, when experienced deeply, becomes the
+              gateway to the inner life.
             </p>
           </div>
         </div>
@@ -131,25 +131,24 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p className="text-lg">
-                  My journey into sound and breath began not in a studio, but in the quiet hours 
-                  before dawn in the foothills of the Himalayas. What started as a personal practice 
-                  to navigate life's challenges became a calling I couldn't ignore.
+                  Shrutika is a Meditation Teacher and Indian Classical Singer practicing Nada Yoga—
+                  the yoga of sound and music—as a pathway to the inner life.
                 </p>
                 <p>
-                  After years of training with master practitioners in India and Nepal—studying 
-                  Tibetan singing bowls, pranayama, and meditation traditions—I returned home 
-                  with a vision: to create spaces where modern souls could access ancient healing.
+                  She creates Sound Healing Experiences using Crystal Singing Bowls and the
+                  instrument of Voice, supported by breathwork and guided relaxation. Her work
+                  blends traditional yogic practices with an intuitive, somatic approach. Every
+                  experience rests on the same principle: profound relaxation as the gateway to
+                  the inner life.
                 </p>
-                <p>
-                  Today, I'm honored to guide others on this path. Whether you're seeking relief 
-                  from stress, deeper self-connection, or simply a moment of peace, I'm here to 
-                  hold space for your journey. My approach is gentle, intuitive, and always 
-                  tailored to what you need in the moment.
+                <p className="italic text-foreground/80 pl-6 border-l-2 border-clay/40">
+                  "Pure sound pulls you inward and brings deep relaxation. In this state, the body
+                  is grounded, mind is open and emotions are free. Everything feels perfect, as it is."
                 </p>
               </div>
               
               <div className="mt-10 pt-8 border-t border-foreground/10">
-                <h4 className="text-xs tracking-[0.2em] uppercase text-foreground/60 mb-6">Training & Certifications</h4>
+                <h4 className="text-xs tracking-[0.2em] uppercase text-foreground/60 mb-6">Credentials</h4>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {credentials.map((cred, index) => (
                     <div key={index} className="flex items-start gap-3 text-sm text-muted-foreground">
