@@ -33,12 +33,14 @@ const philosophyPillars = [
 ];
 
 const credentials = [
-  { icon: Award, text: "Certified Sound Healing Practitioner, Nepal School of Sound" },
-  { icon: Award, text: "Advanced Pranayama Teacher, Rishikesh Institute" },
-  { icon: BookOpen, text: "500-hour Yoga Teacher Training, Mysore" },
-  { icon: Award, text: "Tibetan Bowl Therapy Certification, Kathmandu" },
-  { icon: Award, text: "Holotropic Breathwork Facilitator" },
-  { icon: BookOpen, text: "Mindfulness-Based Stress Reduction (MBSR) Training" }
+  { icon: Award, text: "12+ years of experience in the mindfulness industry" },
+  { icon: Award, text: "Founder of Om Shala — first studio in Bombay dedicated to Sound Healing" },
+  { icon: BookOpen, text: "Spotify meditations in collaboration with Universal Music" },
+  { icon: Award, text: "Sessions for members of the Royal Family in Dubai & Saudi Arabia" },
+  { icon: Award, text: "Private sessions for the Late G. P. Hinduja in London" },
+  { icon: Award, text: "Private sessions for the Health Minister of Goa" },
+  { icon: BookOpen, text: "Large-scale event for 1,000+ participants (Rotary Club, Vapi)" },
+  { icon: Award, text: "Online clients across the US, Europe & Madagascar" },
 ];
 
 const About = () => {
