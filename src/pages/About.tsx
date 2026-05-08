@@ -33,12 +33,14 @@ const philosophyPillars = [
 ];
 
 const credentials = [
-  { icon: Award, text: "Certified Sound Healing Practitioner, Nepal School of Sound" },
-  { icon: Award, text: "Advanced Pranayama Teacher, Rishikesh Institute" },
-  { icon: BookOpen, text: "500-hour Yoga Teacher Training, Mysore" },
-  { icon: Award, text: "Tibetan Bowl Therapy Certification, Kathmandu" },
-  { icon: Award, text: "Holotropic Breathwork Facilitator" },
-  { icon: BookOpen, text: "Mindfulness-Based Stress Reduction (MBSR) Training" }
+  { icon: Award, text: "12+ years of experience in the mindfulness industry" },
+  { icon: Award, text: "Founder of Om Shala — first studio in Bombay dedicated to Sound Healing" },
+  { icon: BookOpen, text: "Spotify meditations in collaboration with Universal Music" },
+  { icon: Award, text: "Sessions for members of the Royal Family in Dubai & Saudi Arabia" },
+  { icon: Award, text: "Private sessions for the Late G. P. Hinduja in London" },
+  { icon: Award, text: "Private sessions for the Health Minister of Goa" },
+  { icon: BookOpen, text: "Large-scale event for 1,000+ participants (Rotary Club, Vapi)" },
+  { icon: Award, text: "Online clients across the US, Europe & Madagascar" },
 ];
 
 const About = () => {
@@ -87,13 +89,13 @@ const About = () => {
               Our Story
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6">
-              Where Ancient Wisdom
-              <span className="block mt-2 text-clay">Meets Modern Seekers</span>
+              A Practice of
+              <span className="block mt-2 text-clay">Profound Relaxation</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              OmShala was born from a simple truth: in our fast-paced world, 
-              we need sacred spaces to return to ourselves. Here, time slows, 
-              breath deepens, and healing becomes possible.
+              Om Shala is the first studio in Bombay dedicated to Sound Healing—a quiet space
+              built around the principle that relaxation, when experienced deeply, becomes the
+              gateway to the inner life.
             </p>
           </div>
         </div>
@@ -129,25 +131,24 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p className="text-lg">
-                  My journey into sound and breath began not in a studio, but in the quiet hours 
-                  before dawn in the foothills of the Himalayas. What started as a personal practice 
-                  to navigate life's challenges became a calling I couldn't ignore.
+                  Shrutika is a Meditation Teacher and Indian Classical Singer practicing Nada Yoga—
+                  the yoga of sound and music—as a pathway to the inner life.
                 </p>
                 <p>
-                  After years of training with master practitioners in India and Nepal—studying 
-                  Tibetan singing bowls, pranayama, and meditation traditions—I returned home 
-                  with a vision: to create spaces where modern souls could access ancient healing.
+                  She creates Sound Healing Experiences using Crystal Singing Bowls and the
+                  instrument of Voice, supported by breathwork and guided relaxation. Her work
+                  blends traditional yogic practices with an intuitive, somatic approach. Every
+                  experience rests on the same principle: profound relaxation as the gateway to
+                  the inner life.
                 </p>
-                <p>
-                  Today, I'm honored to guide others on this path. Whether you're seeking relief 
-                  from stress, deeper self-connection, or simply a moment of peace, I'm here to 
-                  hold space for your journey. My approach is gentle, intuitive, and always 
-                  tailored to what you need in the moment.
+                <p className="italic text-foreground/80 pl-6 border-l-2 border-clay/40">
+                  "Pure sound pulls you inward and brings deep relaxation. In this state, the body
+                  is grounded, mind is open and emotions are free. Everything feels perfect, as it is."
                 </p>
               </div>
               
               <div className="mt-10 pt-8 border-t border-foreground/10">
-                <h4 className="text-xs tracking-[0.2em] uppercase text-foreground/60 mb-6">Training & Certifications</h4>
+                <h4 className="text-xs tracking-[0.2em] uppercase text-foreground/60 mb-6">Credentials</h4>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {credentials.map((cred, index) => (
                     <div key={index} className="flex items-start gap-3 text-sm text-muted-foreground">
@@ -230,32 +231,32 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p className="text-lg">
-                  OmShala is designed to be an escape from the everyday—a place where the outside 
-                  world fades and inner exploration begins. Natural light, minimal distractions, 
-                  and carefully curated acoustics create the perfect environment for healing work.
+                  Om Shala is designed to feel like an exhale—soft lighting, warm textures, and
+                  carefully curated acoustics so the outside world can fade and inner exploration
+                  can begin.
                 </p>
                 <p>
-                  Every element of our space has been thoughtfully chosen: from the handwoven 
-                  textiles to the carefully sourced instruments from Nepal and Tibet. Each detail 
-                  supports your journey toward peace and presence.
+                  At the centre of every session are Crystal Singing Bowls tuned to 435 Hz—the
+                  frequency of nature—paired with live Indian classical ragas sung as lullabies
+                  for the soul.
                 </p>
                 <p>
-                  The moment you step through our doors, you'll feel the shift—a subtle invitation 
-                  to slow down, breathe deeper, and remember what matters most.
+                  The moment you settle in, the room invites you to slow down, breathe deeper,
+                  and surrender enough that meditation begins to happen on its own.
                 </p>
               </div>
               <div className="mt-12 flex flex-wrap gap-12">
                 <div className="text-center">
-                  <span className="text-4xl font-serif text-clay block">50+</span>
-                  <p className="text-sm text-muted-foreground mt-2">Healing Instruments</p>
+                  <span className="text-4xl font-serif text-clay block">435Hz</span>
+                  <p className="text-sm text-muted-foreground mt-2">Tuned crystal bowls</p>
                 </div>
                 <div className="text-center">
                   <span className="text-4xl font-serif text-clay block">1000+</span>
-                  <p className="text-sm text-muted-foreground mt-2">Sessions Held</p>
+                  <p className="text-sm text-muted-foreground mt-2">Participants held</p>
                 </div>
                 <div className="text-center">
-                  <span className="text-4xl font-serif text-clay block">∞</span>
-                  <p className="text-sm text-muted-foreground mt-2">Moments of Peace</p>
+                  <span className="text-4xl font-serif text-clay block">12+</span>
+                  <p className="text-sm text-muted-foreground mt-2">Years in practice</p>
                 </div>
               </div>
             </div>
@@ -284,19 +285,19 @@ const About = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className={`text-center mb-20 transition-all duration-1000 ${journeyVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-              <span className="text-xs tracking-[0.3em] uppercase text-clay">Our Journey</span>
+              <span className="text-xs tracking-[0.3em] uppercase text-clay">The Philosophy</span>
               <h2 className="mt-6 font-serif text-4xl md:text-5xl font-light">
-                How OmShala Came to Be
+                Why this practice
               </h2>
             </div>
             
             <div className="space-y-16">
               {[
-                { year: "2015", title: "The Seed", desc: "Shrutika's first transformative experience with sound healing in the Himalayas planted a seed that would grow into something beautiful." },
-                { year: "2017", title: "The Training", desc: "Years of intensive study across India and Nepal, learning from master practitioners and ancient traditions." },
-                { year: "2019", title: "The Vision", desc: "OmShala opens its doors—a dream realized of creating accessible healing spaces for modern seekers." },
-                { year: "2023", title: "The Community", desc: "What started as individual sessions has blossomed into a thriving community of practitioners and seekers." },
-                { year: "Now", title: "The Invitation", desc: "We continue to grow, learn, and hold space for all who seek healing, peace, and connection." }
+                { year: "01", title: "Soften", desc: "Meditation is not something you do — it is something that happens. The job is to simplify, soften and sweeten the process of going inward." },
+                { year: "02", title: "Surrender", desc: "Give yourself permission to let go so deeply that relaxation pulls you naturally back to your centre, where meditation begins." },
+                { year: "03", title: "Reset", desc: "We live in constant stimulation. This practice resets the nervous system regularly, before stress accumulates and disconnects mind from body." },
+                { year: "04", title: "Return", desc: "Instead of pushing through the week and crashing, you learn to return to balance — again and again." },
+                { year: "05", title: "Remember", desc: "Over time you sleep deeper, feel more, and understand yourself better. You begin to remember what was always there." }
               ].map((milestone, index) => (
                 <div 
                   key={milestone.year}

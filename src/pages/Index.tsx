@@ -8,6 +8,7 @@ import TestimonialSection from "@/components/TestimonialSection";
 import BookingSection from "@/components/BookingSection";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
+import StatsStrip from "@/components/StatsStrip";
 
 const Index = () => {
   return (
@@ -17,6 +18,7 @@ const Index = () => {
         <main>
           <HeroSection />
           <PhilosophySection />
+          <StatsStrip />
           <PracticesSection />
           <ExpectSection />
           <GuideSection />

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Waves, Wind, Brain, Sparkles, Check } from "lucide-react";
+import { ArrowRight, Waves, Wind, Brain, Sparkles, Check, Moon } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -9,12 +9,30 @@ import abstractZen from "@/assets/abstract-zen.jpg";
 
 const practices = [
   {
+    icon: Moon,
+    name: "Yog Nidra Meditation",
+    tagline: "Return to your self",
+    intention: "Through breath, sound, and profound relaxation",
+    description: "A weekly online practice designed to reset the nervous system and bring the mind back to centre. Breathwork calms the nervous system, a soundscape creates safety and slows the mind, and Yoga Nidra meditation grounds the body and relaxes deeper layers of the mind. When relaxation is experienced this deeply, meditation occurs naturally.",
+    benefits: [
+      "Regulates the nervous system and reduces stress",
+      "Supports deeper, more restful sleep",
+      "Brings you back to a calm, grounded state",
+      "Improves emotional awareness and mental clarity",
+      "Over time you understand yourself better",
+      "60-minute live sessions, recording for 7 days",
+    ],
+    duration: "60 min · weekly",
+    price: "First class free · €80/month",
+    ideal: "For those who want a consistent space to reset, rest and reconnect — joinable from anywhere in the world."
+  },
+  {
     icon: Waves,
     name: "Sound Healing",
     tagline: "Vibration as Medicine",
-    intention: "Deep cellular restoration through sacred vibrations",
-    description: "Experience the profound healing power of Tibetan singing bowls, crystal bowls, and harmonic frequencies. Sound waves penetrate every cell, releasing tension and restoring natural balance to body and mind. Each session is a journey inward, guided by ancient instruments that have been used for centuries to promote healing and transformation.",
-    benefits: ["Reduces stress and anxiety", "Promotes deep relaxation", "Balances energy centers", "Enhances mental clarity", "Releases emotional blockages", "Improves sleep quality"],
+    intention: "Crystal Singing Bowls tuned to 435 Hz — the frequency of nature",
+    description: "Therapeutic sound immersions using Crystal Singing Bowls and the instrument of Voice. Pure tones bypass the thinking mind and shift brain waves directly, dissolving mental and emotional tension — sometimes putting people gently off to sleep. Live Indian classical ragas may be sung as lullabies for the soul.",
+    benefits: ["Dissolves mental and emotional tension", "Shifts brain waves into deep relaxation", "Relaxes the nervous system", "Improves focus and clarity", "Supports restful sleep", "Accessible — no prior practice required"],
     duration: "60-90 min",
     price: "From ₹2,500",
     ideal: "Perfect for those seeking deep relaxation and stress relief"
@@ -23,20 +41,20 @@ const practices = [
     icon: Wind,
     name: "Breathwork",
     tagline: "The Bridge Within",
-    intention: "Unlock your life force through conscious breathing",
-    description: "Harness the transformative power of breath to release emotional blockages, increase vitality, and access expanded states of consciousness. Through various techniques tailored to your needs—from calming pranayama to energizing holotropic patterns—discover how the simple act of breathing can unlock profound transformation.",
-    benefits: ["Releases emotional blocks", "Increases energy levels", "Improves focus and clarity", "Supports emotional healing", "Activates the nervous system", "Deepens self-awareness"],
+    intention: "Conscious breathing to settle the nervous system",
+    description: "Gentle, guided breathwork practices that calm the nervous system, balance emotions, and align the mind. Often woven into the start of a sound bath to help you arrive, soften, and let go before the deeper journey begins.",
+    benefits: ["Calms the nervous system", "Balances emotions", "Aligns the mind", "Eases anxiety and overwhelm", "Improves focus", "Prepares the body for deep rest"],
     duration: "45-75 min",
     price: "From ₹2,000",
-    ideal: "Ideal for those ready to move energy and process emotions"
+    ideal: "Ideal for those who want practical tools to regulate stress in everyday life"
   },
   {
     icon: Brain,
     name: "Guided Meditation",
     tagline: "Return to Stillness",
-    intention: "Journey inward to discover your truest self",
-    description: "Be gently guided through visualization, body scanning, and mindfulness practices. Whether you're new to meditation or deepening your practice, find the stillness that resides within. Each session is crafted to meet you where you are, offering techniques you can carry into daily life.",
-    benefits: ["Calms the nervous system", "Improves sleep quality", "Enhances self-awareness", "Cultivates inner peace", "Reduces mental chatter", "Builds resilience"],
+    intention: "Meditation is not something you do — it is something that happens",
+    description: "Soft, somatic guidance through body awareness, breath and stillness. The job here is not to try harder, but to soften and sweeten the process of going inward — until relaxation pulls you naturally back to your centre, where meditation begins.",
+    benefits: ["Calms the nervous system", "Improves sleep quality", "Enhances self-awareness", "Quietens mental chatter", "Builds emotional resilience", "Accessible for complete beginners"],
     duration: "30-60 min",
     price: "From ₹1,500",
     ideal: "Best for beginners and those seeking peace of mind"
@@ -46,8 +64,8 @@ const practices = [
     name: "Private Sessions",
     tagline: "Your Personal Journey",
     intention: "A bespoke experience crafted just for you",
-    description: "Receive personalized attention in one-on-one sessions that blend multiple modalities based on your unique needs. Whether you're navigating a life transition, seeking deeper healing, or simply craving dedicated space for yourself, private sessions offer the intimacy and customization for profound transformation.",
-    benefits: ["Personalized approach", "Deeper healing work", "Flexible scheduling", "Ongoing support", "Combined modalities", "Safe, private space"],
+    description: "One-on-one sessions weaving sound, breath and guided relaxation around exactly what you need. Available in-studio in Bandra West, or online for clients across the US, Europe and beyond.",
+    benefits: ["Personalised pace and intention", "Combined modalities", "Available online or in-person", "Flexible scheduling across time zones", "Held in complete privacy", "Follow-up integration support"],
     duration: "90-120 min",
     price: "From ₹4,000",
     ideal: "For those seeking dedicated, personalized healing work"
@@ -101,12 +119,13 @@ const Practices = () => {
               Our Offerings
             </span>
             <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6">
-              Practices for the
-              <span className="block mt-2 text-clay">Mind, Body & Soul</span>
+              Sound, Breath
+              <span className="block mt-2 text-clay">& Stillness</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Each practice is a doorway to deeper self-understanding. Whether through sound, breath, or stillness, 
-              discover the modality that speaks to your soul's journey.
+              Each practice is a way of softening the journey inward. Drawn from Nada Yoga — the
+              yoga of sound and music — and shaped to be simple, effective and accessible, with
+              no prior practice required.
             </p>
             
             <div className="mt-10 flex flex-wrap gap-4">

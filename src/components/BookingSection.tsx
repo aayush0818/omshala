@@ -1,4 +1,5 @@
 import { Calendar, Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const BookingSection = () => {
@@ -30,7 +31,7 @@ const BookingSection = () => {
             {[
               { icon: Calendar, title: "Book Online", desc: "View available times and book instantly" },
               { icon: MapPin, title: "Visit Us", desc: "Bandra West, Mumbai" },
-              { icon: Mail, title: "Get in Touch", desc: "hello@omshala.com" }
+              { icon: Mail, title: "Get in Touch", desc: "omshala.official@gmail.com" }
             ].map((item, index) => (
               <div 
                 key={item.title}
@@ -47,16 +48,16 @@ const BookingSection = () => {
           </div>
           
           <div className={`text-center transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <a 
-              href="#" 
+            <Link
+              to="/schedule"
               className="group relative inline-block px-14 py-5 bg-bone text-charcoal text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-bone/20"
             >
               <span className="relative z-10 group-hover:text-bone transition-colors duration-500">View full schedule</span>
               <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-            </a>
+            </Link>
             
             <p className="mt-8 text-xs text-bone/30">
-              First time? Mention "new guest" for a complimentary consultation.
+              First class is complimentary. WhatsApp +91 7400361681 to begin.
             </p>
           </div>
         </div>
