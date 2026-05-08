@@ -52,7 +52,7 @@ const Header = () => {
               </DropdownMenuTrigger>
               <DropdownMenuContent className="bg-background border border-foreground/10 shadow-lg z-50">
                 <DropdownMenuItem className="cursor-pointer hover:bg-muted" asChild>
-                  <Link to="/events/public" className="w-full">Public</Link>
+                  <Link to="/events/public" className="w-full">Corporate</Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="cursor-pointer hover:bg-muted" asChild>
                   <Link to="/events/private" className="w-full">Private</Link>
@@ -120,7 +120,7 @@ const Header = () => {
                 onClick={() => setMobileMenuOpen(false)}
                 className="text-lg text-muted-foreground hover:text-clay transition-colors duration-300"
               >
-                Public
+                Corporate
               </Link>
               <Link 
                 to="/events/private"
