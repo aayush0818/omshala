@@ -53,7 +53,7 @@ const TestimonialSection = () => {
       {/* Ambient background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-earth via-earth to-charcoal/50" />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-clay/10 rounded-full blur-[150px] animate-pulse-soft" />
-      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-bone/5 rounded-full blur-[100px] animate-pulse-soft" style={{ animationDelay: '2s' }} />
+      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-bone/5 rounded-full blur-[50px] animate-pulse-soft" style={{ animationDelay: '2s' }} />
       
       {/* Large decorative quote */}
       <div className="absolute top-8 left-1/2 -translate-x-1/2 text-[16rem] md:text-[24rem] font-serif text-bone/[0.03] leading-none select-none pointer-events-none">

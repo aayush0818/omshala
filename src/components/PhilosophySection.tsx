@@ -30,8 +30,8 @@ const PhilosophySection = () => {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-bone/[0.02]" />
       
       {/* Subtle gradient orbs */}
-      <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-clay/5 rounded-full blur-[100px] animate-float" />
-      <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-earth/10 rounded-full blur-[80px] animate-float" style={{ animationDelay: '3s' }} />
+      <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-clay/5 rounded-full blur-[50px] animate-float" />
+      <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-earth/10 rounded-full blur-[40px] animate-float" style={{ animationDelay: '3s' }} />
       
       <div ref={ref} className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto">

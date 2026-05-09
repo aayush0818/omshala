@@ -15,7 +15,7 @@ const HeroSection = () => {
         <img 
           src={heroBowl} 
           alt="Hand touching singing bowl" 
-          className={`w-full h-full object-cover transition-all duration-[2s] ease-out ${loaded ? 'scale-100 opacity-100' : 'scale-110 opacity-0'}`}
+          className={`w-full h-full object-cover transition-opacity duration-1000 ease-out ${loaded ? 'scale-100 opacity-100' : 'scale-110 opacity-0'}`}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
         
