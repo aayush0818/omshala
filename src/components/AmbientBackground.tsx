@@ -1,29 +1,65 @@
-import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 /**
- * Sitewide ambient layer — slow drifting blurred orbs to give pages a
- * subtle "breathing" feel. Pointer-events disabled, low opacity, very slow loops.
+ * Sitewide ambient layer — slow drifting blurred orbs.
+ * GPU-only transforms, paused when tab is hidden, gated by reduced-motion.
  */
 const AmbientBackground = () => {
+  const aRef = useRef<HTMLDivElement>(null);
+  const bRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced) return;
+
+    let raf = 0;
+    let start = performance.now();
+    let running = true;
+
+    const tick = (now: number) => {
+      if (!running) return;
+      const t = (now - start) / 1000;
+      if (aRef.current) {
+        const x = Math.sin(t / 18) * 40;
+        const y = Math.cos(t / 22) * 30;
+        aRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      }
+      if (bRef.current) {
+        const x = Math.cos(t / 26) * 50;
+        const y = Math.sin(t / 30) * 35;
+        bRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+
+    const onVis = () => {
+      if (document.hidden) {
+        running = false;
+        cancelAnimationFrame(raf);
+      } else if (!running) {
+        running = true;
+        start = performance.now();
+        raf = requestAnimationFrame(tick);
+      }
+    };
+    document.addEventListener("visibilitychange", onVis);
+    return () => {
+      running = false;
+      cancelAnimationFrame(raf);
+      document.removeEventListener("visibilitychange", onVis);
+    };
+  }, []);
+
   return (
-    <div
-      aria-hidden
-      className="pointer-events-none fixed inset-0 z-0 overflow-hidden"
-    >
-      <motion.div
-        className="absolute top-[-10%] left-[-10%] w-[55vw] h-[55vw] rounded-full bg-clay/[0.06] blur-[120px]"
-        animate={{ x: [0, 60, 0], y: [0, 40, 0] }}
-        transition={{ duration: 42, repeat: Infinity, ease: "easeInOut" }}
+    <div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+      <div
+        ref={aRef}
+        className="absolute -top-[15%] -left-[10%] w-[45vw] h-[45vw] rounded-full bg-clay/[0.05] blur-[80px] will-change-transform"
       />
-      <motion.div
-        className="absolute bottom-[-15%] right-[-10%] w-[50vw] h-[50vw] rounded-full bg-earth/[0.07] blur-[140px]"
-        animate={{ x: [0, -50, 0], y: [0, -30, 0] }}
-        transition={{ duration: 55, repeat: Infinity, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute top-[40%] left-[40%] w-[35vw] h-[35vw] rounded-full bg-clay/[0.04] blur-[120px]"
-        animate={{ scale: [1, 1.15, 1], opacity: [0.8, 1, 0.8] }}
-        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+      <div
+        ref={bRef}
+        className="absolute -bottom-[20%] -right-[10%] w-[40vw] h-[40vw] rounded-full bg-earth/[0.05] blur-[80px] will-change-transform"
       />
     </div>
   );
