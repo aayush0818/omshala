@@ -1,75 +1,67 @@
-## Goal
+## Why the site feels laggy right now
 
-Replace placeholder/fictional copy across the site with the real Om Shala content from the uploaded docs, and layer in subtle premium motion + ambient touches that match a sound-healing aesthetic. Keep all existing layouts, sections, and components intact — only swap text and add light visual polish.
+After auditing, the slowdown isn't one bug — it's accumulated weight:
 
----
+1. **Too many large blur layers stacked on every page.** `AmbientBackground` renders 3 fixed `blur-[120–140px]` orbs *plus* each page (Practices, Philosophy, CTA sections, hero) renders its own `blur-[60–100px]` orbs and `animate-float`/`animate-pulse-soft` rings. Browsers composite these on every frame.
+2. **`CursorGlow` triggers a React re-render on every mouse move** (state-driven inline style on a full-screen div) which keeps the main thread busy.
+3. **`AnimatePresence mode="wait"`** delays paint of the next page until the old one finishes exiting — feels like nav is "stuck".
+4. **Hero images use `transition-all duration-[2s]`** on the entire image — `transition-all` is the most expensive transition variant.
+5. **Lots of always-on infinite CSS animations** (`animate-float`, `animate-pulse-soft` on multiple decorative elements per section) running off-screen too.
+6. **Heavy `useScrollAnimation` IntersectionObservers** instantiated per component — fine, but combined with the above adds up.
 
-## Content updates (from the two .docx files)
+## Plan
 
-### Landing page (`Index.tsx` + child sections)
-- **Hero / philosophy**: keep current structure, but reword to reference *Nada Yoga, breathwork, guided relaxation, crystal singing bowls (435 Hz)*.
-- **Guide section (Shrutika)**: rewrite bio to match the doc — Meditation Teacher, Indian Classical Singer, Nada Yoga practitioner, 12+ years, founder of Om Shala (first Bombay studio dedicated to Sound Healing). Add the pull-quote: *"Pure sound pulls you inward and brings deep relaxation…"*.
-- **Credentials list** (used in About + Guide): replace fake certifications with the real ones:
-  - 12+ years in mindfulness
-  - Founder of Om Shala, first Bombay studio for Sound Healing
-  - Spotify meditations w/ Universal Music
-  - Sessions for Royal Family in Dubai & Saudi Arabia
-  - Private sessions for the Late G. P. Hinduja, London
-  - Private sessions for the Health Minister of Goa
-  - 1,000+ participant event (Rotary Club, Vapi)
-  - Online clients across US, Europe & Madagascar
+### 1. Performance pass (the biggest win)
 
-### About page
-- Rewrite story + philosophy using doc language ("relaxation as gateway to the inner life", meditation is not something you do — it happens, etc.).
-- Replace fake credential list with the real one above.
+- **Slim `AmbientBackground`** to 2 orbs, drop blur radius to ~80px, add `will-change: transform` and `translate3d` so it stays on the GPU compositor layer. Pause animation when tab is hidden (`document.visibilityState`).
+- **Rewrite `CursorGlow`** to mutate a `ref`'d div's `style.background` directly inside `requestAnimationFrame` — zero React re-renders. Also disable below the `lg` breakpoint, not just on touch.
+- **Remove duplicate orbs from individual pages** (Practices hero, Philosophy, CTA, EventsPublic, EventsPrivate, About). The sitewide ambient layer covers it. Keep only the small accent floats that actually frame content.
+- **Switch `transition-all` → `transition-opacity`/`transition-transform`** on hero images and reduce `duration-[2s]` to `duration-1000`.
+- **Cap `animate-pulse-soft` / `animate-float`** to one or two elements per section and add `prefers-reduced-motion` short-circuits in `index.css` (extend the existing block).
+- **Switch `AnimatePresence` to `mode="sync"`** with a faster (250 ms) crossfade so navigation feels instant.
+- **Lazy-load page routes** with `React.lazy` + `Suspense` so the initial bundle is smaller.
 
-### Practices page
-- Add a primary **Yog Nidra Meditation** offering with the doc's content: Breathwork → Soundscape → Yoga Nidra triad, benefits, weekly online format, 60 min, first class free, monthly plan €80 (~$86 / ~400,000 MGA), 1 live session/week + 7-day recording access. Payment options: Wise / PayPal / Bank Transfer.
-- Keep existing offering cards (Sound Bath, Breathwork, etc.) but reword descriptions to align with Nada Yoga / 435 Hz framing.
+### 2. Premium subtle motion (consistent across pages)
 
-### Private Events page
-- Replace fictional offerings with the real positioning: weddings, birthdays, Diwali parties, women's forums, baby showers.
-- Use the doc's "The Experience" copy (crystal bowls @ 435 Hz, live ragas as lullabies, soft lighting, blankets, aromas).
-- Replace fake testimonials/pricing with a single CTA: *"Let's discuss how we can organise one for you"* + WhatsApp +91 7400361681.
+- **Shared `<Reveal>` wrapper** (framer-motion + IntersectionObserver, single instance) replacing the ad-hoc `useScrollAnimation` + class-toggle pattern. One easing curve, one duration, one stagger — applied to section headings, paragraphs, lists, cards. This alone makes the whole site feel cohesive.
+- **Magnetic CTA buttons** — primary "Begin a session" / "Book" buttons gently pull toward the cursor within a small radius (desktop only). Adds a tactile, expensive feel without being loud.
+- **Card lift micro-interaction** — replace existing scale/shadow hovers with a unified `whileHover={{ y: -4 }}` + soft clay glow. Same on Practices, Corporate, Private cards.
+- **Soft focus ring on form fields** in Contact (clay glow expands on focus, breathing rhythm).
+- **Word-by-word reveal** on hero headlines (h1) — staggered fade, very slow (90 ms per word). Used only on hero h1s.
+- **Slow Ken-Burns** (20 s) on hero background images via transform only (cheap, GPU).
 
-### Public Events page → repurpose as **Corporate Events**
-- Update copy: "Deep Relaxation for High-Performance Teams", Sound Baths for corporate wellness, ideal for leadership teams + orgs prioritising wellbeing.
-- Benefits list (reduces stress, focus, emotional regulation, nervous-system relaxation, etc.).
-- "How a Session Works" steps (breathwork → guided relaxation → sound immersion → optional ragas/mantras).
-- "Rise of Online Sound Baths" explainer + "The Setup" note.
-- Booking: online/in-person, small/large, one-time/ongoing. Email `omshala.official@gmail.com`, WhatsApp `+91 7400361681`.
+### 3. Two signature, non-generic features
 
-### Contact page
-- Update email to `omshala.official@gmail.com`, WhatsApp `+91 7400361681`. Keep Bandra West, Mumbai location.
+These are what makes the site stand out — both directly tie to Shrutika's craft (sound + breath):
 
----
+#### A. Interactive 435 Hz Sound Bowl (landing hero corner + Practices page)
+A small floating crystal-bowl ring in the bottom-right of the hero. On hover it begins a soft, slow rotation; on click it actually **plays a 6-second 435 Hz sine tone** with a gentle attack/decay envelope through Web Audio API, while concentric ripples emanate from it on the page (SVG circles expanding + fading). Click again to stop. A tiny label reads *"Tap to hear 435 Hz"*. No external assets needed — the tone is synthesised in-browser.
 
-## Subtle premium motion & ambient polish (light-touch, no redesign)
+This is the single most "Om Shala" thing the site can do: visitors physically experience the frequency the brand is built on.
 
-1. **Ambient background layer** — new `<AmbientBackground />` component mounted once in `App.tsx`, rendering 2–3 very slow drifting blurred clay/earth orbs (fixed, `pointer-events-none`, ~5% opacity, 30–60s loops). Adds a subtle "breathing" feel across every page without touching individual sections.
-2. **Breathing pulse on hero decorative dots/lines** — extend existing `animate-pulse-soft` to a slower 6–8s ease, suggesting a breath cycle. Add one small "breath ring" near hero CTAs (expanding/contracting circle).
-3. **Framer-motion micro-interactions**:
-   - `whileHover={{ y: -4 }}` + soft shadow on offering/credential cards.
-   - Stagger fade-in for credential and benefit list items as they enter the viewport (replace current css-based reveals where it's a list — cards stay as-is).
-4. **Smooth scroll cue** — small animated "scroll" indicator at bottom of each hero (thin vertical line that slides down and loops), already used in some places; standardise via a tiny shared component.
-5. **Image Ken-Burns** — apply a very slow (20s) scale 1 → 1.05 loop to hero background images for a living, meditative feel.
-6. **Number-counter on credentials** — when the "12+ years" / "1,000+ participants" stats scroll into view, count up using framer-motion. Add a small stats strip on landing + about (3–4 numbers).
-7. **Cursor-follow soft glow (desktop only)** — a faint clay-tinted radial gradient that follows the cursor at low opacity; disabled on touch devices and with `prefers-reduced-motion`.
-8. Respect `prefers-reduced-motion` everywhere — all new motion gated behind the existing media query block in `index.css`.
+#### B. Live Breath Companion (sitewide, dismissible)
+A slim 1-px clay line pinned to the very bottom of the viewport that **slowly expands and contracts in a 4-7-8 breath rhythm** (inhale 4s, hold 7s, exhale 8s) with a tiny floating label that fades in once per cycle: *"Inhale… Hold… Exhale…"*. There's a subtle pill button in the footer area: *"Breathe with us"* that toggles it on/off (off by default for first-time visitors; preference saved to localStorage).
 
-No new colors, no new fonts, no layout changes beyond inserting the small stats strip and the corporate-events restructuring. Existing components (Header, Footer, PageTransition, Card styles) untouched.
+When active, the entire page subtly syncs — the ambient orbs match the same breath rhythm. It turns the website itself into a 60-second meditation. Nothing else on the web does this for a sound-healing brand.
 
----
+Both features fully respect `prefers-reduced-motion` (Bowl still plays audio but skips ripples; Breath Companion shows a static line).
+
+### 4. Polish gaps that make it feel "incomplete"
+
+- Add a real **footer divider with the enso/ring brand mark** centered (currently footer is flat).
+- Add a **scroll-progress hairline** at the top of the viewport (1 px clay line, GPU-only `scaleX`) — present on every page.
+- Standardise hero scroll cue (small animated vertical line) across all 7 pages via a single `<ScrollCue />` component.
+- Make sure every page has the same **section rhythm**: hero → intro → meat → CTA → footer. Audit Schedule + Contact, which currently feel light.
 
 ## Technical notes
 
-- Files touched: `src/pages/Index.tsx` (+ child section components), `About.tsx`, `Practices.tsx`, `EventsPrivate.tsx`, `EventsPublic.tsx`, `Contact.tsx`, `App.tsx`, `index.css`.
-- New files: `src/components/AmbientBackground.tsx`, `src/components/CursorGlow.tsx`, `src/components/StatCounter.tsx`, `src/components/ScrollCue.tsx`.
-- Uses already-installed `framer-motion`. No new dependencies.
-- All copy stored as plain strings in the page files (no CMS / backend changes).
+- New files: `src/components/SoundBowl.tsx`, `src/components/BreathCompanion.tsx`, `src/components/Reveal.tsx`, `src/components/ScrollCue.tsx`, `src/components/ScrollProgress.tsx`, `src/hooks/useBreathCycle.tsx`.
+- Edited: `App.tsx` (lazy routes, mount BreathCompanion + ScrollProgress), `AmbientBackground.tsx`, `CursorGlow.tsx`, `HeroSection.tsx`, `Practices.tsx`, `PhilosophySection.tsx`, `EventsPublic.tsx`, `EventsPrivate.tsx`, `About.tsx`, `Contact.tsx`, `Footer.tsx`, `index.css`.
+- Audio: Web Audio API only (no library, no asset). ~30 lines.
+- No new dependencies.
+- All new motion gated on `prefers-reduced-motion`.
 
 ## Out of scope
 
-- No backend/Lovable Cloud work (no booking forms wired up — CTAs remain mailto/WhatsApp links).
-- No new imagery generation; reuses existing assets.
-- No restructuring of routes or navigation.
+- No backend, no booking system wiring, no new copy beyond labels for the new features.
+- No design-system color/typography changes.
