@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Heart, Leaf, Sun, Moon, Volume2, Wind, Award, BookOpen } from "lucide-react";
+import { Wind, Volume2, Moon, Heart, Award, BookOpen } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -11,24 +11,24 @@ import heroBowl from "@/assets/hero-bowl.jpg";
 
 const philosophyPillars = [
   {
-    icon: Heart,
-    title: "Presence Over Perfection",
-    description: "We believe healing happens not through striving, but through being. Each session invites you to simply arrive as you are."
+    icon: Wind,
+    title: "Breathwork",
+    description: "Calms the nervous system, balances emotions, and aligns the mind."
   },
   {
-    icon: Leaf,
-    title: "Nature as Teacher",
-    description: "Our practices draw from ancient wisdom traditions that recognized the profound healing power found in natural rhythms and elements."
-  },
-  {
-    icon: Sun,
-    title: "Light & Shadow",
-    description: "True wellness embraces all parts of ourselves. We create safe space for both celebration and gentle exploration of what needs healing."
+    icon: Volume2,
+    title: "Soundscape",
+    description: "Crystal singing bowls tuned to 435 Hz create safety and slow the mind."
   },
   {
     icon: Moon,
-    title: "Cyclical Living",
-    description: "Just as the moon waxes and wanes, we honor the natural cycles of expansion and rest in our approach to wellbeing."
+    title: "Yog Nidra",
+    description: "Grounds the body and relaxes deeper layers of the mind."
+  },
+  {
+    icon: Heart,
+    title: "Connection",
+    description: "When relaxation is experienced this deeply, meditation occurs naturally."
   }
 ];
 
