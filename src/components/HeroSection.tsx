@@ -40,15 +40,16 @@ const HeroSection = () => {
             <div className={`w-px h-16 bg-gradient-to-b from-transparent via-foreground/30 to-foreground/10 mx-auto mb-8 transition-all duration-1000 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`} />
             
             <span className={`inline-block text-xs tracking-[0.25em] uppercase text-muted-foreground transition-all duration-700 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`} style={{ transitionDelay: '200ms' }}>
-              Sound · Breath · Stillness
+              Om Shala
             </span>
             
             <h1 className={`mt-8 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight tracking-tight text-foreground transition-all duration-1000 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '400ms' }}>
-              A space to breathe, listen,<br className="hidden md:block" /> and return to yourself.
+              Sound Healing Experiences<br className="hidden md:block" /> &amp; Events
             </h1>
             
             <p className={`mt-8 text-lg text-muted-foreground font-light leading-relaxed max-w-xl mx-auto transition-all duration-1000 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '600ms' }}>
-              Sound healing, breathwork, and meditation practices in a calm, intentional space.
+              Crystal Singing Bowls and the instrument of Voice, supported by breathwork and
+              guided relaxation. Simple, effective, and accessible — no prior practice required.
             </p>
             
             <div className={`mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 transition-all duration-1000 ease-out ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: '800ms' }}>
