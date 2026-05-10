@@ -38,48 +38,12 @@ const contactMethods = [
   }
 ];
 
-const faqs = [
-  {
-    question: "What should I wear to a session?",
-    answer: "Wear comfortable, loose-fitting clothing that allows you to breathe freely and relax. We recommend layers as body temperature can fluctuate during deep relaxation. Avoid heavy perfumes or scents."
-  },
-  {
-    question: "Do I need any prior experience?",
-    answer: "Not at all. Our sessions are designed for complete beginners as well as experienced practitioners. We'll guide you through everything and meet you exactly where you are on your journey."
-  },
-  {
-    question: "How early should I arrive?",
-    answer: "Please arrive 10-15 minutes before your session. This allows time to settle in, complete any paperwork, and transition into a relaxed state before we begin. Late arrivals may result in shortened sessions."
-  },
-  {
-    question: "What if I fall asleep during a sound bath?",
-    answer: "Falling asleep is completely natural and nothing to worry about. Your subconscious mind continues to receive the healing frequencies even during sleep. Many find this to be deeply restorative and a sign of true relaxation."
-  },
-  {
-    question: "Can I book a session for someone else?",
-    answer: "Yes! Gift sessions make wonderful presents for birthdays, anniversaries, or simply because. Contact us directly to arrange a beautifully presented gift certificate or book on someone's behalf."
-  },
-  {
-    question: "What is your cancellation policy?",
-    answer: "We understand plans change. Please provide at least 24 hours notice for cancellations to receive a full refund or reschedule. Late cancellations (less than 24 hours) may be subject to a 50% fee."
-  },
-  {
-    question: "Are group bookings available?",
-    answer: "Absolutely! We offer private group sessions for friends, families, corporate teams, and special occasions. Group sessions can be customized to your specific needs. Contact us for pricing and availability."
-  },
-  {
-    question: "What should I do after a session?",
-    answer: "We recommend drinking plenty of water, avoiding heavy meals immediately after, and giving yourself time to integrate the experience. Journaling, gentle walks, or simply resting can help extend the benefits."
-  }
-];
-
 const Contact = () => {
   const [loaded, setLoaded] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '', interest: '' });
   const { ref: contactRef, isVisible: contactVisible } = useScrollAnimation();
   const { ref: formRef, isVisible: formVisible } = useScrollAnimation();
-  const { ref: faqRef, isVisible: faqVisible } = useScrollAnimation();
-  const { ref: locationRef, isVisible: locationVisible } = useScrollAnimation();
+  const { ref: locationRef } = useScrollAnimation();
 
   useEffect(() => {
     setLoaded(true);
@@ -286,26 +250,13 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <h4 className="text-xs tracking-[0.2em] uppercase text-foreground/60 mb-4">Session Hours</h4>
-                  <div className="space-y-3 text-muted-foreground">
-                    <div className="flex justify-between border-b border-foreground/5 pb-2">
-                      <span>Monday - Friday</span>
-                      <span className="text-foreground">7:00 AM - 8:00 PM</span>
-                    </div>
-                    <div className="flex justify-between border-b border-foreground/5 pb-2">
-                      <span>Saturday</span>
-                      <span className="text-foreground">8:00 AM - 6:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Sunday</span>
-                      <span className="text-clay">By Appointment</span>
-                    </div>
-                  </div>
+                  <h4 className="text-xs tracking-[0.2em] uppercase text-foreground/60 mb-4">Hours</h4>
+                  <p className="text-muted-foreground leading-relaxed">By appointment only.</p>
                 </div>
                 
                 <div className="p-6 border border-clay/20 bg-clay/5">
                   <p className="text-sm text-muted-foreground">
-                    <span className="text-clay font-medium">First time?</span> Mention "new guest" when booking for a complimentary 15-minute consultation before your session.
+                    <span className="text-clay font-medium">Yog Nidra Meditation:</span> first class is free. WhatsApp +91 74003 61681 to book your trial.
                   </p>
                 </div>
               </div>
