@@ -5,12 +5,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import abstractZen from "@/assets/abstract-zen.jpg";
 
 const contactMethods = [
