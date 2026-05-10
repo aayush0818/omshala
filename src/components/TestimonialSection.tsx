@@ -4,19 +4,9 @@ import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const testimonials = [
   {
-    quote: "I didn't realize how much tension I was carrying until I felt it dissolve. This is the reset I've been searching for.",
-    author: "Priya M.",
-    context: "After her first sound healing session"
-  },
-  {
-    quote: "The breathwork session unlocked something I had been holding for years. I left feeling lighter than I have in a decade.",
-    author: "Arjun R.",
-    context: "Regular practitioner"
-  },
-  {
-    quote: "A rare space of true stillness. No gimmicks, no performance—just genuine healing work.",
-    author: "Kavitha K.",
-    context: "Meditation teacher"
+    quote: "Pure sound pulls you inward and brings deep relaxation. In this state, the body is grounded, mind is open and emotions are free. Everything feels perfect, as it is.",
+    author: "Shrutika",
+    context: "Founder, Om Shala"
   }
 ];
 

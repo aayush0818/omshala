@@ -29,15 +29,12 @@ const Footer = () => {
               </span>
             </div>
             
-            <div className="flex items-center gap-10">
-              <a href="#practices" className="text-sm text-muted-foreground hover:text-clay transition-colors duration-300 link-underline">
-                Practices
+            <div className="flex flex-col items-center gap-2 text-xs text-muted-foreground/70">
+              <a href="mailto:omshala.official@gmail.com" className="hover:text-clay transition-colors duration-300">
+                omshala.official@gmail.com
               </a>
-              <a href="#philosophy" className="text-sm text-muted-foreground hover:text-clay transition-colors duration-300 link-underline">
-                About
-              </a>
-              <a href="#booking" className="text-sm text-muted-foreground hover:text-clay transition-colors duration-300 link-underline">
-                Contact
+              <a href="https://wa.me/917400361681" target="_blank" rel="noopener noreferrer" className="hover:text-clay transition-colors duration-300">
+                WhatsApp +91 74003 61681
               </a>
             </div>
             
@@ -46,7 +43,7 @@ const Footer = () => {
                 Bandra West, Mumbai
               </span>
               <span className="text-xs text-muted-foreground/40">
-                © {currentYear} OmShala
+                © {currentYear} Om Shala
               </span>
             </div>
           </div>

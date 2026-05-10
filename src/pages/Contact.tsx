@@ -5,12 +5,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import abstractZen from "@/assets/abstract-zen.jpg";
 
 const contactMethods = [
@@ -44,48 +38,12 @@ const contactMethods = [
   }
 ];
 
-const faqs = [
-  {
-    question: "What should I wear to a session?",
-    answer: "Wear comfortable, loose-fitting clothing that allows you to breathe freely and relax. We recommend layers as body temperature can fluctuate during deep relaxation. Avoid heavy perfumes or scents."
-  },
-  {
-    question: "Do I need any prior experience?",
-    answer: "Not at all. Our sessions are designed for complete beginners as well as experienced practitioners. We'll guide you through everything and meet you exactly where you are on your journey."
-  },
-  {
-    question: "How early should I arrive?",
-    answer: "Please arrive 10-15 minutes before your session. This allows time to settle in, complete any paperwork, and transition into a relaxed state before we begin. Late arrivals may result in shortened sessions."
-  },
-  {
-    question: "What if I fall asleep during a sound bath?",
-    answer: "Falling asleep is completely natural and nothing to worry about. Your subconscious mind continues to receive the healing frequencies even during sleep. Many find this to be deeply restorative and a sign of true relaxation."
-  },
-  {
-    question: "Can I book a session for someone else?",
-    answer: "Yes! Gift sessions make wonderful presents for birthdays, anniversaries, or simply because. Contact us directly to arrange a beautifully presented gift certificate or book on someone's behalf."
-  },
-  {
-    question: "What is your cancellation policy?",
-    answer: "We understand plans change. Please provide at least 24 hours notice for cancellations to receive a full refund or reschedule. Late cancellations (less than 24 hours) may be subject to a 50% fee."
-  },
-  {
-    question: "Are group bookings available?",
-    answer: "Absolutely! We offer private group sessions for friends, families, corporate teams, and special occasions. Group sessions can be customized to your specific needs. Contact us for pricing and availability."
-  },
-  {
-    question: "What should I do after a session?",
-    answer: "We recommend drinking plenty of water, avoiding heavy meals immediately after, and giving yourself time to integrate the experience. Journaling, gentle walks, or simply resting can help extend the benefits."
-  }
-];
-
 const Contact = () => {
   const [loaded, setLoaded] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', message: '', interest: '' });
   const { ref: contactRef, isVisible: contactVisible } = useScrollAnimation();
   const { ref: formRef, isVisible: formVisible } = useScrollAnimation();
-  const { ref: faqRef, isVisible: faqVisible } = useScrollAnimation();
-  const { ref: locationRef, isVisible: locationVisible } = useScrollAnimation();
+  const { ref: locationRef } = useScrollAnimation();
 
   useEffect(() => {
     setLoaded(true);
@@ -292,70 +250,17 @@ const Contact = () => {
                 </div>
                 
                 <div>
-                  <h4 className="text-xs tracking-[0.2em] uppercase text-foreground/60 mb-4">Session Hours</h4>
-                  <div className="space-y-3 text-muted-foreground">
-                    <div className="flex justify-between border-b border-foreground/5 pb-2">
-                      <span>Monday - Friday</span>
-                      <span className="text-foreground">7:00 AM - 8:00 PM</span>
-                    </div>
-                    <div className="flex justify-between border-b border-foreground/5 pb-2">
-                      <span>Saturday</span>
-                      <span className="text-foreground">8:00 AM - 6:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Sunday</span>
-                      <span className="text-clay">By Appointment</span>
-                    </div>
-                  </div>
+                  <h4 className="text-xs tracking-[0.2em] uppercase text-foreground/60 mb-4">Hours</h4>
+                  <p className="text-muted-foreground leading-relaxed">By appointment only.</p>
                 </div>
                 
                 <div className="p-6 border border-clay/20 bg-clay/5">
                   <p className="text-sm text-muted-foreground">
-                    <span className="text-clay font-medium">First time?</span> Mention "new guest" when booking for a complimentary 15-minute consultation before your session.
+                    <span className="text-clay font-medium">Yog Nidra Meditation:</span> first class is free. WhatsApp +91 74003 61681 to book your trial.
                   </p>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section ref={faqRef} className="py-28 md:py-40 bg-charcoal text-bone relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-20 -right-32 w-64 h-64 rounded-full border border-bone/5 animate-pulse-soft" />
-        <div className="absolute bottom-20 -left-32 w-96 h-96 rounded-full border border-bone/5 animate-pulse-soft" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/4 right-1/4 w-48 h-48 bg-clay/10 rounded-full blur-[40px] animate-float" />
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-16">
-              <span className={`text-xs tracking-[0.3em] uppercase text-ash transition-all duration-700 ${faqVisible ? 'opacity-100' : 'opacity-0'}`}>
-                Common Questions
-              </span>
-              <h2 className={`mt-6 font-serif text-4xl md:text-5xl font-light transition-all duration-700 delay-100 ${faqVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                Frequently Asked
-              </h2>
-              <div className={`mt-8 w-16 h-px bg-gradient-to-r from-transparent via-clay to-transparent mx-auto transition-all duration-700 delay-200 ${faqVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} />
-            </div>
-            
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
-                  value={`item-${index}`}
-                  className={`border border-bone/10 px-6 hover:border-clay/30 transition-all duration-500 ${faqVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                  style={{ transitionDelay: `${(index + 2) * 50}ms` }}
-                >
-                  <AccordionTrigger className="text-left font-serif text-lg hover:text-clay transition-colors py-6 hover:no-underline">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-bone/70 pb-6 leading-relaxed">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
           </div>
         </div>
       </section>

@@ -23,7 +23,7 @@ const practices = [
       "60-minute live sessions, recording for 7 days",
     ],
     duration: "60 min · weekly",
-    price: "First class free · €80/month",
+    price: "First class free · €80/month (4 sessions)",
     ideal: "For those who want a consistent space to reset, rest and reconnect — joinable from anywhere in the world."
   },
   {
@@ -34,7 +34,7 @@ const practices = [
     description: "Therapeutic sound immersions using Crystal Singing Bowls and the instrument of Voice. Pure tones bypass the thinking mind and shift brain waves directly, dissolving mental and emotional tension — sometimes putting people gently off to sleep. Live Indian classical ragas may be sung as lullabies for the soul.",
     benefits: ["Dissolves mental and emotional tension", "Shifts brain waves into deep relaxation", "Relaxes the nervous system", "Improves focus and clarity", "Supports restful sleep", "Accessible — no prior practice required"],
     duration: "60-90 min",
-    price: "From ₹2,500",
+    price: "On request",
     ideal: "Perfect for those seeking deep relaxation and stress relief"
   },
   {
@@ -45,7 +45,7 @@ const practices = [
     description: "Gentle, guided breathwork practices that calm the nervous system, balance emotions, and align the mind. Often woven into the start of a sound bath to help you arrive, soften, and let go before the deeper journey begins.",
     benefits: ["Calms the nervous system", "Balances emotions", "Aligns the mind", "Eases anxiety and overwhelm", "Improves focus", "Prepares the body for deep rest"],
     duration: "45-75 min",
-    price: "From ₹2,000",
+    price: "On request",
     ideal: "Ideal for those who want practical tools to regulate stress in everyday life"
   },
   {
@@ -56,7 +56,7 @@ const practices = [
     description: "Soft, somatic guidance through body awareness, breath and stillness. The job here is not to try harder, but to soften and sweeten the process of going inward — until relaxation pulls you naturally back to your centre, where meditation begins.",
     benefits: ["Calms the nervous system", "Improves sleep quality", "Enhances self-awareness", "Quietens mental chatter", "Builds emotional resilience", "Accessible for complete beginners"],
     duration: "30-60 min",
-    price: "From ₹1,500",
+    price: "On request",
     ideal: "Best for beginners and those seeking peace of mind"
   },
   {
@@ -67,7 +67,7 @@ const practices = [
     description: "One-on-one sessions weaving sound, breath and guided relaxation around exactly what you need. Available in-studio in Bandra West, or online for clients across the US, Europe and beyond.",
     benefits: ["Personalised pace and intention", "Combined modalities", "Available online or in-person", "Flexible scheduling across time zones", "Held in complete privacy", "Follow-up integration support"],
     duration: "90-120 min",
-    price: "From ₹4,000",
+    price: "On request",
     ideal: "For those seeking dedicated, personalized healing work"
   }
 ];

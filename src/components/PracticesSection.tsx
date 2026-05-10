@@ -4,28 +4,20 @@ import useScrollAnimation from "@/hooks/useScrollAnimation";
 
 const practices = [
   {
+    name: "Yog Nidra Meditation",
+    intention: "A weekly online practice to reset the nervous system and return to centre.",
+  },
+  {
     name: "Sound Healing",
-    intention: "Using vibration to restore balance and calm.",
-    duration: "60 min",
-    price: "₹2,500",
+    intention: "Crystal Singing Bowls tuned to 435 Hz — the frequency of nature.",
   },
   {
     name: "Breathwork",
-    intention: "Conscious breathing for clarity and release.",
-    duration: "45 min",
-    price: "₹2,000",
+    intention: "Conscious breathing to settle the nervous system and balance emotions.",
   },
   {
     name: "Guided Meditation",
-    intention: "A gentle return to stillness and presence.",
-    duration: "30 min",
-    price: "₹1,500",
-  },
-  {
-    name: "Private Session",
-    intention: "One-on-one practice tailored to your needs.",
-    duration: "90 min",
-    price: "₹4,000",
+    intention: "Soft, somatic guidance — meditation that happens, rather than something you do.",
   },
 ];
 
@@ -75,22 +67,14 @@ const PracticesSection = () => {
                   style={{ transitionDelay: `${(index + 2) * 100}ms` }}
                 >
                   <div className="flex-1">
-                    <div className="flex items-baseline gap-4 mb-2">
-                      <h3 className="font-serif text-xl md:text-2xl font-light text-foreground group-hover:text-clay transition-colors duration-300">
-                        {practice.name}
-                      </h3>
-                      <span className="text-xs text-muted-foreground tracking-wide">
-                        {practice.duration}
-                      </span>
-                    </div>
+                    <h3 className="font-serif text-xl md:text-2xl font-light text-foreground group-hover:text-clay transition-colors duration-300 mb-2">
+                      {practice.name}
+                    </h3>
                     <p className="text-sm text-muted-foreground font-light group-hover:text-muted-foreground/80 transition-colors duration-300">
                       {practice.intention}
                     </p>
                   </div>
-                  <div className="flex items-center gap-6 ml-4">
-                    <span className="text-sm font-light text-foreground">
-                      {practice.price}
-                    </span>
+                  <div className="flex items-center ml-4">
                     <div className="w-10 h-10 rounded-full border border-border/50 flex items-center justify-center group-hover:border-clay group-hover:bg-clay/10 transition-all duration-300">
                       <ArrowRight className="w-4 h-4 text-muted-foreground group-hover:text-clay group-hover:translate-x-0.5 transition-all duration-300" />
                     </div>
