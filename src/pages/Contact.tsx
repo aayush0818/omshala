@@ -314,46 +314,6 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section ref={faqRef} className="py-28 md:py-40 bg-charcoal text-bone relative overflow-hidden">
-        {/* Decorative elements */}
-        <div className="absolute top-20 -right-32 w-64 h-64 rounded-full border border-bone/5 animate-pulse-soft" />
-        <div className="absolute bottom-20 -left-32 w-96 h-96 rounded-full border border-bone/5 animate-pulse-soft" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/4 right-1/4 w-48 h-48 bg-clay/10 rounded-full blur-[40px] animate-float" />
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-16">
-              <span className={`text-xs tracking-[0.3em] uppercase text-ash transition-all duration-700 ${faqVisible ? 'opacity-100' : 'opacity-0'}`}>
-                Common Questions
-              </span>
-              <h2 className={`mt-6 font-serif text-4xl md:text-5xl font-light transition-all duration-700 delay-100 ${faqVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                Frequently Asked
-              </h2>
-              <div className={`mt-8 w-16 h-px bg-gradient-to-r from-transparent via-clay to-transparent mx-auto transition-all duration-700 delay-200 ${faqVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`} />
-            </div>
-            
-            <Accordion type="single" collapsible className="space-y-4">
-              {faqs.map((faq, index) => (
-                <AccordionItem 
-                  key={index} 
-                  value={`item-${index}`}
-                  className={`border border-bone/10 px-6 hover:border-clay/30 transition-all duration-500 ${faqVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-                  style={{ transitionDelay: `${(index + 2) * 50}ms` }}
-                >
-                  <AccordionTrigger className="text-left font-serif text-lg hover:text-clay transition-colors py-6 hover:no-underline">
-                    {faq.question}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-bone/70 pb-6 leading-relaxed">
-                    {faq.answer}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </div>
-      </section>
-
       {/* Final CTA */}
       <section className="py-28 md:py-40 bg-muted/20 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
