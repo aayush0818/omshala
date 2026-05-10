@@ -25,10 +25,10 @@ const ExpectSection = () => {
         <div className="max-w-5xl mx-auto">
           <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <span className="text-xs tracking-[0.3em] uppercase text-muted-foreground">
-              What to expect
+              How a session works
             </span>
             <h2 className="mt-6 font-serif text-4xl md:text-5xl font-light">
-              A journey in five steps
+              Fully guided, accessible to everyone
             </h2>
             <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-clay to-transparent mx-auto" />
           </div>
