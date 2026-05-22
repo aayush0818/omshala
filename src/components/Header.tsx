@@ -21,7 +21,6 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { href: "/practices", label: "Practices", isRoute: true },
     { href: "/about", label: "About", isRoute: true },
     { href: "/schedule", label: "Schedule", isRoute: true },
   ];

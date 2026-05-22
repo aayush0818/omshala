@@ -288,7 +288,7 @@ const Contact = () => {
               <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
             </Link>
             <Link 
-              to="/practices"
+              to="/schedule"
               className="px-10 py-4 border border-foreground/20 text-foreground hover:border-clay hover:text-clay transition-all duration-300"
             >
               Explore Practices
