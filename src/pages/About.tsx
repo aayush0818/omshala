@@ -333,7 +333,7 @@ const About = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
-              to="/practices"
+              to="/schedule"
               className="px-10 py-4 bg-transparent border border-bone/30 text-bone hover:bg-bone hover:text-charcoal transition-all duration-300"
             >
               Explore Practices
