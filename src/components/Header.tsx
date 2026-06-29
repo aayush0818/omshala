@@ -1,12 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { Menu, X } from "lucide-react";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -22,7 +16,9 @@ const Header = () => {
 
   const navLinks = [
     { href: "/about", label: "About", isRoute: true },
-    { href: "/schedule", label: "Schedule", isRoute: true },
+    { href: "/events/corporate", label: "Corporate", isRoute: true },
+    { href: "/events/private", label: "Private", isRoute: true },
+    { href: "/contact", label: "Contact", isRoute: true },
   ];
 
   return (
@@ -33,7 +29,7 @@ const Header = () => {
             OmShala
           </Link>
           
-          <div className="hidden md:flex items-center gap-12">
+          <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <Link 
                 key={link.href}
@@ -43,31 +39,9 @@ const Header = () => {
                 {link.label}
               </Link>
             ))}
-            
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 link-underline outline-none">
-                Events
-                <ChevronDown className="w-4 h-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-background border border-foreground/10 shadow-lg z-50">
-                <DropdownMenuItem className="cursor-pointer hover:bg-muted" asChild>
-                  <Link to="/events/public" className="w-full">Corporate</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem className="cursor-pointer hover:bg-muted" asChild>
-                  <Link to="/events/private" className="w-full">Private</Link>
-                </DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
           </div>
 
           <div className="flex items-center gap-4">
-            <Link 
-              to="/schedule" 
-              className="hidden md:inline-block px-6 py-2.5 text-sm border border-foreground/20 hover:border-clay hover:text-clay transition-all duration-300"
-            >
-              Book
-            </Link>
-            
             <button 
               className="md:hidden p-2 text-foreground hover:text-clay transition-colors duration-300"
               onClick={() => setMobileMenuOpen(true)}
@@ -108,36 +82,6 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
-          <div 
-            className={`flex flex-col items-center gap-4 transition-all duration-500 ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-            style={{ transitionDelay: '300ms' }}
-          >
-            <span className="font-serif text-3xl text-foreground">Events</span>
-            <div className="flex gap-6">
-              <Link 
-                to="/events/public"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-lg text-muted-foreground hover:text-clay transition-colors duration-300"
-              >
-                Corporate
-              </Link>
-              <Link 
-                to="/events/private"
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-lg text-muted-foreground hover:text-clay transition-colors duration-300"
-              >
-                Private
-              </Link>
-            </div>
-          </div>
-          <Link 
-            to="/schedule"
-            onClick={() => setMobileMenuOpen(false)}
-            className={`mt-4 px-10 py-4 border border-foreground/20 text-foreground hover:border-clay hover:text-clay transition-all duration-500 ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
-            style={{ transitionDelay: '400ms' }}
-          >
-            Book a Session
-          </Link>
         </nav>
       </div>
     </>
