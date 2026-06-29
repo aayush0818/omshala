@@ -1,312 +1,343 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Clock, MapPin, Users, ArrowRight, Calendar, Sparkles, Mail, Brain, Heart, Focus, Activity, Headphones, Building2 } from "lucide-react";
+import { useEffect, useState } from "react";
+import {
+  Activity, Brain, Focus, Heart, Sparkles, Users, Building2,
+  Mail, MessageCircle, Headphones, Volume2, Mic2, Wind, Moon,
+} from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import Reveal from "@/components/Reveal";
 import heroBowl from "@/assets/hero-bowl.jpg";
+import corporateImg from "@/assets/experience-corporate.jpg";
+import abstractZen from "@/assets/abstract-zen.jpg";
+
+const credentials = [
+  { value: "12+", label: "Years in the mindfulness industry" },
+  { value: "1000+", label: "Largest live corporate event" },
+  { value: "Spotify", label: "Meditations × Universal Music" },
+  { value: "Global", label: "Online clients across continents" },
+];
+
+const idealFor = [
+  "Leadership Teams",
+  "Decision Makers",
+  "High Pressure Teams",
+  "Employee Wellbeing",
+  "Retention",
+  "Offsites",
+];
 
 const benefits = [
-  { icon: Activity, text: "Reduces stress and prevents burnout" },
-  { icon: Focus, text: "Improves focus, clarity and creativity" },
-  { icon: Heart, text: "Enhances emotional regulation under pressure" },
-  { icon: Brain, text: "Relaxes the nervous system" },
-  { icon: Sparkles, text: "Increases overall workplace wellbeing" },
-  { icon: Users, text: "Builds a calmer, more resilient team environment" },
+  { icon: Activity, label: "Reduce Stress" },
+  { icon: Brain, label: "Prevent Burnout" },
+  { icon: Focus, label: "Improve Focus" },
+  { icon: Sparkles, label: "Increase Creativity" },
+  { icon: Heart, label: "Support Emotional Regulation" },
+  { icon: Wind, label: "Relax the Nervous System" },
+  { icon: Users, label: "Strengthen Workplace Wellbeing" },
 ];
 
 const sessionFlow = [
-  { number: "01", title: "Gentle breathwork", desc: "To settle the nervous system and help everyone arrive." },
-  { number: "02", title: "Guided relaxation", desc: "To release mental and physical tension built up through the week." },
-  { number: "03", title: "Sound immersion", desc: "Crystal singing bowls tuned to 435 Hz align brain waves with the frequency of nature." },
-  { number: "04", title: "Optional voice", desc: "Live Indian classical ragas or mantras, when suitable for the group." },
+  { icon: Wind, title: "Breathwork", desc: "Gentle conscious breathing to settle the nervous system and help everyone arrive." },
+  { icon: Moon, title: "Guided Relaxation", desc: "A soft somatic guidance that releases tension built up through the week." },
+  { icon: Volume2, title: "Crystal Singing Bowls", desc: "Bowls tuned to 435 Hz — the frequency of nature — align brain waves and slow the mind." },
+  { icon: Mic2, title: "Live Indian Classical Voice", desc: "Ragas and mantras sung live, when suitable for the group." },
+  { icon: Heart, title: "Deep Relaxation", desc: "The body softens, the mind opens, and a quiet rejuvenation settles in." },
 ];
 
-const formats = [
-  { icon: Headphones, title: "Online", desc: "Joinable from desks or homes — ideal for distributed teams." },
-  { icon: Building2, title: "On-site", desc: "Hosted at your office or boardroom for in-person teams." },
-  { icon: Sparkles, title: "Offsites & retreats", desc: "Designed into leadership offsites and wellbeing retreats." },
-];
+const youNeed = ["Quiet Space", "Headphones", "Comfortable Seating"];
+const weProvide = ["Professional Recording", "Crystal Singing Bowls", "Guided Experience", "Live Voice"];
 
-const EventsPublic = () => {
+const EventsCorporate = () => {
   const [loaded, setLoaded] = useState(false);
-  const { ref: eventsRef, isVisible: eventsVisible } = useScrollAnimation();
-  const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
-
-  useEffect(() => {
-    setLoaded(true);
-  }, []);
+  useEffect(() => setLoaded(true), []);
 
   return (
     <PageTransition>
       <div className="min-h-screen bg-background text-foreground">
         <Header />
-      
-      {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img 
-            src={heroBowl} 
-            alt="Sound healing ceremony" 
-            className={`w-full h-full object-cover transition-opacity duration-1000 ease-out ${loaded ? 'scale-100 opacity-100' : 'scale-110 opacity-0'}`}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
-        </div>
-        
-        {/* Floating elements */}
-        <div className="absolute top-1/3 left-10 w-1 h-20 bg-gradient-to-b from-clay/30 to-transparent animate-float" />
-        <div className="absolute top-1/4 right-20 w-1 h-16 bg-gradient-to-b from-clay/20 to-transparent animate-float" style={{ animationDelay: '1.5s' }} />
-        <div className="absolute bottom-1/3 left-1/4 w-20 h-px bg-gradient-to-r from-transparent via-foreground/10 to-transparent animate-pulse-soft" />
-        
-        {/* Gradient orbs */}
-        <div className="absolute top-1/4 right-1/3 w-64 h-64 bg-clay/10 rounded-full blur-[50px] animate-float" />
-        <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-earth/10 rounded-full blur-[40px] animate-float" style={{ animationDelay: '2s' }} />
-        
-        <div className="container mx-auto px-6 relative z-10 pt-32">
-          <div className={`max-w-2xl transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className={`w-px h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-8 transition-all duration-1000 delay-200 ${loaded ? 'opacity-100' : 'opacity-0'}`} />
-            
-            <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">
-              Corporate Wellness
-            </span>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6">
-              Deep Relaxation
-              <span className="block mt-2 text-clay">for High-Performance Teams</span>
-            </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Therapeutic Sound Baths designed to reduce mental fatigue, improve focus and
-              support emotional resilience. The mind is the highest human power — a rejuvenated
-              mind is an optimised human resource.
-            </p>
-            
-            <div className="mt-10 flex flex-wrap gap-4">
-              <a 
-                href="#benefits"
-                className="group relative px-10 py-4 bg-foreground text-background text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl"
-              >
-                <span className="relative z-10 group-hover:text-background transition-colors duration-500">Enquire for Corporate Sessions</span>
-                <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              </a>
-              <a 
-                href="https://wa.me/917400361681?text=Hi%20Om%20Shala%2C%20I%27d%20like%20to%20enquire%20about%20a%20corporate%20sound%20healing%20session."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-10 py-4 border border-foreground/20 text-foreground text-sm tracking-wide hover:border-clay hover:text-clay transition-all duration-500 hover:bg-foreground/5"
-              >
-                WhatsApp Us
-              </a>
+
+        {/* Hero */}
+        <section className="relative min-h-[85vh] flex items-center overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src={heroBowl}
+              alt=""
+              className={`w-full h-full object-cover transition-opacity duration-[1500ms] ${loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}`}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
+          </div>
+          <div className="container mx-auto px-6 relative z-10 pt-32">
+            <div className={`max-w-3xl transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <div className={`w-px h-16 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-10 transition-opacity duration-1000 delay-200 ${loaded ? 'opacity-100' : 'opacity-0'}`} />
+              <span className="text-xs tracking-[0.3em] uppercase text-clay mb-8 block">Corporate</span>
+              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-light leading-[1.05]">
+                Deep Relaxation
+                <span className="block mt-3 italic text-clay/90">for High-Performance Teams</span>
+              </h1>
+              <p className="mt-10 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl font-light">
+                Therapeutic sound baths designed to reduce mental fatigue, improve focus and
+                support emotional resilience.
+              </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Benefits */}
-      <section id="benefits" ref={eventsRef} className="py-28 md:py-40 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-foreground/[0.02] to-transparent" />
-        <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-clay/5 rounded-full blur-[40px] animate-float" />
-
-        <div className="container mx-auto px-6">
-          <div className={`text-center mb-16 transition-all duration-700 ${eventsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="text-xs tracking-[0.3em] uppercase text-clay">Why Sound Baths at Work</span>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl font-light">
-              Benefits for the team
-            </h2>
-            <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-clay to-transparent mx-auto" />
-            <p className="mt-8 max-w-2xl mx-auto text-muted-foreground leading-relaxed">
-              A therapeutic experience combining guided breathwork and deep relaxation in a sound
-              immersion — helping employees and leaders rejuvenate mentally and access more
-              presence and productivity.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            {benefits.map((b, i) => (
-              <div
-                key={b.text}
-                className={`group p-8 border border-foreground/10 hover:border-clay/30 hover:bg-muted/20 transition-all duration-500 ${eventsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-                style={{ transitionDelay: `${i * 80}ms` }}
-              >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-foreground/10 group-hover:border-clay/40 mb-5 transition-colors duration-500">
-                  <b.icon className="w-5 h-5 text-clay" />
-                </div>
-                <p className="text-foreground/80 leading-relaxed">{b.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How a Session Works */}
-      <section className="py-28 md:py-40 bg-charcoal text-bone relative overflow-hidden">
-        <div className="absolute top-20 -right-32 w-64 h-64 rounded-full border border-bone/5 animate-pulse-soft" />
-        <div className="absolute bottom-20 -left-32 w-96 h-96 rounded-full border border-bone/5 animate-pulse-soft" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/4 right-1/4 w-48 h-48 bg-clay/10 rounded-full blur-[40px] animate-float" />
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-20">
-            <span className="text-xs tracking-[0.3em] uppercase text-ash">How a Session Works</span>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl font-light">
-              Fully guided. Accessible to everyone.
-            </h2>
-            <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-clay to-transparent mx-auto" />
-          </div>
-
-          <div className="max-w-4xl mx-auto space-y-8">
-            {sessionFlow.map((s) => (
-              <div key={s.number} className="flex gap-8">
-                <div className="flex-shrink-0 w-16 h-16 border border-bone/20 flex items-center justify-center">
-                  <span className="font-serif text-2xl text-clay">{s.number}</span>
-                </div>
-                <div className="pt-3">
-                  <h3 className="font-serif text-xl mb-3">{s.title}</h3>
-                  <p className="text-bone/60 leading-relaxed">{s.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Online Sound Baths Explainer */}
-      <section className="py-28 md:py-40 relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            <div>
-              <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">The Rise of Online Sound Baths</span>
-              <h2 className="font-serif text-3xl md:text-4xl font-light mb-8 leading-tight">
-                Felt deeply, even from your desk
-              </h2>
-              <div className="space-y-6 text-muted-foreground leading-relaxed">
-                <p>
-                  Online sound healing is increasingly preferred for corporate wellness because of
-                  the ease of organising, accessibility and time efficiency. Participants can
-                  experience it from their desk, or from bed when working from home.
-                </p>
-                <p>
-                  Sound frequencies enter the ear and alter brain waves, which signal the nervous
-                  system to shift into deep relaxation. Anything we "feel" in the body is often a
-                  configuration in the brain first — and harmonious pure tones create real feelings
-                  of peace and positivity, even when experienced online.
-                </p>
-                <p>
-                  In an Om Shala experience, the crystal singing bowls are tuned to <span className="text-clay">435 Hz</span>
-                  {" "}— the frequency of nature, deeply healing for the mind to sync with.
-                </p>
-              </div>
-            </div>
-
-            <div className="lg:pl-8">
-              <div className="p-8 border border-foreground/10 relative bg-muted/10">
-                <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-clay/30" />
-                <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-clay/30" />
-                <h3 className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">The Setup</h3>
-                <p className="text-foreground/80 leading-relaxed mb-6">
-                  Om Shala uses a high-quality professional sound recording system to transmit the
-                  subtle microtones of the singing bowls with utmost clarity and precision.
-                </p>
-                <p className="text-foreground/80 leading-relaxed">
-                  All you need from your end is a calm ambience and earphones / headphones for your
-                  participants — or a stereo system for a room full of people.
-                </p>
-              </div>
-
-              <div className="mt-8 grid sm:grid-cols-3 gap-4">
-                {formats.map((f) => (
-                  <div key={f.title} className="p-5 border border-foreground/10 text-center">
-                    <f.icon className="w-5 h-5 text-clay mx-auto mb-3" />
-                    <p className="text-xs tracking-[0.15em] uppercase text-foreground/70">{f.title}</p>
-                    <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{f.desc}</p>
-                  </div>
+        {/* Credentials */}
+        <section className="py-24 md:py-32 border-y border-foreground/5">
+          <div className="container mx-auto px-6">
+            <div className="max-w-6xl mx-auto">
+              <Reveal>
+                <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-6">Credentials</span>
+                <h2 className="font-serif text-3xl md:text-4xl font-light max-w-2xl">
+                  Trusted by leaders, founders and global organisations.
+                </h2>
+              </Reveal>
+              <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-px bg-foreground/10">
+                {credentials.map((c, i) => (
+                  <Reveal key={c.label} delay={i * 0.08}>
+                    <div className="bg-background p-8 md:p-10 h-full">
+                      <span className="font-serif text-3xl md:text-4xl font-light text-clay">{c.value}</span>
+                      <p className="mt-4 text-sm text-muted-foreground leading-relaxed">{c.label}</p>
+                    </div>
+                  </Reveal>
                 ))}
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Booking */}
-      <section className="py-28 md:py-40 bg-muted/20 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
-        <div className="container mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">Booking</span>
-            <h2 className="font-serif text-3xl md:text-4xl font-light mb-8">
-              Customised to your organisation
-            </h2>
-            <ul className="text-muted-foreground space-y-3 max-w-xl mx-auto mb-12 text-left">
-              <li className="flex gap-3"><span className="text-clay">·</span> Online or in-person</li>
-              <li className="flex gap-3"><span className="text-clay">·</span> Small teams or large groups</li>
-              <li className="flex gap-3"><span className="text-clay">·</span> One-time sessions or ongoing wellness programs</li>
-              <li className="flex gap-3"><span className="text-clay">·</span> Can be positioned within leadership development or performance optimisation programs</li>
-            </ul>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:omshala.official@gmail.com?subject=Corporate%20Sound%20Healing%20Enquiry"
-                className="group relative inline-flex items-center justify-center gap-2 px-10 py-4 bg-foreground text-background text-sm tracking-wide overflow-hidden transition-all duration-500"
-              >
-                <Mail className="w-4 h-4 relative z-10 group-hover:text-background transition-colors duration-500" />
-                <span className="relative z-10 group-hover:text-background transition-colors duration-500">Request the rate card</span>
-                <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              </a>
-              <a
-                href="https://wa.me/917400361681?text=Hi%20Om%20Shala%2C%20I%27d%20like%20to%20schedule%20a%20consultation%20for%20a%20corporate%20session."
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-10 py-4 border border-foreground/20 text-foreground hover:border-clay hover:text-clay transition-all duration-300"
-              >
-                WhatsApp +91 74003 61681
-              </a>
+        {/* What This Is */}
+        <section className="py-28 md:py-40">
+          <div className="container mx-auto px-6">
+            <div className="max-w-3xl mx-auto">
+              <Reveal>
+                <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-8">What This Is</span>
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-[1.15] mb-10">
+                  A therapeutic experience combining guided breathwork and deep relaxation in a
+                  sound immersion.
+                </h2>
+                <div className="space-y-6 text-lg text-muted-foreground font-light leading-relaxed">
+                  <p>
+                    The mind is the highest human power. A rejuvenated mind is an optimised human
+                    resource — sharper, calmer, more creative and more present.
+                  </p>
+                  <p>
+                    Om Shala helps employees and leaders access this state through ancient sound
+                    practices, delivered with professional clarity for the modern workplace.
+                  </p>
+                </div>
+              </Reveal>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Private Events CTA */}
-      <section ref={ctaRef} className="py-28 md:py-40 relative overflow-hidden">
-        {/* Background gradient like landing page booking section */}
-        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal to-earth/30" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-clay/10 rounded-full blur-[200px] -translate-y-1/2" />
-        
-        {/* Decorative lines */}
-        <div className="absolute top-1/4 left-0 w-32 h-px bg-gradient-to-r from-bone/10 to-transparent" />
-        <div className="absolute bottom-1/4 right-0 w-32 h-px bg-gradient-to-l from-bone/10 to-transparent" />
-        
-        <div className={`container mx-auto px-6 text-center relative z-10 transition-all duration-1000 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">Private Experiences</span>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light mb-6 text-bone">
-            Hosting a private gathering instead?
-          </h2>
-          <div className="w-16 h-px bg-gradient-to-r from-transparent via-clay to-transparent mx-auto mb-8" />
-          <p className="text-bone/60 max-w-xl mx-auto mb-12 text-lg font-light leading-relaxed">
-            From weddings and birthdays to baby showers and Diwali parties — sound healing has
-            become a meaningful way to gather and exhale together.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              to="/events/private" 
-              className="group relative inline-flex items-center justify-center gap-2 px-14 py-5 bg-bone text-charcoal text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-bone/20"
-            >
-              <span className="relative z-10 group-hover:text-bone transition-colors duration-500">Explore Private Events</span>
-              <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 group-hover:text-bone transition-all duration-300" />
-              <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-            </Link>
-            <Link 
-              to="/contact"
-              className="px-10 py-5 border border-bone/30 text-bone hover:bg-bone hover:text-charcoal transition-all duration-300"
-            >
-              Contact Us
-            </Link>
+        {/* Ideal For */}
+        <section className="py-28 md:py-40 bg-muted/10">
+          <div className="container mx-auto px-6">
+            <div className="max-w-6xl mx-auto">
+              <Reveal>
+                <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-6">Ideal For</span>
+                <h2 className="font-serif text-3xl md:text-4xl font-light max-w-xl">
+                  Built for the people inside the building.
+                </h2>
+              </Reveal>
+              <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-foreground/10">
+                {idealFor.map((item, i) => (
+                  <Reveal key={item} delay={i * 0.05}>
+                    <div className="bg-background p-10 h-full flex items-end min-h-[180px]">
+                      <h3 className="font-serif text-2xl md:text-3xl font-light">{item}</h3>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <Footer />
+        {/* Benefits */}
+        <section className="py-28 md:py-40">
+          <div className="container mx-auto px-6">
+            <div className="max-w-6xl mx-auto">
+              <Reveal>
+                <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-6">Benefits</span>
+                <h2 className="font-serif text-3xl md:text-4xl font-light max-w-xl">
+                  What teams take home.
+                </h2>
+              </Reveal>
+              <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                {benefits.map((b, i) => (
+                  <Reveal key={b.label} delay={i * 0.05}>
+                    <div className="group p-8 border border-foreground/10 hover:border-clay/40 transition-colors duration-500 h-full">
+                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-foreground/10 group-hover:border-clay/40 mb-6 transition-colors duration-500">
+                        <b.icon className="w-5 h-5 text-clay" />
+                      </div>
+                      <h3 className="font-serif text-lg font-light leading-snug">{b.label}</h3>
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* How A Session Works — vertical timeline */}
+        <section className="py-28 md:py-40 bg-charcoal text-bone">
+          <div className="container mx-auto px-6">
+            <div className="max-w-3xl mx-auto">
+              <Reveal>
+                <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-6">How A Session Works</span>
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-[1.15] mb-20">
+                  Fully guided. Accessible to everyone.
+                </h2>
+              </Reveal>
+
+              <ol className="relative">
+                <div className="absolute left-6 top-0 bottom-0 w-px bg-bone/10" />
+                {sessionFlow.map((s, i) => (
+                  <Reveal key={s.title} delay={i * 0.08}>
+                    <li className="relative pl-20 pb-16 last:pb-0">
+                      <div className="absolute left-0 top-0 w-12 h-12 rounded-full border border-bone/20 bg-charcoal flex items-center justify-center">
+                        <s.icon className="w-5 h-5 text-clay" />
+                      </div>
+                      <h3 className="font-serif text-2xl md:text-3xl font-light mb-3">{s.title}</h3>
+                      <p className="text-bone/60 leading-relaxed font-light">{s.desc}</p>
+                    </li>
+                  </Reveal>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        {/* Rise of Online Sound Baths */}
+        <section className="py-28 md:py-40">
+          <div className="container mx-auto px-6">
+            <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center max-w-6xl mx-auto">
+              <Reveal>
+                <div>
+                  <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-6">The Rise of Online Sound Baths</span>
+                  <h2 className="font-serif text-3xl md:text-4xl font-light leading-[1.15] mb-10">
+                    Felt deeply, even from a desk.
+                  </h2>
+                  <div className="space-y-6 text-muted-foreground font-light leading-relaxed">
+                    <p>
+                      Online sound healing has become the preferred format for corporate wellness —
+                      easier to organise, more accessible, and beautifully time-efficient.
+                      Participants join from a desk, a couch, or a quiet corner at home.
+                    </p>
+                    <p>
+                      Sound frequencies enter the ear and shift brain waves, which signal the
+                      nervous system into deep relaxation. Anything we feel in the body is often a
+                      configuration in the brain first — and harmonious pure tones create real
+                      feelings of peace and positivity, even when experienced through headphones.
+                    </p>
+                    <p>
+                      In an Om Shala experience, the crystal singing bowls are tuned to{" "}
+                      <span className="text-clay">435 Hz</span> — the frequency of nature, deeply
+                      healing for the mind to sync with.
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+              <Reveal delay={0.15}>
+                <div className="aspect-[4/5] overflow-hidden">
+                  <img
+                    src={corporateImg}
+                    alt=""
+                    loading="lazy"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* The Setup */}
+        <section className="py-28 md:py-40 bg-muted/10">
+          <div className="container mx-auto px-6">
+            <div className="max-w-5xl mx-auto">
+              <Reveal>
+                <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-6 text-center">The Setup</span>
+                <h2 className="font-serif text-3xl md:text-4xl font-light text-center mb-20">
+                  Simple on your end. Crafted on ours.
+                </h2>
+              </Reveal>
+              <div className="grid md:grid-cols-2 gap-px bg-foreground/10">
+                <Reveal>
+                  <div className="bg-background p-10 md:p-14 h-full">
+                    <div className="flex items-center gap-3 mb-8">
+                      <Headphones className="w-5 h-5 text-clay" />
+                      <span className="text-xs tracking-[0.25em] uppercase text-muted-foreground">You Need</span>
+                    </div>
+                    <ul className="space-y-5">
+                      {youNeed.map((i) => (
+                        <li key={i} className="font-serif text-xl font-light">{i}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </Reveal>
+                <Reveal delay={0.1}>
+                  <div className="bg-background p-10 md:p-14 h-full">
+                    <div className="flex items-center gap-3 mb-8">
+                      <Building2 className="w-5 h-5 text-clay" />
+                      <span className="text-xs tracking-[0.25em] uppercase text-muted-foreground">We Provide</span>
+                    </div>
+                    <ul className="space-y-5">
+                      {weProvide.map((i) => (
+                        <li key={i} className="font-serif text-xl font-light text-clay">{i}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </Reveal>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact */}
+        <section className="py-28 md:py-40">
+          <div className="container mx-auto px-6">
+            <div className="max-w-3xl mx-auto text-center">
+              <Reveal>
+                <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-8">Begin</span>
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-[1.15] mb-12">
+                  Interested in bringing Om Shala
+                  <span className="block italic text-clay/90">to your organisation?</span>
+                </h2>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                  <a
+                    href="mailto:omshala.official@gmail.com?subject=Corporate%20Sound%20Healing%20Enquiry"
+                    className="group inline-flex items-center gap-3 px-10 py-5 bg-foreground text-background text-sm tracking-[0.15em] uppercase relative overflow-hidden"
+                  >
+                    <Mail className="w-4 h-4 relative z-10" />
+                    <span className="relative z-10">Email Us</span>
+                    <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                  </a>
+                  <a
+                    href="https://wa.me/917400361681"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 px-10 py-5 border border-foreground/20 text-foreground text-sm tracking-[0.15em] uppercase hover:border-clay hover:text-clay transition-colors duration-300"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    WhatsApp
+                  </a>
+                </div>
+                <p className="mt-10 text-sm text-muted-foreground">
+                  omshala.official@gmail.com · +91 74003 61681
+                </p>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        <Footer />
       </div>
     </PageTransition>
   );
 };
 
-export default EventsPublic;
+export default EventsCorporate;
