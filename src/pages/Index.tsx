@@ -1,14 +1,11 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import ShrutikaIntro from "@/components/ShrutikaIntro";
+import CredentialsSection from "@/components/CredentialsSection";
+import ExperienceSplit from "@/components/ExperienceSplit";
 import PhilosophySection from "@/components/PhilosophySection";
-import PracticesSection from "@/components/PracticesSection";
-import ExpectSection from "@/components/ExpectSection";
-import GuideSection from "@/components/GuideSection";
-import TestimonialSection from "@/components/TestimonialSection";
-import BookingSection from "@/components/BookingSection";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
-import StatsStrip from "@/components/StatsStrip";
 
 const Index = () => {
   return (
@@ -17,13 +14,10 @@ const Index = () => {
         <Header />
         <main>
           <HeroSection />
+          <ShrutikaIntro />
+          <CredentialsSection />
+          <ExperienceSplit />
           <PhilosophySection />
-          <StatsStrip />
-          <PracticesSection />
-          <ExpectSection />
-          <GuideSection />
-          <TestimonialSection />
-          <BookingSection />
         </main>
         <Footer />
       </div>
