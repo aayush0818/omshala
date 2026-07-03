@@ -1,104 +1,102 @@
-# Om Shala — Gateway Redesign Plan
+# Om Shala — Two-Journey Restructure
 
-Restructure the site from a single-scroll brochure into a gateway experience that routes visitors into one of two distinct journeys (Corporate or Private). Keep the existing brand identity, motion system, and signature interactions intact.
+Keep the existing design system (palette, typography, ambient background, cursor glow, breath companion, sound bowl, page transitions, reveal animations). Only the information architecture and navigation change so Corporate and Private feel like two dedicated sites under one brand.
 
-## 1. Site structure & navigation
+## 1. Route structure
 
-**Remove pages/routes:**
-- `src/pages/Schedule.tsx` (delete file + route in `App.tsx`)
-- `src/components/BookingSection.tsx` (delete, remove imports)
-- Any "Practices" remnants
+Move to prefixed routes so the URL itself carries the experience context.
 
-**Final routes:** `/`, `/about`, `/events/corporate`, `/events/private`, `/contact`
+```text
+/                        Landing (both journeys meet here only)
+/about                   Shared About (renders inside whichever context the visitor came from)
+/corporate               Corporate experience page
+/corporate/contact       Contact — Corporate context
+/private                 Private experience page
+/private/contact         Contact — Private context
+```
 
-**`src/components/Header.tsx`:**
-- Nav: About · Corporate · Private · Contact (flat, no dropdown)
-- Remove the "Book" CTA button entirely
-- Mirror in the mobile menu
+Redirects to keep old links alive: `/events/corporate` → `/corporate`, `/events/private` → `/private`, `/contact` → `/` (visitor must pick a journey first).
 
-## 2. Homepage rebuild (`src/pages/Index.tsx`)
+## 2. Experience context
 
-New order — nothing else:
-1. Hero
-2. Shrutika intro
-3. Credentials
-4. Experience Split (centerpiece)
-5. Philosophy
-6. Footer
+A tiny `ExperienceContext` (`"landing" | "corporate" | "private"`) derived from the URL prefix, with a `sessionStorage` fallback so `/about` remembers where the visitor came from. Clicking a panel on the landing page writes the choice to sessionStorage and navigates to `/corporate` or `/private`.
 
-Remove from homepage: `StatsStrip`, `PracticesSection`, `ExpectSection`, `TestimonialSection`, `BookingSection`, `GuideSection` (becomes part of new Shrutika section).
+## 3. Navigation (context-aware `Header.tsx`)
 
-### New / updated components
+Header reads the context and renders one of three nav sets. No experience ever links to the other.
 
-- **`HeroSection.tsx`** — rewrite for cinematic calm. Single headline "Sound Healing Experiences for Work & Life", one sub-line, single CTA "Explore Experiences" that smooth-scrolls to `#experience-split`. Remove the second button and "Begin a session".
-- **`ShrutikaIntro.tsx`** (new) — large portrait left, editorial copy right, subtle "Read more →" link to `/about`. Uses existing About copy verbatim.
-- **`CredentialsSection.tsx`** (new) — two tiers:
-  - Tier 1: four large stat blocks (12+ years, 1000+ largest event, International clients, Founder of Bombay's first dedicated sound healing studio)
-  - Tier 2: editorial hairline-divided list (Spotify × Universal Music, Royal Family sessions, Late G.P. Hinduja, Health Minister of Goa, international online clients)
-- **`ExperienceSplit.tsx`** (new) — full-viewport, 50/50 panels (Corporate left, Private right). Each panel: immersive image, title, short description, "Explore →", entire panel is a `<Link>`. Hover: hovered side expands to ~60%, opposite contracts to ~40%, image scales ~1.05, brightness lifts subtly, text shifts up. All transitions ~700ms ease-out. Respects `prefers-reduced-motion`.
-- **`PhilosophySection.tsx`** — keep copy, scale type up, add whitespace.
+- **Landing**: Logo · About
+- **Corporate**: Logo · About · Corporate · Contact
+- **Private**: Logo · About · Private · Contact
 
-## 3. About page (`src/pages/About.tsx`)
+Footer follows the same rule (Landing footer is minimal; Corporate/Private footers only reference their own contact + About).
 
-Strip any promotional/booking content. Pure narrative about Shrutika: journey, Nada Yoga, Indian Classical Music, meditation, personal philosophy, founding Om Shala. Large portrait, editorial layout, minimal motion. No pricing, no schedule, no CTAs beyond a quiet contact link.
+## 4. Landing page (`Index.tsx`) — trim to the essentials
 
-## 4. Corporate page (`src/pages/EventsPublic.tsx` → rename intent to "Corporate")
+Final section order, everything else removed:
 
-Rebuild with these sections in order:
-1. **Hero** — "Deep Relaxation for High Performance Teams", large professional image, minimal copy
-2. **Credentials** — visual treatment of corporate credentials (not paragraphs)
-3. **What This Is** — provided copy, typographic only
-4. **Ideal For** — six cards: Leadership Teams, Decision Makers, High Pressure Teams, Employee Wellbeing, Retention, Offsites
-5. **Benefits** — seven icon cards (lucide icons): Reduce Stress, Prevent Burnout, Improve Focus, Increase Creativity, Support Emotional Regulation, Relax the Nervous System, Strengthen Workplace Wellbeing
-6. **How A Session Works** — vertical timeline: Breathwork → Guided Relaxation → Crystal Singing Bowls → Live Indian Classical Voice → Deep Relaxation, each with short explanation
-7. **The Rise of Online Sound Baths** — split layout, copy left, calming visual right, broken into digestible editorial blocks
-8. **The Setup** — two-column comparison: "You Need" (Quiet Space, Headphones, Comfortable Seating) vs "We Provide" (Professional Recording, Crystal Singing Bowls, Guided Experience, Live Voice)
-9. **Contact block** — Email + WhatsApp only, no form
+1. Hero — cinematic, brand-only, no Corporate/Private mention
+2. ShrutikaIntro — existing copy, editorial layout
+3. CredentialsSection — supplied credentials, editorial grouping
+4. ExperienceSplit — becomes the centrepiece under a large "Choose Your Experience" heading; entire panels clickable (no buttons), subtle hover (zoom, brightness, expansion); clicking writes context + navigates
+5. PhilosophySection — Nada Yoga content verbatim, large typography
+6. Footer (landing variant)
 
-## 5. Private page (`src/pages/EventsPrivate.tsx`)
+Anything not in that list is removed from the homepage (no schedule, no bookings, no practice previews, no corporate/private detail).
 
-Warmer, more emotional tone:
-1. **Hero** — "Meaningful Sound Healing for Life's Special Moments", warm photography
-2. **Introduction** — provided copy, improved layout
-3. **The Experience** — vertical journey: Arrive → Breath → Relaxation → Crystal Singing Bowls → Live Ragas → Deep Connection
-4. **Occasions** — six cards: Wedding, Birthday, Baby Shower, Women's Forum, Festive Gathering, Private Celebration
-5. **Atmosphere** — image gallery (candles, blankets, mats, flowers)
-6. **Closing** — "Let's create something unforgettable", Email + WhatsApp
+## 5. Corporate page (`/corporate`)
 
-## 6. Contact page (`src/pages/Contact.tsx`)
+Uses only supplied Corporate content. Sections, in order:
 
-Reduce to Email, WhatsApp, Location (Bandra West, Mumbai). Either drop the form entirely or keep a single minimal block (name + message). Remove map clutter and any fictional hours.
+1. Hero — "Deep Relaxation for High Performance Teams" + supplied supporting paragraph, executive/retreat imagery
+2. Credentials (corporate-only subset)
+3. What This Is — "Sound Baths for Corporate Wellness" verbatim, more whitespace
+4. Ideal For — 6 elegant cards (Leadership teams, Decision-makers, High-performance teams, Employee wellbeing, Retention, Corporate retreats)
+5. Benefits — one visual block per supplied benefit
+6. How A Session Works — vertical journey: Breathwork → Guided Relaxation → Crystal Singing Bowls → Optional Live Ragas
+7. The Rise of Online Sound Baths — split into distinct editorial sub-sections: Why online works · Brain waves · 435Hz · Professional recording system · Setup requirements (all supplied text preserved)
+8. Setup — two columns: From Your Side / From Om Shala
+9. Contact block linking to `/corporate/contact`
 
-## 7. Footer (`src/components/Footer.tsx`)
+No Private references anywhere on the page or footer.
 
-Remove any large booking banner / CTA. Keep enso mark, contact essentials, socials (if present). Quiet and minimal.
+## 6. Private page (`/private`)
 
-## 8. Motion & visuals
+Uses only supplied Private Events content.
 
-- Keep `AmbientBackground`, `CursorGlow`, `BreathCompanion`, `SoundBowl`, `PageTransition`, `Reveal`, `ScrollProgress`.
-- All new hover/transitions: 600–800ms ease-out, subtle scale (≤1.05), no harsh movement.
-- Wrap new motion in `useReducedMotion` check / `motion-reduce:` Tailwind variants.
+1. Hero — warm, emotional imagery (candles, bowls, people), supplied headline
+2. Introduction — supplied intro verbatim, editorial typography
+3. The Experience — guided vertical journey: Arrival · Breath · Relaxation · Crystal Singing Bowls · Live Ragas · Connection
+4. Atmosphere — pillows, blankets, lighting, aromas, 435Hz, live ragas, with immersive imagery
+5. Occasions — visual grid: Weddings · Birthdays · Baby Showers · Women's Forums · Festive Gatherings
+6. Contact block linking to `/private/contact`
 
-## 9. Images needed
+No corporate terminology anywhere.
 
-Generate (or wire placeholders for) the following with `imagegen` at the appropriate moment:
-- Corporate panel image (calm executive setting)
-- Private panel image (candles, blankets, warm gathering)
-- Shrutika portrait placeholder (if no asset exists)
-- Atmosphere gallery for Private page (3–4 warm images)
-- Calming visual for "Rise of Online Sound Baths"
+## 7. Contact pages
 
-## 10. Cleanup checklist
+Two thin variants of the existing minimal Contact (email + WhatsApp + location, no forms):
 
-- Delete `Schedule.tsx`, `BookingSection.tsx`, any practice-page residue
-- Remove all `/schedule` and `#booking` links across components (Header, Footer, Hero, etc.)
-- Remove `StatsStrip`, `TestimonialSection`, `ExpectSection`, `GuideSection`, `PracticesSection` imports from Index
-- Verify no broken routes or dead links
+- `/corporate/contact` — Corporate header + footer, corporate-toned intro line
+- `/private/contact` — Private header + footer, warmer intro line
 
-## Technical notes
+## 8. About (`/about`)
 
-- Files created: `ShrutikaIntro.tsx`, `CredentialsSection.tsx`, `ExperienceSplit.tsx`, plus Corporate/Private subcomponents inline.
-- Files deleted: `src/pages/Schedule.tsx`, `src/components/BookingSection.tsx`.
-- Files edited: `App.tsx`, `Header.tsx`, `HeroSection.tsx`, `PhilosophySection.tsx`, `Footer.tsx`, `Index.tsx`, `About.tsx`, `Contact.tsx`, `EventsPublic.tsx`, `EventsPrivate.tsx`.
-- Keep `framer-motion` for the split-panel hover and existing transitions.
-- No business logic / backend changes.
+Shared page, unchanged content focus (Shrutika: Meditation Teacher, Indian Classical Singer, Nada Yoga practitioner, founder of Om Shala). Renders inside whichever context the visitor arrived from (via `ExperienceContext` fallback to sessionStorage; defaults to landing nav if opened cold).
+
+## 9. Design system
+
+No visual redesign. All motion primitives (`AmbientBackground`, `CursorGlow`, `BreathCompanion`, `SoundBowl`, `PageTransition`, `Reveal`, `ScrollProgress`) stay exactly as they are. Only layouts and section composition change.
+
+## Technical details
+
+- New `src/context/ExperienceContext.tsx` — hook + provider; derives value from `useLocation().pathname`, seeds/reads `sessionStorage("omshala.experience")` for `/about`.
+- `src/App.tsx` — add nested routes for `/corporate`, `/corporate/contact`, `/private`, `/private/contact`; add redirects for legacy `/events/*` and `/contact`; wrap routes with `ExperienceProvider`.
+- `src/components/Header.tsx` — read context, render one of three nav sets; remove any hard-coded Corporate/Private/Contact links from the Landing variant.
+- `src/components/Footer.tsx` — same context-driven variants.
+- `src/components/ExperienceSplit.tsx` — panels become full clickable `<Link>`s that also write the sessionStorage key; remove any inner buttons; refine hover (subtle scale + brightness).
+- `src/pages/Index.tsx` — remove any sections outside the six listed above; add the "Choose Your Experience" heading above `ExperienceSplit`.
+- `src/pages/EventsPublic.tsx` (Corporate) — restructure into the 9 sections above using existing supplied copy; split the "Rise of Online Sound Baths" block into sub-sections.
+- `src/pages/EventsPrivate.tsx` — restructure into the 6 sections above.
+- `src/pages/Contact.tsx` — split into `ContactCorporate.tsx` and `ContactPrivate.tsx` (or a single component that branches on context) and wire the new routes.
+- No new dependencies, no schema/backend changes, no changes to the MCP server.
