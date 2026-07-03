@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   Activity, Brain, Focus, Heart, Sparkles, Users, Building2,
-  Mail, MessageCircle, Headphones, Volume2, Mic2, Wind, Moon,
+  MessageCircle, Headphones, Volume2, Mic2, Wind, Moon, ArrowRight,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -308,14 +309,14 @@ const EventsCorporate = () => {
                   <span className="block italic text-clay/90">to your organisation?</span>
                 </h2>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                  <a
-                    href="mailto:omshala.official@gmail.com?subject=Corporate%20Sound%20Healing%20Enquiry"
+                  <Link
+                    to="/corporate/contact"
                     className="group inline-flex items-center gap-3 px-10 py-5 bg-foreground text-background text-sm tracking-[0.15em] uppercase relative overflow-hidden"
                   >
-                    <Mail className="w-4 h-4 relative z-10" />
-                    <span className="relative z-10">Email Us</span>
+                    <span className="relative z-10">Get In Touch</span>
+                    <ArrowRight className="w-4 h-4 relative z-10" />
                     <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
-                  </a>
+                  </Link>
                   <a
                     href="https://wa.me/917400361681"
                     target="_blank"
