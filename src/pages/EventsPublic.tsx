@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Activity, Brain, Focus, Heart, Sparkles, Users, Building2,
-  Mail, MessageCircle, Headphones, Volume2, Mic2, Wind, Moon, ArrowRight,
+  MessageCircle, Headphones, Volume2, Mic2, Wind, Moon, ArrowRight,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
