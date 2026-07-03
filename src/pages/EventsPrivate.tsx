@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Mail, MessageCircle, Heart, Cake, Baby, Users, Sparkles, PartyPopper, ArrowRight } from "lucide-react";
+import { MessageCircle, Heart, Cake, Baby, Users, Sparkles, PartyPopper, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
