@@ -4,10 +4,36 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import Reveal from "@/components/Reveal";
+import { useExperience } from "@/context/experience";
 
 const Contact = () => {
   const [loaded, setLoaded] = useState(false);
   useEffect(() => setLoaded(true), []);
+  const experience = useExperience();
+
+  const intro =
+    experience === "corporate"
+      ? {
+          eyebrow: "Corporate Enquiries",
+          heading: "Bring Om Shala to your team.",
+          copy: "Share a little about your organisation and the moment you have in mind. We'll respond personally within a day.",
+          subject: "Corporate Sound Healing Enquiry",
+        }
+      : experience === "private"
+      ? {
+          eyebrow: "Private Enquiries",
+          heading: "Let's design your gathering.",
+          copy: "Tell us about the occasion, the room and the people. We'll take it from there — usually within a day.",
+          subject: "Private Event Enquiry",
+        }
+      : {
+          eyebrow: "Contact",
+          heading: "Get in touch.",
+          copy: "We respond personally, usually within a day. WhatsApp is the fastest way to reach us.",
+          subject: "Enquiry",
+        };
+
+  const mailto = `mailto:omshala.official@gmail.com?subject=${encodeURIComponent(intro.subject)}`;
 
   return (
     <PageTransition>
@@ -18,18 +44,18 @@ const Contact = () => {
           <div className="container mx-auto px-6">
             <div className="max-w-4xl">
               <div className={`w-px h-16 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-10 transition-opacity duration-1000 ${loaded ? 'opacity-100' : 'opacity-0'}`} />
-              <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-8">Contact</span>
+              <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-8">{intro.eyebrow}</span>
               <h1 className={`font-serif text-5xl md:text-6xl lg:text-7xl font-light leading-[1.05] transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-                Get in touch.
+                {intro.heading}
               </h1>
               <p className={`mt-10 text-xl text-muted-foreground font-light leading-relaxed max-w-2xl transition-all duration-1000 delay-200 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-                We respond personally, usually within a day. WhatsApp is the fastest way to reach us.
+                {intro.copy}
               </p>
 
               <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-px bg-foreground/10 max-w-4xl">
                 <Reveal>
                   <a
-                    href="mailto:omshala.official@gmail.com"
+                    href={mailto}
                     className="group block bg-background p-10 h-full hover:bg-muted/20 transition-colors duration-500"
                   >
                     <Mail className="w-5 h-5 text-clay mb-8" />
