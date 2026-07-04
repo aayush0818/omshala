@@ -1,102 +1,133 @@
-# Om Shala — Two-Journey Restructure
+# Editorial Restructure — Corporate & Private Pages
 
-Keep the existing design system (palette, typography, ambient background, cursor glow, breath companion, sound bowl, page transitions, reveal animations). Only the information architecture and navigation change so Corporate and Private feel like two dedicated sites under one brand.
+A content + design blueprint. No copy is rewritten. Existing Om Shala design language (palette, typography, ambient background, breath/bowl, page transitions, Reveal animations, spacing philosophy) is preserved. Only the structure, rhythm, hierarchy, imagery, and section pacing change.
 
-## 1. Route structure
+Corporate should feel informative and authoritative.
+Private should feel emotional and immersive.
 
-Move to prefixed routes so the URL itself carries the experience context.
+---
 
-```text
-/                        Landing (both journeys meet here only)
-/about                   Shared About (renders inside whichever context the visitor came from)
-/corporate               Corporate experience page
-/corporate/contact       Contact — Corporate context
-/private                 Private experience page
-/private/contact         Contact — Private context
-```
+## CORPORATE — `src/pages/EventsPublic.tsx`
 
-Redirects to keep old links alive: `/events/corporate` → `/corporate`, `/events/private` → `/private`, `/contact` → `/` (visitor must pick a journey first).
+### 1. Hero — full-screen editorial
+- **Heading:** *Deep Relaxation for High-Performance Teams*
+- **Body:** *Therapeutic sound immersions known as Sound Baths, designed to reduce mental fatigue, improve focus, and support emotional resilience in the workplace. The Mind, is the highest human power and a rejuvenated mind is an optimised human resource.*
+- **CTA:** *Enquire for Corporate Sessions* → `/corporate/contact`
+- **Design:** Full viewport. Large immersive corporate-wellness photograph (leadership retreat / premium meeting space — not meditation posture). Minimal typography, generous whitespace. No floating cards, no auxiliary graphics.
 
-## 2. Experience context
+### 2. Credentials — editorial magazine grid
+- **Content (verbatim):**
+  - 12+ years of experience in the Mindfulness Industry
+  - Founder of Om Shala, the first studio in Bombay dedicated to Sound Healing
+  - Spotify meditations in collaboration with Universal Music
+  - Sessions conducted for members of the Royal Family in Dubai & Saudi Arabia
+  - Private sessions for the Late G. P. Hinduja in London
+  - Private sessions for the Health Minister of Goa
+  - Large-scale event for 1,000+ participants (Rotary Club, Vapi)
+  - International online clients across US, Europe & Madagascar
+- **Design:** Asymmetric editorial grid. Varied type sizes and weights — *Royal Family*, *Universal Music*, and *12+ Years* set largest as headline moments. Others sit at a smaller editorial size. Hairline dividers instead of boxes. No bullets, no icons, no cards.
 
-A tiny `ExperienceContext` (`"landing" | "corporate" | "private"`) derived from the URL prefix, with a `sessionStorage` fallback so `/about` remembers where the visitor came from. Clicking a panel on the landing page writes the choice to sessionStorage and navigates to `/corporate` or `/private`.
+### 3. What This Is — two-column education
+- **Heading:** *Sound Baths for Corporate Wellness*
+- **Body (verbatim):** *A therapeutic experience that combines guided breathwork and deep relaxation techniques in a sound immersion, to help employees and leaders rejuvenate mentally and access more presence and productivity. Available online, onsite and for offsite events & retreats.*
+- **Ideal For (verbatim):**
+  - Leadership teams and decision-makers
+  - High-performance teams under constant pressure
+  - Organisations prioritising employee wellbeing and retention
+- **Design:** Two columns. Text one side, full-height photograph the other. "Ideal For" sits beneath the text column with a small eyebrow and clean typographic list — no icons, no illustrations, no pills.
 
-## 3. Navigation (context-aware `Header.tsx`)
+### 4. Benefits — Apple-style manifesto
+- **Content (verbatim, one per block):**
+  - Reduces stress and prevents burnout
+  - Improves focus, clarity, and creativity
+  - Enhances emotional regulation under pressure
+  - Relaxes the nervous system
+  - Increases overall workplace wellbeing
+  - Builds a calmer, more resilient team environment
+- **Design:** Six vertically stacked blocks. Large serif type. Thin hairline divider between each. Deep vertical padding. No icons, no cards, no columns.
 
-Header reads the context and renders one of three nav sets. No experience ever links to the other.
+### 5. How A Session Works — vertical journey
+- **Intro (verbatim):** *Each session is fully guided and designed to be accessible—even for those new to meditation.*
+- **Steps (verbatim):**
+  - Gentle breathwork to settle the nervous system
+  - Guided relaxation to release mental and physical tension
+  - Sound immersion using crystal singing bowls that align brain waves
+  - Optional vocal elements such as live Indian Classical ragas or mantras when suitable
+- **Design:** Each step occupies close to a full screen. Large supporting photograph beside every step (bowls, breath, hands, room). Serif step title, single line of copy. A thin vertical rule ties the sequence together. No bullets.
 
-- **Landing**: Logo · About
-- **Corporate**: Logo · About · Corporate · Contact
-- **Private**: Logo · About · Private · Contact
+### 6. The Rise of Online Sound Baths — five chapters
+Largest section on the page. Split from a single block into five editorial chapters, alternating image-left / image-right in the existing Om Shala rhythm.
 
-Footer follows the same rule (Landing footer is minimal; Corporate/Private footers only reference their own contact + About).
+- **Chapter 1 — *The Rise of Online Sound Baths*** — first paragraph of the existing copy.
+- **Chapter 2 — *How can we feel the effects of sound online?*** — brain-wave explanation paragraph.
+- **Chapter 3 — *435 Hz*** — the frequency paragraph. Oversized display treatment of "435 Hz", crystal-bowl close-up.
+- **Chapter 4 — *Tone*** — the phone-call tone-of-voice paragraph.
+- **Chapter 5 — *The Setup*** — the "Om Shala uses a high quality professional sound recording system..." and "All you need..." paragraphs, verbatim.
 
-## 4. Landing page (`Index.tsx`) — trim to the essentials
+### 7. Contact — elegant close
+- **Content (verbatim):** *Sessions can be customised based on your organisation's needs:*
+  - Online or in-person
+  - Small teams or large groups
+  - One-time sessions or ongoing programs
+  - Leadership development
+  - Performance optimisation
+- **Line beneath:** *Request the rate card or schedule a consultation*
+- **Actions:** Email · WhatsApp
+- **Design:** Simple, centered, generous whitespace. No large CTA button, no booking widget, no pricing cards.
 
-Final section order, everything else removed:
+---
 
-1. Hero — cinematic, brand-only, no Corporate/Private mention
-2. ShrutikaIntro — existing copy, editorial layout
-3. CredentialsSection — supplied credentials, editorial grouping
-4. ExperienceSplit — becomes the centrepiece under a large "Choose Your Experience" heading; entire panels clickable (no buttons), subtle hover (zoom, brightness, expansion); clicking writes context + navigates
-5. PhilosophySection — Nada Yoga content verbatim, large typography
-6. Footer (landing variant)
+## PRIVATE — `src/pages/EventsPrivate.tsx`
 
-Anything not in that list is removed from the homepage (no schedule, no bookings, no practice previews, no corporate/private detail).
+Warmer imagery. More breathing room. Less information density.
 
-## 5. Corporate page (`/corporate`)
+### 1. Hero — intimate
+- **Content:** Hero introducing private sound healing experiences.
+- **Design:** Warm lighting. Crystal bowls, candles, blankets, people together. Very intimate. Minimal type overlaid low; no CTA button.
 
-Uses only supplied Corporate content. Sections, in order:
+### 2. Introduction — journal-like
+- **Content (verbatim):** *More and more people are opting for a mindful way to celebrate…* through *…It is a deeply soulful relaxation and a truly memorable way to celebrate a special day, occasion or milestone.*
+- **Design:** Large serif typography. Comfortable reading width (~680px). Occupies close to a full screen. Feels like reading a personal journal.
 
-1. Hero — "Deep Relaxation for High Performance Teams" + supplied supporting paragraph, executive/retreat imagery
-2. Credentials (corporate-only subset)
-3. What This Is — "Sound Baths for Corporate Wellness" verbatim, more whitespace
-4. Ideal For — 6 elegant cards (Leadership teams, Decision-makers, High-performance teams, Employee wellbeing, Retention, Corporate retreats)
-5. Benefits — one visual block per supplied benefit
-6. How A Session Works — vertical journey: Breathwork → Guided Relaxation → Crystal Singing Bowls → Optional Live Ragas
-7. The Rise of Online Sound Baths — split into distinct editorial sub-sections: Why online works · Brain waves · 435Hz · Professional recording system · Setup requirements (all supplied text preserved)
-8. Setup — two columns: From Your Side / From Om Shala
-9. Contact block linking to `/corporate/contact`
+### 3. The Experience — sensory chapters
+Each supplied paragraph becomes its own section with accompanying imagery. No wall of text.
+- Section A: *Sound healing can be experienced seated or laying down…* — image.
+- Section B: *Participants are guided through deep breathing…* — image.
+- Section C: *Crystal Singing Bowls…* + *435Hz…* — image.
+- Section D: *Indian Classical Ragas…* — image.
+- Section E: *Soothing aromas… Soft lighting… Pillows… Blankets…* — image.
 
-No Private references anywhere on the page or footer.
+### 4. Atmosphere — imagery-led
+- **Content:** Uses the same atmospheric paragraphs (aromas, lighting, blankets, pillows) that already sit in section 3E — quietly reprised.
+- **Design:** Very little text. Large edge-to-edge gallery: close-ups of bowls, candles, blankets, hands, people relaxing. Imagery carries the section.
 
-## 6. Private page (`/private`)
+### 5. Events Hosted — editorial collage
+- **Content (verbatim):** *Om Shala has organised beautiful sound healing experiences for:*
+  - Weddings
+  - Birthdays
+  - Diwali Parties
+  - Women's Forums
+  - Baby Showers
+- **Design:** Not a list. Editorial collage / mosaic with varied tile sizes, each occasion paired with premium imagery and a single serif label. No descriptions.
 
-Uses only supplied Private Events content.
+### 6. Contact — elegant finish
+- **Content (verbatim):** *Let's discuss how we can organise one for you.* · Call *+91 7400361681* · Email beneath.
+- **Design:** Centered. Very minimal. Large whitespace.
 
-1. Hero — warm, emotional imagery (candles, bowls, people), supplied headline
-2. Introduction — supplied intro verbatim, editorial typography
-3. The Experience — guided vertical journey: Arrival · Breath · Relaxation · Crystal Singing Bowls · Live Ragas · Connection
-4. Atmosphere — pillows, blankets, lighting, aromas, 435Hz, live ragas, with immersive imagery
-5. Occasions — visual grid: Weddings · Birthdays · Baby Showers · Women's Forums · Festive Gatherings
-6. Contact block linking to `/private/contact`
+---
 
-No corporate terminology anywhere.
+## Overall design principles (both pages)
 
-## 7. Contact pages
+- Keep current fonts, colours, animations, spacing philosophy, ambient background, breath companion, sound bowl, page transitions, and Reveal timing.
+- Larger photography throughout.
+- Break long paragraphs into multiple editorial sections without changing a single word.
+- Let imagery and whitespace create rhythm — no unnecessary cards, icons, or graphics.
+- Corporate rhythm: hero → trust → education → benefits → process → chaptered depth → contact.
+- Private rhythm: hero → emotion → sensory journey → atmosphere → occasions → contact.
+- Every section should flow naturally into the next so each page reads as a curated editorial experience.
 
-Two thin variants of the existing minimal Contact (email + WhatsApp + location, no forms):
+## Imagery to source
 
-- `/corporate/contact` — Corporate header + footer, corporate-toned intro line
-- `/private/contact` — Private header + footer, warmer intro line
+Corporate: hero (executive wellness setting), what-this-is (full-height column image), five images for the session-journey steps, 435 Hz crystal bowl close-up, tone/setup supporting shots.
 
-## 8. About (`/about`)
-
-Shared page, unchanged content focus (Shrutika: Meditation Teacher, Indian Classical Singer, Nada Yoga practitioner, founder of Om Shala). Renders inside whichever context the visitor arrived from (via `ExperienceContext` fallback to sessionStorage; defaults to landing nav if opened cold).
-
-## 9. Design system
-
-No visual redesign. All motion primitives (`AmbientBackground`, `CursorGlow`, `BreathCompanion`, `SoundBowl`, `PageTransition`, `Reveal`, `ScrollProgress`) stay exactly as they are. Only layouts and section composition change.
-
-## Technical details
-
-- New `src/context/ExperienceContext.tsx` — hook + provider; derives value from `useLocation().pathname`, seeds/reads `sessionStorage("omshala.experience")` for `/about`.
-- `src/App.tsx` — add nested routes for `/corporate`, `/corporate/contact`, `/private`, `/private/contact`; add redirects for legacy `/events/*` and `/contact`; wrap routes with `ExperienceProvider`.
-- `src/components/Header.tsx` — read context, render one of three nav sets; remove any hard-coded Corporate/Private/Contact links from the Landing variant.
-- `src/components/Footer.tsx` — same context-driven variants.
-- `src/components/ExperienceSplit.tsx` — panels become full clickable `<Link>`s that also write the sessionStorage key; remove any inner buttons; refine hover (subtle scale + brightness).
-- `src/pages/Index.tsx` — remove any sections outside the six listed above; add the "Choose Your Experience" heading above `ExperienceSplit`.
-- `src/pages/EventsPublic.tsx` (Corporate) — restructure into the 9 sections above using existing supplied copy; split the "Rise of Online Sound Baths" block into sub-sections.
-- `src/pages/EventsPrivate.tsx` — restructure into the 6 sections above.
-- `src/pages/Contact.tsx` — split into `ContactCorporate.tsx` and `ContactPrivate.tsx` (or a single component that branches on context) and wire the new routes.
-- No new dependencies, no schema/backend changes, no changes to the MCP server.
+Private: hero (candlelit intimate gathering), five sensory-chapter images, atmosphere gallery set (bowls, candles, blankets, hands, people), five occasion tiles (weddings, birthdays, Diwali, women's forums, baby showers).
