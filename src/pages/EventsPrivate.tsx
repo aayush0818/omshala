@@ -330,13 +330,14 @@ const EventsPrivate = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-28 md:py-40 bg-earth text-bone relative overflow-hidden">
+      <section id="enquire" className="py-28 md:py-40 bg-earth text-bone relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-earth via-earth to-charcoal/50" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-clay/10 rounded-full blur-[150px] animate-pulse-soft" />
         
         <div className="container mx-auto px-6 text-center relative z-10">
+          <span className="text-[10px] tracking-[0.35em] uppercase text-bone/60 mb-6 block">Enquire</span>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light mb-6">
-            Let's Create Something Beautiful
+            Let's create something beautiful.
           </h2>
           <p className="text-bone/70 max-w-xl mx-auto mb-10 text-lg">
             Every private experience begins with a conversation. Tell us your vision, 
@@ -354,10 +355,10 @@ const EventsPrivate = () => {
               <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
             </a>
             <Link 
-              to="/events/public" 
+              to="/contact" 
               className="inline-flex items-center justify-center gap-2 px-10 py-4 border border-bone/30 text-bone hover:bg-bone hover:text-charcoal transition-all duration-300"
             >
-              Corporate Events
+              Send an enquiry
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
