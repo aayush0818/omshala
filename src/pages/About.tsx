@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Wind, Volume2, Moon, Heart, Award, BookOpen } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
-import useScrollAnimation from "@/hooks/useScrollAnimation";
+import Reveal from "@/components/Reveal";
 import guidePortrait from "@/assets/guide-portrait.jpg";
-import abstractZen from "@/assets/abstract-zen.jpg";
 import heroBowl from "@/assets/hero-bowl.jpg";
 
 const philosophyPillars = [
