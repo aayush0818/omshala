@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   
@@ -21,12 +23,19 @@ const Footer = () => {
           </div>
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex flex-col items-center md:items-start gap-2">
-              <span className="font-serif text-xl tracking-tight text-foreground hover:text-clay transition-colors duration-300 cursor-pointer">
-                OmShala
-              </span>
+              <Link to="/" className="font-serif text-sm tracking-[0.35em] uppercase text-foreground hover:text-clay transition-colors duration-300">
+                Om Shala
+              </Link>
               <span className="text-xs text-muted-foreground/50">
                 Sound · Breath · Stillness
               </span>
+            </div>
+
+            <div className="flex items-center gap-6 text-xs tracking-[0.2em] uppercase text-muted-foreground/70">
+              <Link to="/about" className="hover:text-clay transition-colors">About</Link>
+              <Link to="/corporate" className="hover:text-clay transition-colors">Corporate</Link>
+              <Link to="/private" className="hover:text-clay transition-colors">Private</Link>
+              <Link to="/contact" className="hover:text-clay transition-colors">Contact</Link>
             </div>
             
             <div className="flex flex-col items-center gap-2 text-xs text-muted-foreground/70">
@@ -37,15 +46,10 @@ const Footer = () => {
                 WhatsApp +91 74003 61681
               </a>
             </div>
-            
-            <div className="flex flex-col items-center md:items-end gap-2">
-              <span className="text-xs text-muted-foreground/50">
-                Bandra West, Mumbai
-              </span>
-              <span className="text-xs text-muted-foreground/40">
-                © {currentYear} Om Shala
-              </span>
-            </div>
+          </div>
+          <div className="mt-10 pt-6 border-t border-border/20 flex flex-col md:flex-row items-center justify-between gap-2 text-[10px] tracking-[0.3em] uppercase text-muted-foreground/50">
+            <span>Bandra West, Mumbai</span>
+            <span>© {currentYear} Om Shala</span>
           </div>
         </div>
       </div>
