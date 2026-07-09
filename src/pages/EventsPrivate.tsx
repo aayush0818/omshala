@@ -13,7 +13,7 @@ const privateOfferings = [
     title: "Weddings",
     tagline: "A soulful pause amid celebration",
     description: "An intimate sound healing ceremony for the bride, groom and inner circle — a moment of stillness and shared breath before or between the festivities. Crystal singing bowls and live ragas create a memory that stays with everyone present.",
-    features: ["Tuned to 435 Hz", "Live Indian classical ragas", "Soft lighting & cozy setup", "Aromas, blankets and pillows", "Guided breathwork & relaxation"],
+    features: ["Crystal Singing Bowls", "Live Indian classical ragas", "Soft lighting & cozy setup", "Aromas, blankets and pillows", "Guided breathwork & relaxation"],
     idealFor: "Pre-wedding rituals, mehendi mornings, sangeet wind-downs, or post-wedding gratitude circles",
     price: "On request",
     duration: "60-90 min"
@@ -73,7 +73,7 @@ const processSteps = [
   { number: "02", title: "Design", description: "We co-design the experience around your venue and intention — from soundscape to setup, lighting and aromatics." },
   { number: "03", title: "Settle in", description: "Participants are seated or lying down in a calm environment. Soft lighting, cozy pillows and blankets, gentle aromas." },
   { number: "04", title: "Soften", description: "Guided breathwork and relaxation help everyone arrive, let go, and absorb the subtle vibrations of sound." },
-  { number: "05", title: "Sound bath", description: "Crystal singing bowls tuned to 435 Hz, with live Indian classical ragas sung as lullabies for the soul." }
+  { number: "05", title: "Sound bath", description: "Crystal singing bowls and live Indian classical ragas, sung as lullabies for the soul." }
 ];
 
 const EventsPrivate = () => {
@@ -330,13 +330,14 @@ const EventsPrivate = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-28 md:py-40 bg-earth text-bone relative overflow-hidden">
+      <section id="enquire" className="py-28 md:py-40 bg-earth text-bone relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-earth via-earth to-charcoal/50" />
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-clay/10 rounded-full blur-[150px] animate-pulse-soft" />
         
         <div className="container mx-auto px-6 text-center relative z-10">
+          <span className="text-[10px] tracking-[0.35em] uppercase text-bone/60 mb-6 block">Enquire</span>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light mb-6">
-            Let's Create Something Beautiful
+            Let's create something beautiful.
           </h2>
           <p className="text-bone/70 max-w-xl mx-auto mb-10 text-lg">
             Every private experience begins with a conversation. Tell us your vision, 
@@ -354,10 +355,10 @@ const EventsPrivate = () => {
               <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
             </a>
             <Link 
-              to="/events/public" 
+              to="/contact" 
               className="inline-flex items-center justify-center gap-2 px-10 py-4 border border-bone/30 text-bone hover:bg-bone hover:text-charcoal transition-all duration-300"
             >
-              Corporate Events
+              Send an enquiry
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
