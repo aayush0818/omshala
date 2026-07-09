@@ -3,7 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import AmbientBackground from "./components/AmbientBackground";
 import CursorGlow from "./components/CursorGlow";
@@ -14,7 +14,8 @@ import Index from "./pages/Index";
 
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
-const EventsCorporate = lazy(() => import("./pages/EventsPublic"));
+const Schedule = lazy(() => import("./pages/Schedule"));
+const EventsPublic = lazy(() => import("./pages/EventsPublic"));
 const EventsPrivate = lazy(() => import("./pages/EventsPrivate"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
@@ -29,21 +30,10 @@ const AnimatedRoutes = () => {
         <Routes location={location}>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
-
-          {/* Corporate journey */}
-          <Route path="/corporate" element={<EventsCorporate />} />
-          <Route path="/corporate/contact" element={<Contact />} />
-
-          {/* Private journey */}
-          <Route path="/private" element={<EventsPrivate />} />
-          <Route path="/private/contact" element={<Contact />} />
-
-          {/* Legacy redirects */}
-          <Route path="/events/corporate" element={<Navigate to="/corporate" replace />} />
-          <Route path="/events/public" element={<Navigate to="/corporate" replace />} />
-          <Route path="/events/private" element={<Navigate to="/private" replace />} />
-          <Route path="/contact" element={<Navigate to="/" replace />} />
-
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/schedule" element={<Schedule />} />
+          <Route path="/events/public" element={<EventsPublic />} />
+          <Route path="/events/private" element={<EventsPrivate />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
