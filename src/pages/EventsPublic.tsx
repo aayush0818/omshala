@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Clock, MapPin, Users, ArrowRight, Calendar, Sparkles, Mail, Brain, Heart, Focus, Activity, Headphones, Building2 } from "lucide-react";
+import { Users, Sparkles, Mail, Brain, Heart, Focus, Activity, Headphones, Building2 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -32,7 +31,6 @@ const formats = [
 const EventsPublic = () => {
   const [loaded, setLoaded] = useState(false);
   const { ref: eventsRef, isVisible: eventsVisible } = useScrollAnimation();
-  const { ref: ctaRef, isVisible: ctaVisible } = useScrollAnimation();
 
   useEffect(() => {
     setLoaded(true);
