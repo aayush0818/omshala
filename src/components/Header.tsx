@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { useExperience } from "@/context/experience";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const experience = useExperience();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,20 +14,12 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks =
-    experience === "corporate"
-      ? [
-          { href: "/about", label: "About" },
-          { href: "/corporate", label: "Corporate" },
-          { href: "/corporate/contact", label: "Contact" },
-        ]
-      : experience === "private"
-      ? [
-          { href: "/about", label: "About" },
-          { href: "/private", label: "Private" },
-          { href: "/private/contact", label: "Contact" },
-        ]
-      : [{ href: "/about", label: "About" }];
+  const navLinks = [
+    { href: "/about", label: "About", isRoute: true },
+    { href: "/events/corporate", label: "Corporate", isRoute: true },
+    { href: "/events/private", label: "Private", isRoute: true },
+    { href: "/contact", label: "Contact", isRoute: true },
+  ];
 
   return (
     <>

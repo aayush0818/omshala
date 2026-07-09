@@ -1,60 +1,32 @@
 import { useEffect, useState } from "react";
+import { Mail, MessageCircle, Heart, Cake, Baby, Users, Sparkles, PartyPopper } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import Reveal from "@/components/Reveal";
-import privateHero from "@/assets/private-hero.jpg";
-import privateSeated from "@/assets/private-seated.jpg";
-import journeyBreath from "@/assets/journey-breath.jpg";
-import journeyBowls from "@/assets/journey-bowls.jpg";
-import journeyVoice from "@/assets/journey-voice.jpg";
-import journeyRelax from "@/assets/journey-relax.jpg";
-import bowl435 from "@/assets/bowl-435.jpg";
-import occasionWedding from "@/assets/occasion-wedding.jpg";
-import occasionBirthday from "@/assets/occasion-birthday.jpg";
-import occasionDiwali from "@/assets/occasion-diwali.jpg";
-import occasionWomens from "@/assets/occasion-womens.jpg";
-import occasionBabyshower from "@/assets/occasion-babyshower.jpg";
+import privateImg from "@/assets/experience-private.jpg";
+import abstractZen from "@/assets/abstract-zen.jpg";
+import heroBowl from "@/assets/hero-bowl.jpg";
 
-const experience = [
-  {
-    img: privateSeated,
-    text: "Sound healing can be experienced seated or laying down, whichever feels most comfortable for the person and the space. There is no posture to hold, no technique to learn — simply the invitation to arrive.",
-  },
-  {
-    img: journeyBreath,
-    text: "Participants are guided through deep breathing to gently drop out of the noise of the day and into the softness of the room. The breath becomes the doorway between the celebration and the stillness.",
-  },
-  {
-    img: journeyBowls,
-    text: "Crystal Singing Bowls, tuned to 435 Hz — the frequency of nature — send slow, luminous waves of sound through the room. The tones move through the body and settle the mind into a deep, resonant quiet.",
-  },
-  {
-    img: journeyVoice,
-    text: "Live Indian Classical Ragas and mantras are woven in when the moment calls for them — sung as lullabies for the heart, adding a layer of soulful intimacy the crystal bowls alone cannot reach.",
-  },
-  {
-    img: journeyRelax,
-    text: "Soothing aromas linger in the air. Soft lighting warms the walls. Pillows and blankets are placed with care. Every sensory detail is arranged so that the body knows, immediately, it is safe to let go.",
-  },
+const journey = [
+  { title: "Arrive", desc: "Settle into a softly lit room — blankets, cushions, gentle aromas." },
+  { title: "Breath", desc: "Guided breathwork to land the body and quiet the mind." },
+  { title: "Relaxation", desc: "A soft somatic guidance that opens space for everything to release." },
+  { title: "Crystal Singing Bowls", desc: "Bowls tuned to 435 Hz wash through the room in waves." },
+  { title: "Live Ragas", desc: "Indian classical voice sung as lullabies for the soul." },
+  { title: "Deep Connection", desc: "A shared exhale — held, together." },
 ];
 
 const occasions = [
-  { label: "Weddings", img: occasionWedding, span: "row-span-2" },
-  { label: "Birthdays", img: occasionBirthday, span: "" },
-  { label: "Diwali Parties", img: occasionDiwali, span: "" },
-  { label: "Women's Forums", img: occasionWomens, span: "" },
-  { label: "Baby Showers", img: occasionBabyshower, span: "row-span-2" },
+  { icon: Heart, title: "Wedding" },
+  { icon: Cake, title: "Birthday" },
+  { icon: Baby, title: "Baby Shower" },
+  { icon: Users, title: "Women's Forum" },
+  { icon: PartyPopper, title: "Festive Gathering" },
+  { icon: Sparkles, title: "Private Celebration" },
 ];
 
-const galleryImages = [
-  { src: privateHero, aspect: "aspect-[4/5]" },
-  { src: bowl435, aspect: "aspect-square" },
-  { src: journeyRelax, aspect: "aspect-square" },
-  { src: privateSeated, aspect: "aspect-[4/5]" },
-  { src: journeyBowls, aspect: "aspect-square" },
-  { src: journeyBreath, aspect: "aspect-[4/5]" },
-];
+const atmosphereImages = [privateImg, abstractZen, heroBowl, privateImg];
 
 const EventsPrivate = () => {
   const [loaded, setLoaded] = useState(false);
@@ -65,44 +37,52 @@ const EventsPrivate = () => {
       <div className="min-h-screen bg-background text-foreground">
         <Header />
 
-        {/* 1. Hero — intimate */}
-        <section className="relative min-h-screen flex items-end overflow-hidden">
+        {/* Hero */}
+        <section className="relative min-h-[85vh] flex items-center overflow-hidden">
           <div className="absolute inset-0">
             <img
-              src={privateHero}
+              src={privateImg}
               alt=""
-              className={`w-full h-full object-cover transition-all duration-[1800ms] ${loaded ? "opacity-100 scale-100" : "opacity-0 scale-105"}`}
+              className={`w-full h-full object-cover transition-opacity duration-[1500ms] ${loaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'}`}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-background/10" />
+            <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/30" />
           </div>
-          <div className="container mx-auto px-6 relative z-10 pb-24 md:pb-32">
-            <div className={`max-w-3xl transition-all duration-1000 delay-300 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+          <div className="container mx-auto px-6 relative z-10 pt-32">
+            <div className={`max-w-3xl transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+              <div className={`w-px h-16 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-10 transition-opacity duration-1000 delay-200 ${loaded ? 'opacity-100' : 'opacity-0'}`} />
               <span className="text-xs tracking-[0.3em] uppercase text-clay mb-8 block">Private</span>
-              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-light leading-[1.05] text-foreground">
-                A soulful pause,
-                <span className="block mt-3 italic text-clay/90">held within the celebration.</span>
+              <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-light leading-[1.05]">
+                Meaningful Sound Healing
+                <span className="block mt-3 italic text-clay/90">for Life's Special Moments</span>
               </h1>
+              <p className="mt-10 text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl font-light">
+                A soulful pause held within your celebration — candles, blankets, crystal bowls
+                and live ragas, designed around the people in the room.
+              </p>
             </div>
           </div>
         </section>
 
-        {/* 2. Introduction — journal-like */}
-        <section className="min-h-screen flex items-center py-32 md:py-48">
+        {/* Introduction */}
+        <section className="py-28 md:py-40">
           <div className="container mx-auto px-6">
-            <div className="max-w-2xl mx-auto">
+            <div className="max-w-3xl mx-auto">
               <Reveal>
-                <div className="space-y-10 font-serif text-2xl md:text-3xl lg:text-[2rem] font-light leading-[1.5] text-foreground/85">
+                <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-8">An Invitation</span>
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-[1.15] mb-10">
+                  More and more people are choosing a mindful way to celebrate.
+                </h2>
+                <div className="space-y-6 text-lg text-muted-foreground font-light leading-relaxed">
                   <p>
-                    More and more people are opting for a mindful way to celebrate — a quiet
-                    moment folded into the middle of a joyful day.
+                    Sound healing has become a meaningful pause between the laughter and the high
+                    energy — a deeply soulful relaxation that turns a special day into an
+                    unforgettable one.
                   </p>
                   <p>
-                    Sound healing has become that moment. A private, intimate immersion the
-                    guests carry with them long after the evening ends.
-                  </p>
-                  <p>
-                    It is a deeply soulful relaxation and a truly memorable way to celebrate a
-                    special day, occasion or milestone.
+                    Whether it's a wedding, a birthday, a baby shower or a quiet women's circle,
+                    Om Shala designs the experience around your gathering — the room, the lighting,
+                    the people, the moment.
                   </p>
                 </div>
               </Reveal>
@@ -110,113 +90,50 @@ const EventsPrivate = () => {
           </div>
         </section>
 
-        {/* 3. The Experience — sensory chapters */}
-        <section className="py-24 md:py-32 bg-muted/10">
-          <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto">
-              <Reveal>
-                <div className="max-w-2xl mb-24 md:mb-32">
-                  <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-8">
-                    The Experience
-                  </span>
-                  <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-[1.15]">
-                    A journey through the senses.
-                  </h2>
-                </div>
-              </Reveal>
-
-              <div className="space-y-32 md:space-y-48">
-                {experience.map((e, i) => {
-                  const reversed = i % 2 === 1;
-                  return (
-                    <div
-                      key={i}
-                      className={`grid lg:grid-cols-12 gap-12 lg:gap-20 items-center ${reversed ? "lg:[&>div:first-child]:order-2" : ""}`}
-                    >
-                      <Reveal className="lg:col-span-7">
-                        <div className="aspect-[4/5] lg:aspect-[5/6] overflow-hidden">
-                          <img
-                            src={e.img}
-                            alt=""
-                            loading="lazy"
-                            className="w-full h-full object-cover"
-                          />
-                        </div>
-                      </Reveal>
-                      <Reveal delay={0.1} className="lg:col-span-5">
-                        <p className="font-serif text-2xl md:text-3xl font-light leading-[1.35] text-foreground/85">
-                          {e.text}
-                        </p>
-                      </Reveal>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 4. Atmosphere — imagery-led */}
-        <section className="py-24 md:py-40">
-          <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto mb-16">
-              <Reveal>
-                <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-8">
-                  Atmosphere
-                </span>
-                <p className="font-serif text-2xl md:text-3xl font-light italic text-foreground/70 max-w-2xl leading-[1.35]">
-                  Aromas. Lighting. Pillows. Blankets. The room becomes the invitation.
-                </p>
-              </Reveal>
-            </div>
-          </div>
-          <div className="w-full">
-            <div className="columns-2 md:columns-3 gap-3 md:gap-4 px-3 md:px-4 [column-fill:_balance]">
-              {galleryImages.map((g, i) => (
-                <Reveal key={i} delay={(i % 3) * 0.08}>
-                  <div className={`mb-3 md:mb-4 overflow-hidden ${g.aspect}`}>
-                    <img
-                      src={g.src}
-                      alt=""
-                      loading="lazy"
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-[1400ms]"
-                    />
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* 5. Events Hosted — editorial collage */}
+        {/* The Experience — vertical journey */}
         <section className="py-28 md:py-40 bg-charcoal text-bone">
           <div className="container mx-auto px-6">
+            <div className="max-w-3xl mx-auto">
+              <Reveal>
+                <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-6">The Experience</span>
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-[1.15] mb-20">
+                  A six-step exhale.
+                </h2>
+              </Reveal>
+              <ol className="relative">
+                <div className="absolute left-6 top-0 bottom-0 w-px bg-bone/10" />
+                {journey.map((s, i) => (
+                  <Reveal key={s.title} delay={i * 0.08}>
+                    <li className="relative pl-20 pb-14 last:pb-0">
+                      <div className="absolute left-0 top-0 w-12 h-12 rounded-full border border-bone/20 bg-charcoal flex items-center justify-center">
+                        <span className="font-serif text-clay text-sm tabular-nums">0{i + 1}</span>
+                      </div>
+                      <h3 className="font-serif text-2xl md:text-3xl font-light mb-3">{s.title}</h3>
+                      <p className="text-bone/60 leading-relaxed font-light">{s.desc}</p>
+                    </li>
+                  </Reveal>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        {/* Occasions */}
+        <section className="py-28 md:py-40">
+          <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto">
               <Reveal>
-                <div className="max-w-2xl mb-20">
-                  <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-8">
-                    Events Hosted
-                  </span>
-                  <p className="font-serif text-2xl md:text-3xl lg:text-4xl font-light leading-[1.3] text-bone/90">
-                    Om Shala has organised beautiful sound healing experiences for:
-                  </p>
-                </div>
+                <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-6">Occasions</span>
+                <h2 className="font-serif text-3xl md:text-4xl font-light max-w-xl">
+                  For the moments that deserve more than a party.
+                </h2>
               </Reveal>
-
-              <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-[240px] md:auto-rows-[320px] gap-4 md:gap-6">
+              <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-px bg-foreground/10">
                 {occasions.map((o, i) => (
-                  <Reveal key={o.label} delay={i * 0.08} className={o.span}>
-                    <div className="relative w-full h-full overflow-hidden group">
-                      <img
-                        src={o.img}
-                        alt=""
-                        loading="lazy"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[1400ms]"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                      <span className="absolute bottom-6 left-6 font-serif text-xl md:text-2xl font-light text-bone">
-                        {o.label}
-                      </span>
+                  <Reveal key={o.title} delay={i * 0.05}>
+                    <div className="group bg-background p-10 md:p-14 h-full flex flex-col items-start gap-6 hover:bg-muted/20 transition-colors duration-500 min-h-[200px]">
+                      <o.icon className="w-6 h-6 text-clay group-hover:scale-110 transition-transform duration-500" />
+                      <h3 className="font-serif text-2xl md:text-3xl font-light">{o.title}</h3>
                     </div>
                   </Reveal>
                 ))}
@@ -225,26 +142,66 @@ const EventsPrivate = () => {
           </div>
         </section>
 
-        {/* 6. Contact — elegant finish */}
-        <section className="py-32 md:py-48">
+        {/* Atmosphere gallery */}
+        <section className="py-28 md:py-40 bg-muted/10">
           <div className="container mx-auto px-6">
-            <div className="max-w-2xl mx-auto text-center">
+            <div className="max-w-6xl mx-auto">
               <Reveal>
-                <p className="font-serif text-3xl md:text-4xl lg:text-5xl font-light italic leading-[1.25] text-foreground/85 mb-16">
-                  Let&apos;s discuss how we can organise one for you.
-                </p>
-                <div className="space-y-4 text-sm tracking-[0.15em] uppercase text-muted-foreground">
-                  <p>
-                    <a href="tel:+917400361681" className="hover:text-clay transition-colors duration-300">
-                      Call · +91 74003 61681
-                    </a>
-                  </p>
-                  <p>
-                    <a href="mailto:omshala.official@gmail.com" className="hover:text-clay transition-colors duration-300">
-                      omshala.official@gmail.com
-                    </a>
-                  </p>
+                <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-6">Atmosphere</span>
+                <h2 className="font-serif text-3xl md:text-4xl font-light max-w-xl mb-16">
+                  Warm lighting. Soft textures. A held space.
+                </h2>
+              </Reveal>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+                {atmosphereImages.map((src, i) => (
+                  <Reveal key={i} delay={i * 0.08}>
+                    <div className={`overflow-hidden ${i % 3 === 0 ? "aspect-[3/4]" : "aspect-square"}`}>
+                      <img
+                        src={src}
+                        alt=""
+                        loading="lazy"
+                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-[1200ms]"
+                      />
+                    </div>
+                  </Reveal>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Closing */}
+        <section className="py-28 md:py-40">
+          <div className="container mx-auto px-6">
+            <div className="max-w-3xl mx-auto text-center">
+              <Reveal>
+                <span className="text-xs tracking-[0.3em] uppercase text-clay block mb-8">Begin</span>
+                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-[1.15] mb-12">
+                  Let's create something
+                  <span className="block italic text-clay/90">unforgettable.</span>
+                </h2>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                  <a
+                    href="mailto:omshala.official@gmail.com?subject=Private%20Event%20Enquiry"
+                    className="group inline-flex items-center gap-3 px-10 py-5 bg-foreground text-background text-sm tracking-[0.15em] uppercase relative overflow-hidden"
+                  >
+                    <Mail className="w-4 h-4 relative z-10" />
+                    <span className="relative z-10">Email Us</span>
+                    <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                  </a>
+                  <a
+                    href="https://wa.me/917400361681"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3 px-10 py-5 border border-foreground/20 text-foreground text-sm tracking-[0.15em] uppercase hover:border-clay hover:text-clay transition-colors duration-300"
+                  >
+                    <MessageCircle className="w-4 h-4" />
+                    WhatsApp
+                  </a>
                 </div>
+                <p className="mt-10 text-sm text-muted-foreground">
+                  omshala.official@gmail.com · +91 74003 61681
+                </p>
               </Reveal>
             </div>
           </div>

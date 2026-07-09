@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { motion, useReducedMotion } from "framer-motion";
 import corporateImg from "@/assets/experience-corporate.jpg";
 import privateImg from "@/assets/experience-private.jpg";
-import { rememberExperience } from "@/context/experience";
 
 type Side = "corporate" | "private" | null;
 
@@ -13,8 +12,8 @@ const panels = [
     eyebrow: "For Organisations",
     title: "Corporate",
     description:
-      "Deep relaxation for high-performance teams — sound baths for leadership, offsites and employee wellbeing.",
-    href: "/corporate",
+      "Therapeutic sound baths for leadership teams, offsites and ongoing employee wellbeing.",
+    href: "/events/corporate",
     image: corporateImg,
   },
   {
@@ -22,8 +21,8 @@ const panels = [
     eyebrow: "For Life's Moments",
     title: "Private",
     description:
-      "Meaningful sound healing for celebrations — weddings, birthdays, baby showers and intimate gatherings.",
-    href: "/private",
+      "Intimate sound healing for weddings, birthdays, baby showers and meaningful gatherings.",
+    href: "/events/private",
     image: privateImg,
   },
 ];
@@ -63,12 +62,7 @@ const ExperienceSplit = () => {
               className="relative overflow-hidden group cursor-pointer min-h-[60vh] md:min-h-0"
               onMouseEnter={() => setHovered(p.id)}
             >
-              <Link
-                to={p.href}
-                onClick={() => rememberExperience(p.id)}
-                className="absolute inset-0 z-20"
-                aria-label={`Enter ${p.title}`}
-              />
+              <Link to={p.href} className="absolute inset-0 z-20" aria-label={`Explore ${p.title}`} />
 
               <motion.img
                 src={p.image}
