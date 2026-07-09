@@ -13,7 +13,7 @@ const privateOfferings = [
     title: "Weddings",
     tagline: "A soulful pause amid celebration",
     description: "An intimate sound healing ceremony for the bride, groom and inner circle — a moment of stillness and shared breath before or between the festivities. Crystal singing bowls and live ragas create a memory that stays with everyone present.",
-    features: ["Tuned to 435 Hz", "Live Indian classical ragas", "Soft lighting & cozy setup", "Aromas, blankets and pillows", "Guided breathwork & relaxation"],
+    features: ["Crystal Singing Bowls", "Live Indian classical ragas", "Soft lighting & cozy setup", "Aromas, blankets and pillows", "Guided breathwork & relaxation"],
     idealFor: "Pre-wedding rituals, mehendi mornings, sangeet wind-downs, or post-wedding gratitude circles",
     price: "On request",
     duration: "60-90 min"
@@ -73,7 +73,7 @@ const processSteps = [
   { number: "02", title: "Design", description: "We co-design the experience around your venue and intention — from soundscape to setup, lighting and aromatics." },
   { number: "03", title: "Settle in", description: "Participants are seated or lying down in a calm environment. Soft lighting, cozy pillows and blankets, gentle aromas." },
   { number: "04", title: "Soften", description: "Guided breathwork and relaxation help everyone arrive, let go, and absorb the subtle vibrations of sound." },
-  { number: "05", title: "Sound bath", description: "Crystal singing bowls tuned to 435 Hz, with live Indian classical ragas sung as lullabies for the soul." }
+  { number: "05", title: "Sound bath", description: "Crystal singing bowls and live Indian classical ragas, sung as lullabies for the soul." }
 ];
 
 const EventsPrivate = () => {
