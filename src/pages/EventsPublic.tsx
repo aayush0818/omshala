@@ -227,11 +227,11 @@ const EventsPublic = () => {
       </section>
 
       {/* Booking */}
-      <section className="py-28 md:py-40 bg-muted/20 relative overflow-hidden">
+      <section id="enquire" className="py-28 md:py-40 bg-muted/20 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">Booking</span>
+            <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">Enquire</span>
             <h2 className="font-serif text-3xl md:text-4xl font-light mb-8">
               Customised to your organisation
             </h2>
@@ -259,45 +259,6 @@ const EventsPublic = () => {
                 WhatsApp +91 74003 61681
               </a>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Private Events CTA */}
-      <section ref={ctaRef} className="py-28 md:py-40 relative overflow-hidden">
-        {/* Background gradient like landing page booking section */}
-        <div className="absolute inset-0 bg-gradient-to-br from-charcoal via-charcoal to-earth/30" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-clay/10 rounded-full blur-[200px] -translate-y-1/2" />
-        
-        {/* Decorative lines */}
-        <div className="absolute top-1/4 left-0 w-32 h-px bg-gradient-to-r from-bone/10 to-transparent" />
-        <div className="absolute bottom-1/4 right-0 w-32 h-px bg-gradient-to-l from-bone/10 to-transparent" />
-        
-        <div className={`container mx-auto px-6 text-center relative z-10 transition-all duration-1000 ${ctaVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">Private Experiences</span>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light mb-6 text-bone">
-            Hosting a private gathering instead?
-          </h2>
-          <div className="w-16 h-px bg-gradient-to-r from-transparent via-clay to-transparent mx-auto mb-8" />
-          <p className="text-bone/60 max-w-xl mx-auto mb-12 text-lg font-light leading-relaxed">
-            From weddings and birthdays to baby showers and Diwali parties — sound healing has
-            become a meaningful way to gather and exhale together.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              to="/events/private" 
-              className="group relative inline-flex items-center justify-center gap-2 px-14 py-5 bg-bone text-charcoal text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-bone/20"
-            >
-              <span className="relative z-10 group-hover:text-bone transition-colors duration-500">Explore Private Events</span>
-              <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 group-hover:text-bone transition-all duration-300" />
-              <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-            </Link>
-            <Link 
-              to="/contact"
-              className="px-10 py-5 border border-bone/30 text-bone hover:bg-bone hover:text-charcoal transition-all duration-300"
-            >
-              Contact Us
-            </Link>
           </div>
         </div>
       </section>
