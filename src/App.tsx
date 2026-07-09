@@ -11,12 +11,12 @@ import ScrollProgress from "./components/ScrollProgress";
 import BreathCompanion from "./components/BreathCompanion";
 import SoundBowl from "./components/SoundBowl";
 import Index from "./pages/Index";
-import { Navigate } from "react-router-dom";
 
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
-const Corporate = lazy(() => import("./pages/Corporate"));
-const Private = lazy(() => import("./pages/Private"));
+const Schedule = lazy(() => import("./pages/Schedule"));
+const EventsPublic = lazy(() => import("./pages/EventsPublic"));
+const EventsPrivate = lazy(() => import("./pages/EventsPrivate"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -31,12 +31,9 @@ const AnimatedRoutes = () => {
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/corporate" element={<Corporate />} />
-          <Route path="/private" element={<Private />} />
-          {/* legacy redirects */}
-          <Route path="/schedule" element={<Navigate to="/" replace />} />
-          <Route path="/events/public" element={<Navigate to="/corporate" replace />} />
-          <Route path="/events/private" element={<Navigate to="/private" replace />} />
+          <Route path="/schedule" element={<Schedule />} />
+          <Route path="/events/public" element={<EventsPublic />} />
+          <Route path="/events/private" element={<EventsPrivate />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
