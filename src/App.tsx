@@ -14,7 +14,6 @@ import Index from "./pages/Index";
 
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
-const Schedule = lazy(() => import("./pages/Schedule"));
 const EventsPublic = lazy(() => import("./pages/EventsPublic"));
 const EventsPrivate = lazy(() => import("./pages/EventsPrivate"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -31,7 +30,6 @@ const AnimatedRoutes = () => {
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/schedule" element={<Schedule />} />
           <Route path="/events/public" element={<EventsPublic />} />
           <Route path="/events/private" element={<EventsPrivate />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
