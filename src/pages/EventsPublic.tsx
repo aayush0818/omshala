@@ -77,17 +77,16 @@ const EventsPublic = () => {
               <span className="block mt-2 text-clay">for High-Performance Teams</span>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Therapeutic Sound Baths designed to reduce mental fatigue, improve focus and
-              support emotional resilience. The mind is the highest human power — a rejuvenated
-              mind is an optimised human resource.
+              Sound Healing for Teams, Leadership Retreats & Workplace Wellbeing. The mind is
+              our greatest resource. A rejuvenated mind is an optimised human resource.
             </p>
             
             <div className="mt-10 flex flex-wrap gap-4">
               <a 
-                href="#benefits"
+                href="#enquire"
                 className="group relative px-10 py-4 bg-foreground text-background text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl"
               >
-                <span className="relative z-10 group-hover:text-background transition-colors duration-500">Enquire for Corporate Sessions</span>
+                <span className="relative z-10 group-hover:text-background transition-colors duration-500">Enquire for corporate sessions</span>
                 <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
               </a>
               <a 
