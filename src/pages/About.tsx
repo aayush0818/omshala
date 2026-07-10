@@ -3,8 +3,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import Reveal from "@/components/Reveal";
-import guidePortrait from "@/assets/guide-portrait.jpg";
+import CredentialCards from "@/components/CredentialCards";
+import guidePortraitAsset from "@/assets/img9-yellow-speaking.webp.asset.json";
+import img2Asset from "@/assets/img2-yogathon.webp.asset.json";
 import heroBowl from "@/assets/hero-bowl.jpg";
+
+const guidePortrait = guidePortraitAsset.url;
+const img2 = img2Asset.url;
 
 const About = () => {
   const [loaded, setLoaded] = useState(false);
@@ -100,6 +105,35 @@ const About = () => {
             </div>
           </div>
         </section>
+
+        {/* Editorial figure — img2 */}
+        <section className="pb-24 md:pb-32 relative">
+          <div className="container mx-auto px-6">
+            <div className="max-w-5xl mx-auto">
+              <Reveal>
+                <figure className="relative">
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <img
+                      src={img2}
+                      alt="Shrutika honoured at a large yogathon"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute -bottom-4 -left-4 w-full h-full border border-clay/20 -z-10" />
+                  </div>
+                  <figcaption className="mt-6 text-xs tracking-[0.25em] uppercase text-muted-foreground text-center">
+                    Om Shala on stage — a large-scale gathering.
+                  </figcaption>
+                </figure>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        <CredentialCards
+          eyebrow="Credentials"
+          heading="A quiet record of the work."
+          className="border-t border-foreground/5"
+        />
 
         <Footer />
       </div>
