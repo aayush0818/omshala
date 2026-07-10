@@ -1,85 +1,67 @@
-# Om Shala 2.0 — Gateway Redesign
+# Om Shala 2.0 — Round 2 Implementation Plan
 
-Treating this as a version bump: the site becomes a premium **Sound Healing Experiences & Events** studio where every visitor immediately picks Corporate or Private and never sees the other path again.
+## Image handling
+Upload all 10 user images via `lovable-assets` (kept off the repo binary tree) and import the resulting `.asset.json` pointers where needed.
 
-## 1. Site structure
+Mapping:
+- img1 → Home About section
+- img2 → About page (secondary)
+- img3, img4 → Corporate page
+- img5 → Home gateway (Private panel)
+- img6, img7, img10 → Private page
+- img8 → Home gateway (Corporate panel)
+- img9 → About page hero portrait
 
-**Keep:** Home, About, Corporate, Private, Contact
-**Remove entirely:**
-- `src/pages/Schedule.tsx` (delete file + route)
-- All references to weekly Yog Nidra classes, €80/month pricing, first class free, timezones, Wise / PayPal / Bank Transfer, "Book" buttons
-- `BookingSection` on the homepage (replaced by simple Contact CTA)
-- Any "book a class" language sitewide → replaced with "enquire"
+Replaces the current AI-generated `gateway-corporate.jpg`, `gateway-private.jpg`, and `guide-portrait.jpg` where relevant.
 
-## 2. Navigation (context-aware)
+---
 
-`Header.tsx` reads the current route and renders one of three nav sets:
+## 1. Homepage — `src/components/HeroGateway.tsx`
+- Swap panel images to img8 (Corporate) and img5 (Private).
+- Fix legibility: strengthen the gradient overlay (darker `charcoal/95` base, taller falloff) and lift eyebrow label from `text-[10px] text-bone/70` to `text-xs tracking-[0.45em] text-bone` with a thin clay underline; ensure title stays pure `text-bone` with a subtle text-shadow.
+- Update copy:
+  - Left eyebrow → `CORPORATE EVENTS`; title → "Sound Healing for the office, leadership retreats and employee wellbeing programs."
+  - Right eyebrow → `PRIVATE EVENTS`; title → "Sound Healing for your next celebration or social event, from weddings to baby showers, to birthdays, to festive get-togethers."
 
-- **Home** (`/`): `About · Corporate · Private · Contact` — no dropdown, no Book button
-- **Corporate** (`/events/public` + descendants): `About · Contact · Enquire` (Enquire = clay-accent button scrolling to enquiry form)
-- **Private** (`/events/private` + descendants): `About · Contact · Enquire`
-- **About / Contact:** homepage nav
+## 2. Homepage — About section (`src/pages/Index.tsx`)
+- Replace `guide-portrait.jpg` with img1 in the left column.
 
-Logo always `OM SHALA`. Mobile menu mirrors the same context logic.
+## 3. Homepage — Credentials redesign (`src/pages/Index.tsx`)
+Replace the current flat `<ul>` with a more editorial two-column layout:
+- Large sticky left column with the eyebrow "Credentials" and the heading.
+- Right column: numbered credential entries (`01 — 08`) in serif numerals, clay accent, generous vertical rhythm, hairline dividers, subtle stagger `Reveal`.
+- Keep the 8 items unchanged.
 
-## 3. Homepage rebuild (`Index.tsx`)
+## 4. Corporate page — `src/pages/EventsPublic.tsx` (full restructure)
+New section order:
+1. **Hero** — headline "Deep Relaxation for High-Performance Teams", body + supporting italic line, CTA "Enquire for Corporate Sessions" (anchors to `#enquire`).
+2. **Credentials strip (subtle)** — small individual cards in a responsive grid (2/4 cols), each with number + one credential line, thin borders, no bold. Distinct from homepage treatment.
+3. **Sound Baths for Corporate Wellness** — heading + body + "Ideal For" list (3 items), clean editorial layout with a supporting image (img3).
+4. Keep existing **Benefits** cards; delete the intro paragraph above them.
+5. Keep existing **Why Sound Healing Works Online** section.
+6. **The Setup** — new section with heading + body, image (img4) alongside.
+7. **Booking** (replaces current Enquire) — same visual shell, id `enquire`, updated heading/body/list/CTA and contact block (email + WhatsApp).
 
-Shortened to four sections only. Remove: `PhilosophySection`, `PracticesSection`, `ExpectSection`, `TestimonialSection`, `StatsStrip`, `BookingSection`.
+## 5. Private page — `src/pages/EventsPrivate.tsx`
+- Hero: add a CTA button "Enquire for Private Events" linking to `#enquire` (or contact block anchor).
+- New **The Experience** section directly below hero: full-bleed editorial block with img6 as the visual, provided body copy.
+- Remove **In Her Words** section entirely.
+- Add img7 and img10 as supporting visuals within existing sections (e.g. between "What to Expect" and CTA).
+- Final CTA section: keep layout; replace copy with the wedding/birthday/Diwali paragraph + "Call +91 7400361681".
 
-### Section 1 — Hero Gateway (`HeroGateway.tsx`, new)
-Full-viewport split into two interactive panels (stacked on mobile).
+## 6. About page — `src/pages/About.tsx`
+- Replace current portrait with img9.
+- Insert img2 within the flowing editorial passage as a supporting figure.
+- Append a **Credentials** section at the bottom, reusing the same subtle-card treatment used on the Corporate page (visually distinct from the homepage editorial version, and appropriate for a secondary page).
 
-- **Left — Corporate:** background image conveys scale/professionalism. Overlay: eyebrow "Corporate", headline "Sound Healing for Teams, Leadership Retreats & Employee Wellbeing", "Explore →"
-- **Right — Private:** background image conveys warmth/intimacy. Overlay: eyebrow "Private", headline "Sound Healing for Celebrations, Gatherings & Special Moments", "Explore →"
-- Hover: hovered panel zooms slightly + saturates + text lifts; opposite panel darkens; a soft clay ripple drifts toward hovered side (framer-motion)
-- Click: hovered panel expands to fill the viewport, then routes to the page (framer-motion layout animation + navigate on completion)
-- Small `OM SHALA` wordmark centered at the top with a hairline divider — no other chrome
+## 7. Shared component
+- Create `src/components/CredentialCards.tsx` (subtle card grid) used by Corporate + About.
+- Homepage keeps its bespoke editorial variant inline in `Index.tsx`.
 
-Two new images generated via `imagegen` (premium tier) into `src/assets/`:
-- `gateway-corporate.jpg` — wide airy conference/retreat hall with singing bowls arranged, warm daylight, editorial
-- `gateway-private.jpg` — intimate candle-lit gathering with bowls, soft textiles, dusk warmth
+---
 
-### Section 2 — About Om Shala
-Editorial two-column. Left: portrait/quiet image (reuse existing Shrutika asset if present, otherwise a calm still). Right: heading "About Om Shala" + the three provided paragraphs + the italic pull quote.
-
-### Section 3 — Credentials
-Quiet vertical list, small caps eyebrow "Credentials", each row separated by a hairline `border-b border-foreground/10`, generous `py-6`, no icons, no cards. Eight items exactly as written.
-
-### Section 4 — Contact CTA
-Centered, minimal: "Ready to create a Sound Healing Experience?" + single ghost-outline `Link` "Contact Om Shala" → `/contact`. That's it.
-
-Footer stays but is simplified: remove Schedule link.
-
-## 4. About page (`About.tsx`)
-Rewrite as one flowing editorial passage (no numbered pillars, no section headers). Opens with Shrutika + Nada Yoga, flows into Voice / Indian Classical Music / Crystal Singing Bowls / Breathwork / Guided Relaxation as prose, closes with the quote. Remove any Corporate/Private specifics. Keep ambient background + Reveal for gentle fade-in per paragraph.
-
-## 5. Corporate page (`EventsPublic.tsx`)
-No structural changes. Small tweaks:
-- Ensure "Sound Healing for Teams, Leadership Retreats & Workplace Wellbeing" is the hero subhead
-- 435 Hz explanation stays here under "Why Sound Healing Works Online"
-- Add a matching "Enquire" anchor / form section id so header Enquire button scrolls to it
-
-## 6. Private page (`EventsPrivate.tsx`)
-No structural changes. Small tweaks:
-- Use "Private Experiences" in headings; keep "Private Events" only where clarity requires it
-- Remove any 435 Hz explanation (belongs on Corporate)
-- Add "Enquire" section id for scroll target
-
-## 7. Contact page (`Contact.tsx`)
-Trim to: Email · WhatsApp · Location · Enquiry form. Remove any leftover placeholder blocks.
-
-## 8. Copy refinements sitewide
-- Replace "Sound Healing for the office" → "Sound Healing for Teams, Leadership Retreats & Workplace Wellbeing"
-- Replace "The Mind, is the highest human power" → "The mind is our greatest resource. A rejuvenated mind is an optimised human resource."
-- Purge all mentions of weekly classes, subscription, monthly pricing, "book a class" (grep sweep across `src/`)
-
-## 9. Technical notes
-- Delete `src/pages/Schedule.tsx`; drop the route in `App.tsx`; drop any Schedule imports/links (Header, Footer, BookingSection callers)
-- Delete `BookingSection.tsx` (no longer used) or leave unimported — will delete
-- New `HeroGateway.tsx` uses framer-motion for hover ripple + click expand transition; `useNavigate` fires after expand animation completes (~500ms) for a "curtain reveal" feel
-- Header derives context from `useLocation().pathname.startsWith('/events/public' | '/events/private')`
-- Enquire button in Corporate/Private nav = `<a href="#enquire">` (or `scrollIntoView`)
-- All new copy uses semantic tokens; no hardcoded colors
-
-## 10. Out of scope (unchanged)
-`SoundBowl`, `BreathCompanion`, `AmbientBackground`, `CursorGlow`, `ScrollProgress`, `Reveal`, brand palette, footer branding.
+## Technical notes
+- All new imagery imported as `@/assets/<name>.asset.json` pointers created via `lovable-assets create --file /mnt/user-uploads/... > src/assets/<name>.asset.json`.
+- Delete the now-unused `src/assets/gateway-corporate.jpg`, `gateway-private.jpg`, and `guide-portrait.jpg` after swap.
+- No routing, nav, or design-token changes. Motion primitives (`Reveal`, `MagneticButton`) reused as-is.
+- Contact info stays: `omshala.official@gmail.com` / `+91 7400361681`.
