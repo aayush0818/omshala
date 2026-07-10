@@ -3,18 +3,11 @@ import HeroGateway from "@/components/HeroGateway";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import Reveal from "@/components/Reveal";
-import guidePortrait from "@/assets/guide-portrait.jpg";
+import guidePortraitAsset from "@/assets/img1-portrait.webp.asset.json";
+import { CREDENTIALS } from "@/components/CredentialCards";
 
-const credentials = [
-  "12+ years of experience in the mindfulness industry",
-  "Founder of Om Shala — first studio in Bombay dedicated to Sound Healing",
-  "Spotify meditations in collaboration with Universal Music",
-  "Sessions for members of the Royal Family in Dubai & Saudi Arabia",
-  "Private sessions for the Late G. P. Hinduja in London",
-  "Private sessions for the Health Minister of Goa",
-  "Large-scale event for 1,000+ participants (Rotary Club, Vapi)",
-  "Online clients across the US, Europe & Madagascar",
-];
+const guidePortrait = guidePortraitAsset.url;
+const credentials = CREDENTIALS;
 
 const Index = () => {
   return (
@@ -82,27 +75,45 @@ const Index = () => {
             </div>
           </section>
 
-          {/* 3. Credentials */}
-          <section className="py-24 md:py-32 border-t border-foreground/5 relative overflow-hidden">
+          {/* 3. Credentials — editorial two-column */}
+          <section className="py-28 md:py-44 border-t border-foreground/5 relative overflow-hidden">
+            <div className="absolute top-1/3 -left-40 w-96 h-96 bg-clay/5 rounded-full blur-[120px] pointer-events-none" />
             <div className="container mx-auto px-6">
-              <div className="max-w-3xl mx-auto">
-                <Reveal>
-                  <span className="text-[10px] tracking-[0.35em] uppercase text-clay">
-                    Credentials
-                  </span>
-                  <h2 className="mt-6 font-serif text-3xl md:text-4xl font-light leading-tight mb-12">
-                    A body of work built quietly, over years.
-                  </h2>
-                </Reveal>
-                <ul className="divide-y divide-foreground/10">
+              <div className="grid lg:grid-cols-12 gap-14 lg:gap-24 max-w-6xl mx-auto">
+                <div className="lg:col-span-5">
+                  <div className="lg:sticky lg:top-32">
+                    <Reveal>
+                      <span className="text-[10px] tracking-[0.35em] uppercase text-clay">
+                        Credentials
+                      </span>
+                      <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-[1.05]">
+                        A body of work
+                        <span className="block text-clay italic">built quietly,</span>
+                        over years.
+                      </h2>
+                      <div className="mt-10 h-px w-16 bg-clay/60" />
+                      <p className="mt-8 text-sm text-muted-foreground leading-relaxed max-w-sm">
+                        A quiet record of the rooms Om Shala has been asked to hold —
+                        boardrooms, palaces, festivals, private homes.
+                      </p>
+                    </Reveal>
+                  </div>
+                </div>
+
+                <ol className="lg:col-span-7 divide-y divide-foreground/10 border-t border-foreground/10">
                   {credentials.map((c, i) => (
-                    <Reveal key={c} delay={0.05 + i * 0.03}>
-                      <li className="py-6 text-[15px] md:text-base text-foreground/80 leading-relaxed">
-                        {c}
-                      </li>
+                    <Reveal as="li" key={c} delay={0.04 + i * 0.03}>
+                      <div className="group flex gap-6 md:gap-10 py-8 md:py-10">
+                        <span className="font-serif text-2xl md:text-3xl text-clay/70 leading-none pt-1 tabular-nums">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <p className="font-serif text-xl md:text-2xl leading-snug text-foreground/90 font-light group-hover:text-foreground transition-colors duration-500">
+                          {c}
+                        </p>
+                      </div>
                     </Reveal>
                   ))}
-                </ul>
+                </ol>
               </div>
             </div>
           </section>

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import corporateImg from "@/assets/gateway-corporate.jpg";
-import privateImg from "@/assets/gateway-private.jpg";
+import corporateImg from "@/assets/img8-sunset-circle.webp.asset.json";
+import privateImg from "@/assets/img5-studio-night.webp.asset.json";
 
 type Side = "corporate" | "private" | null;
 
@@ -10,17 +10,19 @@ const panels = [
   {
     key: "corporate" as const,
     href: "/events/public",
-    eyebrow: "Corporate",
-    title: "Sound Healing for Teams, Leadership Retreats & Employee Wellbeing",
-    image: corporateImg,
+    eyebrow: "Corporate Events",
+    title:
+      "Sound Healing for the office, leadership retreats and employee wellbeing programs.",
+    image: corporateImg.url,
     align: "left" as const,
   },
   {
     key: "private" as const,
     href: "/events/private",
-    eyebrow: "Private",
-    title: "Sound Healing for Celebrations, Gatherings & Special Moments",
-    image: privateImg,
+    eyebrow: "Private Events",
+    title:
+      "Sound Healing for your next celebration or social event, from weddings to baby showers, to birthdays, to festive get-togethers.",
+    image: privateImg.url,
     align: "right" as const,
   },
 ];
@@ -92,7 +94,8 @@ const HeroGateway = () => {
               </motion.div>
 
               {/* Gradient overlay for legibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/30 to-charcoal/20 pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/95 via-charcoal/55 to-charcoal/35 pointer-events-none" />
+              <div className="absolute inset-0 bg-charcoal/20 pointer-events-none" />
 
               {/* Ambient ripple toward hovered side */}
               <motion.div
@@ -116,10 +119,16 @@ const HeroGateway = () => {
                   animate={{ y: isHovered ? -6 : 0, opacity: isDimmed ? 0.55 : 1 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <span className="block text-[10px] tracking-[0.4em] uppercase text-bone/70 mb-6">
-                    {panel.eyebrow}
+                  <span className="inline-flex flex-col items-center gap-3 mb-8">
+                    <span className="block text-xs md:text-[13px] tracking-[0.45em] uppercase text-bone font-medium">
+                      {panel.eyebrow}
+                    </span>
+                    <span className="block h-px w-10 bg-clay" />
                   </span>
-                  <h2 className="font-serif text-2xl md:text-3xl lg:text-[2.2rem] leading-[1.25] font-light text-bone">
+                  <h2
+                    className="font-serif text-xl md:text-2xl lg:text-[1.75rem] leading-[1.4] font-light text-bone"
+                    style={{ textShadow: "0 2px 24px rgba(0,0,0,0.55)" }}
+                  >
                     {panel.title}
                   </h2>
                   <motion.div
