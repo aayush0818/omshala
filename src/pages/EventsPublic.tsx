@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Users, Sparkles, Mail, Brain, Heart, Focus, Activity, Headphones, Building2, ArrowRight } from "lucide-react";
+import { Users, Sparkles, Mail, Brain, Heart, Focus, Activity, Headphones, Building2 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
