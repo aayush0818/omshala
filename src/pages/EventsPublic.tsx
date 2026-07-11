@@ -27,9 +27,9 @@ const benefits = [
 ];
 
 const sessionFlow = [
-  { number: "01", title: "Gentle breathwork", desc: "To settle the nervous system and help everyone arrive." },
-  { number: "02", title: "Guided relaxation", desc: "To release mental and physical tension built up through the week." },
-  { number: "03", title: "Sound immersion", desc: "Crystal singing bowls tuned to 435 Hz align brain waves with the frequency of nature." },
+  { number: "01", title: "Gentle breathwork", desc: "To settle the nervous system." },
+  { number: "02", title: "Guided relaxation", desc: "To release mental and physical tension." },
+  { number: "03", title: "Sound immersion", desc: "Using crystal singing bowls that align brain waves." },
   { number: "04", title: "Optional voice", desc: "Live Indian classical ragas or mantras, when suitable for the group." },
 ];
 
