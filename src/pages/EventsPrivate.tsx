@@ -34,7 +34,7 @@ const EventsPrivate = () => {
         <Header />
       
       {/* Hero Section */}
-      <section className="relative min-h-[75vh] flex items-center overflow-hidden bg-charcoal">
+      <section className="relative min-h-[85vh] md:min-h-[75vh] flex items-center overflow-hidden bg-charcoal">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
@@ -56,18 +56,18 @@ const EventsPrivate = () => {
         <div className="absolute top-1/4 right-1/3 w-64 h-64 bg-clay/10 rounded-full blur-[50px] animate-float" />
         <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-earth/10 rounded-full blur-[40px] animate-float" style={{ animationDelay: '2s' }} />
         
-        <div className="container mx-auto px-6 sm:px-10 lg:px-16 relative z-10 pt-32 pb-16">
+        <div className="container mx-auto px-6 sm:px-10 lg:px-16 relative z-10 pt-28 md:pt-32 pb-14 md:pb-16">
           <div className={`max-w-2xl transition-all duration-1000 [text-shadow:0_1px_24px_rgba(0,0,0,0.4)] ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className={`w-px h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-8 transition-all duration-1000 delay-200 ${loaded ? 'opacity-100' : 'opacity-0'}`} />
+            <div className={`w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-6 md:mb-8 transition-all duration-1000 delay-200 ${loaded ? 'opacity-100' : 'opacity-0'}`} />
             
-            <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">
+            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-clay mb-4 md:mb-6 block">
               Bespoke Experiences
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6">
+            <h1 className="font-serif text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-light leading-[1.15] mb-5 md:mb-6">
               A soulful way
               <span className="block mt-2 text-clay">to gather</span>
             </h1>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl whitespace-pre-line">
+            <p className="text-[15px] sm:text-lg text-muted-foreground leading-relaxed max-w-xl whitespace-pre-line">
               More and more people are opting for a mindful way to celebrate or come together&nbsp;for social gatherings. We live in a stimulated world and Sound Healing has become&nbsp;a meaningful way to pause and connect with one another in an emotionally intimate&nbsp;way, between all the laughter and high energy.{"\n\n\n"}
               It is a deeply soulful relaxation and a truly memorable way to celebrate a special day, occasion or milestone.
             </p>
