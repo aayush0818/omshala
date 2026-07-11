@@ -9,8 +9,8 @@ import MediaVideo from "@/components/MediaVideo";
 import AboutSection from "@/components/AboutSection";
 import CredentialCards from "@/components/CredentialCards";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
-import heroImgAsset from "@/assets/img8-sunset-circle.webp.asset.json";
-import whatThisIsAsset from "@/assets/corporate-what-this-is.jpg.asset.json";
+import heroImgAsset from "@/assets/img5-studio-night.webp.asset.json";
+import whatThisIsAsset from "@/assets/img8-sunset-circle.webp.asset.json";
 import motionVideoAsset from "@/assets/corporate-motion.mov.asset.json";
 
 const whatThisIsImg = whatThisIsAsset.url;
@@ -59,10 +59,10 @@ const EventsPublic = () => {
           <img 
             src={heroImg} 
             alt="Sound healing ceremony" 
-            className={`w-full h-full object-cover transition-opacity duration-1000 ease-out ${loaded ? 'scale-100 opacity-100' : 'scale-110 opacity-0'}`}
+            className={`w-full h-full object-cover object-top transition-opacity duration-1000 ease-out ${loaded ? 'scale-100 opacity-100' : 'scale-110 opacity-0'}`}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/30 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/55 via-transparent to-background/15" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/65 via-background/20 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-background/10" />
         </div>
         
         {/* Floating elements */}
@@ -97,7 +97,7 @@ const EventsPublic = () => {
             <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
               <a 
                 href="#enquire"
-                className="group relative w-full sm:w-auto text-center px-8 sm:px-10 py-4 bg-foreground text-background text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl"
+                className="group relative inline-block w-auto text-center px-8 sm:px-10 py-4 bg-foreground text-background text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl"
               >
                 <span className="relative z-10 group-hover:text-background transition-colors duration-500">Enquire for Corporate Sessions</span>
                 <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
@@ -106,7 +106,7 @@ const EventsPublic = () => {
                 href="https://wa.me/917400361681?text=Hi%20Om%20Shala%2C%20I%27d%20like%20to%20enquire%20about%20a%20corporate%20sound%20healing%20session."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto text-center px-8 sm:px-10 py-4 border border-foreground/20 text-foreground text-sm tracking-wide hover:border-clay hover:text-clay transition-all duration-500 hover:bg-foreground/5"
+                className="inline-block w-auto text-center px-8 sm:px-10 py-4 border border-foreground/20 text-foreground text-sm tracking-wide hover:border-clay hover:text-clay transition-all duration-500 hover:bg-foreground/5"
               >
                 WhatsApp Us
               </a>
