@@ -170,24 +170,17 @@ const EventsPrivate = () => {
             <Reveal>
               <span className="text-[10px] tracking-[0.4em] uppercase text-clay">The Experience</span>
               <h2 className="mt-6 font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-[1.2] text-bone">
-                Lullabies for the soul,
-                <span className="block italic text-bone/80">wrapped in soft light.</span>
+                {"\n"}
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <div className="mt-12 h-px w-16 bg-clay mx-auto" />
             </Reveal>
             <Reveal delay={0.15}>
-              <p className="mt-10 md:mt-12 text-bone/75 leading-[1.9] text-base md:text-[17px] text-left md:text-center">
-                Sound healing can be experienced seated or laying down in a calm environment.
-                Participants are guided through deep breathing and relaxation techniques to be
-                able to let go and absorb the subtle vibrations of sound. The Crystal Singing
-                Bowls used are tuned to a healing frequency, <span className="text-clay">435 Hz</span>,
-                and instantly dissolve mental and emotional tensions, sometimes even putting
-                people off to sleep. Ragas are sung live in the Indian classical style, like
-                lullabies for the soul. Soothing aromas, soft lighting and cozy pillows and
-                blankets are put together aesthetically, to make this journey truly special and
-                unforgettable.
+              <p className="mt-10 md:mt-12 text-bone/75 leading-[1.9] text-base md:text-[17px] text-left md:text-center whitespace-pre-line">
+                Sound healing can be experienced seated or laying down in a calm environment. Participants are guided through deep breathing and relaxation techniques to be able to let go and absorb the subtle vibrations of sound.&nbsp;{"\n"}
+                The Crystal Singing Bowls used are tuned to a healing frequency, <span className="text-clay">435 Hz</span>, and instantly dissolve mental and emotional tensions, sometimes even putting people off to sleep. Ragas are sung live in the Indian classical style, like lullabies for the soul.&nbsp;{"\n"}
+                Soothing aromas, soft lighting and cozy pillows and blankets are put together aesthetically, to make this journey truly special and unforgettable.
               </p>
             </Reveal>
           </div>
