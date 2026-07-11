@@ -51,7 +51,7 @@ const About = () => {
                   <img
                     src={guidePortrait}
                     alt="Shrutika"
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                    className="w-full h-full object-cover"
                   />
                   <div className="absolute -bottom-4 -right-4 w-full h-full border border-clay/20 -z-10" />
                 </div>
@@ -61,7 +61,7 @@ const About = () => {
                 <Reveal>
                   <p>
                     Shrutika is a Meditation Teacher and Indian Classical Singer. Her practice
-                    rests on Nada Yoga — the yoga of sound and music — where the vibration of
+                    rests on Nada Yoga, the yoga of sound and music, where the vibration of
                     pure tone becomes a doorway into the inner life. Every offering she creates
                     is shaped by this one belief: that sound, when it is honest, quietly
                     dissolves the noise between a person and themselves.
@@ -70,7 +70,7 @@ const About = () => {
                 <Reveal delay={0.05}>
                   <p>
                     Her voice was her first instrument. Trained in the Indian classical
-                    tradition, she sings ragas the way they were intended to be received —
+                    tradition, she sings ragas the way they were intended to be received:
                     slowly, ceremonially, as lullabies for the soul. In an Om Shala experience,
                     the voice arrives softly, sits alongside the breath, and becomes the thread
                     that carries everyone inward.
@@ -82,7 +82,7 @@ const About = () => {
                     nature. Their tone is unhurried and whole. It moves through the body before
                     it reaches the mind, softening what has been holding on without asking to be
                     understood. Guided breathwork settles the nervous system before the sound
-                    begins, and a gentle relaxation holds the closing — so that meditation is
+                    begins, and a gentle relaxation holds the closing, so that meditation is
                     not something anyone is asked to do, but something that begins to happen on
                     its own.
                   </p>
@@ -121,7 +121,7 @@ const About = () => {
                     <div className="absolute -bottom-4 -left-4 w-full h-full border border-clay/20 -z-10" />
                   </div>
                   <figcaption className="mt-6 text-xs tracking-[0.25em] uppercase text-muted-foreground text-center">
-                    Om Shala on stage — a large-scale gathering.
+                    Om Shala on stage, a large-scale gathering.
                   </figcaption>
                 </figure>
               </Reveal>
