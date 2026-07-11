@@ -38,7 +38,7 @@ const Footer = () => {
                 Sound Healing Experiences
               </p>
               <p className="text-sm text-muted-foreground/80 italic max-w-xs leading-relaxed pt-2">
-                A quiet practice, held with care.
+                {"\n"}
               </p>
             </div>
 
