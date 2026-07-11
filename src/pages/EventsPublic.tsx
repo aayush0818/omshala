@@ -253,10 +253,10 @@ const EventsPublic = () => {
             <Reveal delay={0.1}>
               <MediaVideo
                 src={motionVideo}
-                fallbackAspect="9 / 16"
+                fallbackAspect="16 / 9"
                 frame="br"
                 ariaLabel="Corporate sound healing session"
-                className="max-w-md mx-auto"
+                className="mx-auto"
               />
             </Reveal>
           </div>
