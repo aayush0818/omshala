@@ -60,10 +60,10 @@ const EventsPublic = () => {
             src={heroImg} 
             alt="Sound healing ceremony" 
             className={`w-full h-full object-cover object-center transition-opacity duration-1000 ease-out ${loaded ? 'scale-100 opacity-100' : 'scale-105 opacity-0'}`}
-            style={{ objectPosition: '50% 62%' }}
+            style={{ objectPosition: '50% 55%' }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/75 via-background/25 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-background/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/55 via-transparent to-background/15" />
         </div>
         
         {/* Floating elements */}
@@ -76,7 +76,7 @@ const EventsPublic = () => {
         <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-earth/10 rounded-full blur-[40px] animate-float" style={{ animationDelay: '2s' }} />
         
         <div className="container mx-auto px-6 sm:px-10 lg:px-16 relative z-10 pt-32 pb-16">
-          <div className={`max-w-2xl transition-all duration-1000 [text-shadow:0_1px_20px_rgba(0,0,0,0.35)] ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <div className={`max-w-2xl transition-all duration-1000 [text-shadow:0_1px_24px_rgba(0,0,0,0.4)] ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className={`w-px h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-8 transition-all duration-1000 delay-200 ${loaded ? 'opacity-100' : 'opacity-0'}`} />
             
             <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">
