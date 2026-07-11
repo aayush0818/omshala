@@ -49,7 +49,6 @@ const Footer = () => {
               </span>
               <nav className="flex flex-col items-center md:items-start gap-3 text-sm text-muted-foreground">
                 <Link to="/" className="hover:text-clay transition-colors duration-300">Home</Link>
-                <Link to="/about" className="hover:text-clay transition-colors duration-300">About</Link>
                 <Link to="/events/public" className="hover:text-clay transition-colors duration-300">Corporate</Link>
                 <Link to="/events/private" className="hover:text-clay transition-colors duration-300">Private</Link>
                 <Link to="/contact" className="hover:text-clay transition-colors duration-300">Contact</Link>

@@ -4,18 +4,18 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import Reveal from "@/components/Reveal";
-import CredentialCards from "@/components/CredentialCards";
 import NaturalImage from "@/components/NaturalImage";
 import MediaVideo from "@/components/MediaVideo";
+import AboutSection from "@/components/AboutSection";
+import CredentialsEditorial from "@/components/CredentialsEditorial";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
-import heroBowl from "@/assets/hero-bowl.jpg";
+import heroImgAsset from "@/assets/img8-sunset-circle.webp.asset.json";
 import whatThisIsAsset from "@/assets/corporate-what-this-is.jpg.asset.json";
-import setupAsset from "@/assets/corporate-setup.jpg.asset.json";
 import motionVideoAsset from "@/assets/corporate-motion.mov.asset.json";
 
 const whatThisIsImg = whatThisIsAsset.url;
-const setupImg = setupAsset.url;
 const motionVideo = motionVideoAsset.url;
+const heroImg = heroImgAsset.url;
 
 const benefits = [
   { icon: Activity, text: "Reduces stress and prevents burnout" },
@@ -57,7 +57,7 @@ const EventsPublic = () => {
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
-            src={heroBowl} 
+            src={heroImg} 
             alt="Sound healing ceremony" 
             className={`w-full h-full object-cover transition-opacity duration-1000 ease-out ${loaded ? 'scale-100 opacity-100' : 'scale-110 opacity-0'}`}
           />
@@ -115,8 +115,11 @@ const EventsPublic = () => {
         </div>
       </section>
 
-      {/* Credentials strip */}
-      <CredentialCards className="border-t border-foreground/5" />
+      {/* About */}
+      <AboutSection />
+
+      {/* Credentials */}
+      <CredentialsEditorial />
 
       {/* Sound Baths for Corporate Wellness */}
       <section className="py-20 md:py-40 relative overflow-hidden bg-muted/10">
@@ -308,39 +311,6 @@ const EventsPublic = () => {
                 ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The Setup */}
-      <section className="py-20 md:py-36 relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
-            <div className="lg:col-span-6 order-2 lg:order-1">
-              <Reveal>
-                <span className="text-[10px] tracking-[0.35em] uppercase text-clay">The Setup</span>
-                <h2 className="mt-6 font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
-                  Studio-grade sound, delivered anywhere.
-                </h2>
-              </Reveal>
-              <Reveal delay={0.1}>
-                <p className="mt-8 text-muted-foreground leading-relaxed">
-                  Om Shala uses a high quality professional sound recording system to be able to
-                  transmute the subtle microtones of singing bowls with utmost clarity and
-                  precision. All you need from your end is a calm ambience and
-                  earphones/headphones for your participants or simply a stereo system for a
-                  room full of people.
-                </p>
-              </Reveal>
-            </div>
-            <Reveal className="lg:col-span-6 order-1 lg:order-2" delay={0.05}>
-              <NaturalImage
-                src={setupImg}
-                alt="Studio setup with crystal singing bowls and tanpura"
-                fallbackAspect="3 / 4"
-                frame="tl"
-              />
-            </Reveal>
           </div>
         </div>
       </section>

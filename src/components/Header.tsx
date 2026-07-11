@@ -19,15 +19,20 @@ const Header = () => {
   const isPrivate = pathname.startsWith("/events/private");
 
   let navLinks: NavItem[];
-  if (isCorporate || isPrivate) {
+  if (isCorporate) {
     navLinks = [
-      { href: "/about", label: "About" },
-      { href: "/contact", label: "Contact" },
+      { href: "/events/public", label: "Corporate" },
+      { href: "/contact?journey=corporate", label: "Contact" },
+      { href: "#enquire", label: "Enquire", hash: true, cta: true },
+    ];
+  } else if (isPrivate) {
+    navLinks = [
+      { href: "/events/private", label: "Private" },
+      { href: "/contact?journey=private", label: "Contact" },
       { href: "#enquire", label: "Enquire", hash: true, cta: true },
     ];
   } else {
     navLinks = [
-      { href: "/about", label: "About" },
       { href: "/events/public", label: "Corporate" },
       { href: "/events/private", label: "Private" },
       { href: "/contact", label: "Contact" },

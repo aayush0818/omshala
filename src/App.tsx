@@ -12,7 +12,6 @@ import BreathCompanion from "./components/BreathCompanion";
 import SoundBowl from "./components/SoundBowl";
 import Index from "./pages/Index";
 
-const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const EventsPublic = lazy(() => import("./pages/EventsPublic"));
 const EventsPrivate = lazy(() => import("./pages/EventsPrivate"));
@@ -28,7 +27,6 @@ const AnimatedRoutes = () => {
       <Suspense key={location.pathname} fallback={<div className="min-h-screen" />}>
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/events/public" element={<EventsPublic />} />
           <Route path="/events/private" element={<EventsPrivate />} />
