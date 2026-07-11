@@ -3,10 +3,13 @@ import HeroGateway from "@/components/HeroGateway";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import Reveal from "@/components/Reveal";
+import MediaVideo from "@/components/MediaVideo";
 import guidePortraitAsset from "@/assets/img1-portrait.webp.asset.json";
+import homeVideoAsset from "@/assets/home-intro.mp4.asset.json";
 import { CREDENTIALS } from "@/components/CredentialCards";
 
 const guidePortrait = guidePortraitAsset.url;
+const homeVideo = homeVideoAsset.url;
 const credentials = CREDENTIALS;
 
 const Index = () => {
@@ -17,8 +20,36 @@ const Index = () => {
           {/* 1. Gateway */}
           <HeroGateway />
 
-          {/* 2. About Om Shala */}
-          <section className="py-28 md:py-40 relative overflow-hidden">
+          {/* 2. In Motion — first look */}
+          <section className="py-20 md:py-32 relative overflow-hidden">
+            <div className="container mx-auto px-6">
+              <div className="max-w-5xl mx-auto">
+                <Reveal>
+                  <div className="text-center mb-10 md:mb-14">
+                    <span className="text-[10px] tracking-[0.4em] uppercase text-clay">
+                      A First Look
+                    </span>
+                    <h2 className="mt-5 font-serif text-2xl md:text-4xl font-light leading-tight">
+                      A quiet glimpse of the practice.
+                    </h2>
+                    <div className="mt-6 w-12 h-px bg-clay/60 mx-auto" />
+                  </div>
+                </Reveal>
+                <Reveal delay={0.1}>
+                  <MediaVideo
+                    src={homeVideo}
+                    fallbackAspect="9 / 16"
+                    frame="br"
+                    ariaLabel="A moment from an Om Shala experience"
+                    className="max-w-sm md:max-w-md mx-auto"
+                  />
+                </Reveal>
+              </div>
+            </div>
+          </section>
+
+          {/* 3. About Om Shala */}
+          <section className="py-20 md:py-40 relative overflow-hidden">
             <div className="container mx-auto px-6">
               <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center max-w-6xl mx-auto">
                 <Reveal className="lg:col-span-5">
@@ -58,7 +89,7 @@ const Index = () => {
                     <Reveal delay={0.2}>
                       <p>
                         Every experience is designed to help people slow down, reconnect with
-                        themselves and experience deep rest — without requiring prior meditation
+                        themselves and experience deep rest, without requiring prior meditation
                         experience or belief systems.
                       </p>
                     </Reveal>
@@ -75,8 +106,8 @@ const Index = () => {
             </div>
           </section>
 
-          {/* 3. Credentials — editorial two-column */}
-          <section className="py-28 md:py-44 border-t border-foreground/5 relative overflow-hidden">
+          {/* 4. Credentials — editorial two-column */}
+          <section className="py-20 md:py-44 border-t border-foreground/5 relative overflow-hidden">
             <div className="absolute top-1/3 -left-40 w-96 h-96 bg-clay/5 rounded-full blur-[120px] pointer-events-none" />
             <div className="container mx-auto px-6">
               <div className="grid lg:grid-cols-12 gap-14 lg:gap-24 max-w-6xl mx-auto">
@@ -93,7 +124,7 @@ const Index = () => {
                       </h2>
                       <div className="mt-10 h-px w-16 bg-clay/60" />
                       <p className="mt-8 text-sm text-muted-foreground leading-relaxed max-w-sm">
-                        A quiet record of the rooms Om Shala has been asked to hold —
+                        A quiet record of the rooms Om Shala has been asked to hold:
                         boardrooms, palaces, festivals, private homes.
                       </p>
                     </Reveal>
@@ -118,12 +149,12 @@ const Index = () => {
             </div>
           </section>
 
-          {/* 4. Contact CTA */}
-          <section className="py-28 md:py-40 bg-muted/20 relative overflow-hidden">
+          {/* 5. Contact CTA */}
+          <section className="py-20 md:py-40 bg-muted/20 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
             <div className="container mx-auto px-6 text-center">
               <Reveal>
-                <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-tight max-w-2xl mx-auto">
+                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-tight max-w-2xl mx-auto">
                   Ready to create a Sound Healing Experience?
                 </h2>
               </Reveal>
