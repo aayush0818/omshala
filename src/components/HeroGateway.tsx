@@ -334,7 +334,7 @@ const HeroGateway = () => {
                     <span className="block h-px w-8 md:w-10 bg-clay" />
                   </span>
                   <h2
-                    className="hidden md:block font-serif text-xl md:text-2xl lg:text-[1.75rem] leading-[1.4] font-light text-bone"
+                    className="hidden md:block font-serif text-xl md:text-2xl lg:text-[1.75rem] leading-[1.4] font-medium text-bone"
                     style={{ textShadow: "0 2px 24px rgba(0,0,0,0.55)" }}
                   >
                     {panel.title}
