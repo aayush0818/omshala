@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 
 export const CREDENTIALS = [
   "12+ years of experience in the mindfulness industry",
-  "Founder of Om Shala — first studio in Bombay dedicated to Sound Healing",
+  "Founder of Om Shala, first studio in Bombay dedicated to Sound Healing",
   "Spotify meditations in collaboration with Universal Music",
   "Sessions for members of the Royal Family in Dubai & Saudi Arabia",
   "Private sessions for the Late G. P. Hinduja in London",
