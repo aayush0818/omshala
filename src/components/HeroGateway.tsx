@@ -328,7 +328,7 @@ const HeroGateway = () => {
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <span className="inline-flex flex-col items-center gap-3 mb-6 md:mb-8">
-                    <span className="block text-[10px] md:text-[13px] tracking-[0.35em] md:tracking-[0.45em] uppercase text-bone font-medium">
+                    <span className="block text-[10px] md:text-[13px] tracking-[0.35em] md:tracking-[0.45em] uppercase text-bone font-semibold">
                       {panel.eyebrow}
                     </span>
                     <span className="block h-px w-8 md:w-10 bg-clay" />
