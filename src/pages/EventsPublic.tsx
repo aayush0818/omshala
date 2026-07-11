@@ -7,7 +7,7 @@ import Reveal from "@/components/Reveal";
 import NaturalImage from "@/components/NaturalImage";
 import MediaVideo from "@/components/MediaVideo";
 import AboutSection from "@/components/AboutSection";
-import CredentialsEditorial from "@/components/CredentialsEditorial";
+import CredentialCards from "@/components/CredentialCards";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import heroImgAsset from "@/assets/img8-sunset-circle.webp.asset.json";
 import whatThisIsAsset from "@/assets/corporate-what-this-is.jpg.asset.json";
@@ -119,7 +119,7 @@ const EventsPublic = () => {
       <AboutSection />
 
       {/* Credentials */}
-      <CredentialsEditorial />
+      <CredentialCards className="border-t border-foreground/5" />
 
       {/* Sound Baths for Corporate Wellness */}
       <section className="py-20 md:py-40 relative overflow-hidden bg-muted/10">
