@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import HeroGateway from "@/components/HeroGateway";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import Reveal from "@/components/Reveal";
@@ -14,6 +15,7 @@ const Index = () => {
   return (
     <PageTransition>
       <div className="min-h-screen bg-background text-foreground">
+        <Header />
         <main>
           {/* 1. Gateway */}
           <HeroGateway />
