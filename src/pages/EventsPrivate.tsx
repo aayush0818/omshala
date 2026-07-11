@@ -8,7 +8,7 @@ import Reveal from "@/components/Reveal";
 import NaturalImage from "@/components/NaturalImage";
 import MediaVideo from "@/components/MediaVideo";
 import AboutSection from "@/components/AboutSection";
-import CredentialsEditorial from "@/components/CredentialsEditorial";
+import CredentialCards from "@/components/CredentialCards";
 import heroImgAsset from "@/assets/img5-studio-night.webp.asset.json";
 import img6Asset from "@/assets/img6-outdoor-group.webp.asset.json";
 import img7Asset from "@/assets/img7-purple-room.webp.asset.json";
@@ -88,7 +88,7 @@ const EventsPrivate = () => {
       <AboutSection />
 
       {/* Credentials */}
-      <CredentialsEditorial />
+      <CredentialCards className="border-t border-foreground/5" />
 
       {/* The Experience */}
       <section className="relative overflow-hidden bg-charcoal text-bone">
