@@ -65,7 +65,7 @@ const EventsPrivate = () => {
               <div className={`w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-6 md:mb-8 transition-all duration-1000 delay-200 ${loaded ? 'opacity-100' : 'opacity-0'}`} />
               
               <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-clay mb-4 md:mb-6 block font-semibold">
-                Bespoke Experiences
+                {"\n"}
               </span>
               <h1 className="font-serif text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.15] mb-5 md:mb-6"
                   style={{ textShadow: "0 1px 16px rgba(255,255,255,0.8)" }}>
