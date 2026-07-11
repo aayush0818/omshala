@@ -32,11 +32,10 @@ const About = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/40" />
           </div>
           <div className="container mx-auto px-6 relative z-10 pt-32">
-            <div className={`max-w-2xl transition-all duration-1000 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+            <div className={`max-w-3xl transition-all duration-1000 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
               <div className="w-px h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-8" />
-              <span className="text-[10px] tracking-[0.35em] uppercase text-clay">About</span>
-              <h1 className="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1]">
-                The yoga of sound.
+              <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-light leading-[1.05]">
+                About
               </h1>
             </div>
           </div>
@@ -60,45 +59,20 @@ const About = () => {
               <div className="lg:col-span-7 space-y-8 text-muted-foreground leading-[1.85] text-[17px]">
                 <Reveal>
                   <p>
-                    Shrutika is a Meditation Teacher and Indian Classical Singer. Her practice
-                    rests on Nada Yoga, the yoga of sound and music, where the vibration of
-                    pure tone becomes a doorway into the inner life. Every offering she creates
-                    is shaped by this one belief: that sound, when it is honest, quietly
-                    dissolves the noise between a person and themselves.
-                  </p>
-                </Reveal>
-                <Reveal delay={0.05}>
-                  <p>
-                    Her voice was her first instrument. Trained in the Indian classical
-                    tradition, she sings ragas the way they were intended to be received:
-                    slowly, ceremonially, as lullabies for the soul. In an Om Shala experience,
-                    the voice arrives softly, sits alongside the breath, and becomes the thread
-                    that carries everyone inward.
+                    Shrutika is a Meditation Teacher and Indian Classical Singer practicing Nada Yoga, the yoga of sound &amp; music, as a pathway to the inner life. She creates unique Sound Healing Experiences using Crystal Singing Bowls and the instrument of Voice, supported by Breathwork and Guided Relaxation.
                   </p>
                 </Reveal>
                 <Reveal delay={0.1}>
-                  <p>
-                    Around the voice she weaves Crystal Singing Bowls, tuned to the frequency of
-                    nature. Their tone is unhurried and whole. It moves through the body before
-                    it reaches the mind, softening what has been holding on without asking to be
-                    understood. Guided breathwork settles the nervous system before the sound
-                    begins, and a gentle relaxation holds the closing, so that meditation is
-                    not something anyone is asked to do, but something that begins to happen on
-                    its own.
+                  <p className="italic text-foreground/85 pl-6 border-l border-clay/40 text-lg mt-10">
+                    "Pure sound pulls you inward and brings deep relaxation. In this state, the body is grounded, mind is open and emotions are free. Everything feels perfect, as it is."
                   </p>
                 </Reveal>
                 <Reveal delay={0.15}>
-                  <p>
-                    This is the whole of the practice. No technique to perfect, no belief system
-                    to adopt. Only breath, sound, and enough stillness for the person underneath
-                    to be heard again.
-                  </p>
+                  <p className="pl-6 text-sm text-foreground/70">– Shrutika</p>
                 </Reveal>
                 <Reveal delay={0.2}>
-                  <p className="italic text-foreground/85 pl-6 border-l border-clay/40 text-lg mt-14">
-                    "Pure sound pulls you inward and brings deep relaxation. In this state, the
-                    body is grounded, the mind is open and emotions are free. Everything feels
-                    perfect, as it is."
+                  <p>
+                    Her sessions are designed to be simple, effective, and accessible, without requiring effort, belief systems, or prior practice.
                   </p>
                 </Reveal>
               </div>
@@ -131,7 +105,6 @@ const About = () => {
 
         <CredentialCards
           eyebrow="Credentials"
-          heading="A quiet record of the work."
           className="border-t border-foreground/5"
         />
 
