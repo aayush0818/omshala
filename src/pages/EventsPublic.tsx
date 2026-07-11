@@ -116,11 +116,7 @@ const EventsPublic = () => {
       </section>
 
       {/* Credentials strip */}
-      <CredentialCards
-        eyebrow="Trusted With"
-        heading="Rooms Om Shala has been asked to hold."
-        className="border-t border-foreground/5"
-      />
+      <CredentialCards className="border-t border-foreground/5" />
 
       {/* Sound Baths for Corporate Wellness */}
       <section className="py-20 md:py-40 relative overflow-hidden bg-muted/10">
@@ -180,8 +176,7 @@ const EventsPublic = () => {
 
         <div className="container mx-auto px-6">
           <div className={`text-center mb-16 transition-all duration-700 ${eventsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <span className="text-xs tracking-[0.3em] uppercase text-clay">Why Sound Baths at Work</span>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl font-light">
+            <h2 className="font-serif text-4xl md:text-5xl font-light">
               Benefits for the team
             </h2>
             <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-clay to-transparent mx-auto" />
@@ -241,11 +236,8 @@ const EventsPublic = () => {
           <div className="max-w-5xl mx-auto">
             <Reveal>
               <div className="text-center mb-10 md:mb-14">
-                <span className="text-[10px] tracking-[0.35em] uppercase text-clay">
-                  See It In Motion
-                </span>
-                <h2 className="mt-5 font-serif text-2xl md:text-4xl font-light leading-tight">
-                  A glimpse of the room.
+                <h2 className="font-serif text-2xl md:text-4xl font-light leading-tight">
+                  A Glimpse
                 </h2>
                 <div className="mt-6 w-12 h-px bg-clay/60 mx-auto" />
               </div>

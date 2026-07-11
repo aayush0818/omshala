@@ -197,49 +197,14 @@ const EventsPrivate = () => {
         </div>
       </section>
 
-      {/* The Room — dedicated editorial moment for private-room image */}
-      <section className="py-20 md:py-32 relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center max-w-6xl mx-auto">
-            <div className="lg:col-span-5 order-2 lg:order-1">
-              <Reveal>
-                <span className="text-[10px] tracking-[0.4em] uppercase text-clay">The Room</span>
-                <h2 className="mt-6 font-serif text-2xl md:text-3xl lg:text-4xl font-light leading-tight">
-                  A quiet space,
-                  <span className="block italic text-clay">held in stillness.</span>
-                </h2>
-              </Reveal>
-              <Reveal delay={0.1}>
-                <p className="mt-8 text-muted-foreground leading-relaxed">
-                  Bowls arranged by the light, a tanpura resting against the window, the floor
-                  polished to a soft reflection. Everything is placed with intention so that the
-                  room itself invites you to slow down before a single note is played.
-                </p>
-              </Reveal>
-            </div>
-            <Reveal className="lg:col-span-7 order-1 lg:order-2" delay={0.05}>
-              <NaturalImage
-                src={privateRoom}
-                alt="Crystal singing bowls arranged by a bright studio window"
-                fallbackAspect="3 / 4"
-                frame="tl"
-              />
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* In Motion — standalone private video */}
+      {/* A Glimpse — standalone private video */}
       <section className="py-20 md:py-32 bg-muted/10 relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <Reveal>
               <div className="text-center mb-10 md:mb-14">
-                <span className="text-[10px] tracking-[0.4em] uppercase text-clay">
-                  In Motion
-                </span>
-                <h2 className="mt-5 font-serif text-2xl md:text-4xl font-light leading-tight">
-                  A moment from a private ceremony.
+                <h2 className="font-serif text-2xl md:text-4xl font-light leading-tight">
+                  A Glimpse
                 </h2>
                 <div className="mt-6 w-12 h-px bg-clay/60 mx-auto" />
               </div>

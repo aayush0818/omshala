@@ -21,26 +21,17 @@ interface Props {
  * Subtle credential card grid — used on secondary pages (Corporate, About).
  * Visually distinct from the homepage's bespoke editorial treatment.
  */
-const CredentialCards = ({ eyebrow = "Credentials", heading, className }: Props) => {
+const CredentialCards = ({ heading = "Credentials", className }: Props) => {
   return (
     <section className={`py-24 md:py-32 relative overflow-hidden ${className ?? ""}`}>
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <Reveal>
-            <div className="mb-14 flex items-end justify-between flex-wrap gap-6">
-              <div>
-                <span className="text-[10px] tracking-[0.35em] uppercase text-clay">
-                  {eyebrow}
-                </span>
-                {heading && (
-                  <h2 className="mt-4 font-serif text-2xl md:text-3xl font-light leading-tight max-w-xl">
-                    {heading}
-                  </h2>
-                )}
-              </div>
-              <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground">
-                A quiet record
-              </span>
+            <div className="mb-14">
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
+                {heading}
+              </h2>
+              <div className="mt-6 h-px w-16 bg-clay/60" />
             </div>
           </Reveal>
 
