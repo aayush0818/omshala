@@ -263,9 +263,12 @@ const HeroGateway = () => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-charcoal text-bone">
-      {/* Tagline (Header already shows the wordmark) */}
+      {/* Brand mark + tagline */}
       <div className="absolute top-16 md:top-20 left-0 right-0 z-30 pt-4 pointer-events-none">
         <div className="flex flex-col items-center gap-2 md:gap-3">
+          <span className="font-serif text-3xl md:text-5xl lg:text-6xl tracking-[0.25em] md:tracking-[0.3em] text-bone uppercase text-center px-4">
+            OM SHALA
+          </span>
           <span className="h-px w-8 md:w-10 bg-bone/30" />
           <span className="text-[9px] md:text-[10px] tracking-[0.3em] md:tracking-[0.35em] uppercase text-bone/50 text-center px-4">
             Sound Healing Experiences &amp; Events
