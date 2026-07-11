@@ -274,7 +274,7 @@ const HeroGateway = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 h-full">
+      <div className="grid grid-cols-2 h-full">
         {panels.map((panel) => {
           const isHovered = hovered === panel.key;
           const isDimmed = hovered && hovered !== panel.key;
@@ -289,7 +289,7 @@ const HeroGateway = () => {
               onMouseEnter={() => !expanding && setHovered(panel.key)}
               onMouseLeave={() => !expanding && setHovered(null)}
               onClick={() => handleClick(panel.key, panel.href)}
-              className="group relative h-[50vh] md:h-full w-full overflow-hidden text-left cursor-pointer"
+              className="group relative h-full w-full overflow-hidden text-left cursor-pointer"
               animate={{
                 flex: isExpanding ? 2 : isRetreating ? 0 : 1,
                 opacity: isRetreating ? 0 : 1,
@@ -319,31 +319,37 @@ const HeroGateway = () => {
               )}
 
               {/* Content */}
-              <div className="absolute inset-0 flex items-center justify-center px-8 md:px-14 lg:px-20">
+              <div className="absolute inset-0 flex items-center justify-center px-4 md:px-14 lg:px-20">
                 <motion.div
                   className="max-w-md text-center"
                   animate={{ y: isHovered ? -6 : 0, opacity: isDimmed ? 0.55 : 1 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <span className="inline-flex flex-col items-center gap-3 mb-8">
-                    <span className="block text-xs md:text-[13px] tracking-[0.45em] uppercase text-bone font-medium">
+                  <span className="inline-flex flex-col items-center gap-3 mb-6 md:mb-8">
+                    <span className="block text-[10px] md:text-[13px] tracking-[0.35em] md:tracking-[0.45em] uppercase text-bone font-medium">
                       {panel.eyebrow}
                     </span>
-                    <span className="block h-px w-10 bg-clay" />
+                    <span className="block h-px w-8 md:w-10 bg-clay" />
                   </span>
                   <h2
-                    className="font-serif text-xl md:text-2xl lg:text-[1.75rem] leading-[1.4] font-light text-bone"
+                    className="hidden md:block font-serif text-xl md:text-2xl lg:text-[1.75rem] leading-[1.4] font-light text-bone"
                     style={{ textShadow: "0 2px 24px rgba(0,0,0,0.55)" }}
                   >
                     {panel.title}
                   </h2>
+                  <h2
+                    className="md:hidden font-serif text-2xl leading-tight font-light text-bone"
+                    style={{ textShadow: "0 2px 24px rgba(0,0,0,0.55)" }}
+                  >
+                    {panel.key === "corporate" ? "Corporate" : "Private"}
+                  </h2>
                   <motion.div
-                    className="mt-10 inline-flex items-center gap-3 text-xs tracking-[0.3em] uppercase text-bone/85"
+                    className="mt-6 md:mt-10 inline-flex items-center gap-2 md:gap-3 text-[10px] md:text-xs tracking-[0.25em] md:tracking-[0.3em] uppercase text-bone/85"
                     animate={{ x: isHovered ? 4 : 0 }}
                     transition={{ duration: 0.4 }}
                   >
                     <span>Explore</span>
-                    <span className="inline-block w-8 h-px bg-clay" />
+                    <span className="inline-block w-5 md:w-8 h-px bg-clay" />
                     <span>→</span>
                   </motion.div>
                 </motion.div>
