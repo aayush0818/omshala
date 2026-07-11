@@ -59,9 +59,9 @@ const EventsPrivate = () => {
         <div className="container mx-auto px-6 sm:px-10 lg:px-16 relative z-10 pt-28 md:pt-32 pb-14 md:pb-16">
           <div className={`max-w-2xl relative transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             {/* Soft white glow concentrated behind the text */}
-            <div className="absolute -inset-x-12 sm:-inset-x-16 lg:-inset-x-24 -inset-y-8 sm:-inset-y-12 lg:-inset-y-16 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/60 via-white/20 to-transparent blur-3xl rounded-full pointer-events-none opacity-90" />
+            <div className="absolute -inset-x-16 sm:-inset-x-20 lg:-inset-x-32 -inset-y-10 sm:-inset-y-14 lg:-inset-y-20 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/85 via-white/35 to-transparent blur-3xl rounded-full pointer-events-none" />
             
-            <div className="relative z-10 [text-shadow:0_1px_24px_rgba(0,0,0,0.4)]">
+            <div className="relative z-10">
               <div className={`w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-6 md:mb-8 transition-all duration-1000 delay-200 ${loaded ? 'opacity-100' : 'opacity-0'}`} />
               
               <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-clay mb-4 md:mb-6 block">
