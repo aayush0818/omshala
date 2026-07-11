@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, Send } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -8,7 +8,6 @@ import Reveal from "@/components/Reveal";
 const contactMethods = [
   { icon: Mail, label: "Email", value: "omshala.official@gmail.com", href: "mailto:omshala.official@gmail.com" },
   { icon: Phone, label: "WhatsApp", value: "+91 74003 61681", href: "https://wa.me/917400361681" },
-  { icon: MapPin, label: "Location", value: "Bandra West, Mumbai", href: "#" },
 ];
 
 const Contact = () => {
@@ -46,7 +45,7 @@ const Contact = () => {
         {/* Methods */}
         <section className="py-16 md:py-20 border-y border-foreground/5">
           <div className="container mx-auto px-6">
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
               {contactMethods.map((m, i) => (
                 <Reveal key={m.label} delay={i * 0.06}>
                   <a
