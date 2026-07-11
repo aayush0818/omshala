@@ -53,7 +53,7 @@ const EventsPublic = () => {
         <Header />
       
       {/* Hero Section */}
-      <section className="relative min-h-[75vh] flex items-center overflow-hidden bg-charcoal">
+      <section className="relative min-h-[85vh] md:min-h-[75vh] flex items-center overflow-hidden bg-charcoal">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
@@ -75,18 +75,18 @@ const EventsPublic = () => {
         <div className="absolute top-1/4 right-1/3 w-64 h-64 bg-clay/10 rounded-full blur-[50px] animate-float" />
         <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-earth/10 rounded-full blur-[40px] animate-float" style={{ animationDelay: '2s' }} />
         
-        <div className="container mx-auto px-6 sm:px-10 lg:px-16 relative z-10 pt-32 pb-16">
+        <div className="container mx-auto px-6 sm:px-10 lg:px-16 relative z-10 pt-28 md:pt-32 pb-14 md:pb-16">
           <div className={`max-w-2xl transition-all duration-1000 [text-shadow:0_1px_24px_rgba(0,0,0,0.4)] ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className={`w-px h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-8 transition-all duration-1000 delay-200 ${loaded ? 'opacity-100' : 'opacity-0'}`} />
+            <div className={`w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-6 md:mb-8 transition-all duration-1000 delay-200 ${loaded ? 'opacity-100' : 'opacity-0'}`} />
             
-            <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">
+            <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-clay mb-4 md:mb-6 block">
               Corporate Wellness
             </span>
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-tight mb-6">
+            <h1 className="font-serif text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-light leading-[1.15] mb-5 md:mb-6">
               Deep Relaxation
               <span className="block mt-2 text-clay">for High-Performance Teams</span>
             </h1>
-            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
+            <p className="text-[15px] sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
               Therapeutic sound immersions known as Sound Baths, designed to reduce mental
               fatigue, improve focus, and support emotional resilience in the workplace.
             </p>
