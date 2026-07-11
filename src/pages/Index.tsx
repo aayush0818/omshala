@@ -68,36 +68,24 @@ const Index = () => {
                     <span className="text-[10px] tracking-[0.35em] uppercase text-clay">
                       About Om Shala
                     </span>
-                    <h2 className="mt-6 font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-[1.15]">
-                      A quiet practice, held with care.
-                    </h2>
                   </Reveal>
-                  <div className="mt-10 space-y-6 text-muted-foreground leading-relaxed max-w-xl">
+                  <div className="mt-8 space-y-6 text-muted-foreground leading-relaxed max-w-xl">
                     <Reveal delay={0.1}>
                       <p>
-                        Shrutika is a Meditation Teacher and Indian Classical Singer practicing
-                        Nada Yoga, the yoga of sound and music, as a pathway to the inner life.
+                        Shrutika is a Meditation Teacher and Indian Classical Singer practicing Nada Yoga, the yoga of sound &amp; music, as a pathway to the inner life. She creates unique Sound Healing Experiences using Crystal Singing Bowls and the instrument of Voice, supported by Breathwork and Guided Relaxation.
                       </p>
                     </Reveal>
                     <Reveal delay={0.15}>
-                      <p>
-                        Through Om Shala, she creates immersive Sound Healing Experiences using
-                        Crystal Singing Bowls, the healing power of Voice, Breathwork and
-                        Guided Relaxation.
+                      <p className="italic text-foreground/80 pl-6 border-l border-clay/40 mt-10">
+                        "Pure sound pulls you inward and brings deep relaxation. In this state, the body is grounded, mind is open and emotions are free. Everything feels perfect, as it is."
                       </p>
                     </Reveal>
                     <Reveal delay={0.2}>
-                      <p>
-                        Every experience is designed to help people slow down, reconnect with
-                        themselves and experience deep rest, without requiring prior meditation
-                        experience or belief systems.
-                      </p>
+                      <p className="pl-6 text-sm text-foreground/70">– Shrutika</p>
                     </Reveal>
                     <Reveal delay={0.25}>
-                      <p className="italic text-foreground/80 pl-6 border-l border-clay/40 mt-10">
-                        "Pure sound pulls you inward and brings deep relaxation. In this state,
-                        the body is grounded, the mind is open and emotions are free. Everything
-                        feels perfect, as it is."
+                      <p>
+                        Her sessions are designed to be simple, effective, and accessible, without requiring effort, belief systems, or prior practice.
                       </p>
                     </Reveal>
                   </div>
@@ -114,19 +102,10 @@ const Index = () => {
                 <div className="lg:col-span-5">
                   <div className="lg:sticky lg:top-32">
                     <Reveal>
-                      <span className="text-[10px] tracking-[0.35em] uppercase text-clay">
+                      <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-[1.05]">
                         Credentials
-                      </span>
-                      <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-[1.05]">
-                        A body of work
-                        <span className="block text-clay italic">built quietly,</span>
-                        over years.
                       </h2>
                       <div className="mt-10 h-px w-16 bg-clay/60" />
-                      <p className="mt-8 text-sm text-muted-foreground leading-relaxed max-w-sm">
-                        A quiet record of the rooms Om Shala has been asked to hold:
-                        boardrooms, palaces, festivals, private homes.
-                      </p>
                     </Reveal>
                   </div>
                 </div>
