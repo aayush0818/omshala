@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/__l5e/:path*",
+      "destination": "https://still-mind-practice.lovable.app/__l5e/:path*"
+    },
+    {
+      "source": "/((?!__l5e|assets|favicon|robots|placeholder|.*\\..*).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
