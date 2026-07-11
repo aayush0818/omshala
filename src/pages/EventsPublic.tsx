@@ -53,16 +53,17 @@ const EventsPublic = () => {
         <Header />
       
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[75vh] flex items-center overflow-hidden bg-charcoal">
         {/* Background Image */}
         <div className="absolute inset-0">
           <img 
             src={heroImg} 
             alt="Sound healing ceremony" 
-            className={`w-full h-full object-cover object-top transition-opacity duration-1000 ease-out ${loaded ? 'scale-100 opacity-100' : 'scale-110 opacity-0'}`}
+            className={`w-full h-full object-cover object-center transition-opacity duration-1000 ease-out ${loaded ? 'scale-100 opacity-100' : 'scale-105 opacity-0'}`}
+            style={{ objectPosition: '50% 62%' }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/65 via-background/20 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-background/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/75 via-background/25 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-background/10" />
         </div>
         
         {/* Floating elements */}
@@ -74,8 +75,8 @@ const EventsPublic = () => {
         <div className="absolute top-1/4 right-1/3 w-64 h-64 bg-clay/10 rounded-full blur-[50px] animate-float" />
         <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-earth/10 rounded-full blur-[40px] animate-float" style={{ animationDelay: '2s' }} />
         
-        <div className="container mx-auto px-6 relative z-10 pt-32">
-          <div className={`max-w-2xl transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        <div className="container mx-auto px-6 sm:px-10 lg:px-16 relative z-10 pt-32 pb-16">
+          <div className={`max-w-2xl transition-all duration-1000 [text-shadow:0_1px_20px_rgba(0,0,0,0.35)] ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             <div className={`w-px h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-8 transition-all duration-1000 delay-200 ${loaded ? 'opacity-100' : 'opacity-0'}`} />
             
             <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">
