@@ -12,13 +12,11 @@ import abstractZen from "@/assets/abstract-zen.jpg";
 import img6Asset from "@/assets/img6-outdoor-group.webp.asset.json";
 import img7Asset from "@/assets/img7-purple-room.webp.asset.json";
 import img10Asset from "@/assets/img10-white-brunch.webp.asset.json";
-import privateRoomAsset from "@/assets/private-room.jpg.asset.json";
 import privateVideoAsset from "@/assets/private-carousel.mp4.asset.json";
 
 const img6 = img6Asset.url;
 const img7 = img7Asset.url;
 const img10 = img10Asset.url;
-const privateRoom = privateRoomAsset.url;
 const privateVideo = privateVideoAsset.url;
 
 const privateOfferings = [
