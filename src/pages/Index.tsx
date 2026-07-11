@@ -5,7 +5,7 @@ import PageTransition from "@/components/PageTransition";
 import Reveal from "@/components/Reveal";
 import MediaVideo from "@/components/MediaVideo";
 import AboutSection from "@/components/AboutSection";
-import CredentialsEditorial from "@/components/CredentialsEditorial";
+import CredentialCards from "@/components/CredentialCards";
 import homeVideoAsset from "@/assets/home-intro.mp4.asset.json";
 
 const homeVideo = homeVideoAsset.url;
@@ -50,7 +50,7 @@ const Index = () => {
           <AboutSection />
 
           {/* 4. Credentials */}
-          <CredentialsEditorial />
+          <CredentialCards className="border-t border-foreground/5" />
 
           {/* 5. Contact CTA */}
           <section className="py-20 md:py-40 bg-muted/20 relative overflow-hidden">

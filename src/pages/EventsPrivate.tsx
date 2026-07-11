@@ -8,7 +8,7 @@ import Reveal from "@/components/Reveal";
 import NaturalImage from "@/components/NaturalImage";
 import MediaVideo from "@/components/MediaVideo";
 import AboutSection from "@/components/AboutSection";
-import CredentialsEditorial from "@/components/CredentialsEditorial";
+import CredentialCards from "@/components/CredentialCards";
 import heroImgAsset from "@/assets/img5-studio-night.webp.asset.json";
 import img6Asset from "@/assets/img6-outdoor-group.webp.asset.json";
 import img7Asset from "@/assets/img7-purple-room.webp.asset.json";
@@ -42,8 +42,8 @@ const EventsPrivate = () => {
             alt="Private meditation space" 
             className={`w-full h-full object-cover transition-opacity duration-1000 ease-out ${loaded ? 'scale-100 opacity-100' : 'scale-110 opacity-0'}`}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/70" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/55 via-transparent to-background/15" />
         </div>
         
         {/* Floating elements */}
@@ -88,7 +88,7 @@ const EventsPrivate = () => {
       <AboutSection />
 
       {/* Credentials */}
-      <CredentialsEditorial />
+      <CredentialCards className="border-t border-foreground/5" />
 
       {/* The Experience */}
       <section className="relative overflow-hidden bg-charcoal text-bone">
