@@ -24,9 +24,9 @@ const AnimatedRoutes = () => {
   const location = useLocation();
   
   return (
-    <AnimatePresence mode="sync" initial={false}>
-      <Suspense fallback={<div className="min-h-screen" />} key={location.pathname}>
-        <Routes location={location}>
+    <AnimatePresence mode="wait" initial={false}>
+      <Suspense key={location.pathname} fallback={<div className="min-h-screen" />}>
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
