@@ -78,23 +78,24 @@ const EventsPublic = () => {
         <div className="container mx-auto px-6 sm:px-10 lg:px-16 relative z-10 pt-28 md:pt-32 pb-14 md:pb-16">
           <div className={`max-w-2xl relative transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
             {/* Soft white glow concentrated behind the text */}
-            <div className="absolute -inset-x-16 sm:-inset-x-20 lg:-inset-x-32 -inset-y-10 sm:-inset-y-14 lg:-inset-y-20 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/85 via-white/35 to-transparent blur-3xl rounded-full pointer-events-none" />
+            <div className="absolute -inset-x-16 sm:-inset-x-20 lg:-inset-x-32 -inset-y-10 sm:-inset-y-14 lg:-inset-y-20 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/95 via-white/50 to-transparent blur-3xl rounded-full pointer-events-none" />
             
             <div className="relative z-10">
               <div className={`w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-6 md:mb-8 transition-all duration-1000 delay-200 ${loaded ? 'opacity-100' : 'opacity-0'}`} />
               
-              <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-clay mb-4 md:mb-6 block">
+              <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-clay mb-4 md:mb-6 block font-semibold">
                 Corporate Wellness
               </span>
-              <h1 className="font-serif text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-light leading-[1.15] mb-5 md:mb-6">
+              <h1 className="font-serif text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.15] mb-5 md:mb-6"
+                  style={{ textShadow: "0 1px 16px rgba(255,255,255,0.8)" }}>
                 Deep Relaxation
                 <span className="block mt-2 text-clay">for High-Performance Teams</span>
               </h1>
-              <p className="text-[15px] sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
+              <p className="text-[15px] sm:text-lg text-foreground/90 leading-relaxed max-w-xl font-medium">
                 Therapeutic sound immersions known as Sound Baths, designed to reduce mental
                 fatigue, improve focus, and support emotional resilience in the workplace.
               </p>
-              <p className="mt-6 text-sm sm:text-base text-foreground/80 italic leading-relaxed max-w-xl border-l border-clay/40 pl-5">
+              <p className="mt-6 text-sm sm:text-base text-foreground/90 italic leading-relaxed max-w-xl border-l border-clay/40 pl-5 font-medium">
                 The Mind, is the highest human power and a rejuvenated mind is an optimised
                 human resource.
               </p>

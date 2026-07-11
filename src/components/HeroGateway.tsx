@@ -263,9 +263,12 @@ const HeroGateway = () => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-charcoal text-bone">
-      {/* Tagline (Header already shows the wordmark) */}
+      {/* Brand mark + tagline */}
       <div className="absolute top-16 md:top-20 left-0 right-0 z-30 pt-4 pointer-events-none">
         <div className="flex flex-col items-center gap-2 md:gap-3">
+          <span className="font-serif text-3xl md:text-5xl lg:text-6xl tracking-[0.25em] md:tracking-[0.3em] text-bone uppercase text-center px-4">
+            OM SHALA
+          </span>
           <span className="h-px w-8 md:w-10 bg-bone/30" />
           <span className="text-[9px] md:text-[10px] tracking-[0.3em] md:tracking-[0.35em] uppercase text-bone/50 text-center px-4">
             Sound Healing Experiences &amp; Events
@@ -325,19 +328,19 @@ const HeroGateway = () => {
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <span className="inline-flex flex-col items-center gap-3 mb-6 md:mb-8">
-                    <span className="block text-[10px] md:text-[13px] tracking-[0.35em] md:tracking-[0.45em] uppercase text-bone font-medium">
+                    <span className="block text-[10px] md:text-[13px] tracking-[0.35em] md:tracking-[0.45em] uppercase text-bone font-semibold">
                       {panel.eyebrow}
                     </span>
                     <span className="block h-px w-8 md:w-10 bg-clay" />
                   </span>
                   <h2
-                    className="hidden md:block font-serif text-xl md:text-2xl lg:text-[1.75rem] leading-[1.4] font-light text-bone"
+                    className="hidden md:block font-serif text-xl md:text-2xl lg:text-[1.75rem] leading-[1.4] font-medium text-bone"
                     style={{ textShadow: "0 2px 24px rgba(0,0,0,0.55)" }}
                   >
                     {panel.title}
                   </h2>
                   <h2
-                    className="md:hidden font-serif text-2xl leading-tight font-light text-bone"
+                    className="md:hidden font-serif text-2xl leading-tight font-medium text-bone"
                     style={{ textShadow: "0 2px 24px rgba(0,0,0,0.55)" }}
                   >
                     {panel.key === "corporate" ? "Corporate" : "Private"}
