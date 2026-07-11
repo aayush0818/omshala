@@ -1,67 +1,89 @@
-# Om Shala 2.0 — Round 2 Implementation Plan
+# Om Shala — Refinement Pass (Round 3)
 
-## Image handling
-Upload all 10 user images via `lovable-assets` (kept off the repo binary tree) and import the resulting `.asset.json` pointers where needed.
+Refinements only. Visual language stays. Focus: real assets shown naturally, better rhythm, footer polish, full mobile pass, remove em dashes and physical location.
 
-Mapping:
-- img1 → Home About section
-- img2 → About page (secondary)
-- img3, img4 → Corporate page
-- img5 → Home gateway (Private panel)
-- img6, img7, img10 → Private page
-- img8 → Home gateway (Corporate panel)
-- img9 → About page hero portrait
+## 1. Asset ingestion
 
-Replaces the current AI-generated `gateway-corporate.jpg`, `gateway-private.jpg`, and `guide-portrait.jpg` where relevant.
+Upload the 3 new photos + 3 videos to Lovable Assets (CDN):
+- `IMG_6832.jpg` → Corporate "What This Is"
+- `IMG_7478.jpeg` → Corporate "The Setup"
+- `IMG_8713.jpeg` → Private (dedicated new section)
+- `c5a4581c-...MP4` → Homepage video moment
+- `carousel.MP4` → Private page video moment
+- `IMG_0743.MOV` → Corporate page video moment
 
----
+Videos will render via a shared `MediaVideo` component: autoplay, muted, loop, playsInline, `preload="metadata"`, poster fallback, `object-contain` so nothing crops.
 
-## 1. Homepage — `src/components/HeroGateway.tsx`
-- Swap panel images to img8 (Corporate) and img5 (Private).
-- Fix legibility: strengthen the gradient overlay (darker `charcoal/95` base, taller falloff) and lift eyebrow label from `text-[10px] text-bone/70` to `text-xs tracking-[0.45em] text-bone` with a thin clay underline; ensure title stays pure `text-bone` with a subtle text-shadow.
-- Update copy:
-  - Left eyebrow → `CORPORATE EVENTS`; title → "Sound Healing for the office, leadership retreats and employee wellbeing programs."
-  - Right eyebrow → `PRIVATE EVENTS`; title → "Sound Healing for your next celebration or social event, from weddings to baby showers, to birthdays, to festive get-togethers."
+## 2. Image container rule (site-wide)
 
-## 2. Homepage — About section (`src/pages/Index.tsx`)
-- Replace `guide-portrait.jpg` with img1 in the left column.
+Introduce a `NaturalImage` pattern: images sit in a container with `aspect-auto` (or their natural ratio), `object-contain`, a subtle bone/muted backdrop, and the existing hairline offset border. No forced `aspect-[4/5]` crops for photographic content. Applied to Corporate "What This Is", Corporate "The Setup", and every Private page image.
 
-## 3. Homepage — Credentials redesign (`src/pages/Index.tsx`)
-Replace the current flat `<ul>` with a more editorial two-column layout:
-- Large sticky left column with the eyebrow "Credentials" and the heading.
-- Right column: numbered credential entries (`01 — 08`) in serif numerals, clay accent, generous vertical rhythm, hairline dividers, subtle stagger `Reveal`.
-- Keep the 8 items unchanged.
+## 3. Corporate page (`src/pages/EventsPublic.tsx`)
 
-## 4. Corporate page — `src/pages/EventsPublic.tsx` (full restructure)
-New section order:
-1. **Hero** — headline "Deep Relaxation for High-Performance Teams", body + supporting italic line, CTA "Enquire for Corporate Sessions" (anchors to `#enquire`).
-2. **Credentials strip (subtle)** — small individual cards in a responsive grid (2/4 cols), each with number + one credential line, thin borders, no bold. Distinct from homepage treatment.
-3. **Sound Baths for Corporate Wellness** — heading + body + "Ideal For" list (3 items), clean editorial layout with a supporting image (img3).
-4. Keep existing **Benefits** cards; delete the intro paragraph above them.
-5. Keep existing **Why Sound Healing Works Online** section.
-6. **The Setup** — new section with heading + body, image (img4) alongside.
-7. **Booking** (replaces current Enquire) — same visual shell, id `enquire`, updated heading/body/list/CTA and contact block (email + WhatsApp).
+- Replace `img3-large-event` in "What This Is" with the new `IMG_6832` asset, shown in full (no crop).
+- Replace `img4-stage-bowls` in "The Setup" with the new `IMG_7478` asset, shown in full.
+- Add a dedicated **"See it in motion"** section between "How a Session Works" and "Online Sound Baths Explainer" that hosts `IMG_0743.MOV` as a standalone video block (contained, generous padding, short caption).
+- Standardise vertical rhythm to match other sections.
 
-## 5. Private page — `src/pages/EventsPrivate.tsx`
-- Hero: add a CTA button "Enquire for Private Events" linking to `#enquire` (or contact block anchor).
-- New **The Experience** section directly below hero: full-bleed editorial block with img6 as the visual, provided body copy.
-- Remove **In Her Words** section entirely.
-- Add img7 and img10 as supporting visuals within existing sections (e.g. between "What to Expect" and CTA).
-- Final CTA section: keep layout; replace copy with the wedding/birthday/Diwali paragraph + "Call +91 7400361681".
+## 4. Private page (`src/pages/EventsPrivate.tsx`)
 
-## 6. About page — `src/pages/About.tsx`
-- Replace current portrait with img9.
-- Insert img2 within the flowing editorial passage as a supporting figure.
-- Append a **Credentials** section at the bottom, reusing the same subtle-card treatment used on the Corporate page (visually distinct from the homepage editorial version, and appropriate for a secondary page).
+- Increase spacing between Hero and "The Experience" (larger top padding, quiet spacer with hairline, slower reveal delay) so the transition feels intentional.
+- Rework all Private image blocks to use `NaturalImage` (no crop/zoom/stretch); rebalance the gallery into a symmetric two-column composition with equal gutters and aligned baselines.
+- Add a new **dedicated section** hosting `IMG_8713.jpeg` (e.g., a quiet editorial "The Room" moment between The Experience and the moments gallery) — not merged into the gallery.
+- Add a standalone video section for `carousel.MP4` with its own heading and breathing room, separate from images.
 
-## 7. Shared component
-- Create `src/components/CredentialCards.tsx` (subtle card grid) used by Corporate + About.
-- Homepage keeps its bespoke editorial variant inline in `Index.tsx`.
+## 5. Homepage (`src/pages/Index.tsx`)
 
----
+- Insert a standalone video section (using `c5a4581c-...MP4`) between the gateway and the About/Credentials block. Full-width contained video, short intro line, no gallery grouping.
+
+## 6. About page (`src/pages/About.tsx`)
+
+- Remove grayscale/filter treatment from Shrutika's portrait (`IMG_3840` / `img9`); render in full colour. No other changes.
+
+## 7. Typography — remove em dashes
+
+Sweep every page/component and replace `—` with commas, periods, or restructured sentences. Files to scan: all `src/pages/*.tsx` and `src/components/*.tsx`. Also verify any decorative uses inside JSX strings.
+
+## 8. Remove physical location
+
+Strip "Bandra West", "Mumbai", and any address text from:
+- `src/components/Footer.tsx`
+- `src/pages/Contact.tsx`
+- Any other page mentioning location
+Keep email + WhatsApp only.
+
+## 9. Footer refinement (`src/components/Footer.tsx`)
+
+Keep minimal aesthetic; upgrade composition:
+- Three-column layout (brand + enso mark / navigation / contact)
+- Clearer type hierarchy: small-caps eyebrow labels, refined serif wordmark, muted body
+- Hairline dividers, generous vertical padding
+- Aligned baselines, consistent spacing scale
+- Bottom meta row: © line + subtle tagline, right-aligned
+- Remove location line entirely
+
+## 10. Comprehensive mobile pass
+
+Audit every page/section at mobile breakpoints. Adjustments per component:
+- Hero: reduce type scale, tighten line-height, cap line length, adjust vertical padding, ensure CTA buttons stack full-width with 44px+ touch targets
+- Section spacing: introduce mobile-specific `py-*` values (smaller than desktop)
+- Typography: fluid scale via responsive Tailwind classes (`text-3xl md:text-5xl` etc.)
+- Images / video: full-width, natural ratio, no side padding jitter
+- Galleries: single-column on mobile with proper gap
+- Navigation (`Header.tsx`): verify mobile menu behaviour, tap targets, active state
+- Footer: stack columns cleanly, keep hierarchy
+- Gateway (`HeroGateway.tsx`): confirm split panels stack vertically on mobile with equal weight
+- Remove any horizontal overflow; ensure all sections respect viewport width
 
 ## Technical notes
-- All new imagery imported as `@/assets/<name>.asset.json` pointers created via `lovable-assets create --file /mnt/user-uploads/... > src/assets/<name>.asset.json`.
-- Delete the now-unused `src/assets/gateway-corporate.jpg`, `gateway-private.jpg`, and `guide-portrait.jpg` after swap.
-- No routing, nav, or design-token changes. Motion primitives (`Reveal`, `MagneticButton`) reused as-is.
-- Contact info stays: `omshala.official@gmail.com` / `+91 7400361681`.
+
+- New shared components: `src/components/NaturalImage.tsx`, `src/components/MediaVideo.tsx`.
+- Assets uploaded via `lovable-assets create` from `/mnt/user-uploads/`; delete old `img3-large-event` and `img4-stage-bowls` pointers after swap.
+- Videos autoplay muted/looped/inline; include `poster` where a still exists.
+- Em-dash sweep done with `rg -l "—" src/` then targeted edits.
+- Mobile pass verified with the Playwright browser at 375px viewport, capturing each page for review.
+
+## Out of scope
+
+- No changes to overall visual identity, color tokens, or the gateway concept.
+- No new content copy beyond section labels for the new video sections.

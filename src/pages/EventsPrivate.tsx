@@ -5,22 +5,28 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import Reveal from "@/components/Reveal";
+import NaturalImage from "@/components/NaturalImage";
+import MediaVideo from "@/components/MediaVideo";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import abstractZen from "@/assets/abstract-zen.jpg";
 import img6Asset from "@/assets/img6-outdoor-group.webp.asset.json";
 import img7Asset from "@/assets/img7-purple-room.webp.asset.json";
 import img10Asset from "@/assets/img10-white-brunch.webp.asset.json";
+import privateRoomAsset from "@/assets/private-room.jpg.asset.json";
+import privateVideoAsset from "@/assets/private-carousel.mp4.asset.json";
 
 const img6 = img6Asset.url;
 const img7 = img7Asset.url;
 const img10 = img10Asset.url;
+const privateRoom = privateRoomAsset.url;
+const privateVideo = privateVideoAsset.url;
 
 const privateOfferings = [
   {
     icon: Heart,
     title: "Weddings",
     tagline: "A soulful pause amid celebration",
-    description: "An intimate sound healing ceremony for the bride, groom and inner circle — a moment of stillness and shared breath before or between the festivities. Crystal singing bowls and live ragas create a memory that stays with everyone present.",
+    description: "An intimate sound healing ceremony for the bride, groom and inner circle. A moment of stillness and shared breath before or between the festivities. Crystal singing bowls and live ragas create a memory that stays with everyone present.",
     features: ["Crystal Singing Bowls", "Live Indian classical ragas", "Soft lighting & cozy setup", "Aromas, blankets and pillows", "Guided breathwork & relaxation"],
     idealFor: "Pre-wedding rituals, mehendi mornings, sangeet wind-downs, or post-wedding gratitude circles",
     price: "On request",
@@ -30,7 +36,7 @@ const privateOfferings = [
     icon: Cake,
     title: "Birthdays",
     tagline: "Mark the year with intention",
-    description: "A truly memorable way to celebrate a special day — a sound bath shared with closest friends, between the laughter and high energy. A deeply soulful relaxation that everyone takes home with them.",
+    description: "A truly memorable way to celebrate a special day, a sound bath shared with closest friends, between the laughter and high energy. A deeply soulful relaxation that everyone takes home with them.",
     features: ["Hosted at your venue", "Cozy floor setup", "Soft lighting & aromatics", "Crystal bowls & live voice", "Suitable for all ages"],
     idealFor: "Milestone birthdays, intimate celebrations, soul-circle gatherings",
     price: "On request",
@@ -40,7 +46,7 @@ const privateOfferings = [
     icon: PartyPopper,
     title: "Diwali & Festive Gatherings",
     tagline: "A grounded moment within the festivities",
-    description: "An evening of light, breath and pure tone — the perfect counterpoint to a high-energy festive season. We design a setup that honours the occasion while offering everyone a few moments of true stillness.",
+    description: "An evening of light, breath and pure tone, the perfect counterpoint to a high-energy festive season. We design a setup that honours the occasion while offering everyone a few moments of true stillness.",
     features: ["Festive aesthetic setup", "Optional mantra & ragas", "Group breathwork", "Sound immersion", "Closing circle"],
     idealFor: "Diwali parties, year-end gatherings, intimate festive get-togethers",
     price: "On request",
@@ -50,7 +56,7 @@ const privateOfferings = [
     icon: Users,
     title: "Women's Forums & Baby Showers",
     tagline: "Soft, intimate, deeply held",
-    description: "Sound healing has become a meaningful way to gather women in an emotionally intimate way — to pause, exhale, and connect beneath the surface. Especially loved for baby showers and women's circles.",
+    description: "Sound healing has become a meaningful way to gather women in an emotionally intimate way, to pause, exhale, and connect beneath the surface. Especially loved for baby showers and women's circles.",
     features: ["Held seated or lying down", "Aromas & cozy textures", "Voice & crystal bowls", "Optional intention sharing", "Trauma-aware facilitation"],
     idealFor: "Baby showers, women's circles, soul gatherings, friendship celebrations",
     price: "On request",
@@ -60,7 +66,7 @@ const privateOfferings = [
     icon: Sparkles,
     title: "Bespoke Occasions",
     tagline: "Anniversaries, milestones & more",
-    description: "Anniversaries, retirements, family reunions, healing circles — if there's a moment that calls for stillness and meaning, we'll design a sound healing experience around it.",
+    description: "Anniversaries, retirements, family reunions, healing circles. If there's a moment that calls for stillness and meaning, we'll design a sound healing experience around it.",
     features: ["Fully bespoke design", "Choice of voice & instruments", "Custom ambience", "Pre-event consultation", "Optional keepsake recording"],
     idealFor: "Any meaningful milestone that deserves more than a party",
     price: "On request",
@@ -70,7 +76,7 @@ const privateOfferings = [
 
 const processSteps = [
   { number: "01", title: "Connect", description: "Send us a message about the occasion, the size of the gathering, and the feeling you want to create." },
-  { number: "02", title: "Design", description: "We co-design the experience around your venue and intention — from soundscape to setup, lighting and aromatics." },
+  { number: "02", title: "Design", description: "We co-design the experience around your venue and intention, from soundscape to setup, lighting and aromatics." },
   { number: "03", title: "Settle in", description: "Participants are seated or lying down in a calm environment. Soft lighting, cozy pillows and blankets, gentle aromas." },
   { number: "04", title: "Soften", description: "Guided breathwork and relaxation help everyone arrive, let go, and absorb the subtle vibrations of sound." },
   { number: "05", title: "Sound bath", description: "Crystal singing bowls and live Indian classical ragas, sung as lullabies for the soul." }
@@ -124,23 +130,23 @@ const EventsPrivate = () => {
               A soulful way
               <span className="block mt-2 text-clay">to gather</span>
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
               More and more people are choosing a mindful way to celebrate. Sound healing has
-              become a meaningful pause between the laughter and high energy — a deeply soulful
+              become a meaningful pause between the laughter and high energy, a deeply soulful
               relaxation that turns a special day into an unforgettable one.
             </p>
             
-            <div className="mt-10 flex flex-wrap gap-4">
+            <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
               <a
                 href="#enquire"
-                className="group relative inline-block px-10 py-4 bg-foreground text-background text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl"
+                className="group relative inline-block w-full sm:w-auto text-center px-8 sm:px-10 py-4 bg-foreground text-background text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl"
               >
-                <span className="relative z-10 group-hover:text-background transition-colors duration-500">→ Enquire for Private Events</span>
+                <span className="relative z-10 group-hover:text-background transition-colors duration-500">Enquire for Private Events</span>
                 <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
               </a>
               <a
                 href="#offerings"
-                className="px-10 py-4 border border-foreground/20 text-foreground text-sm tracking-wide hover:border-clay hover:text-clay transition-all duration-500 hover:bg-foreground/5"
+                className="w-full sm:w-auto text-center px-8 sm:px-10 py-4 border border-foreground/20 text-foreground text-sm tracking-wide hover:border-clay hover:text-clay transition-all duration-500 hover:bg-foreground/5"
               >
                 Explore Options
               </a>
@@ -148,6 +154,11 @@ const EventsPrivate = () => {
           </div>
         </div>
       </section>
+
+      {/* Quiet spacer, gives the hero room to breathe before the next section */}
+      <div className="relative py-16 md:py-28 flex justify-center">
+        <div className="h-px w-24 bg-clay/40" />
+      </div>
 
       {/* The Experience */}
       <section className="relative overflow-hidden bg-charcoal text-bone">
@@ -157,11 +168,11 @@ const EventsPrivate = () => {
         </div>
         <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-clay/10 rounded-full blur-[120px]" />
 
-        <div className="container mx-auto px-6 relative z-10 py-32 md:py-48">
+        <div className="container mx-auto px-6 relative z-10 py-28 md:py-48">
           <div className="max-w-3xl mx-auto text-center">
             <Reveal>
               <span className="text-[10px] tracking-[0.4em] uppercase text-clay">The Experience</span>
-              <h2 className="mt-6 font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-[1.2] text-bone">
+              <h2 className="mt-6 font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-[1.2] text-bone">
                 Lullabies for the soul,
                 <span className="block italic text-bone/80">wrapped in soft light.</span>
               </h2>
@@ -170,7 +181,7 @@ const EventsPrivate = () => {
               <div className="mt-12 h-px w-16 bg-clay mx-auto" />
             </Reveal>
             <Reveal delay={0.15}>
-              <p className="mt-12 text-bone/75 leading-[1.9] text-[17px] text-left md:text-center">
+              <p className="mt-10 md:mt-12 text-bone/75 leading-[1.9] text-base md:text-[17px] text-left md:text-center">
                 Sound healing can be experienced seated or laying down in a calm environment.
                 Participants are guided through deep breathing and relaxation techniques to be
                 able to let go and absorb the subtle vibrations of sound. The Crystal Singing
@@ -181,6 +192,65 @@ const EventsPrivate = () => {
                 blankets are put together aesthetically, to make this journey truly special and
                 unforgettable.
               </p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* The Room — dedicated editorial moment for private-room image */}
+      <section className="py-20 md:py-32 relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center max-w-6xl mx-auto">
+            <div className="lg:col-span-5 order-2 lg:order-1">
+              <Reveal>
+                <span className="text-[10px] tracking-[0.4em] uppercase text-clay">The Room</span>
+                <h2 className="mt-6 font-serif text-2xl md:text-3xl lg:text-4xl font-light leading-tight">
+                  A quiet space,
+                  <span className="block italic text-clay">held in stillness.</span>
+                </h2>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <p className="mt-8 text-muted-foreground leading-relaxed">
+                  Bowls arranged by the light, a tanpura resting against the window, the floor
+                  polished to a soft reflection. Everything is placed with intention so that the
+                  room itself invites you to slow down before a single note is played.
+                </p>
+              </Reveal>
+            </div>
+            <Reveal className="lg:col-span-7 order-1 lg:order-2" delay={0.05}>
+              <NaturalImage
+                src={privateRoom}
+                alt="Crystal singing bowls arranged by a bright studio window"
+                fallbackAspect="3 / 4"
+                frame="tl"
+              />
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* In Motion — standalone private video */}
+      <section className="py-20 md:py-32 bg-muted/10 relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <Reveal>
+              <div className="text-center mb-10 md:mb-14">
+                <span className="text-[10px] tracking-[0.4em] uppercase text-clay">
+                  In Motion
+                </span>
+                <h2 className="mt-5 font-serif text-2xl md:text-4xl font-light leading-tight">
+                  A moment from a private ceremony.
+                </h2>
+                <div className="mt-6 w-12 h-px bg-clay/60 mx-auto" />
+              </div>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <MediaVideo
+                src={privateVideo}
+                fallbackAspect="16 / 9"
+                frame="br"
+                ariaLabel="A private sound healing gathering"
+              />
             </Reveal>
           </div>
         </div>
@@ -337,18 +407,24 @@ const EventsPrivate = () => {
       </section>
 
       {/* Moments Gallery */}
-      <section className="py-24 md:py-32 relative overflow-hidden">
+      <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6 md:gap-8">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-10 items-center">
             <Reveal>
-              <div className="relative aspect-[4/5] overflow-hidden">
-                <img src={img7} alt="Studio setup by night" className="w-full h-full object-cover" />
-              </div>
+              <NaturalImage
+                src={img7}
+                alt="Studio setup by night"
+                fallbackAspect="3 / 4"
+                frame="bl"
+              />
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="relative aspect-[4/5] overflow-hidden md:mt-16">
-                <img src={img10} alt="A private women's gathering" className="w-full h-full object-cover" />
-              </div>
+              <NaturalImage
+                src={img10}
+                alt="A private women's gathering"
+                fallbackAspect="3 / 4"
+                frame="br"
+              />
             </Reveal>
           </div>
         </div>
