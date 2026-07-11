@@ -30,7 +30,7 @@ const Index = () => {
                       A First Look
                     </span>
                     <h2 className="mt-5 font-serif text-2xl md:text-4xl font-light leading-tight">
-                      A quiet glimpse of the practice.
+                      A glimpse of the practice.
                     </h2>
                     <div className="mt-6 w-12 h-px bg-clay/60 mx-auto" />
                   </div>
