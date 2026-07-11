@@ -340,7 +340,7 @@ const HeroGateway = () => {
                     {panel.title}
                   </h2>
                   <h2
-                    className="md:hidden font-serif text-2xl leading-tight font-light text-bone"
+                    className="md:hidden font-serif text-2xl leading-tight font-medium text-bone"
                     style={{ textShadow: "0 2px 24px rgba(0,0,0,0.55)" }}
                   >
                     {panel.key === "corporate" ? "Corporate" : "Private"}
