@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Users, Sparkles, Mail, Brain, Heart, Focus, Activity, Headphones, Building2 } from "lucide-react";
+import { Users, Sparkles, Brain, Heart, Focus, Activity, Headphones, Building2, MessageCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -7,15 +7,17 @@ import Reveal from "@/components/Reveal";
 import NaturalImage from "@/components/NaturalImage";
 import MediaVideo from "@/components/MediaVideo";
 import AboutSection from "@/components/AboutSection";
-import CredentialCards from "@/components/CredentialCards";
+import { CREDENTIALS } from "@/components/CredentialCards";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import heroImgAsset from "@/assets/img5-studio-night.webp.asset.json";
 import whatThisIsAsset from "@/assets/img8-sunset-circle.webp.asset.json";
 import motionVideoAsset from "@/assets/corporate-motion.mov.asset.json";
+import homeVideoAsset from "@/assets/home-intro.mp4.asset.json";
 
 const whatThisIsImg = whatThisIsAsset.url;
 const motionVideo = motionVideoAsset.url;
 const heroImg = heroImgAsset.url;
+const credentialsVideo = homeVideoAsset.url;
 
 const benefits = [
   { icon: Activity, text: "Reduces stress and prevents burnout" },
