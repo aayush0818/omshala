@@ -1,96 +1,74 @@
-# Om Shala 2.0 — Round 5 Revision
+## Om Shala 2.0 — Round 4: Two Independent Journeys
 
-A structural pass that repositions the site as a pure gateway with two editorial journeys, all funneling to a single WhatsApp conversion point.
+Restructure the site so Corporate and Private become two self-contained experiences that share only a Footer, remove the standalone About page, and replace the gateway photography with an abstract artistic treatment.
 
-## 1. Brand assets & typography
+---
 
-- Save the uploaded `om shala` wordmark logo as a Lovable asset (`src/assets/om-shala-logo.png`) and the second uploaded photo (purple-lit studio) as `src/assets/experience-purple.webp` for the Private Experience section.
-- Extract the official purple from the logo (deep indigo/violet) and add it as a semantic token `--brand-purple` in `src/index.css` + `tailwind.config.ts`.
-- Introduce a clean modern sans-serif (Inter or similar, via Google Fonts in `index.html`) as `font-sans-display` for the new gateway + hero + section headings. Serif stays available but is removed from the touched surfaces per spec.
+### 1. Homepage Credentials — match About page structure
+Update `src/pages/Index.tsx` Credentials section so it uses the same two-column editorial layout already used (sticky "Credentials" heading on the left, numbered list on the right). Keep spacing, hairlines, and typography consistent so About/Home/Corporate/Private all read as one system.
 
-## 2. Header (global)
+### 2. Corporate page — new structure
+`src/pages/EventsPublic.tsx` becomes:
+1. Hero (using the current corporate gateway image as the hero photograph)
+2. About section — copied verbatim from Homepage (portrait + exact copy + quote + closing line)
+3. Credentials section — same editorial two-column block as Homepage
+4. Existing Corporate-specific sections (What This Is, Session Flow, Benefits, A Glimpse video, etc.)
+5. Contact / Enquire CTA
 
-Rewrite `src/components/Header.tsx` so navigation contains only:
-- `Home` → `/`
-- `Contact` → `/contact`
+**Remove:** the Setup section (heading, copy, image) entirely.
 
-Remove journey-scoped logic, Enquire CTA, Corporate/Private/About links, and mobile equivalents. Keep the wordmark linking home, keep the mobile hamburger.
+### 3. Private page — new structure
+`src/pages/EventsPrivate.tsx` becomes:
+1. Hero (using the current private gateway image)
+2. About section — identical to Homepage
+3. Credentials section — identical to Homepage
+4. Existing Private-specific sections (Experience block, A Glimpse video, etc.)
+5. Contact / Enquire CTA
 
-## 3. Homepage (`src/pages/Index.tsx` + `HeroGateway.tsx`)
+**Remove:**
+- The Private Offering section (entire block).
+- The How It Works section (heading, copy, icons, images) — surrounding sections join directly with clean spacing, no empty gap.
 
-Strip the page down to a single full-viewport gateway:
-- Full-page background = brand purple.
-- Centered Om Shala logo image (generous whitespace).
-- Two large cards below the logo: `Corporate Events` / `Private Events`.
-  - Sans-serif, large heading, small supporting description, arrow icon only.
-  - Subtle border, obvious hover state, generous gap.
-  - No "Explore" / "Choose Your Path" / "Learn More" labels.
-- Delete every other section from the homepage (About, Credentials, video, CTA band, footer content sections). Footer component may remain minimal at bottom.
+### 4. Delete the standalone About page
+- Delete `src/pages/About.tsx`.
+- Remove the `/about` route from `src/App.tsx` (and its lazy import).
+- Remove all `Link to="/about"` references across the codebase (Header, Footer, any CTAs).
 
-`HeroGateway.tsx` will be rewritten to this minimal spec (removing painterly gradients, wordmark type block, subtext panels, animated SVGs).
+### 5. Independent navigation per journey
+Rework `src/components/Header.tsx` so nav is scoped to the active journey. No cross-links between Corporate and Private, and no About link anywhere.
 
-## 4. Corporate & Private pages — shared changes
+- **On `/` (gateway):** wordmark only, no nav links (the gateway itself is the navigation).
+- **On `/events/public/*` (Corporate journey):** nav shows only `Contact` and `Enquire` (Enquire = in-page anchor).
+- **On `/events/private/*` (Private journey):** nav shows only `Contact` and `Enquire`.
+- **On `/contact`:** determine the active journey from a query param (e.g. `?from=corporate` / `?from=private`) set when navigating from either journey. Header then shows only that journey's links (Back to Corporate / Back to Private + Enquire). Never surface the opposite journey.
+- Update every existing link into `/contact` to include the correct `?from=` param so the journey context carries through.
+- Mobile menu mirrors the same scoped links.
 
-### Hero
-- Remove overlay gradients, radial white glow, text-over-image layout.
-- Show the hero photograph in its natural aspect (no crop/zoom/opacity), full-width contained.
-- Move eyebrow + headline + body copy into an editorial block **below** the image, using the new sans-serif.
+### 6. Footer — the only shared element
+`src/components/Footer.tsx` stays global but is trimmed so it does not act as a cross-journey bridge: remove any About link, keep brand mark, tagline, contact essentials, and social. If it currently lists both Corporate and Private, keep only a single neutral "Enquire" / contact link plus legal/brand — no journey switch.
 
-### Credentials section (new shared layout)
-- Two columns: left = credentials as a clean vertical editorial list (no cards, no containers, just typographic rhythm); right = the current homepage intro video (`home-intro.mp4`).
-- Apply to both Corporate and Private. Rewrite `CredentialCards.tsx` (or add a new `CredentialsEditorialSplit.tsx`) accordingly and drop the card grid usage.
+### 7. Gateway — abstract artistic treatment (no photography)
+Rebuild `src/components/HeroGateway.tsx` so the two panels are pure visual compositions, not photographs.
 
-### Typography scale
-- Bump all primary section headings (`What This Is`, `How a Session Works`, `The Rise of Online Sound Baths`, `Benefits`, `Experiences`, `Booking`, `The Experience`, etc.) to a larger, consistent size (e.g. `text-4xl md:text-6xl`, sans-serif, medium weight).
+- Remove the corporate and private image imports from the gateway.
+- Each panel becomes a full-bleed abstract canvas built with CSS + SVG + subtle motion:
+  - **Corporate panel:** cooler, structured composition — layered painterly gradients in deep charcoal / bone / muted clay, soft horizontal light bands, faint concentric ring pattern (echoing a singing bowl seen from above), gentle parallax on hover.
+  - **Private panel:** warmer, softer composition — flowing gradient blooms in clay / dusk / bone, organic blurred forms, faint vertical light column, slow drifting grain/noise overlay.
+  - Both share a thin bone hairline divider and consistent typographic treatment already in place (eyebrow, title, "Explore →").
+- Use only CSS gradients, blurred divs, SVG shapes, and existing brand tokens (`--charcoal`, `--bone`, `--clay`). No `<img>` tags. No AI-generated raster art. No stock imagery.
+- Preserve the existing hover expansion, dimming, and click-to-navigate transition.
+- Update wordmark/subtitle treatment to sit cleanly against the abstract backgrounds.
 
-### "How a Session Works"
-- Replace numbered ordered list with bulleted list styling (dot markers, lighter rhythm).
+### 8. Hero images move into journeys
+- Corporate hero uses `img8-sunset-circle.webp` (previous corporate gateway image).
+- Private hero uses `img5-studio-night.webp` (previous private gateway image).
+- Heroes keep the existing left-aligned title treatment used across the site.
 
-### "A Glimpse" → "Experiences"
-- Rename the heading on both pages. Positioning + video content stay.
+---
 
-### "The Rise of Online Sound Baths" (Corporate)
-- Increase heading prominence (largest section heading on the page).
-- Wrap `Felt deeply, even from your desk.` in a span with subtle emphasis (italic + slightly heavier weight + brand color accent) while keeping it inline in the paragraph.
-
-### Booking section (Corporate)
-- Pull the sentence `Sessions can also be positioned as part of leadership development or performance optimisation programs.` out of the paragraph and render it as a standalone bullet below.
-
-### Final CTA (both pages)
-- Replace the current CTA block (dual buttons, background band) with:
-  - Heading: `Schedule a Consultation` (Corporate) / `Schedule a Call` (Private).
-  - Single clickable contact card: `WhatsApp · +91 74003 61681`.
-  - `href` = `https://wa.me/917400361681?text=<encoded message>` with:
-    - Corporate: `Hi, I'd like to enquire about Corporate Events.`
-    - Private: `Hi, I'd like to enquire about Private Events.`
-  - Remove all other buttons, tel: links, secondary CTAs, form links.
-
-## 5. Private page — Experience section rework
-
-- Swap in the newly uploaded purple-lit studio image (`experience-purple.webp`).
-- Layout: left image (natural proportions, generous size), right editorial text.
-- Rewrite copy hierarchy:
-  - Lead statement (larger/heavier): `Sound healing can be experienced seated or laying down in a calm environment.`
-  - Body: `Participants are guided through deep breathing and relaxation techniques to be able to let go and absorb the subtle vibrations of sound.`
-  - Sub-emphasis: `The Crystal Singing Bowls` (highlighted) followed by body `used are tuned to a healing frequency, 435 Hz, and instantly dissolve mental and emotional tensions, sometimes even putting people off to sleep. Ragas are sung live in the Indian classical style, like lullabies for the soul.`
-  - Poetic break: `Soothing aromas, soft lighting and cozy pillows and blankets` in italics, followed by body `are put together aesthetically, to make this journey truly special and unforgettable.`
-
-## 6. Contact page (`src/pages/Contact.tsx`)
-
-- Remove the enquiry form entirely.
-- Keep an ultra-minimal editorial layout with just two links:
-  - Email: `omshala.official@gmail.com` (mailto:)
-  - WhatsApp: `+91 74003 61681` (wa.me link, no prefilled journey message here — generic).
-- Header + Footer stay.
-
-## 7. Cleanup
-
-- Remove now-unused components/imports: `AboutSection` (from homepage & journey pages), old CredentialCards grid usage, dual-button CTA blocks, `MagneticButton` if unused, homepage `MediaVideo` first-look block.
-- Keep files that other pages still consume; delete only files with zero remaining references.
-
-## Technical notes
-
-- Files touched: `src/pages/Index.tsx`, `src/pages/EventsPublic.tsx`, `src/pages/EventsPrivate.tsx`, `src/pages/Contact.tsx`, `src/components/Header.tsx`, `src/components/HeroGateway.tsx`, `src/components/CredentialCards.tsx` (or new split component), `src/index.css`, `tailwind.config.ts`, `index.html`.
-- New assets: `src/assets/om-shala-logo.png.asset.json`, `src/assets/experience-purple.webp.asset.json` via `lovable-assets create` from `/mnt/user-uploads/`.
-- WhatsApp links use `https://wa.me/917400361681?text=` with `encodeURIComponent` for the journey-specific messages.
-- No backend, schema, or dependency changes required.
+### Technical notes
+- Extract the shared About block into a small component (e.g. `src/components/AboutSection.tsx`) so Homepage, Corporate, and Private render it identically without duplication.
+- Extract the shared Credentials editorial block into `src/components/CredentialsEditorial.tsx` (or extend `CredentialCards.tsx`) for the same reason. `CREDENTIALS` array stays the single source of truth.
+- Header journey detection: derive from `pathname` for `/events/public` and `/events/private`; for `/contact`, read `?from=` search param, defaulting to gateway-style minimal header if absent.
+- After deleting `About.tsx`, run through `rg "/about"` and `rg "About.tsx"` to purge every remaining reference (routes, links, imports).
+- Verify the build after edits — no dead imports, no broken routes.

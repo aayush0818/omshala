@@ -49,6 +49,8 @@ const Footer = () => {
               </span>
               <nav className="flex flex-col items-center md:items-start gap-3 text-sm text-muted-foreground">
                 <Link to="/" className="hover:text-clay transition-colors duration-300">Home</Link>
+                <Link to="/events/public" className="hover:text-clay transition-colors duration-300">Corporate</Link>
+                <Link to="/events/private" className="hover:text-clay transition-colors duration-300">Private</Link>
                 <Link to="/contact" className="hover:text-clay transition-colors duration-300">Contact</Link>
               </nav>
             </div>
@@ -73,6 +75,13 @@ const Footer = () => {
                 >
                   WhatsApp +91 74003 61681
                 </a>
+                <Link
+                  to="/contact"
+                  className="mt-2 inline-flex items-center gap-2 text-xs tracking-[0.25em] uppercase text-foreground hover:text-clay transition-colors duration-500"
+                >
+                  <span>Begin a conversation</span>
+                  <span className="w-6 h-px bg-current" />
+                </Link>
               </div>
             </div>
           </div>
