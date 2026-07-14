@@ -1,4 +1,6 @@
 import Reveal from "./Reveal";
+import MediaVideo from "./MediaVideo";
+import homeVideoAsset from "@/assets/home-intro.mp4.asset.json";
 
 export const CREDENTIALS = [
   "12+ years of experience in the mindfulness industry",
@@ -12,43 +14,54 @@ export const CREDENTIALS = [
 ];
 
 interface Props {
-  eyebrow?: string;
   heading?: string;
   className?: string;
 }
 
 /**
- * Subtle credential card grid — used on secondary pages (Corporate, About).
- * Visually distinct from the homepage's bespoke editorial treatment.
+ * Editorial credentials layout:
+ * Left  = clean vertical list (no cards, no containers)
+ * Right = supporting video
  */
 const CredentialCards = ({ heading = "Credentials", className }: Props) => {
   return (
-    <section className={`py-24 md:py-32 relative overflow-hidden ${className ?? ""}`}>
+    <section className={`py-24 md:py-40 relative overflow-hidden ${className ?? ""}`}>
       <div className="container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
-          <Reveal>
-            <div className="mb-14">
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+          {/* Left — credentials list */}
+          <div>
+            <Reveal>
+              <h2 className="font-sans text-4xl md:text-5xl lg:text-6xl font-light tracking-tight leading-[1.05]">
                 {heading}
               </h2>
-              <div className="mt-6 h-px w-16 bg-clay/60" />
-            </div>
-          </Reveal>
+              <div className="mt-6 h-px w-14 bg-clay/60" />
+            </Reveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {CREDENTIALS.map((c, i) => (
-              <Reveal key={c} delay={0.04 + i * 0.03}>
-                <div className="group h-full p-6 border border-foreground/10 hover:border-clay/40 transition-colors duration-500 bg-background/40">
-                  <span className="font-serif text-xs text-clay tracking-widest">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div className="mt-4 h-px w-8 bg-foreground/15 group-hover:w-12 group-hover:bg-clay/60 transition-all duration-500" />
-                  <p className="mt-4 text-sm text-foreground/80 leading-relaxed">
+            <Reveal delay={0.08}>
+              <ul className="mt-12 space-y-6">
+                {CREDENTIALS.map((c) => (
+                  <li
+                    key={c}
+                    className="text-foreground/85 text-base md:text-lg leading-relaxed pb-6 border-b border-foreground/10 last:border-0"
+                  >
                     {c}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+
+          {/* Right — supporting video */}
+          <div className="lg:sticky lg:top-24">
+            <Reveal delay={0.1}>
+              <MediaVideo
+                src={homeVideoAsset.url}
+                fallbackAspect="9 / 16"
+                frame="br"
+                ariaLabel="A moment from an Om Shala experience"
+                className="max-w-md mx-auto lg:mx-0 lg:ml-auto"
+              />
+            </Reveal>
           </div>
         </div>
       </div>
