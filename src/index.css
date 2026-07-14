@@ -41,6 +41,9 @@
     --charcoal: 20 12% 14%;
     --bone: 30 12% 94%;
     --ash: 30 5% 64%;
+
+    /* Official Om Shala purple (sampled from logotype) */
+    --omshala: 243 37% 26%;
   }
 
   .dark {
