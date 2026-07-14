@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -8,18 +7,20 @@ import Reveal from "@/components/Reveal";
 import NaturalImage from "@/components/NaturalImage";
 import MediaVideo from "@/components/MediaVideo";
 import AboutSection from "@/components/AboutSection";
-import CredentialCards from "@/components/CredentialCards";
+import { CREDENTIALS } from "@/components/CredentialCards";
 import heroImgAsset from "@/assets/img5-studio-night.webp.asset.json";
-import img6Asset from "@/assets/img6-outdoor-group.webp.asset.json";
 import img7Asset from "@/assets/img7-purple-room.webp.asset.json";
 import img10Asset from "@/assets/img10-white-brunch.webp.asset.json";
 import privateVideoAsset from "@/assets/private-carousel.mp4.asset.json";
+import experienceImgAsset from "@/assets/private-experience.png.asset.json";
+import homeVideoAsset from "@/assets/home-intro.mp4.asset.json";
 
-const img6 = img6Asset.url;
 const img7 = img7Asset.url;
 const img10 = img10Asset.url;
 const privateVideo = privateVideoAsset.url;
 const heroImg = heroImgAsset.url;
+const experienceImg = experienceImgAsset.url;
+const credentialsVideo = homeVideoAsset.url;
 
 const EventsPrivate = () => {
   const [loaded, setLoaded] = useState(false);
@@ -33,56 +34,34 @@ const EventsPrivate = () => {
       <div className="min-h-screen bg-background text-foreground">
         <Header />
       
-      {/* Hero Section */}
-      <section className="relative min-h-[85vh] md:min-h-[75vh] flex items-center overflow-hidden bg-charcoal">
-        {/* Background Image */}
-        <div className="absolute inset-0">
-          <img 
-            src={heroImg} 
-            alt="Private meditation space" 
-            className={`w-full h-full object-cover object-center transition-opacity duration-1000 ease-out ${loaded ? 'scale-100 opacity-100' : 'scale-105 opacity-0'}`}
-            style={{ objectPosition: '50% 55%' }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/60 via-background/20 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-background/10" />
-        </div>
-        
-        {/* Floating elements */}
-        <div className="absolute top-1/3 left-10 w-1 h-20 bg-gradient-to-b from-clay/30 to-transparent animate-float" />
-        <div className="absolute top-1/4 right-20 w-1 h-16 bg-gradient-to-b from-clay/20 to-transparent animate-float" style={{ animationDelay: '1.5s' }} />
-        <div className="absolute bottom-1/3 left-1/4 w-20 h-px bg-gradient-to-r from-transparent via-foreground/10 to-transparent animate-pulse-soft" />
-        
-        {/* Gradient orbs */}
-        <div className="absolute top-1/4 right-1/3 w-64 h-64 bg-clay/10 rounded-full blur-[50px] animate-float" />
-        <div className="absolute bottom-1/4 left-1/4 w-48 h-48 bg-earth/10 rounded-full blur-[40px] animate-float" style={{ animationDelay: '2s' }} />
-        
-        <div className="container mx-auto px-6 sm:px-10 lg:px-16 relative z-10 pt-28 md:pt-32 pb-14 md:pb-16">
-          <div className={`max-w-2xl relative transition-all duration-1000 ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            {/* Soft white glow concentrated behind the text */}
-            <div className="absolute -inset-x-16 sm:-inset-x-20 lg:-inset-x-32 -inset-y-10 sm:-inset-y-14 lg:-inset-y-20 bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-white/95 via-white/50 to-transparent blur-3xl rounded-full pointer-events-none" />
-            
-            <div className="relative z-10">
-              <div className={`w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-6 md:mb-8 transition-all duration-1000 delay-200 ${loaded ? 'opacity-100' : 'opacity-0'}`} />
-              
-              <span className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-clay mb-4 md:mb-6 block font-semibold">
-                {"\n"}
-              </span>
-              <h1 className="font-serif text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.15] mb-5 md:mb-6"
-                  style={{ textShadow: "0 1px 16px rgba(255,255,255,0.8)" }}>
+      {/* Hero — stacked: image, then editorial content below */}
+      <section className="font-sans pt-28 md:pt-36 pb-16 md:pb-24 relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className={`w-full overflow-hidden transition-opacity duration-1000 ${loaded ? "opacity-100" : "opacity-0"}`}>
+              <img
+                src={heroImg}
+                alt="Private meditation space"
+                className="w-full h-auto object-contain"
+              />
+            </div>
+
+            <div className={`mt-14 md:mt-20 max-w-2xl transition-all duration-1000 delay-150 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
+              <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-semibold leading-[1.05] tracking-tight text-foreground">
                 A soulful way
                 <span className="block mt-2 text-clay">to gather</span>
               </h1>
-              <p className="text-[15px] sm:text-lg text-foreground/90 leading-relaxed max-w-xl whitespace-pre-line font-medium">
+              <p className="mt-8 text-lg text-foreground/85 leading-relaxed max-w-xl whitespace-pre-line">
                 More and more people are opting for a mindful way to celebrate or come together&nbsp;for social gatherings. We live in a stimulated world and Sound Healing has become&nbsp;a meaningful way to pause and connect with one another in an emotionally intimate&nbsp;way, between all the laughter and high energy.{"\n\n\n"}
                 It is a deeply soulful relaxation and a truly memorable way to celebrate a special day, occasion or milestone.
               </p>
-              
+
               <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                 <a
                   href="#enquire"
-                  className="group relative inline-block w-auto text-center px-8 sm:px-10 py-4 bg-foreground text-background text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl"
+                  className="group relative inline-block w-auto text-center px-10 py-4 bg-foreground text-background text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl"
                 >
-                  <span className="relative z-10 group-hover:text-background transition-colors duration-500">Enquire for Private Events</span>
+                  <span className="relative z-10">Enquire for Private Events</span>
                   <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                 </a>
               </div>
@@ -94,47 +73,94 @@ const EventsPrivate = () => {
       {/* About */}
       <AboutSection />
 
-      {/* Credentials */}
-      <CredentialCards className="border-t border-foreground/5" />
-
-      {/* The Experience */}
-      <section className="relative overflow-hidden bg-charcoal text-bone">
-        <div className="absolute inset-0">
-          <img src={img6} alt="A private sound healing gathering" className="w-full h-full object-cover opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-charcoal via-charcoal/85 to-charcoal" />
-        </div>
-        <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-clay/10 rounded-full blur-[120px]" />
-
-        <div className="container mx-auto px-6 relative z-10 py-28 md:py-48">
-          <div className="max-w-3xl mx-auto text-center">
+      {/* Credentials — editorial list + video */}
+      <section className="py-24 md:py-32 relative overflow-hidden border-t border-foreground/5">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
             <Reveal>
-              <span className="text-[10px] tracking-[0.4em] uppercase text-clay">The Experience</span>
-              <h2 className="mt-6 font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-[1.2] text-bone">
-                {"\n"}
+              <h2 className="font-sans text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight mb-14">
+                Credentials
               </h2>
             </Reveal>
-            <Reveal delay={0.1}>
-              <div className="mt-12 h-px w-16 bg-clay mx-auto" />
-            </Reveal>
-            <Reveal delay={0.15}>
-              <p className="mt-10 md:mt-12 text-bone/75 leading-[1.9] text-base md:text-[17px] text-left md:text-center whitespace-pre-line">
-                Sound healing can be experienced seated or laying down in a calm environment. Participants are guided through deep breathing and relaxation techniques to be able to let go and absorb the subtle vibrations of sound.&nbsp;{"\n"}
-                The Crystal Singing Bowls used are tuned to a healing frequency, <span className="text-clay">435 Hz</span>, and instantly dissolve mental and emotional tensions, sometimes even putting people off to sleep. Ragas are sung live in the Indian classical style, like lullabies for the soul.&nbsp;{"\n"}
-                Soothing aromas, soft lighting and cozy pillows and blankets are put together aesthetically, to make this journey truly special and unforgettable.
-              </p>
-            </Reveal>
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+              <Reveal>
+                <ul className="space-y-5">
+                  {CREDENTIALS.map((c) => (
+                    <li key={c} className="flex gap-4 items-start text-foreground/85 leading-relaxed">
+                      <span className="mt-3 h-px w-5 bg-clay/60 flex-shrink-0" />
+                      <span>{c}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <MediaVideo
+                  src={credentialsVideo}
+                  fallbackAspect="9 / 16"
+                  frame="br"
+                  ariaLabel="A moment from an Om Shala experience"
+                  className="max-w-sm mx-auto lg:mx-0 lg:ml-auto"
+                />
+              </Reveal>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* A Glimpse — standalone private video */}
+      {/* The Experience — two-column */}
+      <section className="py-24 md:py-40 bg-charcoal text-bone relative overflow-hidden">
+        <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-clay/10 rounded-full blur-[120px]" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <Reveal>
+              <img
+                src={experienceImg}
+                alt="A private sound healing setup with crystal singing bowls"
+                className="w-full h-auto object-contain"
+              />
+            </Reveal>
+            <div>
+              <Reveal>
+                <span className="text-[10px] tracking-[0.4em] uppercase text-clay">The Experience</span>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <div className="mt-6 space-y-6 text-bone/75 leading-[1.9] text-base md:text-[17px]">
+                  <p>
+                    <strong className="text-bone font-semibold">
+                      Sound healing can be experienced seated or laying down in a calm environment.
+                    </strong>{" "}
+                    Participants are guided through deep breathing and relaxation techniques to be
+                    able to let go and absorb the subtle vibrations of sound.
+                  </p>
+                  <p>
+                    <strong className="text-clay font-semibold">The Crystal Singing Bowls</strong>{" "}
+                    used are tuned to a healing frequency,{" "}
+                    <span className="text-clay">435 Hz</span>, and instantly dissolve mental and
+                    emotional tensions, sometimes even putting people off to sleep. Ragas are sung
+                    live in the Indian classical style, like lullabies for the soul.
+                  </p>
+                  <p>
+                    <em className="text-bone/85">
+                      Soothing aromas, soft lighting and cozy pillows and blankets
+                    </em>{" "}
+                    are put together aesthetically, to make this journey truly special and
+                    unforgettable.
+                  </p>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Experiences — standalone private video */}
       <section className="py-20 md:py-32 bg-muted/10 relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <Reveal>
               <div className="text-center mb-10 md:mb-14">
-                <h2 className="font-serif text-2xl md:text-4xl font-light leading-tight">
-                  A Glimpse
+                <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
+                  Experiences
                 </h2>
                 <div className="mt-6 w-12 h-px bg-clay/60 mx-auto" />
               </div>
@@ -181,32 +207,25 @@ const EventsPrivate = () => {
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-clay/10 rounded-full blur-[150px] animate-pulse-soft" />
 
         <div className="container mx-auto px-6 text-center relative z-10">
-          <span className="text-[10px] tracking-[0.35em] uppercase text-bone/60 mb-6 block">Enquire</span>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light mb-8 leading-tight">
-            Let's discuss how we can
-            <span className="block italic">organise one for you.</span>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium mb-10 leading-tight">
+            Schedule a Consultation
           </h2>
-          <p className="text-bone/75 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
-            Om Shala has organised beautiful sound healing experiences for weddings, birthdays,
-            Diwali parties, women's forums and baby showers.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:+917400361681"
-              className="group relative inline-flex items-center gap-2 px-10 py-4 bg-bone text-charcoal text-sm tracking-wide overflow-hidden transition-all duration-500"
-            >
-              <span className="relative z-10 group-hover:text-bone transition-colors duration-500">Call +91 7400361681</span>
-              <ArrowRight className="w-4 h-4 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-              <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-            </a>
-            <Link
-              to="/contact"
-              className="inline-flex items-center justify-center gap-2 px-10 py-4 border border-bone/30 text-bone hover:bg-bone hover:text-charcoal transition-all duration-300"
-            >
-              Send an enquiry
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
+          <a
+            href="https://wa.me/917400361681?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20Private%20Events."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative block max-w-md mx-auto p-6 md:p-8 border border-bone/25 hover:border-clay/70 bg-charcoal/30 hover:bg-charcoal/50 transition-all duration-500 text-left"
+          >
+            <div className="flex items-center gap-5">
+              <span className="flex-shrink-0 w-12 h-12 rounded-full border border-bone/20 group-hover:border-clay/60 flex items-center justify-center transition-colors">
+                <MessageCircle className="w-5 h-5 text-clay" />
+              </span>
+              <div>
+                <p className="text-[10px] tracking-[0.3em] uppercase text-bone/60">WhatsApp</p>
+                <p className="mt-1 text-lg text-bone group-hover:text-clay transition-colors">+91 74003 61681</p>
+              </div>
+            </div>
+          </a>
         </div>
       </section>
 
