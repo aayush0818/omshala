@@ -157,7 +157,7 @@ const EventsPublic = () => {
             <div className="lg:col-span-6">
               <Reveal>
                 <span className="text-[10px] tracking-[0.35em] uppercase text-clay">What This Is</span>
-                <h2 className="mt-6 font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
+                <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
                   Sound Baths for Corporate Wellness
                 </h2>
               </Reveal>
@@ -200,7 +200,7 @@ const EventsPublic = () => {
 
         <div className="container mx-auto px-6">
           <div className={`text-center mb-16 transition-all duration-700 ${eventsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <h2 className="font-serif text-4xl md:text-5xl font-light">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium">
               Benefits for the team
             </h2>
             <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-clay to-transparent mx-auto" />
@@ -232,36 +232,34 @@ const EventsPublic = () => {
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-20">
             <span className="text-xs tracking-[0.3em] uppercase text-ash">How a Session Works</span>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl font-light">
+            <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl font-medium">
               Fully guided. Accessible to everyone.
             </h2>
             <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-clay to-transparent mx-auto" />
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
+          <ul className="max-w-3xl mx-auto space-y-6 list-none">
             {sessionFlow.map((s) => (
-              <div key={s.number} className="flex gap-5 sm:gap-8">
-                <div className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 border border-bone/20 flex items-center justify-center">
-                  <span className="font-serif text-xl sm:text-2xl text-clay">{s.number}</span>
-                </div>
-                <div className="pt-2 sm:pt-3">
-                  <h3 className="font-serif text-lg sm:text-xl mb-2 sm:mb-3">{s.title}</h3>
+              <li key={s.number} className="flex gap-4 items-start">
+                <span className="mt-3 h-1.5 w-1.5 rounded-full bg-clay flex-shrink-0" />
+                <div>
+                  <h3 className="font-serif text-lg sm:text-xl mb-1">{s.title}</h3>
                   <p className="text-bone/60 leading-relaxed">{s.desc}</p>
                 </div>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
-      {/* See it in motion — standalone video */}
+      {/* Experiences — standalone video */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-6">
           <div className="max-w-5xl mx-auto">
             <Reveal>
               <div className="text-center mb-10 md:mb-14">
-                <h2 className="font-serif text-2xl md:text-4xl font-light leading-tight">
-                  A Glimpse
+                <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium leading-tight">
+                  Experiences
                 </h2>
                 <div className="mt-6 w-12 h-px bg-clay/60 mx-auto" />
               </div>
@@ -285,8 +283,8 @@ const EventsPublic = () => {
           <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             <div>
               <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">The Rise of Online Sound Baths</span>
-              <h2 className="font-serif text-3xl md:text-4xl font-light mb-8 leading-tight">
-                Felt deeply, even from your desk
+              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium mb-8 leading-tight">
+                <em className="not-italic text-clay">Felt deeply, even from your desk.</em>
               </h2>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p>
@@ -342,7 +340,7 @@ const EventsPublic = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">Booking</span>
-            <h2 className="font-serif text-3xl md:text-4xl font-light mb-8">
+            <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium mb-8">
               Customised to your organisation
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto mb-8 leading-relaxed">
@@ -352,33 +350,29 @@ const EventsPublic = () => {
               <li className="flex gap-3"><span className="text-clay">·</span> Online or in-person</li>
               <li className="flex gap-3"><span className="text-clay">·</span> Small teams or large groups</li>
               <li className="flex gap-3"><span className="text-clay">·</span> One-time sessions or ongoing programs for sustained corporate wellness</li>
+              <li className="flex gap-3"><span className="text-clay">·</span> Sessions can also be positioned as part of leadership development or performance optimisation programs</li>
             </ul>
-            <p className="text-muted-foreground max-w-xl mx-auto mb-12 leading-relaxed">
-              Sessions can also be positioned as part of leadership development or performance
-              optimisation programs.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+
+            <div className="mt-14 pt-14 border-t border-foreground/10">
+              <h3 className="font-serif text-3xl md:text-4xl font-medium mb-8">
+                Schedule a Consultation
+              </h3>
               <a
-                href="mailto:omshala.official@gmail.com?subject=Corporate%20Sound%20Healing%20Enquiry"
-                className="group relative inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 bg-foreground text-background text-sm tracking-wide overflow-hidden transition-all duration-500"
-              >
-                <Mail className="w-4 h-4 relative z-10 group-hover:text-background transition-colors duration-500" />
-                <span className="relative z-10 group-hover:text-background transition-colors duration-500">Request the rate card</span>
-                <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-              </a>
-              <a
-                href="https://wa.me/917400361681?text=Hi%20Om%20Shala%2C%20I%27d%20like%20to%20schedule%20a%20consultation%20for%20a%20corporate%20session."
+                href="https://wa.me/917400361681?text=Hi%2C%20I%27d%20like%20to%20enquire%20about%20Corporate%20Events."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-center px-8 sm:px-10 py-4 border border-foreground/20 text-foreground hover:border-clay hover:text-clay transition-all duration-300"
+                className="group relative block max-w-md mx-auto p-6 md:p-8 border border-foreground/15 hover:border-clay/60 bg-background hover:bg-muted/20 transition-all duration-500 text-left"
               >
-                Schedule a consultation
+                <div className="flex items-center gap-5">
+                  <span className="flex-shrink-0 w-12 h-12 rounded-full border border-foreground/10 group-hover:border-clay/40 flex items-center justify-center transition-colors">
+                    <MessageCircle className="w-5 h-5 text-clay" />
+                  </span>
+                  <div>
+                    <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground">WhatsApp</p>
+                    <p className="mt-1 text-lg text-foreground group-hover:text-clay transition-colors">+91 74003 61681</p>
+                  </div>
+                </div>
               </a>
-            </div>
-            <div className="mt-10 flex flex-col sm:flex-row gap-6 justify-center text-sm text-muted-foreground">
-              <span>Email · <a href="mailto:omshala.official@gmail.com" className="text-foreground hover:text-clay transition-colors">omshala.official@gmail.com</a></span>
-              <span className="hidden sm:inline text-foreground/20">·</span>
-              <span>WhatsApp · <a href="https://wa.me/917400361681" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-clay transition-colors">+91 7400361681</a></span>
             </div>
           </div>
         </div>
