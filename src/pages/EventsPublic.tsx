@@ -211,35 +211,6 @@ const EventsPublic = () => {
         </div>
       </section>
 
-      {/* How a Session Works */}
-      <section className="py-20 md:py-40 bg-charcoal text-bone relative overflow-hidden">
-        <div className="absolute top-20 -right-32 w-64 h-64 rounded-full border border-bone/5 animate-pulse-soft" />
-        <div className="absolute bottom-20 -left-32 w-96 h-96 rounded-full border border-bone/5 animate-pulse-soft" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/4 right-1/4 w-48 h-48 bg-clay/10 rounded-full blur-[40px] animate-float" />
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="text-center mb-20">
-            <span className="text-xs tracking-[0.3em] uppercase text-ash">How a Session Works</span>
-            <h2 className="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl font-medium">
-              Fully guided. Accessible to everyone.
-            </h2>
-            <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-clay to-transparent mx-auto" />
-          </div>
-
-          <ul className="max-w-3xl mx-auto space-y-6 list-none">
-            {sessionFlow.map((s) => (
-              <li key={s.number} className="flex gap-4 items-start">
-                <span className="mt-3 h-1.5 w-1.5 rounded-full bg-clay flex-shrink-0" />
-                <div>
-                  <h3 className="font-serif text-lg sm:text-xl mb-1">{s.title}</h3>
-                  <p className="text-bone/60 leading-relaxed">{s.desc}</p>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       {/* Experiences — standalone video */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="container mx-auto px-6">
