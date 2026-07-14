@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Users, Sparkles, Brain, Heart, Focus, Activity, Headphones, Building2, MessageCircle } from "lucide-react";
+import { Users, Sparkles, Brain, Heart, Focus, Activity, MessageCircle } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -28,18 +28,6 @@ const benefits = [
   { icon: Users, text: "Builds a calmer, more resilient team environment" },
 ];
 
-const sessionFlow = [
-  { number: "01", title: "Gentle breathwork", desc: "To settle the nervous system." },
-  { number: "02", title: "Guided relaxation", desc: "To release mental and physical tension." },
-  { number: "03", title: "Sound immersion", desc: "Using crystal singing bowls that align brain waves." },
-  { number: "04", title: "Optional voice", desc: "Live Indian classical ragas or mantras, when suitable for the group." },
-];
-
-const formats = [
-  { icon: Headphones, title: "Online", desc: "Joinable from desks or homes, ideal for distributed teams." },
-  { icon: Building2, title: "On-site", desc: "Hosted at your office or boardroom for in-person teams." },
-  { icon: Sparkles, title: "Offsites & retreats", desc: "Designed into leadership offsites and wellbeing retreats." },
-];
 
 const EventsPublic = () => {
   const [loaded, setLoaded] = useState(false);
