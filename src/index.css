@@ -41,6 +41,10 @@
     --charcoal: 20 12% 14%;
     --bone: 30 12% 94%;
     --ash: 30 5% 64%;
+
+    /* Om Shala brand */
+    --brand-purple: 244 40% 22%;
+    --brand-purple-fg: 32 22% 78%;
   }
 
   .dark {
