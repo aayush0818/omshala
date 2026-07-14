@@ -236,63 +236,6 @@ const EventsPublic = () => {
         </div>
       </section>
 
-      {/* Online Sound Baths Explainer */}
-      <section className="py-20 md:py-40 relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-            <div>
-              <span className="text-xs tracking-[0.3em] uppercase text-clay mb-6 block">The Rise of Online Sound Baths</span>
-              <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-medium mb-8 leading-tight">
-                <em className="not-italic text-clay">Felt deeply, even from your desk.</em>
-              </h2>
-              <div className="space-y-6 text-muted-foreground leading-relaxed">
-                <p>
-                  Online sound healing is increasingly preferred for corporate wellness because of
-                  the ease of organising, accessibility and time efficiency. Participants can
-                  experience it from their desk, or from bed when working from home.
-                </p>
-                <p>
-                  Sound frequencies enter the ear and alter brain waves, which signal the nervous
-                  system to shift into deep relaxation. Anything we "feel" in the body is often a
-                  configuration in the brain first, and harmonious pure tones create real feelings
-                  of peace and positivity, even when experienced online.
-                </p>
-                <p>
-                  In an Om Shala experience, the crystal singing bowls are tuned to <span className="text-clay">435 Hz</span>
-                  {", "}the frequency of nature, deeply healing for the mind to sync with.
-                </p>
-              </div>
-            </div>
-
-            <div className="lg:pl-8">
-              <div className="p-8 border border-foreground/10 relative bg-muted/10">
-                <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-clay/30" />
-                <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-clay/30" />
-                <h3 className="text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6">The Setup</h3>
-                <p className="text-foreground/80 leading-relaxed mb-6">
-                  Om Shala uses a high-quality professional sound recording system to transmit the
-                  subtle microtones of the singing bowls with utmost clarity and precision.
-                </p>
-                <p className="text-foreground/80 leading-relaxed">
-                  All you need from your end is a calm ambience and earphones / headphones for your
-                  participants, or a stereo system for a room full of people.
-                </p>
-              </div>
-
-              <div className="mt-8 grid sm:grid-cols-3 gap-4">
-                {formats.map((f) => (
-                  <div key={f.title} className="p-5 border border-foreground/10 text-center">
-                    <f.icon className="w-5 h-5 text-clay mx-auto mb-3" />
-                    <p className="text-xs tracking-[0.15em] uppercase text-foreground/70">{f.title}</p>
-                    <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{f.desc}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Booking */}
       <section id="enquire" className="py-20 md:py-40 bg-muted/20 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
