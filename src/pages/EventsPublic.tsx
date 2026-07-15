@@ -108,11 +108,11 @@ const EventsPublic = () => {
                 Deep Relaxation
                 <span className="block mt-2 text-clay">for High-Performance Teams</span>
               </h1>
-              <p className="font-display text-[15px] sm:text-lg text-foreground/85 leading-relaxed max-w-xl font-light">
+              <p className="body-text-lg max-w-xl">
                 Therapeutic sound immersions known as Sound Baths, designed to reduce mental
                 fatigue, improve focus, and support emotional resilience in the workplace.
               </p>
-              <p className="font-display mt-6 text-sm sm:text-base text-foreground/85 italic leading-relaxed max-w-xl border-l border-brand-purple/40 pl-5 font-light">
+              <p className="body-quote mt-6 max-w-xl border-l border-brand-purple/40 pl-5">
                 The Mind, is the highest human power and a rejuvenated mind is an optimised
                 human resource.
               </p>
@@ -188,7 +188,7 @@ const EventsPublic = () => {
                   </h2>
                 </Reveal>
                 <Reveal delay={0.1}>
-                  <p className="mt-8 text-muted-foreground leading-relaxed">
+                  <p className="body-text mt-8 max-w-xl">
                     A therapeutic experience that combines guided breathwork and deep relaxation
                     techniques in a sound immersion, to help employees and leaders rejuvenate
                     mentally and access more presence and productivity. Available online, onsite
@@ -206,7 +206,7 @@ const EventsPublic = () => {
                         "High-performance teams under constant pressure",
                         "Organisations prioritising employee wellbeing and retention",
                       ].map((it) => (
-                        <li key={it} className="flex gap-4 items-start text-foreground/80 leading-relaxed">
+                        <li key={it} className="flex gap-4 items-start body-text">
                           <span className="mt-2 h-px w-6 bg-brand-purple flex-shrink-0" />
                           <span>{it}</span>
                         </li>
@@ -240,7 +240,7 @@ const EventsPublic = () => {
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-foreground/10 group-hover:border-brand-purple/40 mb-5 transition-colors duration-500">
                     <b.icon className="w-5 h-5 text-brand-purple" />
                   </div>
-                  <p className="text-foreground/80 leading-relaxed">{b.text}</p>
+                  <p className="body-text">{b.text}</p>
                 </div>
               ))}
             </div>
@@ -270,7 +270,7 @@ const EventsPublic = () => {
                   </div>
                   <div className="pt-2 sm:pt-3">
                     <h3 className="font-serif text-lg sm:text-xl mb-2 sm:mb-3">{s.title}</h3>
-                    <p className="text-bone/60 leading-relaxed">{s.desc}</p>
+                    <p className="body-text text-bone/85">{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -304,7 +304,7 @@ const EventsPublic = () => {
                 <h2 className="font-serif text-3xl md:text-4xl font-light mb-8 leading-tight">
                   Felt deeply, even from your desk
                 </h2>
-                <div className="space-y-6 text-muted-foreground leading-relaxed">
+                <div className="space-y-6 body-text">
                   <p>
                     Online sound healing is increasingly preferred for corporate wellness because of
                     the ease of organising, accessibility and time efficiency. Participants can
@@ -328,11 +328,11 @@ const EventsPublic = () => {
                   <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-brand-purple/30" />
                   <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-brand-purple/30" />
                   <h3 className="text-sm tracking-[0.2em] uppercase text-muted-foreground mb-6">The Setup</h3>
-                  <p className="text-foreground/80 leading-relaxed mb-6">
+                  <p className="body-text mb-6">
                     Om Shala uses a high-quality professional sound recording system to transmit the
                     subtle microtones of the singing bowls with utmost clarity and precision.
                   </p>
-                  <p className="text-foreground/80 leading-relaxed">
+                  <p className="body-text">
                     All you need from your end is a calm ambience and earphones / headphones for your
                     participants, or a stereo system for a room full of people.
                   </p>
@@ -343,7 +343,7 @@ const EventsPublic = () => {
                     <div key={f.title} className="p-5 border border-foreground/10 text-center">
                       <f.icon className="w-5 h-5 text-brand-purple mx-auto mb-3" />
                       <p className="text-xs tracking-[0.15em] uppercase text-foreground/70">{f.title}</p>
-                      <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{f.desc}</p>
+                      <p className="body-text text-[0.9375rem] mt-2">{f.desc}</p>
                     </div>
                   ))}
                 </div>
