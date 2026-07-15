@@ -30,11 +30,11 @@ const Footer = () => {
             <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
               <Link
                 to="/"
-                className="font-serif text-2xl tracking-[0.15em] text-foreground hover:text-brand-purple transition-colors duration-500"
+                className="font-serif text-base tracking-[0.25em] text-foreground hover:text-brand-purple transition-colors duration-500"
               >
                 OM SHALA
               </Link>
-              <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground">
+              <p className="text-[10px] tracking-[0.35em] uppercase text-muted-foreground">
                 Sound Healing Experiences
               </p>
               <p className="text-sm text-muted-foreground italic max-w-xs leading-relaxed pt-2">
