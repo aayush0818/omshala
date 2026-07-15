@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="relative pt-20 md:pt-28 pb-10 bg-background text-foreground overflow-hidden border-t border-foreground/10">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-px bg-brand-purple/60" />
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-brand-purple/[0.04] rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-brand-purple-soft/[0.05] rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative">
         <div className="max-w-6xl mx-auto">
