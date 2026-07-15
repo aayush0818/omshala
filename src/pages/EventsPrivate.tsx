@@ -126,8 +126,8 @@ const EventsPrivate = () => {
         </section>
 
         {/* The Experience — two-column editorial */}
-        <section className="relative overflow-hidden bg-charcoal text-bone">
-          <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-brand-purple/10 rounded-full blur-[120px]" />
+        <section className="relative overflow-hidden bg-brand-purple text-bone">
+          <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-bone/5 rounded-full blur-[120px]" />
           <div className="container mx-auto px-6 relative z-10 py-24 md:py-40">
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
               <Reveal className="lg:col-span-6">
@@ -144,7 +144,7 @@ const EventsPrivate = () => {
                   <span className="text-sm tracking-[0.3em] uppercase text-clay">The Experience</span>
                 </Reveal>
                 <Reveal delay={0.1}>
-                  <div className="mt-8 h-px w-16 bg-brand-purple/60" />
+                  <div className="mt-8 h-px w-16 bg-bone/30" />
                 </Reveal>
                 <Reveal delay={0.15}>
                   <div className="mt-10 space-y-6">
@@ -185,7 +185,7 @@ const EventsPrivate = () => {
         </section>
 
         {/* Experience */}
-        <section className="py-20 md:py-32 bg-brand-purple relative overflow-hidden">
+        <section className="py-20 md:py-32 relative overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="max-w-5xl mx-auto">
               <Reveal>
