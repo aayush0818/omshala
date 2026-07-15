@@ -44,13 +44,13 @@ const Contact = () => {
                 <Reveal key={m.label} delay={i * 0.06}>
                   <a
                     href={m.href}
-                    className="group block p-10 border border-foreground/10 hover:border-clay/40 hover:bg-muted/20 transition-all duration-500 h-full"
+                    className="group block p-10 border border-foreground/10 hover:border-brand-purple/60 hover:bg-brand-purple/[0.04] transition-all duration-500 h-full"
                   >
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-foreground/10 group-hover:border-clay/50 group-hover:bg-clay/10 mb-6 transition-all duration-500">
-                      <m.icon className="w-4 h-4 text-clay" />
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-foreground/10 group-hover:border-brand-purple/60 group-hover:bg-brand-purple/10 mb-6 transition-all duration-500">
+                      <m.icon className="w-4 h-4 text-brand-purple" />
                     </div>
                     <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-3">{m.label}</p>
-                    <p className="text-foreground group-hover:text-clay transition-colors duration-300">{m.value}</p>
+                    <p className="text-foreground group-hover:text-brand-purple transition-colors duration-300">{m.value}</p>
                   </a>
                 </Reveal>
               ))}
