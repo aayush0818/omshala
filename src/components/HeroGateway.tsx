@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import wordmarkAsset from "@/assets/omshala-wordmark.png.asset.json";
 
 type Side = "corporate" | "private" | null;
 

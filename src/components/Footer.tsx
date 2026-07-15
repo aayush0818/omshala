@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import wordmarkAsset from "@/assets/omshala-wordmark.png.asset.json";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
