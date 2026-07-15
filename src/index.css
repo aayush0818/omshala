@@ -21,7 +21,7 @@
     --secondary-foreground: 30 12% 94%;
 
     --muted: 30 5% 64%; /* Ash Grey #A8A39D */
-    --muted-foreground: 20 8% 40%;
+    --muted-foreground: 20 10% 32%; /* Darker warm charcoal for improved contrast */
 
     --accent: 24 35% 45%; /* Warm Clay #9A6A4F */
     --accent-foreground: 30 12% 94%;
@@ -41,6 +41,7 @@
     --charcoal: 20 12% 14%;
     --bone: 30 12% 94%;
     --ash: 30 5% 64%;
+    --body: 20 10% 22%; /* Warm charcoal body text — readable on bone */
     --brand-purple: 244 37% 27%; /* #2E2A5E — canonical */
     --brand-purple-deep: 246 42% 19%; /* #1F1C45 — immersive */
     --brand-purple-mid: 246 35% 33%; /* #3B3775 — softer body */
