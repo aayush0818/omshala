@@ -223,7 +223,7 @@ const EventsPrivate = () => {
                 rel="noopener noreferrer"
                 className="group relative inline-flex items-center gap-2 px-10 py-4 bg-bone text-charcoal text-sm tracking-wide overflow-hidden transition-all duration-500"
               >
-                <span className="relative z-10 group-hover:text-bone transition-colors duration-500">WhatsApp</span>
+                <span className="relative z-10 group-hover:text-bone transition-colors duration-500">WhatsApp +91 74003 61681</span>
                 <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
               </a>
             </div>
