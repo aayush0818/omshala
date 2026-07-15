@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Instagram } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -8,6 +8,7 @@ import Reveal from "@/components/Reveal";
 const contactMethods = [
   { icon: Mail, label: "Email", value: "omshala.official@gmail.com", href: "mailto:omshala.official@gmail.com" },
   { icon: Phone, label: "WhatsApp", value: "+91 74003 61681", href: "https://wa.me/917400361681" },
+  { icon: Instagram, label: "Instagram", value: "@omshala.official", href: "https://www.instagram.com/omshala.official" },
 ];
 
 const Contact = () => {
