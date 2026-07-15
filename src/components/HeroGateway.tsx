@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import wordmark from "@/assets/omshala-wordmark-transparent.png.asset.json";
 
 type Side = "corporate" | "private" | null;
 
@@ -38,24 +39,18 @@ const HeroGateway = () => {
       className="relative min-h-screen w-full overflow-hidden text-bone flex flex-col"
       style={{ background: GATEWAY_BG }}
     >
-      {/* Wordmark + tagline (rendered as text, matching the reference exactly) */}
-      <div className="pt-16 sm:pt-20 md:pt-24 lg:pt-28 pb-10 sm:pb-14 md:pb-16 px-4 flex flex-col items-center text-center">
-        <h1
-          className="font-display text-bone tracking-tight leading-none text-[3.5rem] sm:text-[5rem] md:text-[6.5rem] lg:text-[7.5rem]"
-          style={{ fontWeight: 400 }}
-        >
-          om shāla
-        </h1>
-        <p
-          className="mt-3 sm:mt-4 font-sans font-light tracking-wide text-[0.95rem] sm:text-lg md:text-xl"
-          style={{ color: SUBTITLE_COLOR }}
-        >
-          sound healing experiences
-        </p>
+      {/* Wordmark (transparent PNG, centred branding anchor) */}
+      <div className="pt-6 sm:pt-8 md:pt-10 pb-4 sm:pb-6 md:pb-8 px-4 flex justify-center">
+        <img
+          src={wordmark.url}
+          alt="om shāla — sound healing experiences"
+          className="w-auto h-24 sm:h-28 md:h-36 lg:h-40 object-contain select-none pointer-events-none"
+          draggable={false}
+        />
       </div>
 
       {/* Cards */}
-      <div className="flex-1 flex items-start justify-center px-4 sm:px-8 md:px-12 lg:px-16 pb-10 sm:pb-16">
+      <div className="flex-1 flex items-start justify-center px-4 sm:px-8 md:px-12 lg:px-16 pb-6 sm:pb-10">
         <div className="w-full max-w-6xl grid grid-cols-2 gap-3 sm:gap-6 md:gap-8">
           {panels.map((panel) => {
             const isHovered = hovered === panel.key;
@@ -75,7 +70,7 @@ const HeroGateway = () => {
                   transition: "border-color 400ms ease",
                 }}
               >
-                <div className="flex flex-col items-center text-center px-4 sm:px-8 md:px-10 py-10 sm:py-14 md:py-20 min-h-[420px] sm:min-h-[440px] md:min-h-[480px]">
+                <div className="flex flex-col items-center text-center px-4 sm:px-8 md:px-10 py-8 sm:py-10 md:py-12 min-h-[340px] sm:min-h-[360px] md:min-h-[400px]">
                   <h2
                     className="font-display text-bone tracking-tight leading-[1.05] text-[1.75rem] sm:text-4xl md:text-5xl lg:text-[3.5rem]"
                     style={{ fontWeight: 400 }}
@@ -89,12 +84,12 @@ const HeroGateway = () => {
 
                   {/* Small divider line */}
                   <div
-                    className="mt-5 sm:mt-6 md:mt-8 h-px w-10 sm:w-12"
+                    className="mt-4 sm:mt-5 md:mt-6 h-px w-10 sm:w-12"
                     style={{ backgroundColor: SUBTITLE_COLOR }}
                   />
 
                   <p
-                    className="mt-5 sm:mt-6 md:mt-8 max-w-[220px] sm:max-w-xs md:max-w-sm font-sans font-light text-[0.8rem] sm:text-sm md:text-base leading-relaxed"
+                    className="mt-4 sm:mt-5 md:mt-6 max-w-[220px] sm:max-w-xs md:max-w-sm font-sans font-light text-[0.8rem] sm:text-sm md:text-base leading-relaxed"
                     style={{ color: SUBTITLE_COLOR }}
                   >
                     {panel.subtitle}
@@ -103,7 +98,7 @@ const HeroGateway = () => {
                   <div className="flex-1" />
 
                   <motion.div
-                    className="mt-8 sm:mt-10 md:mt-12 inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-md"
+                    className="mt-6 sm:mt-8 inline-flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-md"
                     animate={{
                       backgroundColor: isHovered
                         ? "rgba(200, 190, 240, 0.08)"
