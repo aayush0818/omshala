@@ -129,6 +129,21 @@
     font-weight: 400;
   }
 
+  /* Hero body paragraph — isolated refinement for readability */
+  .hero-body {
+    @apply font-sans text-body leading-[1.8];
+    font-size: 1.125rem;
+    font-weight: 500;
+    letter-spacing: 0;
+  }
+
+  @media (min-width: 640px) {
+    .hero-body {
+      font-size: 1.1875rem;
+    }
+  }
+
+
   .body-quote {
     @apply font-serif italic text-body leading-[1.75];
     font-size: 1.0625rem;
