@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram } from "lucide-react";
+
+const INSTAGRAM_URL = "https://www.instagram.com/omshala.official";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -42,6 +44,15 @@ const Header = () => {
                 {l.label}
               </Link>
             ))}
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-muted-foreground hover:text-brand-purple transition-colors duration-300"
+            >
+              <Instagram className="w-4 h-4" />
+            </a>
           </div>
 
           <button
@@ -87,6 +98,19 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            onClick={() => setMobileMenuOpen(false)}
+            className={`mt-4 text-foreground hover:text-brand-purple transition-all duration-500 ${
+              mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+            style={{ transitionDelay: `${navLinks.length * 100}ms` }}
+          >
+            <Instagram className="w-7 h-7" />
+          </a>
         </nav>
       </div>
     </>
