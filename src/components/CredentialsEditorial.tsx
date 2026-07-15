@@ -12,7 +12,7 @@ interface Props {
 const CredentialsEditorial = ({ className }: Props) => {
   return (
     <section className={`py-20 md:py-44 border-t border-foreground/5 relative overflow-hidden ${className ?? ""}`}>
-      <div className="absolute top-1/3 -left-40 w-96 h-96 bg-clay/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/3 -left-40 w-96 h-96 bg-brand-purple/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-14 lg:gap-24 max-w-6xl mx-auto">
           <div className="lg:col-span-5">
@@ -21,7 +21,7 @@ const CredentialsEditorial = ({ className }: Props) => {
                 <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-[1.05]">
                   Credentials
                 </h2>
-                <div className="mt-10 h-px w-16 bg-clay/60" />
+                <div className="mt-10 h-px w-16 bg-brand-purple/60" />
               </Reveal>
             </div>
           </div>

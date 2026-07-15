@@ -99,7 +99,7 @@ const EventsPublic = () => {
 
           <div className="container mx-auto px-6 sm:px-10 lg:px-16 pt-12 md:pt-16 pb-14 md:pb-16">
             <div className={`max-w-2xl transition-all duration-1000 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-              <div className="w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-6 md:mb-8" />
+              <div className="w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-brand-purple to-brand-purple/30 mb-6 md:mb-8" />
 
               <span className="text-sm tracking-[0.3em] uppercase text-clay mb-4 md:mb-6 block font-light">
                 Corporate Wellness
@@ -112,7 +112,7 @@ const EventsPublic = () => {
                 Therapeutic sound immersions known as Sound Baths, designed to reduce mental
                 fatigue, improve focus, and support emotional resilience in the workplace.
               </p>
-              <p className="font-display mt-6 text-sm sm:text-base text-foreground/85 italic leading-relaxed max-w-xl border-l border-clay/40 pl-5 font-light">
+              <p className="font-display mt-6 text-sm sm:text-base text-foreground/85 italic leading-relaxed max-w-xl border-l border-brand-purple/40 pl-5 font-light">
                 The Mind, is the highest human power and a rejuvenated mind is an optimised
                 human resource.
               </p>
@@ -125,7 +125,7 @@ const EventsPublic = () => {
                   <span className="relative z-10 group-hover:text-background transition-colors duration-500">
                     Enquire for Corporate Sessions
                   </span>
-                  <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                  <div className="absolute inset-0 bg-brand-purple translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                 </a>
               </div>
             </div>
@@ -145,7 +145,7 @@ const EventsPublic = () => {
                   <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
                     Credentials
                   </h2>
-                  <div className="mt-6 h-px w-16 bg-clay/60" />
+                  <div className="mt-6 h-px w-16 bg-brand-purple/60" />
                   <ul className="mt-8 flex-1 flex flex-col justify-between divide-y divide-foreground/10">
                     {CREDENTIALS.map((c) => (
                       <li key={c} className="py-5 text-sm md:text-[15px] text-foreground/85 leading-relaxed">
@@ -207,7 +207,7 @@ const EventsPublic = () => {
                         "Organisations prioritising employee wellbeing and retention",
                       ].map((it) => (
                         <li key={it} className="flex gap-4 items-start text-foreground/80 leading-relaxed">
-                          <span className="mt-2 h-px w-6 bg-clay flex-shrink-0" />
+                          <span className="mt-2 h-px w-6 bg-brand-purple flex-shrink-0" />
                           <span>{it}</span>
                         </li>
                       ))}
@@ -222,22 +222,22 @@ const EventsPublic = () => {
         {/* Benefits */}
         <section id="benefits" ref={eventsRef} className="py-20 md:py-40 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-foreground/[0.02] to-transparent" />
-          <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-clay/5 rounded-full blur-[40px] animate-float" />
+          <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-brand-purple/5 rounded-full blur-[40px] animate-float" />
 
           <div className="container mx-auto px-6">
             <div className={`text-center mb-16 transition-all duration-700 ${eventsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
               <h2 className="font-serif text-4xl md:text-5xl font-light">Benefits for the team</h2>
-              <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-clay to-transparent mx-auto" />
+              <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto" />
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {benefits.map((b, i) => (
                 <div
                   key={b.text}
-                  className={`group p-8 border border-foreground/10 hover:border-clay/30 hover:bg-muted/20 transition-all duration-500 ${eventsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+                  className={`group p-8 border border-foreground/10 hover:border-brand-purple/30 hover:bg-muted/20 transition-all duration-500 ${eventsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-foreground/10 group-hover:border-clay/40 mb-5 transition-colors duration-500">
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-foreground/10 group-hover:border-brand-purple/40 mb-5 transition-colors duration-500">
                     <b.icon className="w-5 h-5 text-clay" />
                   </div>
                   <p className="text-foreground/80 leading-relaxed">{b.text}</p>
@@ -251,7 +251,7 @@ const EventsPublic = () => {
         <section className="py-20 md:py-40 bg-charcoal text-bone relative overflow-hidden">
           <div className="absolute top-20 -right-32 w-64 h-64 rounded-full border border-bone/5 animate-pulse-soft" />
           <div className="absolute bottom-20 -left-32 w-96 h-96 rounded-full border border-bone/5 animate-pulse-soft" style={{ animationDelay: "2s" }} />
-          <div className="absolute top-1/4 right-1/4 w-48 h-48 bg-clay/10 rounded-full blur-[40px] animate-float" />
+          <div className="absolute top-1/4 right-1/4 w-48 h-48 bg-brand-purple/10 rounded-full blur-[40px] animate-float" />
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-20">
@@ -259,7 +259,7 @@ const EventsPublic = () => {
               <h2 className="mt-6 font-serif text-4xl md:text-5xl font-light">
                 Fully guided. Accessible to everyone.
               </h2>
-              <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-clay to-transparent mx-auto" />
+              <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto" />
             </div>
 
             <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
@@ -285,7 +285,7 @@ const EventsPublic = () => {
               <Reveal>
                 <div className="text-center mb-10 md:mb-14">
                   <h2 className="font-serif text-2xl md:text-4xl font-light leading-tight">Experience</h2>
-                  <div className="mt-6 w-12 h-px bg-clay/60 mx-auto" />
+                  <div className="mt-6 w-12 h-px bg-brand-purple/60 mx-auto" />
                 </div>
               </Reveal>
               <Reveal delay={0.1}>
@@ -325,8 +325,8 @@ const EventsPublic = () => {
 
               <div className="lg:pl-8">
                 <div className="p-8 border border-foreground/10 relative bg-muted/10">
-                  <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-clay/30" />
-                  <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-clay/30" />
+                  <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-brand-purple/30" />
+                  <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-brand-purple/30" />
                   <h3 className="text-sm tracking-[0.2em] uppercase text-muted-foreground mb-6">The Setup</h3>
                   <p className="text-foreground/80 leading-relaxed mb-6">
                     Om Shala uses a high-quality professional sound recording system to transmit the

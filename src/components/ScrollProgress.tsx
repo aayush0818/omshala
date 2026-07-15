@@ -7,7 +7,7 @@ const ScrollProgress = () => {
     <motion.div
       aria-hidden
       style={{ scaleX, transformOrigin: "0% 50%" }}
-      className="fixed top-0 left-0 right-0 h-px bg-clay/70 z-[60] will-change-transform"
+      className="fixed top-0 left-0 right-0 h-px bg-brand-purple/70 z-[60] will-change-transform"
     />
   );
 };

@@ -63,7 +63,7 @@ const EventsPrivate = () => {
 
           <div className="container mx-auto px-6 sm:px-10 lg:px-16 pt-12 md:pt-16 pb-14 md:pb-16">
             <div className={`max-w-2xl transition-all duration-1000 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-              <div className="w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-6 md:mb-8" />
+              <div className="w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-brand-purple to-brand-purple/30 mb-6 md:mb-8" />
 
               <h1 className="font-display text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-light leading-[1.15] mb-5 md:mb-6 tracking-tight">
                 A soulful way
@@ -82,7 +82,7 @@ const EventsPrivate = () => {
                   <span className="relative z-10 group-hover:text-background transition-colors duration-500">
                     Enquire for Private Events
                   </span>
-                  <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                  <div className="absolute inset-0 bg-brand-purple translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                 </a>
               </div>
             </div>
@@ -102,7 +102,7 @@ const EventsPrivate = () => {
                   <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
                     Credentials
                   </h2>
-                  <div className="mt-6 h-px w-16 bg-clay/60" />
+                  <div className="mt-6 h-px w-16 bg-brand-purple/60" />
                   <ul className="mt-8 flex-1 flex flex-col justify-between divide-y divide-foreground/10">
                     {CREDENTIALS.map((c) => (
                       <li key={c} className="py-5 text-sm md:text-[15px] text-foreground/85 leading-relaxed">
@@ -127,7 +127,7 @@ const EventsPrivate = () => {
 
         {/* The Experience — two-column editorial */}
         <section className="relative overflow-hidden bg-charcoal text-bone">
-          <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-clay/10 rounded-full blur-[120px]" />
+          <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-brand-purple/10 rounded-full blur-[120px]" />
           <div className="container mx-auto px-6 relative z-10 py-24 md:py-40">
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
               <Reveal className="lg:col-span-6">
@@ -144,7 +144,7 @@ const EventsPrivate = () => {
                   <span className="text-sm tracking-[0.3em] uppercase text-clay">The Experience</span>
                 </Reveal>
                 <Reveal delay={0.1}>
-                  <div className="mt-8 h-px w-16 bg-clay/60" />
+                  <div className="mt-8 h-px w-16 bg-brand-purple/60" />
                 </Reveal>
                 <Reveal delay={0.15}>
                   <div className="mt-10 space-y-8">
@@ -188,7 +188,7 @@ const EventsPrivate = () => {
               <Reveal>
                 <div className="text-center mb-10 md:mb-14">
                   <h2 className="font-serif text-2xl md:text-4xl font-light leading-tight">Experience</h2>
-                  <div className="mt-6 w-12 h-px bg-clay/60 mx-auto" />
+                  <div className="mt-6 w-12 h-px bg-brand-purple/60 mx-auto" />
                 </div>
               </Reveal>
               <Reveal delay={0.1}>

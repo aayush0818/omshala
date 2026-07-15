@@ -112,7 +112,7 @@ const MediaVideo = ({
         </div>
       </div>
       <div
-        className={`absolute ${framePos[frame]} w-full h-full border border-clay/25 -z-10 pointer-events-none`}
+        className={`absolute ${framePos[frame]} w-full h-full border border-brand-purple/25 -z-10 pointer-events-none`}
       />
     </div>
   );

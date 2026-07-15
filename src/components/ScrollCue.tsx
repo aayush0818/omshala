@@ -5,7 +5,7 @@ const ScrollCue = ({ className = "" }: { className?: string }) => (
   >
     <span className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground/60">Scroll</span>
     <div className="relative h-10 w-px overflow-hidden bg-foreground/10">
-      <div className="absolute top-0 left-0 w-full h-4 bg-gradient-to-b from-clay to-transparent animate-scroll-cue" />
+      <div className="absolute top-0 left-0 w-full h-4 bg-gradient-to-b from-brand-purple to-transparent animate-scroll-cue" />
     </div>
   </div>
 );

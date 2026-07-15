@@ -18,7 +18,7 @@ const AboutSection = () => {
                 alt="Shrutika, founder of Om Shala"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute -bottom-4 -right-4 w-full h-full border border-clay/20 -z-10" />
+              <div className="absolute -bottom-4 -right-4 w-full h-full border border-brand-purple/20 -z-10" />
             </div>
           </Reveal>
 
@@ -35,7 +35,7 @@ const AboutSection = () => {
                 </p>
               </Reveal>
               <Reveal delay={0.15}>
-                <p className="italic text-foreground/80 pl-6 border-l border-clay/40 mt-10">
+                <p className="italic text-foreground/80 pl-6 border-l border-brand-purple/40 mt-10">
                   "Pure sound pulls you inward and brings deep relaxation. In this state, the body is grounded, mind is open and emotions are free. Everything feels perfect, as it is."
                 </p>
               </Reveal>

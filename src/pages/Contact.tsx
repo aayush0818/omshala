@@ -23,7 +23,7 @@ const Contact = () => {
         <section className="relative pt-40 pb-16 md:pt-48 md:pb-20 overflow-hidden">
           <div className="container mx-auto px-6">
             <div className={`max-w-2xl transition-all duration-1000 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
-              <div className="w-px h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-8" />
+              <div className="w-px h-12 bg-gradient-to-b from-transparent via-brand-purple to-brand-purple/30 mb-8" />
               <span className="text-[10px] tracking-[0.35em] uppercase text-clay">Contact</span>
               <h1 className="mt-6 font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-[1.1]">
                 Let's begin a conversation.
