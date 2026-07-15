@@ -10,8 +10,20 @@ const BRAND_PURPLE = "#2E2A5E";
 const BRAND_PURPLE_HOVER = "#3A366F";
 
 const panels = [
-  { key: "corporate" as const, href: "/events/public", title: "Corporate Events" },
-  { key: "private" as const, href: "/events/private", title: "Private Events" },
+  {
+    key: "corporate" as const,
+    href: "/events/public",
+    title: "Corporate Events",
+    subtitle:
+      "Sound Healing for the office, leadership retreats and employee wellbeing programs.",
+  },
+  {
+    key: "private" as const,
+    href: "/events/private",
+    title: "Private Events",
+    subtitle:
+      "Sound Healing for your next celebration or social event, from weddings to baby showers, to birthdays, to festive get togethers.",
+  },
 ];
 
 const HeroGateway = () => {
@@ -59,7 +71,9 @@ const HeroGateway = () => {
               onMouseEnter={() => !expanding && setHovered(panel.key)}
               onMouseLeave={() => !expanding && setHovered(null)}
               onClick={() => handleClick(panel.key, panel.href)}
-              className="group relative h-full w-full overflow-hidden text-left cursor-pointer"
+              className={`group relative h-full w-full overflow-hidden text-left cursor-pointer border-bone/25 hover:border-bone/50 transition-colors duration-500 ${
+                idx === 0 ? "border-t border-b border-l" : "border-t border-b border-r"
+              }`}
               animate={{
                 flex: isExpanding ? 2 : isRetreating ? 0 : 1,
                 opacity: isRetreating ? 0 : 1,
@@ -68,24 +82,31 @@ const HeroGateway = () => {
               transition={{ duration: 0.6, ease: [0.65, 0, 0.35, 1] }}
               aria-label={panel.title}
             >
-              {/* Vertical divider between panels */}
+              {/* Center shared divider */}
               {idx === 0 && (
-                <div className="hidden md:block absolute top-1/2 -translate-y-1/2 right-0 h-40 w-px bg-bone/20" />
+                <div className="absolute top-0 bottom-0 right-0 w-px bg-bone/25" />
               )}
 
-              {/* Card container — improves clickability */}
-              <div className="absolute inset-0 flex items-center justify-center px-6 md:px-10 lg:px-16">
+              {/* Full-panel content */}
+              <div className="absolute inset-0 flex items-center justify-center px-8 md:px-14 lg:px-20">
                 <motion.div
-                  className="w-full max-w-md rounded-sm border border-bone/25 bg-bone/[0.03] group-hover:border-clay/70 group-hover:bg-bone/[0.06] transition-colors duration-500 px-8 py-14 md:px-12 md:py-20 text-center"
-                  animate={{ y: isHovered ? -6 : 0, opacity: isDimmed ? 0.6 : 1 }}
+                  className="w-full max-w-xl text-center"
+                  animate={{ y: isHovered ? -4 : 0, opacity: isDimmed ? 0.65 : 1 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-bone leading-tight tracking-tight">
+                  <h2
+                    className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-bone leading-[1.05] tracking-tight"
+                    style={{ fontWeight: 300 }}
+                  >
                     {panel.title}
                   </h2>
 
+                  <p className="mt-6 md:mt-8 max-w-md mx-auto text-sm md:text-base text-bone/70 font-sans font-light leading-relaxed tracking-wide">
+                    {panel.subtitle}
+                  </p>
+
                   <motion.div
-                    className="mt-8 md:mt-10 inline-flex items-center justify-center w-11 h-11 md:w-12 md:h-12 border border-bone/40 group-hover:border-clay group-hover:bg-clay/10 text-bone group-hover:text-clay transition-colors duration-300"
+                    className="mt-10 md:mt-12 inline-flex items-center justify-center w-11 h-11 md:w-12 md:h-12 border border-bone/40 group-hover:border-clay group-hover:bg-clay/10 text-bone group-hover:text-clay transition-colors duration-300"
                     animate={{ x: isHovered ? 4 : 0 }}
                     transition={{ duration: 0.4 }}
                     aria-hidden
