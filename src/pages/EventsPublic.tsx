@@ -328,11 +328,11 @@ const EventsPublic = () => {
                   <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-brand-purple/30" />
                   <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-brand-purple/30" />
                   <h3 className="text-sm tracking-[0.2em] uppercase text-muted-foreground mb-6">The Setup</h3>
-                  <p className="text-foreground/80 leading-relaxed mb-6">
+                  <p className="body-text mb-6">
                     Om Shala uses a high-quality professional sound recording system to transmit the
                     subtle microtones of the singing bowls with utmost clarity and precision.
                   </p>
-                  <p className="text-foreground/80 leading-relaxed">
+                  <p className="body-text">
                     All you need from your end is a calm ambience and earphones / headphones for your
                     participants, or a stereo system for a room full of people.
                   </p>
