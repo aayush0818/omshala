@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Instagram } from "lucide-react";
 import wordmarkAsset from "@/assets/omshala-wordmark.png.asset.json";
 
 const Footer = () => {
@@ -76,6 +77,15 @@ const Footer = () => {
                   className="text-foreground/80 hover:text-brand-purple transition-colors duration-300"
                 >
                   WhatsApp +91 74003 61681
+                </a>
+                <a
+                  href="https://www.instagram.com/omshala.official"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-foreground/80 hover:text-brand-purple transition-colors duration-300"
+                >
+                  <Instagram className="w-4 h-4" />
+                  <span>@omshala.official</span>
                 </a>
                 <Link
                   to="/contact"
