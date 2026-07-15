@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import wordmarkAsset from "@/assets/omshala-wordmark.png.asset.json";
 
 const navLinks = [
   { href: "/", label: "Home" },
