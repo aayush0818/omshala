@@ -353,7 +353,7 @@ const EventsPublic = () => {
         </section>
 
         {/* Booking */}
-        <section id="enquire" className="py-20 md:py-40 bg-brand-purple text-bone relative overflow-hidden">
+        <section id="enquire" className="py-20 md:py-40 bg-gradient-to-b from-brand-purple to-brand-purple-deep text-bone relative overflow-hidden">
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-bone/5 rounded-full blur-[150px] animate-pulse-soft" />
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
