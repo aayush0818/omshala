@@ -41,7 +41,13 @@
     --charcoal: 20 12% 14%;
     --bone: 30 12% 94%;
     --ash: 30 5% 64%;
-    --brand-purple: 244 37% 27%; /* #2E2A5E */
+    --brand-purple: 244 37% 27%; /* #2E2A5E — canonical */
+    --brand-purple-deep: 246 42% 19%; /* #1F1C45 — immersive */
+    --brand-purple-mid: 246 35% 33%; /* #3B3775 — softer body */
+    --brand-purple-soft: 246 34% 42%; /* #4A4690 — calm/airy */
+    --brand-purple-mist: 244 30% 93%; /* #E9E7F2 — tint on light bg */
+    --gradient-purple-immersive: linear-gradient(180deg, #1F1C45 0%, #2E2A5E 100%);
+    --gradient-purple-calm: linear-gradient(180deg, #3B3775 0%, #2E2A5E 100%);
   }
 
   .dark {
