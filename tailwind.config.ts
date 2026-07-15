@@ -57,6 +57,7 @@ export default {
         charcoal: "hsl(var(--charcoal))",
         bone: "hsl(var(--bone))",
         ash: "hsl(var(--ash))",
+        body: "hsl(var(--body))",
         "brand-purple": "hsl(var(--brand-purple))",
         "brand-purple-deep": "hsl(var(--brand-purple-deep))",
         "brand-purple-mid": "hsl(var(--brand-purple-mid))",
