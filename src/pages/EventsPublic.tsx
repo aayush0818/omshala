@@ -240,7 +240,7 @@ const EventsPublic = () => {
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-foreground/10 group-hover:border-brand-purple/40 mb-5 transition-colors duration-500">
                     <b.icon className="w-5 h-5 text-brand-purple" />
                   </div>
-                  <p className="text-foreground/80 leading-relaxed">{b.text}</p>
+                  <p className="body-text">{b.text}</p>
                 </div>
               ))}
             </div>
