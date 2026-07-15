@@ -57,6 +57,7 @@ export default {
         charcoal: "hsl(var(--charcoal))",
         bone: "hsl(var(--bone))",
         ash: "hsl(var(--ash))",
+        "brand-purple": "hsl(var(--brand-purple))",
       },
       borderRadius: {
         lg: "var(--radius)",
