@@ -304,7 +304,7 @@ const EventsPublic = () => {
                 <h2 className="font-serif text-3xl md:text-4xl font-light mb-8 leading-tight">
                   Felt deeply, even from your desk
                 </h2>
-                <div className="space-y-6 text-muted-foreground leading-relaxed">
+                <div className="space-y-6 body-text">
                   <p>
                     Online sound healing is increasingly preferred for corporate wellness because of
                     the ease of organising, accessibility and time efficiency. Participants can
