@@ -1,23 +1,62 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
-type NavItem = { href: string; label: string };
-
-const navLinks: NavItem[] = [
-  { href: "/", label: "Home" },
-  { href: "/contact", label: "Contact" },
-];
+type NavItem = { href: string; label: string; hash?: boolean; cta?: boolean };
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const isCorporate = pathname.startsWith("/events/public");
+  const isPrivate = pathname.startsWith("/events/private");
+
+  let navLinks: NavItem[];
+  if (isCorporate) {
+    navLinks = [
+      { href: "/events/public", label: "Corporate" },
+      { href: "/contact?journey=corporate", label: "Contact" },
+      { href: "#enquire", label: "Enquire", hash: true, cta: true },
+    ];
+  } else if (isPrivate) {
+    navLinks = [
+      { href: "/events/private", label: "Private" },
+      { href: "/contact?journey=private", label: "Contact" },
+      { href: "#enquire", label: "Enquire", hash: true, cta: true },
+    ];
+  } else {
+    navLinks = [
+      { href: "/events/public", label: "Corporate" },
+      { href: "/events/private", label: "Private" },
+      { href: "/contact", label: "Contact" },
+    ];
+  }
+
+  const renderLink = (link: NavItem, onClick?: () => void) => {
+    const base =
+      "text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 link-underline";
+    const cta =
+      "text-sm px-5 py-2 border border-clay/40 text-clay hover:bg-clay hover:text-bone transition-all duration-300";
+    if (link.hash) {
+      return (
+        <a key={link.href} href={link.href} onClick={onClick} className={link.cta ? cta : base}>
+          {link.label}
+        </a>
+      );
+    }
+    return (
+      <Link key={link.href} to={link.href} onClick={onClick} className={link.cta ? cta : base}>
+        {link.label}
+      </Link>
+    );
+  };
 
   return (
     <>
@@ -35,15 +74,7 @@ const Header = () => {
           </Link>
 
           <div className="hidden md:flex items-center gap-10">
-            {navLinks.map((l) => (
-              <Link
-                key={l.href}
-                to={l.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 link-underline"
-              >
-                {l.label}
-              </Link>
-            ))}
+            {navLinks.map((l) => renderLink(l))}
           </div>
 
           <button
@@ -76,19 +107,22 @@ const Header = () => {
         </div>
 
         <nav className="flex flex-col items-center justify-center h-[calc(100vh-100px)] gap-8">
-          {navLinks.map((link, i) => (
-            <Link
-              key={link.href}
-              to={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className={`font-sans text-3xl text-foreground hover:text-clay transition-all duration-500 ${
-                mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-              }`}
-              style={{ transitionDelay: `${i * 100}ms` }}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link, i) => {
+            const cls = `font-serif text-3xl transition-all duration-500 ${
+              link.cta ? "text-clay" : "text-foreground hover:text-clay"
+            } ${mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`;
+            const style = { transitionDelay: `${i * 100}ms` };
+            const close = () => setMobileMenuOpen(false);
+            return link.hash ? (
+              <a key={link.href} href={link.href} onClick={close} className={cls} style={style}>
+                {link.label}
+              </a>
+            ) : (
+              <Link key={link.href} to={link.href} onClick={close} className={cls} style={style}>
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </>

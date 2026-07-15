@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Mail, Phone } from "lucide-react";
+import { Mail, Phone, Send } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -12,7 +12,13 @@ const contactMethods = [
 
 const Contact = () => {
   const [loaded, setLoaded] = useState(false);
+  const [formData, setFormData] = useState({ name: "", email: "", interest: "", message: "" });
   useEffect(() => setLoaded(true), []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    window.location.href = `mailto:omshala.official@gmail.com?subject=Enquiry: ${encodeURIComponent(formData.interest || "General")}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`)}`;
+  };
 
   return (
     <PageTransition>
@@ -54,6 +60,75 @@ const Contact = () => {
                   </a>
                 </Reveal>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Form */}
+        <section id="enquire" className="py-28 md:py-40">
+          <div className="container mx-auto px-6">
+            <div className="max-w-2xl mx-auto">
+              <Reveal>
+                <span className="text-[10px] tracking-[0.35em] uppercase text-clay">Enquiry</span>
+                <h2 className="mt-6 font-serif text-3xl md:text-4xl font-light mb-12 leading-tight">
+                  Tell us a little about what you have in mind.
+                </h2>
+              </Reveal>
+
+              <Reveal delay={0.05}>
+                <form onSubmit={handleSubmit} className="space-y-8">
+                  <div>
+                    <label className="block text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-3">Your name</label>
+                    <input
+                      type="text"
+                      required
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-0 py-3 bg-transparent border-b border-foreground/15 focus:border-clay focus:outline-none transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-3">Email</label>
+                    <input
+                      type="email"
+                      required
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-0 py-3 bg-transparent border-b border-foreground/15 focus:border-clay focus:outline-none transition-colors"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-3">I'm enquiring about</label>
+                    <select
+                      value={formData.interest}
+                      onChange={(e) => setFormData({ ...formData, interest: e.target.value })}
+                      className="w-full px-0 py-3 bg-transparent border-b border-foreground/15 focus:border-clay focus:outline-none transition-colors appearance-none cursor-pointer"
+                    >
+                      <option value="">Select</option>
+                      <option value="Corporate">Corporate</option>
+                      <option value="Private">Private</option>
+                      <option value="General">General enquiry</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-3">Message</label>
+                    <textarea
+                      required
+                      rows={5}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      className="w-full px-0 py-3 bg-transparent border-b border-foreground/15 focus:border-clay focus:outline-none transition-colors resize-none"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="group inline-flex items-center gap-3 px-10 py-4 border border-foreground/20 text-foreground text-xs tracking-[0.25em] uppercase hover:border-clay hover:text-clay transition-all duration-500"
+                  >
+                    <span>Send enquiry</span>
+                    <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  </button>
+                </form>
+              </Reveal>
             </div>
           </div>
         </section>
