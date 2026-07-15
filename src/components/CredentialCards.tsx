@@ -31,18 +31,18 @@ const CredentialCards = ({ heading = "Credentials", className }: Props) => {
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
                 {heading}
               </h2>
-              <div className="mt-6 h-px w-16 bg-clay/60" />
+              <div className="mt-6 h-px w-16 bg-brand-purple/60" />
             </div>
           </Reveal>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {CREDENTIALS.map((c, i) => (
               <Reveal key={c} delay={0.04 + i * 0.03}>
-                <div className="group h-full p-6 border border-foreground/10 hover:border-clay/40 transition-colors duration-500 bg-background/40">
+                <div className="group h-full p-6 border border-foreground/10 hover:border-brand-purple/40 transition-colors duration-500 bg-background/40">
                   <span className="font-serif text-xs text-clay tracking-widest">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <div className="mt-4 h-px w-8 bg-foreground/15 group-hover:w-12 group-hover:bg-clay/60 transition-all duration-500" />
+                  <div className="mt-4 h-px w-8 bg-foreground/15 group-hover:w-12 group-hover:bg-brand-purple/60 transition-all duration-500" />
                   <p className="mt-4 text-sm text-foreground/80 leading-relaxed">
                     {c}
                   </p>

@@ -55,7 +55,7 @@ const AmbientBackground = () => {
     <div aria-hidden className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       <div
         ref={aRef}
-        className="absolute -top-[15%] -left-[10%] w-[45vw] h-[45vw] rounded-full bg-clay/[0.05] blur-[40px] will-change-transform"
+        className="absolute -top-[15%] -left-[10%] w-[45vw] h-[45vw] rounded-full bg-brand-purple/[0.05] blur-[40px] will-change-transform"
       />
       <div
         ref={bRef}
