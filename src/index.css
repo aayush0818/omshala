@@ -90,6 +90,8 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    font-size: 1.0625rem; /* 17px — slightly more comfortable reading size */
+    line-height: 1.75;
   }
 
   h1, h2, h3, h4, h5, h6 {
