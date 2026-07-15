@@ -238,7 +238,7 @@ const EventsPublic = () => {
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-foreground/10 group-hover:border-brand-purple/40 mb-5 transition-colors duration-500">
-                    <b.icon className="w-5 h-5 text-clay" />
+                    <b.icon className="w-5 h-5 text-brand-purple" />
                   </div>
                   <p className="text-foreground/80 leading-relaxed">{b.text}</p>
                 </div>
@@ -266,7 +266,7 @@ const EventsPublic = () => {
               {sessionFlow.map((s) => (
                 <div key={s.title} className="flex gap-5 sm:gap-8">
                   <div className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center">
-                    <span className="text-3xl sm:text-4xl leading-none text-clay">•</span>
+                    <span className="text-3xl sm:text-4xl leading-none text-brand-purple">•</span>
                   </div>
                   <div className="pt-2 sm:pt-3">
                     <h3 className="font-serif text-lg sm:text-xl mb-2 sm:mb-3">{s.title}</h3>
@@ -341,7 +341,7 @@ const EventsPublic = () => {
                 <div className="mt-8 grid sm:grid-cols-3 gap-4">
                   {formats.map((f) => (
                     <div key={f.title} className="p-5 border border-foreground/10 text-center">
-                      <f.icon className="w-5 h-5 text-clay mx-auto mb-3" />
+                      <f.icon className="w-5 h-5 text-brand-purple mx-auto mb-3" />
                       <p className="text-xs tracking-[0.15em] uppercase text-foreground/70">{f.title}</p>
                       <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{f.desc}</p>
                     </div>
