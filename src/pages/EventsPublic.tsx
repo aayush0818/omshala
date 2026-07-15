@@ -357,7 +357,7 @@ const EventsPublic = () => {
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-bone/5 rounded-full blur-[150px] animate-pulse-soft" />
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <span className="text-sm tracking-[0.3em] uppercase text-bone/70 mb-6 block">Booking</span>
+              <span className="text-sm tracking-[0.3em] uppercase text-bone/70 mb-6 block">{"\n"}</span>
               <h2 className="font-serif text-3xl md:text-4xl font-light mb-8 text-bone">
                 Customised to your organisation
               </h2>
