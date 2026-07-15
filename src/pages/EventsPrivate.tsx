@@ -64,8 +64,8 @@ const EventsPrivate = () => {
               <div className="w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-brand-purple to-brand-purple/30 mb-6 md:mb-8" />
 
               <h1 className="font-display text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-light leading-[1.15] mb-5 md:mb-6 tracking-tight">
-                A soulful way
-                <span className="block mt-2 text-clay">to gather</span>
+                A Souful Way
+                <span className="block mt-2 text-clay">to Gather</span>
               </h1>
               <p className="font-display text-[15px] sm:text-lg text-foreground/85 leading-relaxed max-w-xl whitespace-pre-line font-light">
                 More and more people are opting for a mindful way to celebrate or come together&nbsp;for social gatherings. We live in a stimulated world and Sound Healing has become&nbsp;a meaningful way to pause and connect with one another in an emotionally intimate&nbsp;way, between all the laughter and high energy.{"\n\n\n"}
