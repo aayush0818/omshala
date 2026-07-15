@@ -46,6 +46,7 @@
     --brand-purple-mid: 246 35% 33%; /* #3B3775 — softer body */
     --brand-purple-soft: 246 34% 42%; /* #4A4690 — calm/airy */
     --brand-purple-mist: 244 30% 93%; /* #E9E7F2 — tint on light bg */
+    --brand-purple-void: 246 45% 8%; /* #110E24 — near-black purple */
     --gradient-purple-immersive: linear-gradient(180deg, #16143A 0%, #1F1C45 100%);
     --gradient-purple-calm: linear-gradient(180deg, #2E2A5E 0%, #1F1C45 100%);
   }
