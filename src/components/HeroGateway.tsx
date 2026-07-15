@@ -1,20 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import wordmarkAsset from "@/assets/omshala-wordmark.png.asset.json";
 
 type Side = "corporate" | "private" | null;
 
-// Om Shala brand purple, sampled from the official logo
-const BRAND_PURPLE = "#2E2A5E";
+// Vertical gradient — lighter purple at top, deeper toward the bottom
+const GATEWAY_BG =
+  "linear-gradient(180deg, #3B3775 0%, #2E2A5E 45%, #1F1C45 100%)";
 
-// Warm grey border tuned against the purple background
-const BORDER_IDLE = "rgba(232, 224, 208, 0.28)";
-const BORDER_HOVER = "rgba(232, 224, 208, 0.65)";
-
-// Mobile borders are intentionally more visible so the two panels read as distinct
-const BORDER_IDLE_MOBILE = "rgba(232, 224, 208, 0.42)";
-const BORDER_HOVER_MOBILE = "rgba(232, 224, 208, 0.78)";
+const BORDER_IDLE = "rgba(200, 190, 240, 0.35)";
+const BORDER_HOVER = "rgba(220, 210, 250, 0.75)";
+const SUBTITLE_COLOR = "rgba(200, 190, 240, 0.75)";
 
 const panels = [
   {
@@ -35,160 +31,108 @@ const panels = [
 
 const HeroGateway = () => {
   const [hovered, setHovered] = useState<Side>(null);
-  const [expanding, setExpanding] = useState<Side>(null);
   const navigate = useNavigate();
-
-  const handleClick = (side: Side, href: string) => {
-    if (expanding) return;
-    setExpanding(side);
-    setTimeout(() => navigate(href), 620);
-  };
 
   return (
     <section
-      className="relative h-screen w-full overflow-hidden text-bone"
-      style={{ backgroundColor: BRAND_PURPLE }}
+      className="relative min-h-screen w-full overflow-hidden text-bone flex flex-col"
+      style={{ background: GATEWAY_BG }}
     >
-      {/* Brand mark + tagline — mobile is intentionally composed as a tighter unit */}
-      <div className="absolute top-6 sm:top-10 md:top-14 left-0 right-0 z-30 pointer-events-none">
-        <div className="flex flex-col items-center px-4">
-          <img
-            src={wordmarkAsset.url}
-            alt="om shāla"
-            className="w-[140px] sm:w-[200px] md:w-[260px] lg:w-[300px] h-auto opacity-90"
-          />
-        </div>
+      {/* Wordmark + tagline (rendered as text, matching the reference exactly) */}
+      <div className="pt-16 sm:pt-20 md:pt-24 lg:pt-28 pb-10 sm:pb-14 md:pb-16 px-4 flex flex-col items-center text-center">
+        <h1
+          className="font-display text-bone tracking-tight leading-none text-[3.5rem] sm:text-[5rem] md:text-[6.5rem] lg:text-[7.5rem]"
+          style={{ fontWeight: 400 }}
+        >
+          om shāla
+        </h1>
+        <p
+          className="mt-3 sm:mt-4 font-sans font-light tracking-wide text-[0.95rem] sm:text-lg md:text-xl"
+          style={{ color: SUBTITLE_COLOR }}
+        >
+          sound healing experiences
+        </p>
       </div>
 
-      {/* Full-height flex panels so the divider slides with the flex transition */}
-      <div className="flex h-full w-full">
-        {panels.map((panel, idx) => {
-          const isHovered = hovered === panel.key;
-          const isExpanding = expanding === panel.key;
-          const isRetreating = expanding && expanding !== panel.key;
-
-          // Flex ratios: 3 = expanded (75%), 1 = compressed (25%), default 1:1
-          const flexValue = isExpanding
-            ? 2
-            : isRetreating
-            ? 0
-            : hovered
-            ? isHovered
-              ? 3
-              : 1
-            : 1;
-
-          return (
-            <motion.button
-              key={panel.key}
-              type="button"
-              onMouseEnter={() => !expanding && setHovered(panel.key)}
-              onMouseLeave={() => !expanding && setHovered(null)}
-              onClick={() => handleClick(panel.key, panel.href)}
-              className="group relative h-full min-w-0 overflow-hidden text-left cursor-pointer bg-transparent p-0 m-0 appearance-none"
-              animate={{
-                flex: flexValue,
-                opacity: isRetreating ? 0 : 1,
-              }}
-              transition={{ duration: 0.75, ease: [0.65, 0, 0.35, 1] }}
-              aria-label={panel.title}
-              style={{
-                borderTop: `1px solid ${isHovered ? BORDER_HOVER : BORDER_IDLE}`,
-                borderBottom: `1px solid ${isHovered ? BORDER_HOVER : BORDER_IDLE}`,
-                borderLeft: idx === 0 ? `1px solid ${isHovered ? BORDER_HOVER : BORDER_IDLE}` : undefined,
-                borderRight: idx === 1 ? `1px solid ${isHovered ? BORDER_HOVER : BORDER_IDLE}` : undefined,
-                transition: "border-color 500ms ease",
-              }}
-            >
-              {/* Shared divider between panels — brighter on mobile */}
-              {idx === 0 && (
-                <div
-                  className="absolute top-0 bottom-0 right-0 w-px transition-colors duration-500"
-                  style={{
-                    backgroundColor: hovered
-                      ? BORDER_HOVER_MOBILE
-                      : BORDER_IDLE_MOBILE,
-                  }}
-                />
-              )}
-
-              {/* Full-panel content — mobile composition is intentionally distinct */}
-              <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 md:px-14 lg:px-20">
-                <div className="w-full max-w-xl text-center">
+      {/* Cards */}
+      <div className="flex-1 flex items-start justify-center px-4 sm:px-8 md:px-12 lg:px-16 pb-10 sm:pb-16">
+        <div className="w-full max-w-6xl grid grid-cols-2 gap-3 sm:gap-6 md:gap-8">
+          {panels.map((panel) => {
+            const isHovered = hovered === panel.key;
+            return (
+              <motion.button
+                key={panel.key}
+                type="button"
+                onMouseEnter={() => setHovered(panel.key)}
+                onMouseLeave={() => setHovered(null)}
+                onClick={() => navigate(panel.href)}
+                aria-label={panel.title}
+                className="group relative text-left cursor-pointer bg-transparent p-0 m-0 appearance-none rounded-2xl sm:rounded-3xl"
+                whileHover={{ y: -2 }}
+                transition={{ duration: 0.4, ease: [0.65, 0, 0.35, 1] }}
+                style={{
+                  border: `1px solid ${isHovered ? BORDER_HOVER : BORDER_IDLE}`,
+                  transition: "border-color 400ms ease",
+                }}
+              >
+                <div className="flex flex-col items-center text-center px-4 sm:px-8 md:px-10 py-10 sm:py-14 md:py-20 min-h-[420px] sm:min-h-[440px] md:min-h-[480px]">
                   <h2
-                    className="font-display text-bone tracking-tight text-[2.25rem] leading-none sm:text-5xl md:text-6xl lg:text-7xl"
-                    style={{ fontWeight: 300 }}
+                    className="font-display text-bone tracking-tight leading-[1.05] text-[1.75rem] sm:text-4xl md:text-5xl lg:text-[3.5rem]"
+                    style={{ fontWeight: 400 }}
                   >
-                    {/* Mobile: stacked words so the title can be larger without touching the panel edge */}
-                    <span className="block sm:hidden">
-                      {panel.title.split(" ").map((word, i) => (
-                        <span key={i} className="block leading-[0.95]">
-                          {word}
-                        </span>
-                      ))}
-                    </span>
-                    <span className="hidden sm:inline whitespace-nowrap">
-                      {panel.title}
-                    </span>
+                    {panel.title.split(" ").map((word, i) => (
+                      <span key={i} className="block">
+                        {word}
+                      </span>
+                    ))}
                   </h2>
 
-                  {/* Fixed subtitle height on mobile so arrows align horizontally */}
-                  <div className="mt-5 sm:mt-6 md:mt-8 min-h-[110px] sm:min-h-0 flex items-center justify-center">
-                    <p
-                      className="max-w-[200px] sm:max-w-md mx-auto text-[11px] sm:text-sm md:text-base font-sans font-light leading-relaxed tracking-wide"
-                      style={{ color: "rgba(244, 241, 236, 0.75)" }}
-                    >
-                      {panel.subtitle}
-                    </p>
-                  </div>
+                  {/* Small divider line */}
+                  <div
+                    className="mt-5 sm:mt-6 md:mt-8 h-px w-10 sm:w-12"
+                    style={{ backgroundColor: SUBTITLE_COLOR }}
+                  />
 
-                  {/* Larger mobile touch target while keeping the visual mark refined */}
+                  <p
+                    className="mt-5 sm:mt-6 md:mt-8 max-w-[220px] sm:max-w-xs md:max-w-sm font-sans font-light text-[0.8rem] sm:text-sm md:text-base leading-relaxed"
+                    style={{ color: SUBTITLE_COLOR }}
+                  >
+                    {panel.subtitle}
+                  </p>
+
+                  <div className="flex-1" />
+
                   <motion.div
-                    className="mt-8 sm:mt-10 md:mt-12 inline-flex items-center justify-center w-16 h-16 sm:w-12 sm:h-12 md:w-14 md:h-14 relative"
+                    className="mt-8 sm:mt-10 md:mt-12 inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-md"
                     animate={{
                       backgroundColor: isHovered
-                        ? "rgba(232, 224, 208, 0.08)"
-                        : "rgba(232, 224, 208, 0)",
+                        ? "rgba(200, 190, 240, 0.08)"
+                        : "rgba(200, 190, 240, 0)",
                     }}
-                    transition={{ duration: 0.5, ease: [0.65, 0, 0.35, 1] }}
+                    transition={{ duration: 0.4 }}
                     aria-hidden
                     style={{
                       border: `1px solid ${isHovered ? BORDER_HOVER : BORDER_IDLE}`,
-                      transition: "border-color 500ms ease",
+                      transition: "border-color 400ms ease",
                     }}
                   >
                     <svg
-                      width="18"
-                      height="9"
+                      width="22"
+                      height="10"
                       viewBox="0 0 24 10"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="overflow-visible sm:w-5 sm:h-[10px]"
+                      style={{ color: SUBTITLE_COLOR }}
                     >
-                      <line
-                        x1="0"
-                        y1="5"
-                        x2="22"
-                        y2="5"
-                        stroke="currentColor"
-                        strokeWidth="1"
-                        className="text-bone"
-                      />
-                      <polyline
-                        points="17,0.5 22.5,5 17,9.5"
-                        stroke="currentColor"
-                        strokeWidth="1"
-                        fill="none"
-                        className="text-bone"
-                        strokeLinecap="square"
-                      />
+                      <line x1="0" y1="5" x2="22" y2="5" stroke="currentColor" strokeWidth="1" />
+                      <polyline points="17,0.5 22.5,5 17,9.5" stroke="currentColor" strokeWidth="1" fill="none" strokeLinecap="square" />
                     </svg>
                   </motion.div>
                 </div>
-              </div>
-            </motion.button>
-          );
-        })}
+              </motion.button>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
