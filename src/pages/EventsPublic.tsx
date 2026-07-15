@@ -15,6 +15,7 @@ import heroDesktopAsset from "@/assets/hero-desktop.png.asset.json";
 import whatThisIsAsset from "@/assets/img8-sunset-circle.webp.asset.json";
 import homeVideoAsset from "@/assets/home-intro.mp4.asset.json";
 import privateVideoAsset from "@/assets/private-carousel.mp4.asset.json";
+import corporateVideoAsset from "@/assets/corporate-experience.mp4.asset.json";
 import exp6 from "@/assets/experience-6.png.asset.json";
 import exp7 from "@/assets/experience-7.png.asset.json";
 import exp8 from "@/assets/experience-8.png.asset.json";
@@ -30,6 +31,7 @@ const heroDesktopImg = heroDesktopAsset.url;
 const credentialsVideo = homeVideoAsset.url;
 
 const experienceItems: ExperienceItem[] = [
+  { type: "video", src: corporateVideoAsset.url, alt: "A moment from a corporate Om Shala sound bath" },
   { type: "image", src: exp6.url, alt: "Crystal singing bowls setup by the lake at sunrise" },
   { type: "image", src: exp7.url, alt: "Sound bath performance on stage at a corporate event" },
   { type: "image", src: exp8.url, alt: "Large group in shavasana at an outdoor wellness event" },
