@@ -59,10 +59,10 @@ const HeroGateway = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-2 h-full">
+      {/* Full-height flex panels so the divider slides with the flex transition */}
+      <div className="flex h-full w-full">
         {panels.map((panel, idx) => {
           const isHovered = hovered === panel.key;
-          const isDimmed = hovered && hovered !== panel.key;
           const isExpanding = expanding === panel.key;
           const isRetreating = expanding && expanding !== panel.key;
 
@@ -84,12 +84,12 @@ const HeroGateway = () => {
               onMouseEnter={() => !expanding && setHovered(panel.key)}
               onMouseLeave={() => !expanding && setHovered(null)}
               onClick={() => handleClick(panel.key, panel.href)}
-              className="group relative h-full w-full overflow-hidden text-left cursor-pointer"
+              className="group relative h-full min-w-0 overflow-hidden text-left cursor-pointer bg-transparent p-0 m-0 appearance-none"
               animate={{
                 flex: flexValue,
                 opacity: isRetreating ? 0 : 1,
               }}
-              transition={{ duration: 0.65, ease: [0.65, 0, 0.35, 1] }}
+              transition={{ duration: 0.75, ease: [0.65, 0, 0.35, 1] }}
               aria-label={panel.title}
               style={{
                 borderTop: `1px solid ${isHovered ? BORDER_HOVER : BORDER_IDLE}`,
@@ -99,7 +99,7 @@ const HeroGateway = () => {
                 transition: "border-color 500ms ease",
               }}
             >
-              {/* Center shared divider */}
+              {/* Shared divider between panels — moves with the left panel */}
               {idx === 0 && (
                 <div
                   className="absolute top-0 bottom-0 right-0 w-px transition-colors duration-500"
@@ -109,15 +109,7 @@ const HeroGateway = () => {
 
               {/* Full-panel content */}
               <div className="absolute inset-0 flex items-center justify-center px-8 md:px-14 lg:px-20">
-                <motion.div
-                  className="w-full max-w-xl text-center"
-                  animate={{
-                    y: isHovered ? -6 : 0,
-                    opacity: isDimmed ? 0.75 : 1,
-                    scale: isHovered ? 1.04 : 1,
-                  }}
-                  transition={{ duration: 0.6, ease: [0.65, 0, 0.35, 1] }}
-                >
+                <div className="w-full max-w-xl text-center">
                   <h2
                     className="font-display text-bone leading-[1.05] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
                     style={{ fontWeight: 300 }}
@@ -125,24 +117,26 @@ const HeroGateway = () => {
                     {panel.title}
                   </h2>
 
-                  <motion.p
+                  <p
                     className="mt-6 md:mt-8 max-w-md mx-auto text-sm md:text-base font-sans font-light leading-relaxed tracking-wide"
-                    animate={{ opacity: isHovered ? 0.95 : 0.7 }}
-                    transition={{ duration: 0.5 }}
-                    style={{ color: "rgba(244, 241, 236, 1)" }}
+                    style={{ color: "rgba(244, 241, 236, 0.75)" }}
                   >
                     {panel.subtitle}
-                  </motion.p>
+                  </p>
 
-                  {/* Premium arrow: thin outlined square with drawn arrow */}
+                  {/* Refined arrow: subtle border brightening and gentle background fill on hover */}
                   <motion.div
                     className="mt-10 md:mt-12 inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 relative"
-                    animate={{ x: isHovered ? 6 : 0 }}
+                    animate={{
+                      backgroundColor: isHovered
+                        ? "rgba(232, 224, 208, 0.08)"
+                        : "rgba(232, 224, 208, 0)",
+                    }}
                     transition={{ duration: 0.5, ease: [0.65, 0, 0.35, 1] }}
                     aria-hidden
                     style={{
                       border: `1px solid ${isHovered ? BORDER_HOVER : BORDER_IDLE}`,
-                      transition: "border-color 400ms ease",
+                      transition: "border-color 500ms ease",
                     }}
                   >
                     <svg
@@ -172,7 +166,7 @@ const HeroGateway = () => {
                       />
                     </svg>
                   </motion.div>
-                </motion.div>
+                </div>
               </div>
             </motion.button>
           );
