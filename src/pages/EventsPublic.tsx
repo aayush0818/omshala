@@ -106,8 +106,9 @@ const EventsPublic = () => {
               </span>
               <h1 className="font-display text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-light leading-[1.15] mb-5 md:mb-6 tracking-tight">
                 Deep Relaxation
-                <span className="block mt-2 text-clay">for High-Performance Teams</span>
+                <span className="block mt-2 text-clay">for High<span className="font-sans">-</span>Performance Teams</span>
               </h1>
+
               <p className="hero-body max-w-xl">
                 Therapeutic sound immersions known as Sound Baths, designed to reduce mental
                 fatigue, improve focus, and support emotional resilience in the workplace.
