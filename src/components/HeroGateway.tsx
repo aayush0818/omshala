@@ -6,7 +6,6 @@ type Side = "corporate" | "private" | null;
 
 // Om Shala brand purple, sampled from the official logo
 const BRAND_PURPLE = "#2E2A5E";
-const BRAND_PURPLE_HOVER = "#3A366F";
 
 // Warm grey border tuned against the purple background
 const BORDER_IDLE = "rgba(232, 224, 208, 0.28)";
@@ -89,7 +88,6 @@ const HeroGateway = () => {
               animate={{
                 flex: flexValue,
                 opacity: isRetreating ? 0 : 1,
-                backgroundColor: isHovered ? BRAND_PURPLE_HOVER : BRAND_PURPLE,
               }}
               transition={{ duration: 0.65, ease: [0.65, 0, 0.35, 1] }}
               aria-label={panel.title}
