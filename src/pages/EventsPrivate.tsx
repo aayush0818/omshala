@@ -15,7 +15,6 @@ import exp14 from "@/assets/experience-14.png.asset.json";
 import exp15 from "@/assets/experience-15.png.asset.json";
 import exp16 from "@/assets/experience-16.png.asset.json";
 import exp17 from "@/assets/experience-17.png.asset.json";
-import exp18 from "@/assets/experience-18.png.asset.json";
 
 const heroImg = heroImgAsset.url;
 const heroDesktopImg = heroDesktopAsset.url;
