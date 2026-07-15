@@ -270,7 +270,7 @@ const EventsPublic = () => {
                   </div>
                   <div className="pt-2 sm:pt-3">
                     <h3 className="font-serif text-lg sm:text-xl mb-2 sm:mb-3">{s.title}</h3>
-                    <p className="text-bone/60 leading-relaxed">{s.desc}</p>
+                    <p className="body-text text-bone/85">{s.desc}</p>
                   </div>
                 </div>
               ))}
