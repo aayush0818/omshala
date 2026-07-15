@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import wordmarkAsset from "@/assets/omshala-wordmark.png.asset.json";
 
 type Side = "corporate" | "private" | null;
 
@@ -50,16 +51,12 @@ const HeroGateway = () => {
     >
       {/* Brand mark + tagline — mobile is intentionally composed as a tighter unit */}
       <div className="absolute top-6 sm:top-10 md:top-14 left-0 right-0 z-30 pointer-events-none">
-        <div className="flex flex-col items-center gap-1.5 sm:gap-3 md:gap-4 px-4">
-          <span
-            className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-bone text-center leading-none"
-            style={{ letterSpacing: "-0.01em" }}
-          >
-            om sh<span style={{ fontFeatureSettings: '"liga"' }}>ā</span>la
-          </span>
-          <span className="text-[10px] sm:text-[11px] md:text-sm tracking-[0.25em] md:tracking-[0.3em] text-bone/70 text-center font-sans font-light lowercase">
-            sound healing experiences
-          </span>
+        <div className="flex flex-col items-center px-4">
+          <img
+            src={wordmarkAsset.url}
+            alt="om shāla"
+            className="w-[140px] sm:w-[200px] md:w-[260px] lg:w-[300px] h-auto opacity-90"
+          />
         </div>
       </div>
 
