@@ -56,11 +56,11 @@ const EventsPublic = () => {
 
         {/* Hero — image first, content below */}
         <section className="relative overflow-hidden bg-background pt-24 md:pt-28">
-          <div className="w-full bg-charcoal">
+          <div className="w-full max-w-6xl mx-auto px-6">
             <img
               src={heroImg}
               alt="Sound healing ceremony"
-              className={`w-full h-[55vh] md:h-[65vh] object-cover object-center transition-opacity duration-1000 ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
+              className={`w-full h-auto object-contain transition-opacity duration-1000 ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
             />
           </div>
 
@@ -68,18 +68,18 @@ const EventsPublic = () => {
             <div className={`max-w-2xl transition-all duration-1000 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
               <div className="w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-6 md:mb-8" />
 
-              <span className="text-sm tracking-[0.3em] uppercase text-clay mb-4 md:mb-6 block font-semibold">
+              <span className="text-sm tracking-[0.3em] uppercase text-clay mb-4 md:mb-6 block font-light">
                 Corporate Wellness
               </span>
-              <h1 className="font-serif text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.15] mb-5 md:mb-6">
+              <h1 className="font-display text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-light leading-[1.15] mb-5 md:mb-6 tracking-tight">
                 Deep Relaxation
                 <span className="block mt-2 text-clay">for High-Performance Teams</span>
               </h1>
-              <p className="text-[15px] sm:text-lg text-foreground/90 leading-relaxed max-w-xl font-medium">
+              <p className="font-display text-[15px] sm:text-lg text-foreground/85 leading-relaxed max-w-xl font-light">
                 Therapeutic sound immersions known as Sound Baths, designed to reduce mental
                 fatigue, improve focus, and support emotional resilience in the workplace.
               </p>
-              <p className="mt-6 text-sm sm:text-base text-foreground/90 italic leading-relaxed max-w-xl border-l border-clay/40 pl-5 font-medium">
+              <p className="font-display mt-6 text-sm sm:text-base text-foreground/85 italic leading-relaxed max-w-xl border-l border-clay/40 pl-5 font-light">
                 The Mind, is the highest human power and a rejuvenated mind is an optimised
                 human resource.
               </p>
@@ -105,17 +105,17 @@ const EventsPublic = () => {
         {/* Credentials — editorial list + video */}
         <section className="py-24 md:py-32 relative overflow-hidden border-t border-foreground/5">
           <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
               <Reveal>
-                <div>
+                <div className="flex flex-col h-full">
                   <span className="text-sm tracking-[0.3em] uppercase text-clay">Credentials</span>
-                  <h2 className="mt-4 font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
+                  <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
                     Credentials
                   </h2>
                   <div className="mt-6 h-px w-16 bg-clay/60" />
-                  <ul className="mt-8 divide-y divide-foreground/10">
+                  <ul className="mt-8 flex-1 flex flex-col justify-between divide-y divide-foreground/10">
                     {CREDENTIALS.map((c) => (
-                      <li key={c} className="py-4 text-sm md:text-[15px] text-foreground/85 leading-relaxed">
+                      <li key={c} className="py-5 text-sm md:text-[15px] text-foreground/85 leading-relaxed">
                         {c}
                       </li>
                     ))}

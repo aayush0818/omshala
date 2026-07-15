@@ -12,7 +12,7 @@ import img7Asset from "@/assets/img7-purple-room.webp.asset.json";
 import img10Asset from "@/assets/img10-white-brunch.webp.asset.json";
 import privateVideoAsset from "@/assets/private-carousel.mp4.asset.json";
 import homeVideoAsset from "@/assets/home-intro.mp4.asset.json";
-import experienceImgAsset from "@/assets/private-experience.png.asset.json";
+import experienceImgAsset from "@/assets/private-experience-v2.png.asset.json";
 
 const img7 = img7Asset.url;
 const img10 = img10Asset.url;
@@ -35,11 +35,11 @@ const EventsPrivate = () => {
 
         {/* Hero — image first, content below */}
         <section className="relative overflow-hidden bg-background pt-24 md:pt-28">
-          <div className="w-full bg-charcoal">
+          <div className="w-full max-w-6xl mx-auto px-6">
             <img
               src={heroImg}
               alt="Private meditation space"
-              className={`w-full h-[55vh] md:h-[65vh] object-cover object-center transition-opacity duration-1000 ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
+              className={`w-full h-auto object-contain transition-opacity duration-1000 ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
             />
           </div>
 
@@ -47,11 +47,11 @@ const EventsPrivate = () => {
             <div className={`max-w-2xl transition-all duration-1000 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
               <div className="w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-clay to-clay/30 mb-6 md:mb-8" />
 
-              <h1 className="font-serif text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-medium leading-[1.15] mb-5 md:mb-6">
+              <h1 className="font-display text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-light leading-[1.15] mb-5 md:mb-6 tracking-tight">
                 A soulful way
                 <span className="block mt-2 text-clay">to gather</span>
               </h1>
-              <p className="text-[15px] sm:text-lg text-foreground/90 leading-relaxed max-w-xl whitespace-pre-line font-medium">
+              <p className="font-display text-[15px] sm:text-lg text-foreground/85 leading-relaxed max-w-xl whitespace-pre-line font-light">
                 More and more people are opting for a mindful way to celebrate or come together&nbsp;for social gatherings. We live in a stimulated world and Sound Healing has become&nbsp;a meaningful way to pause and connect with one another in an emotionally intimate&nbsp;way, between all the laughter and high energy.{"\n\n\n"}
                 It is a deeply soulful relaxation and a truly memorable way to celebrate a special day, occasion or milestone.
               </p>
@@ -77,17 +77,17 @@ const EventsPrivate = () => {
         {/* Credentials — editorial list + video */}
         <section className="py-24 md:py-32 relative overflow-hidden border-t border-foreground/5">
           <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
               <Reveal>
-                <div>
+                <div className="flex flex-col h-full">
                   <span className="text-sm tracking-[0.3em] uppercase text-clay">Credentials</span>
-                  <h2 className="mt-4 font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
+                  <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
                     Credentials
                   </h2>
                   <div className="mt-6 h-px w-16 bg-clay/60" />
-                  <ul className="mt-8 divide-y divide-foreground/10">
+                  <ul className="mt-8 flex-1 flex flex-col justify-between divide-y divide-foreground/10">
                     {CREDENTIALS.map((c) => (
-                      <li key={c} className="py-4 text-sm md:text-[15px] text-foreground/85 leading-relaxed">
+                      <li key={c} className="py-5 text-sm md:text-[15px] text-foreground/85 leading-relaxed">
                         {c}
                       </li>
                     ))}
@@ -113,11 +113,11 @@ const EventsPrivate = () => {
           <div className="container mx-auto px-6 relative z-10 py-24 md:py-40">
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
               <Reveal className="lg:col-span-6">
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative overflow-hidden">
                   <img
                     src={experienceImg}
                     alt="Om Shala private sound healing setup with crystal singing bowls"
-                    className="w-full h-full object-cover"
+                    className="w-full h-auto object-contain"
                   />
                   <div className="absolute -bottom-4 -right-4 w-full h-full border border-clay/25 -z-10" />
                 </div>
@@ -130,14 +130,34 @@ const EventsPrivate = () => {
                   <div className="mt-8 h-px w-16 bg-clay/60" />
                 </Reveal>
                 <Reveal delay={0.15}>
-                  <p className="mt-8 text-bone/80 leading-[1.9] text-base md:text-[17px] whitespace-pre-line">
-                    <span className="text-bone font-medium">
+                  <div className="mt-10 space-y-8">
+                    {/* Editorial lead statement */}
+                    <p className="font-display text-2xl md:text-3xl lg:text-[2rem] font-light leading-[1.35] text-bone">
                       Sound healing can be experienced seated or laying down in a calm environment.
-                    </span>{" "}
-                    Participants are guided through deep breathing and relaxation techniques to be able to let go and absorb the subtle vibrations of sound.&nbsp;{"\n"}
-                    <span className="text-bone font-medium">The Crystal Singing Bowls</span> used are tuned to a healing frequency, <span className="text-clay">435 Hz</span>, and instantly dissolve mental and emotional tensions, sometimes even putting people off to sleep. Ragas are sung live in the Indian classical style, like lullabies for the soul.&nbsp;{"\n"}
-                    <em>Soothing aromas, soft lighting and cozy pillows and blankets</em> are put together aesthetically, to make this journey truly special and unforgettable.
-                  </p>
+                    </p>
+
+                    <p className="text-bone/75 leading-[1.9] text-base md:text-[17px]">
+                      Participants are guided through deep breathing and relaxation techniques to be able to let go and absorb the subtle vibrations of sound.
+                    </p>
+
+                    {/* Editorial heading */}
+                    <h3 className="pt-4 font-display text-xl md:text-2xl font-light tracking-tight text-bone">
+                      The Crystal Singing Bowls
+                    </h3>
+
+                    <p className="text-bone/75 leading-[1.9] text-base md:text-[17px]">
+                      used are tuned to a healing frequency, <span className="text-clay">435 Hz</span>, and instantly dissolve mental and emotional tensions, sometimes even putting people off to sleep. Ragas are sung live in the Indian classical style, like lullabies for the soul.
+                    </p>
+
+                    {/* Italicised standalone editorial line */}
+                    <p className="pt-4 font-display italic text-lg md:text-xl leading-[1.5] text-bone/90">
+                      Soothing aromas, soft lighting and cozy pillows and blankets
+                    </p>
+
+                    <p className="text-bone/75 leading-[1.9] text-base md:text-[17px]">
+                      are put together aesthetically, to make this journey truly special and unforgettable.
+                    </p>
+                  </div>
                 </Reveal>
               </div>
             </div>
