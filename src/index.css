@@ -116,6 +116,25 @@
 }
 
 @layer utilities {
+  /* Body typography system — premium editorial readability */
+  .body-text {
+    @apply font-sans text-body leading-[1.75];
+    font-size: 1.0625rem;
+    font-weight: 400;
+  }
+
+  .body-text-lg {
+    @apply font-sans text-body leading-[1.75];
+    font-size: 1.125rem;
+    font-weight: 400;
+  }
+
+  .body-quote {
+    @apply font-serif italic text-body leading-[1.75];
+    font-size: 1.0625rem;
+    font-weight: 400;
+  }
+
   /* Animation utilities */
   .animate-fade-up {
     animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
