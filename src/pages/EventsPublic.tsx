@@ -141,7 +141,7 @@ const EventsPublic = () => {
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
               <Reveal>
                 <div className="flex flex-col h-full">
-                  <span className="text-sm tracking-[0.3em] uppercase text-clay">Credentials</span>
+                  <span className="text-sm tracking-[0.3em] uppercase text-clay">{"\n"}</span>
                   <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
                     Credentials
                   </h2>
