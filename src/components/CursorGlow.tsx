@@ -25,7 +25,7 @@ const CursorGlow = () => {
       nextY = e.clientY;
       if (!raf) {
         raf = requestAnimationFrame(() => {
-          el.style.background = `radial-gradient(380px circle at ${nextX}px ${nextY}px, hsl(var(--brand-purple) / 0.07), transparent 65%)`;
+          el.style.background = `radial-gradient(380px circle at ${nextX}px ${nextY}px, hsl(var(--brand-purple-soft) / 0.07), transparent 65%)`;
           raf = 0;
         });
       }

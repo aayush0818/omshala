@@ -58,6 +58,14 @@ export default {
         bone: "hsl(var(--bone))",
         ash: "hsl(var(--ash))",
         "brand-purple": "hsl(var(--brand-purple))",
+        "brand-purple-deep": "hsl(var(--brand-purple-deep))",
+        "brand-purple-mid": "hsl(var(--brand-purple-mid))",
+        "brand-purple-soft": "hsl(var(--brand-purple-soft))",
+        "brand-purple-mist": "hsl(var(--brand-purple-mist))",
+      },
+      backgroundImage: {
+        "gradient-purple-immersive": "var(--gradient-purple-immersive)",
+        "gradient-purple-calm": "var(--gradient-purple-calm)",
       },
       borderRadius: {
         lg: "var(--radius)",

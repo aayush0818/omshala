@@ -248,7 +248,7 @@ const EventsPublic = () => {
         </section>
 
         {/* How a Session Works */}
-        <section className="py-20 md:py-40 bg-brand-purple text-bone relative overflow-hidden">
+        <section className="py-20 md:py-40 bg-gradient-purple-immersive text-bone relative overflow-hidden">
           <div className="absolute top-20 -right-32 w-64 h-64 rounded-full border border-bone/5 animate-pulse-soft" />
           <div className="absolute bottom-20 -left-32 w-96 h-96 rounded-full border border-bone/5 animate-pulse-soft" style={{ animationDelay: "2s" }} />
           <div className="absolute top-1/4 right-1/4 w-48 h-48 bg-brand-purple/10 rounded-full blur-[40px] animate-float" />
