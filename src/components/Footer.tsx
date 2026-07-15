@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import wordmarkAsset from "@/assets/omshala-wordmark.png.asset.json";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -30,13 +31,14 @@ const Footer = () => {
             <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
               <Link
                 to="/"
-                className="font-serif text-base tracking-[0.25em] text-foreground hover:text-brand-purple transition-colors duration-500"
+                className="inline-block bg-brand-purple rounded-sm p-3 hover:opacity-90 transition-opacity duration-500"
               >
-                OM SHALA
+                <img
+                  src={wordmarkAsset.url}
+                  alt="om shāla"
+                  className="w-[140px] sm:w-[160px] h-auto block"
+                />
               </Link>
-              <p className="text-[10px] tracking-[0.35em] uppercase text-muted-foreground">
-                Sound Healing Experiences
-              </p>
               <p className="text-sm text-muted-foreground italic max-w-xs leading-relaxed pt-2">
                 {"\n"}
               </p>
