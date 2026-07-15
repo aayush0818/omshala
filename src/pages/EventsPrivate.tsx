@@ -147,33 +147,36 @@ const EventsPrivate = () => {
                   <div className="mt-8 h-px w-16 bg-brand-purple/60" />
                 </Reveal>
                 <Reveal delay={0.15}>
-                  <div className="mt-10 space-y-8">
+                  <div className="mt-10 space-y-6">
                     {/* Editorial lead statement */}
-                    <p className="font-display text-2xl md:text-3xl lg:text-[2rem] font-light leading-[1.35] text-bone">
-                      Sound healing can be experienced seated or laying down in a calm environment.
-                    </p>
-
-                    <p className="text-bone/75 leading-[1.9] text-base md:text-[17px]">
-                      Participants are guided through deep breathing and relaxation techniques to be able to let go and absorb the subtle vibrations of sound.
-                    </p>
+                    <div>
+                      <p className="font-display text-2xl md:text-3xl lg:text-[2rem] font-light leading-[1.35] text-bone">
+                        Sound healing can be experienced seated or laying down in a calm environment.
+                      </p>
+                      <p className="text-bone/75 leading-[1.9] text-base md:text-[17px] mt-2">
+                        Participants are guided through deep breathing and relaxation techniques to be able to let go and absorb the subtle vibrations of sound.
+                      </p>
+                    </div>
 
                     {/* Editorial heading */}
-                    <h3 className="pt-4 font-display text-xl md:text-2xl font-light tracking-tight text-bone">
-                      The Crystal Singing Bowls
-                    </h3>
-
-                    <p className="text-bone/75 leading-[1.9] text-base md:text-[17px]">
-                      used are tuned to a healing frequency, <span className="text-clay">435 Hz</span>, and instantly dissolve mental and emotional tensions, sometimes even putting people off to sleep. Ragas are sung live in the Indian classical style, like lullabies for the soul.
-                    </p>
+                    <div>
+                      <h3 className="font-display text-xl md:text-2xl font-light tracking-tight text-bone">
+                        The Crystal Singing Bowls
+                      </h3>
+                      <p className="text-bone/75 leading-[1.9] text-base md:text-[17px] mt-2">
+                        used are tuned to a healing frequency, <span className="text-clay">435 Hz</span>, and instantly dissolve mental and emotional tensions, sometimes even putting people off to sleep. Ragas are sung live in the Indian classical style, like lullabies for the soul.
+                      </p>
+                    </div>
 
                     {/* Italicised standalone editorial line */}
-                    <p className="pt-4 font-display italic text-lg md:text-xl leading-[1.5] text-bone/90">
-                      Soothing aromas, soft lighting and cozy pillows and blankets
-                    </p>
-
-                    <p className="text-bone/75 leading-[1.9] text-base md:text-[17px]">
-                      are put together aesthetically, to make this journey truly special and unforgettable.
-                    </p>
+                    <div>
+                      <p className="font-display italic text-lg md:text-xl leading-[1.5] text-bone/90">
+                        Soothing aromas, soft lighting and cozy pillows and blankets
+                      </p>
+                      <p className="text-bone/75 leading-[1.9] text-base md:text-[17px] mt-2">
+                        are put together aesthetically, to make this journey truly special and unforgettable.
+                      </p>
+                    </div>
                   </div>
                 </Reveal>
               </div>
@@ -182,7 +185,7 @@ const EventsPrivate = () => {
         </section>
 
         {/* Experience */}
-        <section className="py-20 md:py-32 bg-muted/10 relative overflow-hidden">
+        <section className="py-20 md:py-32 bg-brand-purple relative overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="max-w-5xl mx-auto">
               <Reveal>
