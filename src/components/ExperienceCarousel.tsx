@@ -57,7 +57,7 @@ const ExperienceCarousel = ({ items, className = "" }: Props) => {
         <CarouselContent>
           {items.map((item, i) => (
             <CarouselItem key={`${item.src}-${i}`}>
-              <div className="relative w-full bg-charcoal overflow-hidden aspect-[4/3] md:aspect-[16/10]">
+              <div className="relative w-full overflow-hidden aspect-[4/3] md:aspect-[16/10]">
                 {item.type === "image" ? (
                   <img
                     src={item.src}
@@ -78,8 +78,8 @@ const ExperienceCarousel = ({ items, className = "" }: Props) => {
           ))}
         </CarouselContent>
 
-        <CarouselPrevious className="left-3 md:-left-12 h-10 w-10 bg-background/80 border-clay/30 text-foreground hover:bg-background" />
-        <CarouselNext className="right-3 md:-right-12 h-10 w-10 bg-background/80 border-clay/30 text-foreground hover:bg-background" />
+        <CarouselPrevious className="left-3 md:-left-12 h-10 w-10 bg-background/80 border-transparent text-foreground hover:bg-background" />
+        <CarouselNext className="right-3 md:-right-12 h-10 w-10 bg-background/80 border-transparent text-foreground hover:bg-background" />
       </Carousel>
 
       {/* Dot indicators */}
