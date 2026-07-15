@@ -8,6 +8,7 @@ import MediaVideo from "@/components/MediaVideo";
 import AboutSection from "@/components/AboutSection";
 import { CREDENTIALS } from "@/components/CredentialCards";
 import heroImgAsset from "@/assets/img5-studio-night.webp.asset.json";
+import heroDesktopAsset from "@/assets/hero-desktop.png.asset.json";
 import img7Asset from "@/assets/img7-purple-room.webp.asset.json";
 import img10Asset from "@/assets/img10-white-brunch.webp.asset.json";
 import privateVideoAsset from "@/assets/private-carousel.mp4.asset.json";
@@ -18,6 +19,7 @@ const img7 = img7Asset.url;
 const img10 = img10Asset.url;
 const privateVideo = privateVideoAsset.url;
 const heroImg = heroImgAsset.url;
+const heroDesktopImg = heroDesktopAsset.url;
 const credentialsVideo = homeVideoAsset.url;
 const experienceImg = experienceImgAsset.url;
 
@@ -35,7 +37,16 @@ const EventsPrivate = () => {
 
         {/* Hero — image first, content below */}
         <section className="relative overflow-hidden bg-background pt-24 md:pt-28">
-          <div className="w-full max-w-6xl mx-auto px-6">
+          {/* Desktop: full-width immersive hero */}
+          <div className="hidden md:block w-full">
+            <img
+              src={heroDesktopImg}
+              alt="Private meditation space with crystal singing bowls and tanpura"
+              className={`w-full object-cover object-center h-[550px] lg:h-[600px] xl:h-[650px] transition-opacity duration-1000 ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
+            />
+          </div>
+          {/* Mobile: unchanged */}
+          <div className="md:hidden w-full max-w-6xl mx-auto px-6">
             <img
               src={heroImg}
               alt="Private meditation space"

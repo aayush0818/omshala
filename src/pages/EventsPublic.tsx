@@ -10,6 +10,7 @@ import AboutSection from "@/components/AboutSection";
 import { CREDENTIALS } from "@/components/CredentialCards";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import heroImgAsset from "@/assets/img5-studio-night.webp.asset.json";
+import heroDesktopAsset from "@/assets/hero-desktop.png.asset.json";
 import whatThisIsAsset from "@/assets/img8-sunset-circle.webp.asset.json";
 import motionVideoAsset from "@/assets/corporate-motion.mov.asset.json";
 import homeVideoAsset from "@/assets/home-intro.mp4.asset.json";
@@ -17,6 +18,7 @@ import homeVideoAsset from "@/assets/home-intro.mp4.asset.json";
 const whatThisIsImg = whatThisIsAsset.url;
 const motionVideo = motionVideoAsset.url;
 const heroImg = heroImgAsset.url;
+const heroDesktopImg = heroDesktopAsset.url;
 const credentialsVideo = homeVideoAsset.url;
 
 const benefits = [
@@ -56,7 +58,16 @@ const EventsPublic = () => {
 
         {/* Hero — image first, content below */}
         <section className="relative overflow-hidden bg-background pt-24 md:pt-28">
-          <div className="w-full max-w-6xl mx-auto px-6">
+          {/* Desktop: full-width immersive hero */}
+          <div className="hidden md:block w-full">
+            <img
+              src={heroDesktopImg}
+              alt="Sound healing ceremony with crystal singing bowls and tanpura"
+              className={`w-full object-cover object-center h-[550px] lg:h-[600px] xl:h-[650px] transition-opacity duration-1000 ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
+            />
+          </div>
+          {/* Mobile: unchanged */}
+          <div className="md:hidden w-full max-w-6xl mx-auto px-6">
             <img
               src={heroImg}
               alt="Sound healing ceremony"
