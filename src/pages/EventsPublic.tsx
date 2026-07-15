@@ -206,7 +206,7 @@ const EventsPublic = () => {
                         "High-performance teams under constant pressure",
                         "Organisations prioritising employee wellbeing and retention",
                       ].map((it) => (
-                        <li key={it} className="flex gap-4 items-start text-foreground/80 leading-relaxed">
+                        <li key={it} className="flex gap-4 items-start body-text">
                           <span className="mt-2 h-px w-6 bg-brand-purple flex-shrink-0" />
                           <span>{it}</span>
                         </li>
