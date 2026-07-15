@@ -188,7 +188,7 @@ const EventsPrivate = () => {
             <div className="max-w-5xl mx-auto">
               <Reveal>
                 <div className="text-center mb-10 md:mb-14">
-                  <h2 className="font-serif text-2xl md:text-4xl font-light leading-tight">Experience</h2>
+                  <h2 className="font-serif text-2xl md:text-4xl font-light leading-tight">Experiences</h2>
                   <div className="mt-6 w-12 h-px bg-brand-purple/60 mx-auto" />
                 </div>
               </Reveal>
