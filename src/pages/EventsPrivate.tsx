@@ -3,25 +3,26 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
 import Reveal from "@/components/Reveal";
-import NaturalImage from "@/components/NaturalImage";
 import MediaVideo from "@/components/MediaVideo";
+import ExperienceCarousel, { type ExperienceItem } from "@/components/ExperienceCarousel";
 import AboutSection from "@/components/AboutSection";
 import { CREDENTIALS } from "@/components/CredentialCards";
 import heroImgAsset from "@/assets/img5-studio-night.webp.asset.json";
 import heroDesktopAsset from "@/assets/hero-desktop.png.asset.json";
-import img7Asset from "@/assets/img7-purple-room.webp.asset.json";
-import img10Asset from "@/assets/img10-white-brunch.webp.asset.json";
-import privateVideoAsset from "@/assets/private-carousel.mp4.asset.json";
 import homeVideoAsset from "@/assets/home-intro.mp4.asset.json";
 import experienceImgAsset from "@/assets/private-experience-v2.png.asset.json";
+import exp14 from "@/assets/experience-14.png.asset.json";
+import exp15 from "@/assets/experience-15.png.asset.json";
 
-const img7 = img7Asset.url;
-const img10 = img10Asset.url;
-const privateVideo = privateVideoAsset.url;
 const heroImg = heroImgAsset.url;
 const heroDesktopImg = heroDesktopAsset.url;
 const credentialsVideo = homeVideoAsset.url;
 const experienceImg = experienceImgAsset.url;
+
+const experienceItems: ExperienceItem[] = [
+  { type: "image", src: exp14.url, alt: "Candlelit private sound healing session in a Mumbai studio" },
+  { type: "image", src: exp15.url, alt: "Private outdoor gathering with meditation on the lawn" },
+];
 
 const EventsPrivate = () => {
   const [loaded, setLoaded] = useState(false);
@@ -175,37 +176,18 @@ const EventsPrivate = () => {
           </div>
         </section>
 
-        {/* A Glimpse — standalone private video */}
+        {/* Experience */}
         <section className="py-20 md:py-32 bg-muted/10 relative overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="max-w-5xl mx-auto">
               <Reveal>
                 <div className="text-center mb-10 md:mb-14">
-                  <h2 className="font-serif text-2xl md:text-4xl font-light leading-tight">A Glimpse</h2>
+                  <h2 className="font-serif text-2xl md:text-4xl font-light leading-tight">Experience</h2>
                   <div className="mt-6 w-12 h-px bg-clay/60 mx-auto" />
                 </div>
               </Reveal>
               <Reveal delay={0.1}>
-                <MediaVideo
-                  src={privateVideo}
-                  fallbackAspect="16 / 9"
-                  frame="br"
-                  ariaLabel="A private sound healing gathering"
-                />
-              </Reveal>
-            </div>
-          </div>
-        </section>
-
-        {/* Moments Gallery */}
-        <section className="py-20 md:py-32 relative overflow-hidden">
-          <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-10 items-center">
-              <Reveal>
-                <NaturalImage src={img7} alt="Studio setup by night" fallbackAspect="3 / 4" frame="bl" />
-              </Reveal>
-              <Reveal delay={0.08}>
-                <NaturalImage src={img10} alt="A private women's gathering" fallbackAspect="3 / 4" frame="br" />
+                <ExperienceCarousel items={experienceItems} />
               </Reveal>
             </div>
           </div>

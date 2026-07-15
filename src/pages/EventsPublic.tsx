@@ -6,20 +6,40 @@ import PageTransition from "@/components/PageTransition";
 import Reveal from "@/components/Reveal";
 import NaturalImage from "@/components/NaturalImage";
 import MediaVideo from "@/components/MediaVideo";
+import ExperienceCarousel, { type ExperienceItem } from "@/components/ExperienceCarousel";
 import AboutSection from "@/components/AboutSection";
 import { CREDENTIALS } from "@/components/CredentialCards";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
 import heroImgAsset from "@/assets/img5-studio-night.webp.asset.json";
 import heroDesktopAsset from "@/assets/hero-desktop.png.asset.json";
 import whatThisIsAsset from "@/assets/img8-sunset-circle.webp.asset.json";
-import motionVideoAsset from "@/assets/corporate-motion.mov.asset.json";
 import homeVideoAsset from "@/assets/home-intro.mp4.asset.json";
+import privateVideoAsset from "@/assets/private-carousel.mp4.asset.json";
+import exp6 from "@/assets/experience-6.png.asset.json";
+import exp7 from "@/assets/experience-7.png.asset.json";
+import exp8 from "@/assets/experience-8.png.asset.json";
+import exp9 from "@/assets/experience-9.png.asset.json";
+import exp10 from "@/assets/experience-10.png.asset.json";
+import exp11 from "@/assets/experience-11.png.asset.json";
+import exp12 from "@/assets/experience-12.png.asset.json";
+import exp13 from "@/assets/experience-13.png.asset.json";
 
 const whatThisIsImg = whatThisIsAsset.url;
-const motionVideo = motionVideoAsset.url;
 const heroImg = heroImgAsset.url;
 const heroDesktopImg = heroDesktopAsset.url;
 const credentialsVideo = homeVideoAsset.url;
+
+const experienceItems: ExperienceItem[] = [
+  { type: "image", src: exp6.url, alt: "Crystal singing bowls setup by the lake at sunrise" },
+  { type: "image", src: exp7.url, alt: "Sound bath performance on stage at a corporate event" },
+  { type: "image", src: exp8.url, alt: "Large group in shavasana at an outdoor wellness event" },
+  { type: "image", src: exp9.url, alt: "Om Shala team receiving a Yogathon recognition" },
+  { type: "image", src: exp10.url, alt: "Sound healing on stage at a large outdoor yoga gathering" },
+  { type: "image", src: exp11.url, alt: "Shrutika speaking at a private brunch gathering" },
+  { type: "image", src: exp12.url, alt: "Guests in white attire deep in meditation" },
+  { type: "image", src: exp13.url, alt: "Circle gathering at sunset by the lake" },
+  { type: "video", src: privateVideoAsset.url, alt: "A moment from an Om Shala sound bath" },
+];
 
 const benefits = [
   { icon: Activity, text: "Reduces stress and prevents burnout" },
@@ -256,24 +276,18 @@ const EventsPublic = () => {
           </div>
         </section>
 
-        {/* A Glimpse */}
+        {/* Experience */}
         <section className="py-20 md:py-32 relative overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="max-w-5xl mx-auto">
               <Reveal>
                 <div className="text-center mb-10 md:mb-14">
-                  <h2 className="font-serif text-2xl md:text-4xl font-light leading-tight">A Glimpse</h2>
+                  <h2 className="font-serif text-2xl md:text-4xl font-light leading-tight">Experience</h2>
                   <div className="mt-6 w-12 h-px bg-clay/60 mx-auto" />
                 </div>
               </Reveal>
               <Reveal delay={0.1}>
-                <MediaVideo
-                  src={motionVideo}
-                  fallbackAspect="16 / 9"
-                  frame="br"
-                  ariaLabel="Corporate sound healing session"
-                  className="mx-auto"
-                />
+                <ExperienceCarousel items={experienceItems} />
               </Reveal>
             </div>
           </div>
