@@ -11,6 +11,10 @@ const BRAND_PURPLE = "#2E2A5E";
 const BORDER_IDLE = "rgba(232, 224, 208, 0.28)";
 const BORDER_HOVER = "rgba(232, 224, 208, 0.65)";
 
+// Mobile borders are intentionally more visible so the two panels read as distinct
+const BORDER_IDLE_MOBILE = "rgba(232, 224, 208, 0.42)";
+const BORDER_HOVER_MOBILE = "rgba(232, 224, 208, 0.78)";
+
 const panels = [
   {
     key: "corporate" as const,
@@ -44,16 +48,16 @@ const HeroGateway = () => {
       className="relative h-screen w-full overflow-hidden text-bone"
       style={{ backgroundColor: BRAND_PURPLE }}
     >
-      {/* Brand mark + tagline */}
-      <div className="absolute top-10 md:top-14 left-0 right-0 z-30 pointer-events-none">
-        <div className="flex flex-col items-center gap-3 md:gap-4 px-4">
+      {/* Brand mark + tagline — mobile is intentionally composed as a tighter unit */}
+      <div className="absolute top-6 sm:top-10 md:top-14 left-0 right-0 z-30 pointer-events-none">
+        <div className="flex flex-col items-center gap-1.5 sm:gap-3 md:gap-4 px-4">
           <span
-            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-bone text-center leading-none"
+            className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal text-bone text-center leading-none"
             style={{ letterSpacing: "-0.01em" }}
           >
             om sh<span style={{ fontFeatureSettings: '"liga"' }}>ā</span>la
           </span>
-          <span className="text-[11px] md:text-sm tracking-[0.25em] md:tracking-[0.3em] text-bone/70 text-center font-sans font-light lowercase">
+          <span className="text-[10px] sm:text-[11px] md:text-sm tracking-[0.25em] md:tracking-[0.3em] text-bone/70 text-center font-sans font-light lowercase">
             sound healing experiences
           </span>
         </div>
@@ -99,34 +103,45 @@ const HeroGateway = () => {
                 transition: "border-color 500ms ease",
               }}
             >
-              {/* Shared divider between panels — moves with the left panel */}
+              {/* Shared divider between panels — brighter on mobile */}
               {idx === 0 && (
                 <div
                   className="absolute top-0 bottom-0 right-0 w-px transition-colors duration-500"
-                  style={{ backgroundColor: hovered ? BORDER_HOVER : BORDER_IDLE }}
+                  style={{
+                    backgroundColor: hovered
+                      ? BORDER_HOVER_MOBILE
+                      : BORDER_IDLE_MOBILE,
+                  }}
                 />
               )}
 
-              {/* Full-panel content */}
-              <div className="absolute inset-0 flex items-center justify-center px-8 md:px-14 lg:px-20">
+              {/* Full-panel content — mobile composition is intentionally distinct */}
+              <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 md:px-14 lg:px-20">
                 <div className="w-full max-w-xl text-center">
                   <h2
-                    className="font-display text-bone leading-[1.05] tracking-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl"
+                    className="font-display text-bone tracking-tight text-[1.75rem] leading-[1.05] sm:text-5xl md:text-6xl lg:text-7xl"
                     style={{ fontWeight: 300 }}
                   >
-                    {panel.title}
+                    <span className="hidden sm:inline">{panel.title}</span>
+                    <span className="sm:hidden">
+                      {panel.title.split(" ").map((word, i) => (
+                        <span key={i} className="block">
+                          {word}
+                        </span>
+                      ))}
+                    </span>
                   </h2>
 
                   <p
-                    className="mt-6 md:mt-8 max-w-md mx-auto text-sm md:text-base font-sans font-light leading-relaxed tracking-wide"
+                    className="mt-5 sm:mt-6 md:mt-8 max-w-[220px] sm:max-w-md mx-auto text-xs sm:text-sm md:text-base font-sans font-light leading-relaxed tracking-wide"
                     style={{ color: "rgba(244, 241, 236, 0.75)" }}
                   >
                     {panel.subtitle}
                   </p>
 
-                  {/* Refined arrow: subtle border brightening and gentle background fill on hover */}
+                  {/* Larger mobile touch target while keeping the visual mark refined */}
                   <motion.div
-                    className="mt-10 md:mt-12 inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 relative"
+                    className="mt-8 sm:mt-10 md:mt-12 inline-flex items-center justify-center w-16 h-16 sm:w-12 sm:h-12 md:w-14 md:h-14 relative"
                     animate={{
                       backgroundColor: isHovered
                         ? "rgba(232, 224, 208, 0.08)"
@@ -140,12 +155,12 @@ const HeroGateway = () => {
                     }}
                   >
                     <svg
-                      width="20"
-                      height="10"
+                      width="18"
+                      height="9"
                       viewBox="0 0 24 10"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="overflow-visible"
+                      className="overflow-visible sm:w-5 sm:h-[10px]"
                     >
                       <line
                         x1="0"
