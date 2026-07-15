@@ -119,10 +119,20 @@ const HeroGateway = () => {
               <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 md:px-14 lg:px-20">
                 <div className="w-full max-w-xl text-center">
                   <h2
-                    className="font-display text-bone tracking-tight whitespace-nowrap text-[1.5rem] leading-none sm:text-5xl md:text-6xl lg:text-7xl"
+                    className="font-display text-bone tracking-tight text-[2.25rem] leading-none sm:text-5xl md:text-6xl lg:text-7xl"
                     style={{ fontWeight: 300 }}
                   >
-                    {panel.title}
+                    {/* Mobile: stacked words so the title can be larger without touching the panel edge */}
+                    <span className="block sm:hidden">
+                      {panel.title.split(" ").map((word, i) => (
+                        <span key={i} className="block leading-[0.95]">
+                          {word}
+                        </span>
+                      ))}
+                    </span>
+                    <span className="hidden sm:inline whitespace-nowrap">
+                      {panel.title}
+                    </span>
                   </h2>
 
                   {/* Fixed subtitle height on mobile so arrows align horizontally */}
