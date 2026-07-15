@@ -15,7 +15,6 @@ import exp14 from "@/assets/experience-14.png.asset.json";
 import exp15 from "@/assets/experience-15.png.asset.json";
 import exp16 from "@/assets/experience-16.png.asset.json";
 import exp17 from "@/assets/experience-17.png.asset.json";
-import exp18 from "@/assets/experience-18.png.asset.json";
 
 const heroImg = heroImgAsset.url;
 const heroDesktopImg = heroDesktopAsset.url;
@@ -27,7 +26,6 @@ const experienceItems: ExperienceItem[] = [
   { type: "image", src: exp16.url, alt: "Private candlelit sound bath with skyline view" },
   { type: "image", src: exp17.url, alt: "Intimate private setup with crystal singing bowls at dusk" },
   { type: "image", src: exp15.url, alt: "Private outdoor gathering with meditation on the lawn" },
-  { type: "image", src: exp18.url, alt: "Warm candlelit private sound bath with crystal singing bowls" },
 ];
 
 const EventsPrivate = () => {
