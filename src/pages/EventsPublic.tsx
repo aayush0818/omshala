@@ -188,7 +188,7 @@ const EventsPublic = () => {
                   </h2>
                 </Reveal>
                 <Reveal delay={0.1}>
-                  <p className="mt-8 text-muted-foreground leading-relaxed">
+                  <p className="body-text mt-8 max-w-xl">
                     A therapeutic experience that combines guided breathwork and deep relaxation
                     techniques in a sound immersion, to help employees and leaders rejuvenate
                     mentally and access more presence and productivity. Available online, onsite
