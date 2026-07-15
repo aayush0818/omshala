@@ -95,6 +95,14 @@
     @apply font-serif tracking-tight;
   }
 
+  /* Normalize Fraunces variable-font axes so stylistic glyphs
+     (notably the swashy "f" and "g") render in their standard form. */
+  .font-display,
+  .font-display * {
+    font-variation-settings: "opsz" 14, "SOFT" 0, "WONK" 0;
+    font-feature-settings: "ss01" off, "ss02" off, "ss03" off, "calt" off;
+  }
+
   /* Grain texture overlay */
   .grain {
     position: relative;
