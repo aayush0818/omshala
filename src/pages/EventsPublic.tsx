@@ -266,7 +266,7 @@ const EventsPublic = () => {
               {sessionFlow.map((s) => (
                 <div key={s.title} className="flex gap-5 sm:gap-8">
                   <div className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center">
-                    <span className="text-3xl sm:text-4xl leading-none text-brand-purple">•</span>
+                    <span className="text-3xl sm:text-4xl leading-none text-bone">•</span>
                   </div>
                   <div className="pt-2 sm:pt-3">
                     <h3 className="font-serif text-lg sm:text-xl mb-2 sm:mb-3">{s.title}</h3>
