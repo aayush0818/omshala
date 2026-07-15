@@ -343,7 +343,7 @@ const EventsPublic = () => {
                     <div key={f.title} className="p-5 border border-foreground/10 text-center">
                       <f.icon className="w-5 h-5 text-brand-purple mx-auto mb-3" />
                       <p className="text-xs tracking-[0.15em] uppercase text-foreground/70">{f.title}</p>
-                      <p className="text-xs text-muted-foreground mt-2 leading-relaxed">{f.desc}</p>
+                      <p className="body-text text-[0.9375rem] mt-2">{f.desc}</p>
                     </div>
                   ))}
                 </div>
