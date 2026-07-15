@@ -90,7 +90,7 @@ const Footer = () => {
           <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] tracking-[0.2em] uppercase text-muted-foreground">
             <span>© {currentYear} Om Shala. All rights reserved.</span>
             <span className="italic tracking-normal text-muted-foreground">
-              Breath. Sound. Stillness.
+              {"\n"}
             </span>
           </div>
         </div>
