@@ -108,11 +108,11 @@ const EventsPublic = () => {
                 Deep Relaxation
                 <span className="block mt-2 text-clay">for High-Performance Teams</span>
               </h1>
-              <p className="font-display text-[15px] sm:text-lg text-foreground/85 leading-relaxed max-w-xl font-light">
+              <p className="body-text-lg max-w-xl">
                 Therapeutic sound immersions known as Sound Baths, designed to reduce mental
                 fatigue, improve focus, and support emotional resilience in the workplace.
               </p>
-              <p className="font-display mt-6 text-sm sm:text-base text-foreground/85 italic leading-relaxed max-w-xl border-l border-brand-purple/40 pl-5 font-light">
+              <p className="body-quote mt-6 max-w-xl border-l border-brand-purple/40 pl-5">
                 The Mind, is the highest human power and a rejuvenated mind is an optimised
                 human resource.
               </p>
