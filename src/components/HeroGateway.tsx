@@ -119,7 +119,7 @@ const HeroGateway = () => {
               <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 md:px-14 lg:px-20">
                 <div className="w-full max-w-xl text-center">
                   <h2
-                    className="font-display text-bone tracking-tight whitespace-nowrap text-[1.75rem] leading-none sm:text-5xl md:text-6xl lg:text-7xl"
+                    className="font-display text-bone tracking-tight whitespace-nowrap text-[1.5rem] leading-none sm:text-5xl md:text-6xl lg:text-7xl"
                     style={{ fontWeight: 300 }}
                   >
                     {panel.title}
