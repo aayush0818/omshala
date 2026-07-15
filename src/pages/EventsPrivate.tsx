@@ -124,7 +124,7 @@ const EventsPrivate = () => {
         </section>
 
         {/* The Experience — two-column editorial */}
-        <section className="relative overflow-hidden bg-gradient-purple-calm text-bone">
+        <section className="relative overflow-hidden bg-gradient-to-b from-brand-purple-deep to-brand-purple-void text-bone">
           <div className="absolute top-1/3 -right-40 w-[500px] h-[500px] bg-bone/5 rounded-full blur-[120px]" />
           <div className="container mx-auto px-6 relative z-10 py-24 md:py-40">
             <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">

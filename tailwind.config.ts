@@ -62,6 +62,7 @@ export default {
         "brand-purple-mid": "hsl(var(--brand-purple-mid))",
         "brand-purple-soft": "hsl(var(--brand-purple-soft))",
         "brand-purple-mist": "hsl(var(--brand-purple-mist))",
+        "brand-purple-void": "hsl(var(--brand-purple-void))",
       },
       backgroundImage: {
         "gradient-purple-immersive": "var(--gradient-purple-immersive)",
