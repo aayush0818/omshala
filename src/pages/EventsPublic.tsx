@@ -57,7 +57,7 @@ const EventsPublic = () => {
         <Header />
 
         {/* Hero — image first, content below */}
-        <section className="relative overflow-hidden bg-background pt-24 md:pt-28">
+        <section className="relative overflow-hidden bg-background pt-16 md:pt-[68px]">
           {/* Desktop: full-width immersive hero */}
           <div className="hidden md:block w-full">
             <img
