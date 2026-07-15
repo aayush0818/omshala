@@ -353,38 +353,35 @@ const EventsPublic = () => {
         </section>
 
         {/* Booking */}
-        <section id="enquire" className="py-20 md:py-40 bg-muted/20 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
-          <div className="container mx-auto px-6">
+        <section id="enquire" className="py-20 md:py-40 bg-brand-purple text-bone relative overflow-hidden">
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-bone/5 rounded-full blur-[150px] animate-pulse-soft" />
+          <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <span className="text-sm tracking-[0.3em] uppercase text-clay mb-6 block">Booking</span>
-              <h2 className="font-serif text-3xl md:text-4xl font-light mb-8">
+              <span className="text-sm tracking-[0.3em] uppercase text-bone/70 mb-6 block">Booking</span>
+              <h2 className="font-serif text-3xl md:text-4xl font-light mb-8 text-bone">
                 Customised to your organisation
               </h2>
-              <p className="text-muted-foreground max-w-xl mx-auto mb-8 leading-relaxed">
+              <p className="text-bone/80 max-w-xl mx-auto mb-8 leading-relaxed">
                 Sessions can be customised based on your organisation's needs:
               </p>
-              <ul className="text-muted-foreground space-y-3 max-w-xl mx-auto mb-12 text-left">
-                <li className="flex gap-3"><span className="text-clay">·</span> Online or in-person</li>
-                <li className="flex gap-3"><span className="text-clay">·</span> Small teams or large groups</li>
-                <li className="flex gap-3"><span className="text-clay">·</span> One-time sessions or ongoing programs for sustained corporate wellness</li>
-                <li className="flex gap-3"><span className="text-clay">·</span> Sessions can also be positioned as part of leadership development or performance optimisation programs</li>
+              <ul className="text-bone/80 space-y-3 max-w-xl mx-auto mb-12 text-left">
+                <li className="flex gap-3"><span className="text-bone/60">·</span> Online or in-person</li>
+                <li className="flex gap-3"><span className="text-bone/60">·</span> Small teams or large groups</li>
+                <li className="flex gap-3"><span className="text-bone/60">·</span> One-time sessions or ongoing programs for sustained corporate wellness</li>
+                <li className="flex gap-3"><span className="text-bone/60">·</span> Sessions can also be positioned as part of leadership development or performance optimisation programs</li>
               </ul>
 
               <div className="flex flex-col items-center gap-4">
-                <span className="text-[11px] tracking-[0.3em] uppercase text-muted-foreground">
+                <span className="text-[11px] tracking-[0.3em] uppercase text-bone/70">
                   Schedule a Consultation
                 </span>
                 <a
                   href="https://wa.me/917400361681?text=Hi%2C%20I%20wanted%20to%20enquire%20about%20Corporate%20Events."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 bg-foreground text-background text-sm tracking-wide overflow-hidden transition-all duration-500"
+                  className="group relative inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 bg-bone text-brand-purple border border-bone text-sm tracking-wide transition-all duration-500 hover:bg-transparent hover:text-bone"
                 >
-                  <span className="relative z-10 group-hover:text-background transition-colors duration-500">
-                    WhatsApp · +91 7400361681
-                  </span>
-                  <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                  <span className="relative z-10">WhatsApp · +91 7400361681</span>
                 </a>
               </div>
             </div>

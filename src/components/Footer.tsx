@@ -4,9 +4,9 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative pt-20 md:pt-28 pb-10 bg-background border-t border-border/40 overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-px bg-clay/40" />
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-clay/[0.03] rounded-full blur-[120px] pointer-events-none" />
+    <footer className="relative pt-20 md:pt-28 pb-10 bg-brand-purple text-bone overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-px bg-bone/40" />
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-bone/[0.04] rounded-full blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative">
         <div className="max-w-6xl mx-auto">
@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="flex justify-center mb-12 md:mb-16">
             <svg
               viewBox="0 0 64 64"
-              className="w-12 h-12 text-clay/70"
+              className="w-12 h-12 text-bone/70"
               fill="none"
               stroke="currentColor"
               strokeWidth="1.1"
@@ -25,45 +25,45 @@ const Footer = () => {
             </svg>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10 pb-12 md:pb-16 border-b border-border/30">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10 pb-12 md:pb-16 border-b border-bone/20">
             {/* Brand */}
             <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
               <Link
                 to="/"
-                className="font-serif text-2xl tracking-[0.15em] text-foreground hover:text-clay transition-colors duration-500"
+                className="font-serif text-2xl tracking-[0.15em] text-bone hover:text-bone/70 transition-colors duration-500"
               >
                 OM SHALA
               </Link>
-              <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground/70">
+              <p className="text-xs tracking-[0.3em] uppercase text-bone/60">
                 Sound Healing Experiences
               </p>
-              <p className="text-sm text-muted-foreground/80 italic max-w-xs leading-relaxed pt-2">
+              <p className="text-sm text-bone/60 italic max-w-xs leading-relaxed pt-2">
                 {"\n"}
               </p>
             </div>
 
             {/* Navigate */}
             <div className="flex flex-col items-center md:items-start gap-5">
-              <span className="text-[10px] tracking-[0.35em] uppercase text-clay">
+              <span className="text-[10px] tracking-[0.35em] uppercase text-bone/60">
                 Navigate
               </span>
-              <nav className="flex flex-col items-center md:items-start gap-3 text-sm text-muted-foreground">
-                <Link to="/" className="hover:text-clay transition-colors duration-300">Home</Link>
-                <Link to="/events/public" className="hover:text-clay transition-colors duration-300">Corporate</Link>
-                <Link to="/events/private" className="hover:text-clay transition-colors duration-300">Private</Link>
-                <Link to="/contact" className="hover:text-clay transition-colors duration-300">Contact</Link>
+              <nav className="flex flex-col items-center md:items-start gap-3 text-sm text-bone/80">
+                <Link to="/" className="hover:text-bone transition-colors duration-300">Home</Link>
+                <Link to="/events/public" className="hover:text-bone transition-colors duration-300">Corporate</Link>
+                <Link to="/events/private" className="hover:text-bone transition-colors duration-300">Private</Link>
+                <Link to="/contact" className="hover:text-bone transition-colors duration-300">Contact</Link>
               </nav>
             </div>
 
             {/* Contact */}
             <div className="flex flex-col items-center md:items-start gap-5">
-              <span className="text-[10px] tracking-[0.35em] uppercase text-clay">
+              <span className="text-[10px] tracking-[0.35em] uppercase text-bone/60">
                 Reach Us
               </span>
               <div className="flex flex-col items-center md:items-start gap-3 text-sm">
                 <a
                   href="mailto:omshala.official@gmail.com"
-                  className="text-muted-foreground hover:text-clay transition-colors duration-300"
+                  className="text-bone/80 hover:text-bone transition-colors duration-300"
                 >
                   omshala.official@gmail.com
                 </a>
@@ -71,13 +71,13 @@ const Footer = () => {
                   href="https://wa.me/917400361681"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-clay transition-colors duration-300"
+                  className="text-bone/80 hover:text-bone transition-colors duration-300"
                 >
                   WhatsApp +91 74003 61681
                 </a>
                 <Link
                   to="/contact"
-                  className="mt-2 inline-flex items-center gap-2 text-xs tracking-[0.25em] uppercase text-foreground hover:text-clay transition-colors duration-500"
+                  className="mt-2 inline-flex items-center gap-2 text-xs tracking-[0.25em] uppercase text-bone hover:text-bone/70 transition-colors duration-500"
                 >
                   <span>Begin a conversation</span>
                   <span className="w-6 h-px bg-current" />
@@ -87,9 +87,9 @@ const Footer = () => {
           </div>
 
           {/* Meta row */}
-          <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] tracking-[0.2em] uppercase text-muted-foreground/60">
+          <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-[11px] tracking-[0.2em] uppercase text-bone/50">
             <span>© {currentYear} Om Shala. All rights reserved.</span>
-            <span className="italic tracking-normal text-muted-foreground/50">
+            <span className="italic tracking-normal text-bone/50">
               Breath. Sound. Stillness.
             </span>
           </div>

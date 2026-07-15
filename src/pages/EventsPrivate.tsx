@@ -199,30 +199,28 @@ const EventsPrivate = () => {
         </section>
 
         {/* CTA */}
-        <section id="enquire" className="py-28 md:py-40 bg-earth text-bone relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-earth via-earth to-charcoal/50" />
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-clay/10 rounded-full blur-[150px] animate-pulse-soft" />
+        <section id="enquire" className="py-28 md:py-40 bg-brand-purple text-bone relative overflow-hidden">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-bone/5 rounded-full blur-[150px] animate-pulse-soft" />
 
           <div className="container mx-auto px-6 text-center relative z-10">
-            <span className="text-sm tracking-[0.3em] uppercase text-bone/60 mb-6 block">Enquire</span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light mb-8 leading-tight">
+            <span className="text-sm tracking-[0.3em] uppercase text-bone/70 mb-6 block">Enquire</span>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light mb-8 leading-tight text-bone">
               Let's discuss how we can
               <span className="block italic">organise one for you.</span>
             </h2>
-            <p className="text-bone/75 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
+            <p className="text-bone/80 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
               Om Shala has organised beautiful sound healing experiences for weddings, birthdays,
               Diwali parties, women's forums and baby showers.
             </p>
             <div className="flex flex-col items-center gap-4">
-              <span className="text-[11px] tracking-[0.3em] uppercase text-bone/60">Schedule a Call</span>
+              <span className="text-[11px] tracking-[0.3em] uppercase text-bone/70">Schedule a Call</span>
               <a
                 href="https://wa.me/917400361681?text=Hi%2C%20I%20wanted%20to%20enquire%20about%20Private%20Events."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center gap-2 px-10 py-4 bg-bone text-charcoal text-sm tracking-wide overflow-hidden transition-all duration-500"
+                className="group relative inline-flex items-center gap-2 px-10 py-4 bg-bone text-brand-purple border border-bone text-sm tracking-wide overflow-hidden transition-all duration-500 hover:bg-transparent hover:text-bone"
               >
-                <span className="relative z-10 group-hover:text-bone transition-colors duration-500">WhatsApp +91 74003 61681</span>
-                <div className="absolute inset-0 bg-clay translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                <span className="relative z-10">WhatsApp +91 74003 61681</span>
               </a>
             </div>
           </div>

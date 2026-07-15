@@ -78,8 +78,8 @@ const ExperienceCarousel = ({ items, className = "" }: Props) => {
           ))}
         </CarouselContent>
 
-        <CarouselPrevious className="left-3 md:-left-12 h-10 w-10 bg-background/80 border-transparent text-foreground hover:bg-background" />
-        <CarouselNext className="right-3 md:-right-12 h-10 w-10 bg-background/80 border-transparent text-foreground hover:bg-background" />
+        <CarouselPrevious className="left-3 md:-left-12 h-10 w-10 bg-background/80 border-transparent text-foreground hover:bg-brand-purple hover:text-bone transition-colors" />
+        <CarouselNext className="right-3 md:-right-12 h-10 w-10 bg-background/80 border-transparent text-foreground hover:bg-brand-purple hover:text-bone transition-colors" />
       </Carousel>
 
       {/* Dot indicators */}
@@ -91,7 +91,7 @@ const ExperienceCarousel = ({ items, className = "" }: Props) => {
             aria-label={`Go to slide ${i + 1}`}
             onClick={() => api?.scrollTo(i)}
             className={`h-1.5 rounded-full transition-all duration-300 ${
-              i === current ? "w-6 bg-clay" : "w-1.5 bg-foreground/25 hover:bg-foreground/45"
+              i === current ? "w-6 bg-brand-purple" : "w-1.5 bg-foreground/25 hover:bg-brand-purple/50"
             }`}
           />
         ))}

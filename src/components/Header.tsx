@@ -27,7 +27,7 @@ const Header = () => {
         <nav className="container mx-auto px-6 py-5 flex items-center justify-between">
           <Link
             to="/"
-            className="font-serif text-base tracking-[0.25em] text-foreground hover:text-clay transition-colors duration-300"
+            className="font-serif text-base tracking-[0.25em] text-foreground hover:text-brand-purple transition-colors duration-300"
           >
             OM SHALA
           </Link>
@@ -37,7 +37,7 @@ const Header = () => {
               <Link
                 key={l.href}
                 to={l.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 link-underline"
+                className="text-sm text-muted-foreground hover:text-brand-purple transition-colors duration-300 link-underline"
               >
                 {l.label}
               </Link>
@@ -45,7 +45,7 @@ const Header = () => {
           </div>
 
           <button
-            className="md:hidden p-2 text-foreground hover:text-clay transition-colors duration-300"
+            className="md:hidden p-2 text-foreground hover:text-brand-purple transition-colors duration-300"
             onClick={() => setMobileMenuOpen(true)}
             aria-label="Open menu"
           >
@@ -65,7 +65,7 @@ const Header = () => {
             OM SHALA
           </Link>
           <button
-            className="p-2 text-foreground hover:text-clay transition-colors duration-300"
+            className="p-2 text-foreground hover:text-brand-purple transition-colors duration-300"
             onClick={() => setMobileMenuOpen(false)}
             aria-label="Close menu"
           >
@@ -79,7 +79,7 @@ const Header = () => {
               key={link.href}
               to={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className={`font-serif text-3xl text-foreground hover:text-clay transition-all duration-500 ${
+              className={`font-serif text-3xl text-foreground hover:text-brand-purple transition-all duration-500 ${
                 mobileMenuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: `${i * 100}ms` }}
