@@ -119,16 +119,16 @@ const HeroGateway = () => {
               <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 md:px-14 lg:px-20">
                 <div className="w-full max-w-xl text-center">
                   <h2
-                    className="font-display text-bone tracking-tight whitespace-nowrap text-[1.125rem] leading-none sm:text-5xl md:text-6xl lg:text-7xl"
+                    className="font-display text-bone tracking-tight whitespace-nowrap text-[1.5rem] leading-none sm:text-5xl md:text-6xl lg:text-7xl"
                     style={{ fontWeight: 300 }}
                   >
                     {panel.title}
                   </h2>
 
                   {/* Fixed subtitle height on mobile so arrows align horizontally */}
-                  <div className="mt-4 sm:mt-6 md:mt-8 min-h-[110px] sm:min-h-0 flex items-center justify-center">
+                  <div className="mt-5 sm:mt-6 md:mt-8 min-h-[110px] sm:min-h-0 flex items-center justify-center">
                     <p
-                      className="max-w-[180px] sm:max-w-md mx-auto text-[11px] sm:text-sm md:text-base font-sans font-light leading-relaxed tracking-wide"
+                      className="max-w-[200px] sm:max-w-md mx-auto text-[11px] sm:text-sm md:text-base font-sans font-light leading-relaxed tracking-wide"
                       style={{ color: "rgba(244, 241, 236, 0.75)" }}
                     >
                       {panel.subtitle}
