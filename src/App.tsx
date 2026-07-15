@@ -8,8 +8,6 @@ import { AnimatePresence } from "framer-motion";
 import AmbientBackground from "./components/AmbientBackground";
 import CursorGlow from "./components/CursorGlow";
 import ScrollProgress from "./components/ScrollProgress";
-import BreathCompanion from "./components/BreathCompanion";
-import SoundBowl from "./components/SoundBowl";
 import Index from "./pages/Index";
 
 const Contact = lazy(() => import("./pages/Contact"));
@@ -50,8 +48,6 @@ const App = () => (
         <div className="relative z-10">
           <AnimatedRoutes />
         </div>
-        <SoundBowl />
-        <BreathCompanion />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
