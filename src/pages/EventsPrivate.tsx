@@ -42,7 +42,7 @@ const EventsPrivate = () => {
             <img
               src={heroDesktopImg}
               alt="Private meditation space with crystal singing bowls and tanpura"
-              className={`w-full object-cover object-center h-[550px] lg:h-[600px] xl:h-[650px] transition-opacity duration-1000 ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
+              className={`w-full h-[550px] object-cover object-center transition-opacity duration-1000 ease-out ${loaded ? "opacity-100" : "opacity-0"}`}
             />
           </div>
           {/* Mobile: unchanged */}
