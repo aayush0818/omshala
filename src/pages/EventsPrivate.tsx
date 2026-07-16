@@ -163,32 +163,24 @@ const EventsPrivate = () => {
                       </p>
                     </div>
 
-                    <div>
-                      <p className="text-foreground leading-[1.9] text-base md:text-[17px]">
-                        <span className="font-display text-xl md:text-2xl font-light tracking-tight">
-                          The Crystal Singing Bowls
-                        </span>{" "}
-                        used are tuned to a healing frequency, <span className="text-clay">435 Hz</span>, and instantly
-                        dissolve mental and emotional tensions, sometimes even putting people off to sleep. Ragas are
-                        sung live in the Indian classical style, like lullabies for the soul.
-                      </p>
-                    </div>
+<div>
+  <p className="text-foreground leading-[1.9] text-base md:text-[17px]">
+    <span className="font-display text-xl md:text-2xl font-normal tracking-tight">
+      The Crystal Singing Bowls
+    </span>{" "}
+    used are tuned to a healing frequency, <span className="text-clay">435 Hz</span>, and instantly dissolve mental and emotional tensions, sometimes even putting people off to sleep. Ragas are sung live in the Indian classical style, like lullabies for the soul.
+  </p>
+</div>
 
-                    {/* Italicised standalone editorial line */}
-                    <div>
-                      <p className="font-display italic text-lg md:text-xl leading-[1.5] text-foreground">
-                        Soothing aromas, soft lighting and cozy pillows and blankets
-                      </p>
-                      <p className="text-foreground leading-[1.9] text-base md:text-[17px] mt-2">
-                        are put together aesthetically, to make this journey truly special and unforgettable.
-                      </p>
-                    </div>
-                  </div>
-                </Reveal>
-              </div>
-            </div>
-          </div>
-        </section>
+{/* Editorial closing statement */}
+<div>
+  <p className="text-foreground leading-[1.9] text-base md:text-[17px]">
+    <span className="font-display italic text-xl md:text-2xl font-normal leading-[1.5]">
+      Soothing aromas, soft lighting and cozy pillows and blankets
+    </span>{" "}
+    are put together aesthetically, to make this journey truly special and unforgettable.
+  </p>
+</div>
 
         {/* Experience */}
         <section className="py-20 md:py-32 relative overflow-hidden">
