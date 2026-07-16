@@ -61,7 +61,10 @@ const Panel = ({
 
 const HeroGateway = () => {
   return (
-    <section className="h-screen w-screen grid grid-rows-[60fr_40fr] overflow-hidden">
+    <section
+      className="w-full grid grid-rows-[60fr_40fr] overflow-hidden"
+      style={{ height: "100vh", minHeight: "100dvh" }}
+    >
       {/* Hero */}
       <div
         className="flex flex-col items-center justify-center px-6"
