@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/omshala-wordmark-transparent.png";
 
 const HERO_BG = "#322E4F";
 const LOWER_BG = "#0E0D12";
@@ -30,7 +29,7 @@ const Panel = ({ to, w1, w2, label }: { to: string; w1: string; w2: string; labe
       className="w-full min-w-0 uppercase text-center leading-[1.1] tracking-[0.04em] text-[1.75rem] sm:text-[2.25rem] md:text-[2.9rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4.5rem]"
       style={{
         color: TEXT,
-        fontFamily: '"Playfair Display", Georgia, serif',
+        fontFamily: '"Passenger Display", "Playfair Display", Georgia, serif',
         fontWeight: 400,
       }}
     >
@@ -52,21 +51,31 @@ const HeroGateway = () => {
     >
       {/* Hero */}
       <div className="flex flex-col items-center justify-center px-6" style={{ background: HERO_BG }}>
-        <img
-          src={logo}
-          alt="Om Shala"
-          draggable={false}
-          className="
-            select-none
-            pointer-events-none
-            w-[min(72vw,680px)]
-            sm:w-[min(68vw,720px)]
-            md:w-[min(62vw,760px)]
-            lg:w-[min(58vw,800px)]
-            xl:w-[min(55vw,860px)]
-            h-auto
-          "
-        />
+        <h1
+          className="text-center leading-none"
+          style={{
+            color: TEXT,
+            fontFamily: '"Passenger Display", "Playfair Display", Georgia, serif',
+            fontWeight: 400,
+            fontSize: "clamp(4rem, 10.5vw, 9.5rem)",
+            letterSpacing: "-0.01em",
+          }}
+        >
+          om shāla
+        </h1>
+
+        <p
+          className="mt-3 sm:mt-4 md:mt-5 text-center"
+          style={{
+            color: TEXT,
+            fontFamily: '"Montserrat", "Inter", sans-serif',
+            fontWeight: 300,
+            letterSpacing: "0.12em",
+            fontSize: "clamp(0.9rem, 1.15vw, 1.15rem)",
+          }}
+        >
+          sound healing experiences
+        </p>
       </div>
 
       {/* Lower */}
