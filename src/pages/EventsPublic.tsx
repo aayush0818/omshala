@@ -309,10 +309,10 @@ const EventsPublic = () => {
             <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               <div>
                 {" "}
-                <span className="text-base md:text-lg tracking-[0.3em] uppercase text-clay mb-6 block">
-                  The Rise of Online Sound Baths{" "}
+                <span className="text-lg md:text-xl lg:text-2xl tracking-[0.3em] uppercase text-clay mb-6 block">
+                  The Rise of Online Sound Baths
                 </span>
-                <h2 className="font-serif text-3xl md:text-4xl font-light mb-8 leading-tight max-w-[13ch]">
+                <h2 className="font-serif text-2xl md:text-3xl font-light mb-8 leading-tight max-w-[13ch]">
                   Felt deeply, even from your desk
                 </h2>
                 <div className="space-y-6 body-text">
