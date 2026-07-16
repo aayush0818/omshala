@@ -6,14 +6,7 @@ const TEXT = "#D8C6B7";
 const DIVIDER = "#4A4A4A";
 
 const Arrow = () => (
-  <svg
-    width="56"
-    height="14"
-    viewBox="0 0 56 14"
-    fill="none"
-    aria-hidden
-    style={{ color: TEXT }}
-  >
+  <svg width="56" height="14" viewBox="0 0 56 14" fill="none" aria-hidden style={{ color: TEXT }}>
     <line x1="0" y1="7" x2="52" y2="7" stroke="currentColor" strokeWidth="1" />
     <polyline
       points="44,1 54,7 44,13"
@@ -26,17 +19,7 @@ const Arrow = () => (
   </svg>
 );
 
-const Panel = ({
-  to,
-  w1,
-  w2,
-  label,
-}: {
-  to: string;
-  w1: string;
-  w2: string;
-  label: string;
-}) => (
+const Panel = ({ to, w1, w2, label }: { to: string; w1: string; w2: string; label: string }) => (
   <Link
     to={to}
     aria-label={label}
@@ -66,10 +49,7 @@ const HeroGateway = () => {
       style={{ height: "100vh", minHeight: "100dvh" }}
     >
       {/* Hero */}
-      <div
-        className="flex flex-col items-center justify-center px-6"
-        style={{ background: HERO_BG }}
-      >
+      <div className="flex flex-col items-center justify-center px-6" style={{ background: HERO_BG }}>
         <h1
           className="text-center leading-none"
           style={{
@@ -82,8 +62,9 @@ const HeroGateway = () => {
         >
           om shāla
         </h1>
+
         <p
-          className="mt-5 sm:mt-6 md:mt-8 uppercase text-center"
+          className="mt-5 sm:mt-6 md:mt-8 text-center"
           style={{
             color: TEXT,
             fontFamily: '"Montserrat", "Inter", sans-serif',
@@ -92,17 +73,16 @@ const HeroGateway = () => {
             fontSize: "clamp(0.65rem, 1.05vw, 0.9rem)",
           }}
         >
-          Sound Healing Experiences
+          sound healing experiences
         </p>
       </div>
 
       {/* Lower */}
-      <div
-        className="relative grid grid-cols-2"
-        style={{ background: LOWER_BG }}
-      >
+      <div className="relative grid grid-cols-2" style={{ background: LOWER_BG }}>
         <Panel to="/events/public" w1="Corporate" w2="Events" label="Corporate Events" />
+
         <Panel to="/events/private" w1="Private" w2="Events" label="Private Events" />
+
         <div
           className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 pointer-events-none"
           style={{ width: "1px", backgroundColor: DIVIDER }}
