@@ -144,10 +144,11 @@ const EventsPublic = () => {
               <Reveal>
                 <div className="flex flex-col h-full">
                   <span className="text-sm tracking-[0.3em] uppercase text-clay">{"\n"}</span>
-                  <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
-                    Credentials
-                  </h2>
-                  <div className="mt-6 h-px w-16 bg-brand-purple/60" />
+                  <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-clay">
+  Credentials
+</h2>
+
+<div className="mt-6 h-px w-16 bg-clay" />
                   <ul className="mt-8 flex-1 flex flex-col justify-between divide-y divide-foreground/10">
                     {CREDENTIALS.map((c) => (
                       <li key={c} className="py-5 text-sm md:text-[15px] text-foreground/85 leading-relaxed">
@@ -236,11 +237,11 @@ const EventsPublic = () => {
               {benefits.map((b, i) => (
                 <div
                   key={b.text}
-                  className={`group p-8 border border-foreground/10 hover:border-brand-purple/30 hover:bg-muted/20 transition-all duration-500 ${eventsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+                  className="group p-8 border border-foreground/10 hover:border-clay/40 hover:bg-muted/20 transition-all duration-500" ${eventsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-foreground/10 group-hover:border-brand-purple/40 mb-5 transition-colors duration-500">
-                    <b.icon className="w-5 h-5 text-brand-purple" />
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-foreground/10 group-hover:border-clay/40 mb-5 transition-colors duration-500">
+                    <b.icon className="w-5 h-5 text-clay" />
                   </div>
                   <p className="body-text">{b.text}</p>
                 </div>
@@ -266,13 +267,13 @@ const EventsPublic = () => {
 
             <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
               {sessionFlow.map((s) => (
-                <div key={s.title} className="flex gap-5 sm:gap-8">
-                  <div className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center">
-                    <span className="text-3xl sm:text-4xl leading-none text-bone">•</span>
+<div key={s.title} className="flex gap-4 sm:gap-6">
+  <div className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center">
+                    <span className="text-5xl sm:text-6xl leading-none text-bone">•</span>
                   </div>
                   <div className="pt-2 sm:pt-3">
-                    <h3 className="font-serif text-lg sm:text-xl mb-2 sm:mb-3">{s.title}</h3>
-                    <p className="body-text !text-bone">{s.desc}</p>
+                    <h3 className="font-serif text-2xl sm:text-3xl font-light mb-3">
+                   <p className="body-text text-lg !text-bone">
                   </div>
                 </div>
               ))}
@@ -303,7 +304,7 @@ const EventsPublic = () => {
             <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               <div>
                 <span className="text-sm tracking-[0.3em] uppercase text-clay mb-6 block">The Rise of Online Sound Baths</span>
-                <h2 className="font-serif text-3xl md:text-4xl font-light mb-8 leading-tight">
+                <h2 className="font-serif text-3xl md:text-4xl font-light mb-8 leading-tight max-w-[13ch]">
                   Felt deeply, even from your desk
                 </h2>
                 <div className="space-y-6 body-text">
