@@ -98,7 +98,9 @@ const EventsPublic = () => {
           </div>
 
           <div className="container mx-auto px-6 sm:px-10 lg:px-16 pt-12 md:pt-16 pb-14 md:pb-16">
-            <div className={`max-w-2xl transition-all duration-1000 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+            <div
+              className={`max-w-2xl transition-all duration-1000 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+            >
               <div className="w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-brand-purple to-brand-purple/30 mb-6 md:mb-8" />
 
               <span className="text-sm tracking-[0.3em] uppercase text-clay mb-4 md:mb-6 block font-light">
@@ -106,17 +108,18 @@ const EventsPublic = () => {
               </span>
               <h1 className="font-display text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-light leading-[1.15] mb-5 md:mb-6 tracking-tight">
                 Deep Relaxation
-                <span className="block mt-2 text-clay">for High<span className="font-sans">-</span>Performance Teams</span>
+                <span className="block mt-2 text-clay">
+                  for High<span className="font-sans">-</span>Performance Teams
+                </span>
               </h1>
 
               <p className="hero-body max-w-xl">
-                Therapeutic sound immersions known as Sound Baths, designed to reduce mental
-                fatigue, improve focus, and support emotional resilience in the workplace.
+                Therapeutic sound immersions known as Sound Baths, designed to reduce mental fatigue, improve focus, and
+                support emotional resilience in the workplace.
               </p>
 
               <p className="body-quote mt-6 max-w-xl border-l border-brand-purple/40 pl-5">
-                The Mind, is the highest human power and a rejuvenated mind is an optimised
-                human resource.
+                The Mind, is the highest human power and a rejuvenated mind is an optimised human resource.
               </p>
 
               <div className="mt-10">
@@ -145,10 +148,10 @@ const EventsPublic = () => {
                 <div className="flex flex-col h-full">
                   <span className="text-sm tracking-[0.3em] uppercase text-clay">{"\n"}</span>
                   <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-clay">
-  Credentials
-</h2>
+                    Credentials
+                  </h2>
 
-<div className="mt-6 h-px w-16 bg-clay" />
+                  <div className="mt-6 h-px w-16 bg-clay" />
                   <ul className="mt-8 flex-1 flex flex-col justify-between divide-y divide-foreground/10">
                     {CREDENTIALS.map((c) => (
                       <li key={c} className="py-5 text-sm md:text-[15px] text-foreground/85 leading-relaxed">
@@ -192,17 +195,14 @@ const EventsPublic = () => {
                 </Reveal>
                 <Reveal delay={0.1}>
                   <p className="body-text mt-8 max-w-xl">
-                    A therapeutic experience that combines guided breathwork and deep relaxation
-                    techniques in a sound immersion, to help employees and leaders rejuvenate
-                    mentally and access more presence and productivity. Available online, onsite
-                    and for offsite events &amp; retreats.
+                    A therapeutic experience that combines guided breathwork and deep relaxation techniques in a sound
+                    immersion, to help employees and leaders rejuvenate mentally and access more presence and
+                    productivity. Available online, onsite and for offsite events &amp; retreats.
                   </p>
                 </Reveal>
                 <Reveal delay={0.15}>
                   <div className="mt-10">
-                    <span className="text-sm tracking-[0.3em] uppercase text-muted-foreground">
-                      Ideal For
-                    </span>
+                    <span className="text-sm tracking-[0.3em] uppercase text-muted-foreground">Ideal For</span>
                     <ul className="mt-5 space-y-4">
                       {[
                         "Leadership teams and decision-makers",
@@ -228,7 +228,9 @@ const EventsPublic = () => {
           <div className="absolute top-1/4 left-1/4 w-48 h-48 bg-brand-purple/5 rounded-full blur-[40px] animate-float" />
 
           <div className="container mx-auto px-6">
-            <div className={`text-center mb-16 transition-all duration-700 ${eventsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+            <div
+              className={`text-center mb-16 transition-all duration-700 ${eventsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+            >
               <h2 className="font-serif text-4xl md:text-5xl font-light">Benefits for the team</h2>
               <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto" />
             </div>
@@ -237,7 +239,9 @@ const EventsPublic = () => {
               {benefits.map((b, i) => (
                 <div
                   key={b.text}
-                  className="group p-8 border border-foreground/10 hover:border-clay/40 hover:bg-muted/20 transition-all duration-500" ${eventsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+                  className={`group p-8 border border-foreground/10 hover:border-clay/40 hover:bg-muted/20 transition-all duration-500 ${
+                    eventsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+                  }`}
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-foreground/10 group-hover:border-clay/40 mb-5 transition-colors duration-500">
@@ -253,27 +257,28 @@ const EventsPublic = () => {
         {/* How a Session Works */}
         <section className="py-20 md:py-40 bg-gradient-purple-immersive text-bone relative overflow-hidden">
           <div className="absolute top-20 -right-32 w-64 h-64 rounded-full border border-bone/5 animate-pulse-soft" />
-          <div className="absolute bottom-20 -left-32 w-96 h-96 rounded-full border border-bone/5 animate-pulse-soft" style={{ animationDelay: "2s" }} />
+          <div
+            className="absolute bottom-20 -left-32 w-96 h-96 rounded-full border border-bone/5 animate-pulse-soft"
+            style={{ animationDelay: "2s" }}
+          />
           <div className="absolute top-1/4 right-1/4 w-48 h-48 bg-brand-purple/10 rounded-full blur-[40px] animate-float" />
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-20">
               <span className="text-sm tracking-[0.3em] uppercase text-ash">How a Session Works</span>
-              <h2 className="mt-6 font-serif text-4xl md:text-5xl font-light">
-                Fully guided. Accessible to everyone.
-              </h2>
+              <h2 className="mt-6 font-serif text-4xl md:text-5xl font-light">Fully guided. Accessible to everyone.</h2>
               <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto" />
             </div>
 
             <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
               {sessionFlow.map((s) => (
-<div key={s.title} className="flex gap-4 sm:gap-6">
-  <div className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center">
+                <div key={s.title} className="flex gap-4 sm:gap-6">
+                  <div className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center">
                     <span className="text-5xl sm:text-6xl leading-none text-bone">•</span>
                   </div>
                   <div className="pt-2 sm:pt-3">
-                    <h3 className="font-serif text-2xl sm:text-3xl font-light mb-3">
-                   <p className="body-text text-lg !text-bone">
+                    <h3 className="font-serif text-2xl sm:text-3xl font-light mb-3">{s.title}</h3>
+                    <p className="body-text text-lg !text-bone">{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -303,24 +308,26 @@ const EventsPublic = () => {
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               <div>
-                <span className="text-sm tracking-[0.3em] uppercase text-clay mb-6 block">The Rise of Online Sound Baths</span>
+                <span className="text-sm tracking-[0.3em] uppercase text-clay mb-6 block">
+                  The Rise of Online Sound Baths
+                </span>
                 <h2 className="font-serif text-3xl md:text-4xl font-light mb-8 leading-tight max-w-[13ch]">
                   Felt deeply, even from your desk
                 </h2>
                 <div className="space-y-6 body-text">
                   <p>
-                    Online sound healing is increasingly preferred for corporate wellness because of
-                    the ease of organising, accessibility and time efficiency. Participants can
-                    experience it from their desk, or from bed when working from home.
+                    Online sound healing is increasingly preferred for corporate wellness because of the ease of
+                    organising, accessibility and time efficiency. Participants can experience it from their desk, or
+                    from bed when working from home.
                   </p>
                   <p>
-                    Sound frequencies enter the ear and alter brain waves, which signal the nervous
-                    system to shift into deep relaxation. Anything we "feel" in the body is often a
-                    configuration in the brain first, and harmonious pure tones create real feelings
-                    of peace and positivity, even when experienced online.
+                    Sound frequencies enter the ear and alter brain waves, which signal the nervous system to shift into
+                    deep relaxation. Anything we "feel" in the body is often a configuration in the brain first, and
+                    harmonious pure tones create real feelings of peace and positivity, even when experienced online.
                   </p>
                   <p>
-                    In an Om Shala experience, the crystal singing bowls are tuned to <span className="text-clay">435 Hz</span>
+                    In an Om Shala experience, the crystal singing bowls are tuned to{" "}
+                    <span className="text-clay">435 Hz</span>
                     {", "}the frequency of nature, deeply healing for the mind to sync with.
                   </p>
                 </div>
@@ -332,12 +339,12 @@ const EventsPublic = () => {
                   <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-brand-purple/30" />
                   <h3 className="text-sm tracking-[0.2em] uppercase text-muted-foreground mb-6">The Setup</h3>
                   <p className="body-text mb-6">
-                    Om Shala uses a high-quality professional sound recording system to transmit the
-                    subtle microtones of the singing bowls with utmost clarity and precision.
+                    Om Shala uses a high-quality professional sound recording system to transmit the subtle microtones
+                    of the singing bowls with utmost clarity and precision.
                   </p>
                   <p className="body-text">
-                    All you need from your end is a calm ambience and earphones / headphones for your
-                    participants, or a stereo system for a room full of people.
+                    All you need from your end is a calm ambience and earphones / headphones for your participants, or a
+                    stereo system for a room full of people.
                   </p>
                 </div>
 
@@ -356,7 +363,10 @@ const EventsPublic = () => {
         </section>
 
         {/* Booking */}
-        <section id="enquire" className="py-20 md:py-40 bg-gradient-to-b from-brand-purple to-brand-purple-deep text-bone relative overflow-hidden">
+        <section
+          id="enquire"
+          className="py-20 md:py-40 bg-gradient-to-b from-brand-purple to-brand-purple-deep text-bone relative overflow-hidden"
+        >
           <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-bone/5 rounded-full blur-[150px] animate-pulse-soft" />
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
@@ -368,16 +378,24 @@ const EventsPublic = () => {
                 Sessions can be customised based on your organisation's needs:
               </p>
               <ul className="text-bone space-y-3 max-w-xl mx-auto mb-12 text-left">
-                <li className="flex gap-3"><span className="text-bone">·</span> Online or in-person</li>
-                <li className="flex gap-3"><span className="text-bone">·</span> Small teams or large groups</li>
-                <li className="flex gap-3"><span className="text-bone">·</span> One-time sessions or ongoing programs for sustained corporate wellness</li>
-                <li className="flex gap-3"><span className="text-bone">·</span> Sessions can also be positioned as part of leadership development or performance optimisation programs</li>
+                <li className="flex gap-3">
+                  <span className="text-bone">·</span> Online or in-person
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-bone">·</span> Small teams or large groups
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-bone">·</span> One-time sessions or ongoing programs for sustained corporate
+                  wellness
+                </li>
+                <li className="flex gap-3">
+                  <span className="text-bone">·</span> Sessions can also be positioned as part of leadership development
+                  or performance optimisation programs
+                </li>
               </ul>
 
               <div className="flex flex-col items-center gap-4">
-                <span className="text-[11px] tracking-[0.3em] uppercase text-bone/70">
-                  Schedule a Consultation
-                </span>
+                <span className="text-[11px] tracking-[0.3em] uppercase text-bone/70">Schedule a Consultation</span>
                 <a
                   href="https://wa.me/917400361681?text=Hi%2C%20I%20wanted%20to%20enquire%20about%20Corporate%20Events."
                   target="_blank"
