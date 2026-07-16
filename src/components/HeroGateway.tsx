@@ -36,6 +36,7 @@ const Panel = ({ to, w1, w2, label }: { to: string; w1: string; w2: string; labe
       <span className="block">{w1}</span>
       <span className="block">{w2}</span>
     </h2>
+
     <div className="mt-8 sm:mt-10 md:mt-14">
       <Arrow />
     </div>
@@ -55,8 +56,8 @@ const HeroGateway = () => {
           style={{
             color: TEXT,
             fontFamily: '"Cormorant Garamond", Georgia, serif',
-            fontWeight: 300,
-            fontSize: "clamp(3.5rem, 10vw, 9rem)",
+            fontWeight: 400,
+            fontSize: "clamp(4rem, 10.5vw, 9.5rem)",
             letterSpacing: "-0.01em",
           }}
         >
@@ -64,13 +65,13 @@ const HeroGateway = () => {
         </h1>
 
         <p
-          className="mt-5 sm:mt-6 md:mt-8 text-center"
+          className="mt-3 sm:mt-4 md:mt-5 text-center"
           style={{
             color: TEXT,
             fontFamily: '"Montserrat", "Inter", sans-serif',
             fontWeight: 300,
-            letterSpacing: "0.32em",
-            fontSize: "clamp(0.65rem, 1.05vw, 0.9rem)",
+            letterSpacing: "0.12em",
+            fontSize: "clamp(0.9rem, 1.15vw, 1.15rem)",
           }}
         >
           sound healing experiences
@@ -85,7 +86,10 @@ const HeroGateway = () => {
 
         <div
           className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 pointer-events-none"
-          style={{ width: "1px", backgroundColor: DIVIDER }}
+          style={{
+            width: "1px",
+            backgroundColor: DIVIDER,
+          }}
           aria-hidden
         />
       </div>
