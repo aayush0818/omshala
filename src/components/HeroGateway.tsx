@@ -43,7 +43,7 @@ const Panel = ({
     className="flex flex-col items-center justify-center px-6 h-full w-full transition-opacity duration-500 hover:opacity-80"
   >
     <h2
-      className="uppercase text-center leading-[1.1] tracking-[0.04em] text-[1.9rem] sm:text-[2.75rem] md:text-[3.5rem] lg:text-[4.25rem]"
+      className="uppercase text-center leading-[1.1] tracking-[0.04em] text-[1.9rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] xl:text-[5.5rem]"
       style={{
         color: TEXT,
         fontFamily: '"Cormorant Garamond", Georgia, serif',
