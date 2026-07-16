@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "@/assets/omshala-wordmark-transparent.png";
+import logo from "../assets/omshala-wordmark-transparent.png";
 
 const HERO_BG = "#322E4F";
 const LOWER_BG = "#0E0D12";
