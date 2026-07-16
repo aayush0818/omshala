@@ -29,7 +29,7 @@ const Panel = ({ to, w1, w2, label }: { to: string; w1: string; w2: string; labe
       className="w-full min-w-0 uppercase text-center leading-[1.1] tracking-[0.04em] text-[1.75rem] sm:text-[2.25rem] md:text-[2.9rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4.5rem]"
       style={{
         color: TEXT,
-        fontFamily: '"Cormorant Garamond", Georgia, serif',
+        fontFamily: '"Playfair Display", Georgia, serif',
         fontWeight: 400,
       }}
     >
