@@ -272,7 +272,7 @@ const EventsPublic = () => {
                   </div>
                   <div className="pt-2 sm:pt-3">
                     <h3 className="font-serif text-lg sm:text-xl mb-2 sm:mb-3">{s.title}</h3>
-                    <p className="body-text text-bone/85">{s.desc}</p>
+                    <p className="body-text text-bone">{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -363,14 +363,14 @@ const EventsPublic = () => {
               <h2 className="font-serif text-3xl md:text-4xl font-light mb-8 text-bone">
                 Customised to your organisation
               </h2>
-              <p className="text-bone/80 max-w-xl mx-auto mb-8 leading-relaxed">
+              <p className="text-bone max-w-xl mx-auto mb-8 leading-relaxed">
                 Sessions can be customised based on your organisation's needs:
               </p>
-              <ul className="text-bone/80 space-y-3 max-w-xl mx-auto mb-12 text-left">
-                <li className="flex gap-3"><span className="text-bone/60">·</span> Online or in-person</li>
-                <li className="flex gap-3"><span className="text-bone/60">·</span> Small teams or large groups</li>
-                <li className="flex gap-3"><span className="text-bone/60">·</span> One-time sessions or ongoing programs for sustained corporate wellness</li>
-                <li className="flex gap-3"><span className="text-bone/60">·</span> Sessions can also be positioned as part of leadership development or performance optimisation programs</li>
+              <ul className="text-bone space-y-3 max-w-xl mx-auto mb-12 text-left">
+                <li className="flex gap-3"><span className="text-bone">·</span> Online or in-person</li>
+                <li className="flex gap-3"><span className="text-bone">·</span> Small teams or large groups</li>
+                <li className="flex gap-3"><span className="text-bone">·</span> One-time sessions or ongoing programs for sustained corporate wellness</li>
+                <li className="flex gap-3"><span className="text-bone">·</span> Sessions can also be positioned as part of leadership development or performance optimisation programs</li>
               </ul>
 
               <div className="flex flex-col items-center gap-4">
