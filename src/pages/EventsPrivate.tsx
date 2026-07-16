@@ -152,7 +152,7 @@ const EventsPrivate = () => {
                       <p className="font-display text-2xl md:text-3xl lg:text-[2rem] font-light leading-[1.35] text-bone">
                         Sound healing can be experienced seated or laying down in a calm environment.
                       </p>
-                      <p className="text-bone/75 leading-[1.9] text-base md:text-[17px] mt-2">
+                      <p className="text-bone leading-[1.9] text-base md:text-[17px] mt-2">
                         Participants are guided through deep breathing and relaxation techniques to be able to let go and absorb the subtle vibrations of sound.
                       </p>
                     </div>
@@ -162,17 +162,17 @@ const EventsPrivate = () => {
                       <h3 className="font-display text-xl md:text-2xl font-light tracking-tight text-bone">
                         The Crystal Singing Bowls
                       </h3>
-                      <p className="text-bone/75 leading-[1.9] text-base md:text-[17px] mt-2">
+                      <p className="text-bone leading-[1.9] text-base md:text-[17px] mt-2">
                         used are tuned to a healing frequency, <span className="text-clay">435 Hz</span>, and instantly dissolve mental and emotional tensions, sometimes even putting people off to sleep. Ragas are sung live in the Indian classical style, like lullabies for the soul.
                       </p>
                     </div>
 
                     {/* Italicised standalone editorial line */}
                     <div>
-                      <p className="font-display italic text-lg md:text-xl leading-[1.5] text-bone/90">
+                      <p className="font-display italic text-lg md:text-xl leading-[1.5] text-bone">
                         Soothing aromas, soft lighting and cozy pillows and blankets
                       </p>
-                      <p className="text-bone/75 leading-[1.9] text-base md:text-[17px] mt-2">
+                      <p className="text-bone leading-[1.9] text-base md:text-[17px] mt-2">
                         are put together aesthetically, to make this journey truly special and unforgettable.
                       </p>
                     </div>
@@ -210,7 +210,7 @@ const EventsPrivate = () => {
               Let's discuss how we can
               <span className="block italic">organise one for you.</span>
             </h2>
-            <p className="text-bone/80 max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
+            <p className="text-bone max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
               Om Shala has organised beautiful sound healing experiences for weddings, birthdays,
               Diwali parties, women's forums and baby showers.
             </p>
