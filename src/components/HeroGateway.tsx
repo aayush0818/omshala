@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const HERO_BG = "#322E4F";
 const LOWER_BG = "#0E0D12";
-const TEXT = "#D8C6B7";
+const TEXT = "#CEBFB5";
 const DIVIDER = "#4A4A4A";
 
 const Arrow = () => (
