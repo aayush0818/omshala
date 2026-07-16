@@ -308,8 +308,9 @@ const EventsPublic = () => {
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               <div>
-                <span className="text-sm tracking-[0.3em] uppercase text-clay mb-6 block">
-                  The Rise of Online Sound Baths
+                311{" "}
+                <span className="text-base md:text-lg tracking-[0.3em] uppercase text-clay mb-6 block">
+                  312 The Rise of Online Sound Baths 313{" "}
                 </span>
                 <h2 className="font-serif text-3xl md:text-4xl font-light mb-8 leading-tight max-w-[13ch]">
                   Felt deeply, even from your desk
