@@ -232,20 +232,20 @@ const EventsPublic = () => {
               className={`text-center mb-16 transition-all duration-700 ${eventsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
             >
               <h2 className="font-serif text-4xl md:text-5xl font-light">Benefits for the team</h2>
-              <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto" />
+              <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-[#CEBFB5] to-transparent mx-auto" />
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {benefits.map((b, i) => (
                 <div
                   key={b.text}
-                  className={`group p-8 border border-foreground/10 hover:border-clay/40 hover:bg-muted/20 transition-all duration-500 ${
+                  className={`group p-8 border border-foreground/10 hover:border-[#CEBFB5]/40 hover:bg-muted/20 transition-all duration-500 ${
                     eventsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                   }`}
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-foreground/10 group-hover:border-clay/40 mb-5 transition-colors duration-500">
-                    <b.icon className="w-5 h-5 text-clay" />
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-[#CEBFB5]/20 group-hover:border-[#CEBFB5]/50 mb-5 transition-colors duration-500">
+                    <b.icon className="w-5 h-5 text-[#CEBFB5]" />
                   </div>
                   <p className="body-text">{b.text}</p>
                 </div>
