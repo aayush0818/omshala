@@ -239,15 +239,15 @@ const EventsPublic = () => {
               {benefits.map((b, i) => (
                 <div
                   key={b.text}
-                  className={`group p-8 border border-foreground/10 hover:border-[#CEBFB5]/40 hover:bg-muted/20 transition-all duration-500 ${
+                  className={`group p-8 bg-[#F6F0EA] border border-[#CEBFB5]/20 hover:border-[#CEBFB5]/40 transition-all duration-500 ${
                     eventsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                   }`}
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-[#CEBFB5]/20 group-hover:border-[#CEBFB5]/50 mb-5 transition-colors duration-500">
-                    <b.icon className="w-5 h-5 text-[#CEBFB5]" />
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-[#CEBFB5]/50 group-hover:border-[#CEBFB5]/50 mb-5 transition-colors duration-500">
+                    <b.icon className="w-5 h-5 text-foreground" />
                   </div>
-                  <p className="body-text">{b.text}</p>
+                  <p className="body-text text-foreground">{b.text}</p>
                 </div>
               ))}
             </div>
