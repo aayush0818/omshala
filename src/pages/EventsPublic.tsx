@@ -60,7 +60,7 @@ const sessionFlow = [
 ];
 
 const formats = [
-  { icon: Headphones, title: "Online", desc: "Joinable from desks or home, ideal for distributed teams." },
+  { icon: Headphones, title: "Online", desc: "Accessi-ble from desks or home, ideal for distributed teams." },
   { icon: Building2, title: "On-site", desc: "Hosted at the office or boardroom for in-person teams." },
   { icon: Sparkles, title: "Offsites & retreats", desc: "Designed into leadership offsites and wellbeing retreats." },
 ];
