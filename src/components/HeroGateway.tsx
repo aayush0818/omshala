@@ -27,7 +27,7 @@ const Panel = ({ to, w1, w2, label }: { to: string; w1: string; w2: string; labe
     className="flex flex-col items-center justify-center px-4 sm:px-6 h-full w-full transition-opacity duration-500 hover:opacity-80"
   >
     <h2
-      className="w-full min-w-0 uppercase text-center leading-[1.1] tracking-[0.04em] text-[1.75rem] sm:text-[2.25rem] md:text-[2.9rem] lg:text-[3.5rem] xl:text-[4rem] 2xl:text-[4.5rem]"
+      className="w-full min-w-0 uppercase text-center leading-[1.1] tracking-[0.04em] text-[1.6rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[2.9rem] xl:text-[3.3rem] 2xl:text-[3.7rem]"
       style={{
         color: TEXT,
         fontFamily: '"Passenger Display", "Playfair Display", Georgia, serif',
@@ -52,11 +52,7 @@ const HeroGateway = () => {
     >
       {/* Hero */}
       <div className="flex flex-col items-center justify-center px-6" style={{ background: HERO_BG }}>
-        <img
-          src={wordmark.url}
-          alt="om shāla"
-          className="w-[clamp(16rem,44vw,40rem)] h-auto max-w-full"
-        />
+        <img src={wordmark.url} alt="om shāla" className="w-[clamp(16rem,44vw,40rem)] h-auto max-w-full" />
       </div>
 
       {/* Lower */}
