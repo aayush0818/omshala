@@ -255,7 +255,7 @@ const EventsPublic = () => {
         </section>
 
         {/* How a Session Works */}
-        <section className="py-20 md:py-40 bg-gradient-purple-immersive text-bone relative overflow-hidden">
+        <section className="py-20 md:py-40 bg-[#322E4F] text-bone relative overflow-hidden">
           <div className="absolute top-20 -right-32 w-64 h-64 rounded-full border border-bone/5 animate-pulse-soft" />
           <div
             className="absolute bottom-20 -left-32 w-96 h-96 rounded-full border border-bone/5 animate-pulse-soft"
@@ -277,7 +277,7 @@ const EventsPublic = () => {
                     <span className="text-5xl sm:text-6xl leading-none text-bone">•</span>
                   </div>
                   <div className="pt-2 sm:pt-3">
-                    <h3 className="font-display text-xl sm:text-2xl font-light uppercase tracking-[0.12em] mb-3">
+                    <h3 className="font-display text-xl sm:text-2xl font-normal uppercase tracking-[0.12em] mb-3">
                       {s.title}
                     </h3>
                     <p className="body-text text-base md:text-[17px] !text-bone">{s.desc}</p>
