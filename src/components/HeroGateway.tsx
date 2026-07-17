@@ -24,7 +24,7 @@ const Panel = ({ to, w1, w2, label }: { to: string; w1: string; w2: string; labe
   <Link
     to={to}
     aria-label={label}
-    className="flex flex-col items-center justify-center px-4 sm:px-6 h-full w-full transition-opacity duration-500 hover:opacity-80"
+    className="group flex flex-col items-center justify-center px-4 sm:px-6 h-full w-full transition-opacity duration-500 hover:opacity-90"
   >
     <h2
       className="w-full min-w-0 uppercase text-center leading-[1.1] tracking-[0.04em] text-[1.6rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[2.9rem] xl:text-[3.3rem] 2xl:text-[3.7rem]"
@@ -38,7 +38,7 @@ const Panel = ({ to, w1, w2, label }: { to: string; w1: string; w2: string; labe
       <span className="block">{w2}</span>
     </h2>
 
-    <div className="mt-8 sm:mt-10 md:mt-14">
+    <div className="mt-8 sm:mt-10 md:mt-14 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-2">
       <Arrow />
     </div>
   </Link>
