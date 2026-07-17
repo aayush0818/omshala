@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import wordmark from "@/assets/omshala-wordmark-transparent.png.asset.json";
 
 const HERO_BG = "#322E4F";
 const LOWER_BG = "#0E0D12";
@@ -51,31 +52,11 @@ const HeroGateway = () => {
     >
       {/* Hero */}
       <div className="flex flex-col items-center justify-center px-6" style={{ background: HERO_BG }}>
-        <h1
-          className="text-center leading-none"
-          style={{
-            color: TEXT,
-            fontFamily: '"Passenger Display", "Playfair Display", Georgia, serif',
-            fontWeight: 400,
-            fontSize: "clamp(4rem, 10.5vw, 9.5rem)",
-            letterSpacing: "-0.01em",
-          }}
-        >
-          om shāla
-        </h1>
-
-        <p
-          className="mt-3 sm:mt-4 md:mt-5 text-center"
-          style={{
-            color: TEXT,
-            fontFamily: '"Montserrat", "Inter", sans-serif',
-            fontWeight: 300,
-            letterSpacing: "0.12em",
-            fontSize: "clamp(0.9rem, 1.15vw, 1.15rem)",
-          }}
-        >
-          sound healing experiences
-        </p>
+        <img
+          src={wordmark.url}
+          alt="om shāla"
+          className="w-[clamp(16rem,44vw,40rem)] h-auto max-w-full"
+        />
       </div>
 
       {/* Lower */}
