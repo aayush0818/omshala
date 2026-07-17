@@ -314,7 +314,7 @@ const EventsPublic = () => {
                 <span className="text-lg md:text-xl lg:text-2xl tracking-[0.3em] uppercase text-clay mb-6 block">
                   The Rise of Online Sound Baths
                 </span>
-                <h2 className="font-serif text-2xl md:text-3xl font-light mb-8 leading-tight max-w-[13ch]">
+                <h2 className="font-serif text-2xl md:text-3xl font-light mb-8 leading-tight">
                   Felt deeply, even from your desk
                 </h2>
                 <div className="space-y-6 body-text">
