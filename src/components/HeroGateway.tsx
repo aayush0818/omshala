@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import wordmark from "@/assets/omshala-wordmark-transparent.png.asset.json";
 
 const HERO_BG = "#322E4F";
 const LOWER_BG = "#0E0D12";
