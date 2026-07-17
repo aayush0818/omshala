@@ -255,7 +255,7 @@ const EventsPublic = () => {
         </section>
 
         {/* How a Session Works */}
-        <section className="py-20 md:py-40 bg-[#322E4F] text-bone relative overflow-hidden">
+        <section className="py-20 md:py-40 bg-[#58527E] text-bone relative overflow-hidden">
           <div className="absolute top-20 -right-32 w-64 h-64 rounded-full border border-bone/5 animate-pulse-soft" />
           <div
             className="absolute bottom-20 -left-32 w-96 h-96 rounded-full border border-bone/5 animate-pulse-soft"
