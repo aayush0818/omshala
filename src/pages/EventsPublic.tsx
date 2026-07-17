@@ -277,7 +277,7 @@ const EventsPublic = () => {
                     <span className="text-5xl sm:text-6xl leading-none text-bone">•</span>
                   </div>
                   <div className="pt-2 sm:pt-3">
-                    <h3 className="font-display text-xl sm:text-2xl font-normal uppercase tracking-[0.12em] mb-3">
+                    <h3 className="body-text text-xl sm:text-2xl font-medium uppercase tracking-[0.08em] mb-3 !text-bone">
                       {s.title}
                     </h3>
                     <p className="body-text text-base md:text-[17px] !text-bone">{s.desc}</p>
