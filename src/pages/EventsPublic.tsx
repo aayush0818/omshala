@@ -99,7 +99,7 @@ const EventsPublic = () => {
 
           <div className="container mx-auto px-6 sm:px-10 lg:px-16 pt-12 md:pt-16 pb-14 md:pb-16">
             <div
-              className={`max-w-3xl transition-all duration-1000 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
+              className={`max-w-2xl transition-all duration-1000 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
             >
               <div className="w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-brand-purple to-brand-purple/30 mb-6 md:mb-8" />
 
@@ -260,7 +260,7 @@ const EventsPublic = () => {
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-20">
-              <span className="t-caption text-bone/70 uppercase tracking-[0.28em]">HOW A SESSION WORKS</span>
+              <span className="t-caption text-clay uppercase tracking-[0.28em]">HOW A SESSION WORKS</span>
 
               <h2 className="mt-6 text-[clamp(2.3rem,7vw,4rem)] leading-tight text-bone">
                 Fully guided. Accessible to everyone.
@@ -278,9 +278,9 @@ const EventsPublic = () => {
                 </div>
 
                 <div className="pt-2 sm:pt-3">
-                  <h3 className="text-xl md:text-2xl font-medium tracking-wide text-bone mb-2">{s.title}</h3>
+                  <h3 className="t-h3 !text-bone mb-3">{s.title}</h3>
 
-                  <p className="t-body leading-relaxed max-w-[32ch] text-bone/90">{s.desc}</p>
+                  <p className="t-body !text-bone">{s.desc}</p>
                 </div>
               </div>
             ))}
@@ -307,13 +307,11 @@ const EventsPublic = () => {
         {/* Online Sound Baths Explainer */}
         <section className="py-20 md:py-40 relative overflow-hidden">
           <div className="container mx-auto px-6">
-            <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
+            <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               <div>
                 {" "}
                 <span className="t-caption text-clay uppercase tracking-[0.28em]">THE RISE OF ONLINE SOUND BATHS</span>
-                <h2 className="mt-6 text-[clamp(2rem,5.8vw,4rem)] leading-none whitespace-nowrap">
-                  Felt deeply, even from your desk
-                </h2>
+                <h2 className="mt-6 text-[clamp(2.2rem,6.8vw,4rem)] leading-tight">Felt deeply, even from your desk</h2>
                 <div className="space-y-6 t-body text-body">
                   <p>
                     Online sound healing is increasingly preferred for corporate wellness because of the ease of
@@ -365,10 +363,10 @@ const EventsPublic = () => {
         {/* Booking */}
         <section id="enquire" className="py-20 md:py-40 bg-black text-[#E7E3DE]">
           <div className="container mx-auto px-6 relative z-10">
-            <div className="max-w-5xl mx-auto text-center">
+            <div className="max-w-3xl mx-auto text-center">
               <span className="t-caption text-[#CEBFB5] uppercase tracking-[0.28em]">BOOKING</span>
 
-              <h2 className="mt-6 text-[clamp(2rem,5.5vw,4rem)] leading-none text-bone whitespace-nowrap">
+              <h2 className="mt-6 text-[clamp(2.2rem,6.5vw,4rem)] leading-tight text-bone">
                 Customised to your organisation
               </h2>
               <p className="t-body text-bone/85 max-w-xl mx-auto mb-8">
