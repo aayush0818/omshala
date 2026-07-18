@@ -184,13 +184,9 @@ const EventsPublic = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="t-caption text-clay uppercase tracking-[0.28em]">
-    WHAT THIS IS
-</span>
+                  <span className="t-caption text-clay uppercase tracking-[0.28em]">WHAT THIS IS</span>
 
-<h2 className="mt-6 t-h1">
-    Sound Baths for Corporate Wellness
-</h2>
+                  <h2 className="mt-6 t-h1">Sound Baths for Corporate Wellness</h2>
                 </Reveal>
                 <Reveal delay={0.1}>
                   <p className="t-body mt-8 max-w-xl text-body">
@@ -264,18 +260,12 @@ const EventsPublic = () => {
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-20">
+              <span className="t-caption text-ash uppercase tracking-[0.28em]">HOW A SESSION WORKS</span>
 
-    <span className="t-caption text-ash uppercase tracking-[0.28em]">
-        HOW A SESSION WORKS
-    </span>
+              <h2 className="mt-6 t-h1 text-bone">Fully guided. Accessible to everyone.</h2>
 
-    <h2 className="mt-6 t-h1 text-bone">
-        Fully guided. Accessible to everyone.
-    </h2>
-
-    <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto" />
-
-</div>
+              <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto" />
+            </div>
             <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto" />
           </div>
 
@@ -319,13 +309,8 @@ const EventsPublic = () => {
             <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               <div>
                 {" "}
-               <span className="t-caption text-clay uppercase tracking-[0.28em]">
-    THE RISE OF ONLINE SOUND BATHS
-</span>
-
-<h2 className="mt-6 t-h1">
-    Felt deeply, even from your desk
-</h2>
+                <span className="t-caption text-clay uppercase tracking-[0.28em]">THE RISE OF ONLINE SOUND BATHS</span>
+                <h2 className="mt-6 t-h1">Felt deeply, even from your desk</h2>
                 <div className="space-y-6 t-body text-body">
                   <p>
                     Online sound healing is increasingly preferred for corporate wellness because of the ease of
@@ -362,9 +347,9 @@ const EventsPublic = () => {
 
                 <div className="mt-8 grid md:grid-cols-3 gap-6">
                   {formats.map((f) => (
-                    <div key={f.title} className="p-8 border border-foreground/10 text-center"
+                    <div key={f.title} className="p-8 border border-foreground/10 text-center">
                       <f.icon className="w-5 h-5 text-brand-purple mx-auto mb-3" />
-                      <h3 className="t-h3 text-foreground mb-3">{f.title}</p>
+                      <h3 className="t-h3 text-foreground mb-3">{f.title}</h3>
                       <p className="t-body text-body mt-3">{f.desc}</p>
                     </div>
                   ))}
@@ -378,13 +363,9 @@ const EventsPublic = () => {
         <section id="enquire" className="py-20 md:py-40 bg-black text-[#E7E3DE]">
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-            <span className="t-caption text-[#CEBFB5] uppercase tracking-[0.28em]">
-    BOOKING
-</span>
+              <span className="t-caption text-[#CEBFB5] uppercase tracking-[0.28em]">BOOKING</span>
 
-<h2 className="mt-6 t-h1 text-bone">
-    Customised to your organisation
-</h2>
+              <h2 className="mt-6 t-h1 text-bone">Customised to your organisation</h2>
               <p className="t-body text-bone/85 max-w-xl mx-auto mb-8">
                 Sessions can be customised based on your organisation's needs:
               </p>
