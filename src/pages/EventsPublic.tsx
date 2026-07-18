@@ -263,7 +263,7 @@ const EventsPublic = () => {
           <div className="absolute top-1/4 right-1/4 w-48 h-48 bg-brand-purple/10 rounded-full blur-[40px] animate-float" />
 
           <div className="container mx-auto px-6 relative z-10">
-            <div className="text-center mb-12">
+            <div className="text-center mb-8">
               <span className="uppercase tracking-[0.28em] font-sans font-medium text-[1.05rem] text-bone/70">
                 HOW A SESSION WORKS
               </span>
