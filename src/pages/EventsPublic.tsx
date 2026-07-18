@@ -184,11 +184,11 @@ const EventsPublic = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="uppercase tracking-[0.28em] font-sans font-medium text-[1.2rem] text-clay">
+                  <span className="uppercase tracking-[0.28em] font-sans font-medium text-[1.05rem] text-clay">
                     WHAT THIS IS
                   </span>
 
-                  <h2 className="mt-6 font-display font-light text-[clamp(1.3rem,4.2vw,4rem)] leading-tight tracking-tight whitespace-nowrap sm:whitespace-normal">
+                  <h2 className="mt-6 font-sans font-medium text-[0.9rem] tracking-[0.1em] uppercase text-foreground">
                     Sound Baths for Corporate Wellness
                   </h2>
                 </Reveal>
