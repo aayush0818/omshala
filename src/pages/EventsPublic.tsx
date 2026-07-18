@@ -184,12 +184,12 @@ const EventsPublic = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="uppercase tracking-[0.28em] font-sans font-medium text-[1.05rem] text-clay">
-                    WHAT THIS IS
-                  </span>
+                  <span className="t-caption text-clay text-[1.05rem]">WHAT THIS IS</span>
 
-                  <h2 className="mt-6 font-sans font-medium text-[0.8rem] tracking-[0.1em] uppercase text-foreground whitespace-nowrap">
-                    Sound Baths for Corporate Wellness
+                  <h2 className="mt-6 font-serif text-[0.8rem] tracking-tight leading-tight text-foreground">
+                    Sound Baths
+                    <br />
+                    for Corporate Wellness
                   </h2>
                 </Reveal>
                 <Reveal delay={0.1}>
@@ -263,12 +263,10 @@ const EventsPublic = () => {
           <div className="absolute top-1/4 right-1/4 w-48 h-48 bg-brand-purple/10 rounded-full blur-[40px] animate-float" />
 
           <div className="container mx-auto px-6 relative z-10">
-            <div className="text-center mb-8">
-              <span className="uppercase tracking-[0.28em] font-sans font-medium text-[1.05rem] text-bone/70">
-                HOW A SESSION WORKS
-              </span>
+            <div className="text-center mb-12">
+              <span className="t-caption text-bone/70 text-[1.05rem]">HOW A SESSION WORKS</span>
 
-              <h2 className="mt-6 font-sans font-medium text-[0.9rem] tracking-[0.1em] uppercase text-bone">
+              <h2 className="mt-6 font-serif tracking-tight text-[0.9rem] leading-tight text-bone">
                 Fully guided. Accessible to everyone.
               </h2>
 
@@ -372,9 +370,9 @@ const EventsPublic = () => {
         <section id="enquire" className="py-20 md:py-40 bg-black text-[#E7E3DE]">
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <span className="t-caption text-[#CEBFB5] uppercase tracking-[0.28em]">BOOKING</span>
+              <span className="t-caption text-[#CEBFB5] text-[1.05rem]">BOOKING</span>
 
-              <h2 className="mt-6 mb-6 font-sans font-medium text-[0.9rem] tracking-[0.1em] uppercase text-bone whitespace-nowrap sm:whitespace-normal">
+              <h2 className="mt-6 mb-6 font-serif tracking-tight text-[0.9rem] leading-tight text-bone whitespace-nowrap sm:whitespace-normal">
                 Customised to your organisation
               </h2>
               <p className="text-[1.0625rem] md:text-[1.2rem] font-sans leading-relaxed text-bone/85 max-w-xl mx-auto mb-8">
