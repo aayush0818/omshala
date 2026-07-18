@@ -184,7 +184,7 @@ const EventsPublic = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="uppercase font-sans font-medium tracking-[0.28em] text-clay text-[1.3rem]">
+                  <span className="uppercase font-sans font-medium tracking-[0.20em] text-clay text-[1.1rem]">
                     WHAT THIS IS
                   </span>
 
