@@ -104,9 +104,9 @@ const EventsPublic = () => {
               <div className="w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-brand-purple to-brand-purple/30 mb-6 md:mb-8" />
 
               <span className="t-caption text-clay mb-4 md:mb-6 block">Corporate Wellness</span>
-              <h1 className="text-[clamp(2.2rem,7vw,4.5rem)] leading-tight mb-5 md:mb-6">
+              <h1 className="text-[clamp(1.7rem,5.9vw,4.5rem)] leading-tight mb-5 md:mb-6">
                 Deep Relaxation
-                <span className="block mt-2 text-clay text-[clamp(1.5rem,5.6vw,4.5rem)] leading-tight">
+                <span className="block mt-2 text-clay">
                   for High<span className="font-sans">-</span>Performance Teams
                 </span>
               </h1>
@@ -368,10 +368,10 @@ const EventsPublic = () => {
             <div className="max-w-3xl mx-auto text-center">
               <span className="t-caption text-[#CEBFB5] uppercase tracking-[0.28em]">BOOKING</span>
 
-              <h2 className="mt-6 text-[clamp(1.5rem,5.2vw,3.3rem)] leading-tight text-bone">
+              <h2 className="mt-6 mb-6 text-[clamp(1.5rem,5.2vw,3.3rem)] leading-tight text-bone">
                 Customised to your organisation
               </h2>
-              <p className="t-body text-bone/85 max-w-xl mx-auto mb-8">
+              <p className="text-[1.3rem] md:text-[1.4rem] font-sans leading-relaxed text-bone/85 max-w-xl mx-auto mb-8">
                 Sessions can be customised based on your organisation's needs:
               </p>
               <ul className="t-body text-bone/85 space-y-3 max-w-xl mx-auto mb-12 text-left">
