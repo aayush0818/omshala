@@ -143,6 +143,63 @@
     }
   }
 
+  /* ------------------------------------------------------------------
+     Unified Typography System (Corporate + Private pages)
+     Display = Cormorant Garamond (editorial serif, Light/Regular only)
+     Sans    = Inter
+     One consistent hierarchy across the site.
+     ------------------------------------------------------------------ */
+  .t-h1 {
+    @apply font-display tracking-tight;
+    font-weight: 300;
+    font-size: clamp(2.25rem, 4.2vw, 4rem);      /* ~56–64px desktop */
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .t-h2 {
+    @apply font-display tracking-tight;
+    font-weight: 300;
+    font-size: clamp(1.75rem, 2.6vw, 2.5rem);    /* ~34–40px */
+    line-height: 1.2;
+  }
+  .t-h3 {
+    @apply font-sans;
+    font-weight: 600;
+    font-size: clamp(1.25rem, 1.6vw, 1.5rem);    /* ~22–26px */
+    line-height: 1.35;
+    letter-spacing: 0;
+  }
+  .t-body {
+    @apply font-sans;
+    font-weight: 400;
+    font-size: 1.125rem;                          /* 18px */
+    line-height: 1.75;
+  }
+  .t-small {
+    @apply font-sans;
+    font-weight: 400;
+    font-size: 1rem;                              /* 16px */
+    line-height: 1.65;
+  }
+  .t-caption {
+    @apply font-sans uppercase;
+    font-weight: 500;
+    font-size: 0.8125rem;                         /* 13–14px */
+    letter-spacing: 0.28em;
+    line-height: 1.4;
+  }
+  .t-btn {
+    @apply font-sans;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    letter-spacing: 0.04em;
+  }
+  .t-nav {
+    @apply font-sans;
+    font-weight: 500;
+    font-size: 0.9375rem;
+  }
+
 
   .body-quote {
     @apply font-serif italic text-body leading-[1.75];

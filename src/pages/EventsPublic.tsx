@@ -103,29 +103,29 @@ const EventsPublic = () => {
             >
               <div className="w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-brand-purple to-brand-purple/30 mb-6 md:mb-8" />
 
-              <span className="text-sm tracking-[0.3em] uppercase text-clay mb-4 md:mb-6 block font-light">
+              <span className="t-caption text-clay mb-4 md:mb-6 block">
                 Corporate Wellness
               </span>
-              <h1 className="font-display text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-light leading-[1.15] mb-5 md:mb-6 tracking-tight">
+              <h1 className="t-h1 mb-5 md:mb-6">
                 Deep Relaxation
                 <span className="block mt-2 text-clay">
                   for High<span className="font-sans">-</span>Performance Teams
                 </span>
               </h1>
 
-              <p className="hero-body max-w-xl">
+              <p className="t-body max-w-xl text-body">
                 Therapeutic sound immersions known as Sound Baths, designed to reduce mental fatigue, improve focus, and
                 support emotional resilience in the workplace.
               </p>
 
-              <p className="body-quote mt-6 max-w-xl border-l border-brand-purple/40 pl-5">
+              <p className="t-body italic mt-6 max-w-xl border-l border-brand-purple/40 pl-5 text-body">
                 The Mind, is the highest human power and a rejuvenated mind is an optimised human resource.
               </p>
 
               <div className="mt-10">
                 <a
                   href="#enquire"
-                  className="group relative inline-block w-auto text-center px-8 sm:px-10 py-4 bg-foreground text-background text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl"
+                  className="group relative inline-block w-auto text-center px-8 sm:px-10 py-4 bg-foreground text-background t-btn overflow-hidden transition-all duration-500 hover:shadow-2xl"
                 >
                   <span className="relative z-10 group-hover:text-background transition-colors duration-500">
                     Enquire for Corporate Sessions
@@ -141,20 +141,20 @@ const EventsPublic = () => {
         <AboutSection />
 
         {/* Credentials — editorial list + video */}
-        <section className="py-24 md:py-32 relative overflow-hidden border-t border-foreground/5">
+        <section className="py-24 md:py-32 relative overflow-hidden bg-charcoal text-bone/85">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
               <Reveal>
                 <div className="flex flex-col h-full">
-                  <span className="text-sm tracking-[0.3em] uppercase text-clay">{"\n"}</span>
-                  <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-clay">
+                  <span className="t-caption text-bone/60">{"\n"}</span>
+                  <h2 className="mt-4 t-h1 text-bone">
                     Credentials
                   </h2>
 
-                  <div className="mt-6 h-px w-16 bg-clay" />
-                  <ul className="mt-8 flex-1 flex flex-col justify-between divide-y divide-foreground/10">
+                  <div className="mt-6 h-px w-16 bg-bone/40" />
+                  <ul className="mt-8 flex-1 flex flex-col justify-between divide-y divide-bone/15">
                     {CREDENTIALS.map((c) => (
-                      <li key={c} className="py-5 text-sm md:text-[15px] text-foreground/85 leading-relaxed">
+                      <li key={c} className="py-5 t-small text-bone/85">
                         {c}
                       </li>
                     ))}
@@ -188,13 +188,13 @@ const EventsPublic = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="text-sm tracking-[0.3em] uppercase text-clay">What This Is</span>
-                  <h2 className="mt-6 font-serif text-3xl md:text-4xl lg:text-5xl font-light leading-tight">
+                  <span className="t-caption text-clay">What This Is</span>
+                  <h2 className="mt-6 t-h1">
                     Sound Baths for Corporate Wellness
                   </h2>
                 </Reveal>
                 <Reveal delay={0.1}>
-                  <p className="body-text mt-8 max-w-xl">
+                  <p className="t-body mt-8 max-w-xl text-body">
                     A therapeutic experience that combines guided breathwork and deep relaxation techniques in a sound
                     immersion, to help employees and leaders rejuvenate mentally and access more presence and
                     productivity. Available online, onsite and for offsite events &amp; retreats.
@@ -202,14 +202,14 @@ const EventsPublic = () => {
                 </Reveal>
                 <Reveal delay={0.15}>
                   <div className="mt-10">
-                    <span className="text-sm tracking-[0.3em] uppercase text-muted-foreground">Ideal For</span>
+                    <span className="t-caption text-muted-foreground">Ideal For</span>
                     <ul className="mt-5 space-y-4">
                       {[
                         "Leadership teams and decision-makers",
                         "High-performance teams under constant pressure",
                         "Organisations prioritising employee wellbeing and retention",
                       ].map((it) => (
-                        <li key={it} className="flex gap-4 items-start body-text">
+                        <li key={it} className="flex gap-4 items-start t-body text-body">
                           <span className="mt-2 h-px w-6 bg-brand-purple flex-shrink-0" />
                           <span>{it}</span>
                         </li>
@@ -231,7 +231,7 @@ const EventsPublic = () => {
             <div
               className={`text-center mb-16 transition-all duration-700 ${eventsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
             >
-              <h2 className="font-serif text-4xl md:text-5xl font-light">Benefits for the team</h2>
+              <h2 className="t-h1">Benefits for the team</h2>
               <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-[#CEBFB5] to-transparent mx-auto" />
             </div>
 
@@ -247,7 +247,7 @@ const EventsPublic = () => {
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-[#CEBFB5]/50 group-hover:border-[#CEBFB5]/50 mb-5 transition-colors duration-500">
                     <b.icon className="w-5 h-5 text-foreground" />
                   </div>
-                  <p className="body-text text-foreground">{b.text}</p>
+                  <p className="t-body text-foreground">{b.text}</p>
                 </div>
               ))}
             </div>
@@ -265,8 +265,8 @@ const EventsPublic = () => {
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-20">
-              <span className="text-sm tracking-[0.3em] uppercase text-ash">How a Session Works</span>
-              <h2 className="mt-6 font-serif text-4xl md:text-5xl font-light">Fully guided. Accessible to everyone.</h2>
+              <span className="t-caption text-ash">How a Session Works</span>
+              <h2 className="mt-6 t-h1">Fully guided. Accessible to everyone.</h2>
               <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto" />
             </div>
 
@@ -277,10 +277,10 @@ const EventsPublic = () => {
                     <span className="text-5xl sm:text-6xl leading-none text-bone">•</span>
                   </div>
                   <div className="pt-2 sm:pt-3">
-                    <h3 className="font-sans text-[1.35rem] md:text-[1.55rem] font-normal uppercase tracking-[0.04em] leading-[1.2] !text-bone mb-3">
+                    <h3 className="t-h3 !text-bone mb-3">
                       {s.title}
                     </h3>
-                    <p className="body-text text-base md:text-[17px] !text-bone">{s.desc}</p>
+                    <p className="t-body !text-bone">{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -294,7 +294,7 @@ const EventsPublic = () => {
             <div className="max-w-5xl mx-auto">
               <Reveal>
                 <div className="text-center mb-10 md:mb-14">
-                  <h2 className="font-serif text-2xl md:text-4xl font-light leading-tight">Experiences</h2>
+                  <h2 className="t-h1">Experiences</h2>
                   <div className="mt-6 w-12 h-px bg-brand-purple/60 mx-auto" />
                 </div>
               </Reveal>
@@ -311,13 +311,13 @@ const EventsPublic = () => {
             <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               <div>
                 {" "}
-                <span className="text-lg md:text-xl lg:text-2xl tracking-[0.3em] uppercase text-clay mb-6 block">
+                <span className="t-caption text-clay mb-6 block">
                   The Rise of Online Sound Baths
                 </span>
-                <h2 className="font-serif text-2xl md:text-3xl font-light mb-8 leading-tight">
+                <h2 className="t-h1 mb-8">
                   Felt deeply, even from your desk
                 </h2>
-                <div className="space-y-6 body-text">
+                <div className="space-y-6 t-body text-body">
                   <p>
                     Online sound healing is increasingly preferred for corporate wellness because of the ease of
                     organising, accessibility and time efficiency. Participants can experience it from their desk, or
@@ -340,12 +340,12 @@ const EventsPublic = () => {
                 <div className="p-8 border border-foreground/10 relative bg-muted/10">
                   <div className="absolute top-0 left-0 w-6 h-6 border-l-2 border-t-2 border-brand-purple/30" />
                   <div className="absolute bottom-0 right-0 w-6 h-6 border-r-2 border-b-2 border-brand-purple/30" />
-                  <h3 className="text-sm tracking-[0.2em] uppercase text-muted-foreground mb-6">The Setup</h3>
-                  <p className="body-text mb-6">
+                  <h3 className="t-caption text-muted-foreground mb-6">The Setup</h3>
+                  <p className="t-body text-body mb-6">
                     Om Shala uses a high-quality professional sound recording system to transmit the subtle microtones
                     of the singing bowls with utmost clarity and precision.
                   </p>
-                  <p className="body-text">
+                  <p className="t-body text-body">
                     All you need from your end is a calm ambience and earphones / headphones for your participants, or a
                     stereo system for a room full of people.
                   </p>
@@ -355,8 +355,8 @@ const EventsPublic = () => {
                   {formats.map((f) => (
                     <div key={f.title} className="p-5 border border-foreground/10 text-center">
                       <f.icon className="w-5 h-5 text-brand-purple mx-auto mb-3" />
-                      <p className="text-xs tracking-[0.15em] uppercase text-foreground/70">{f.title}</p>
-                      <p className="body-text text-[0.9375rem] mt-2">{f.desc}</p>
+                      <p className="t-h3 text-foreground">{f.title}</p>
+                      <p className="t-small text-body mt-2">{f.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -368,42 +368,41 @@ const EventsPublic = () => {
         {/* Booking */}
         <section
           id="enquire"
-          className="py-20 md:py-40 bg-gradient-to-b from-brand-purple to-brand-purple-deep text-bone relative overflow-hidden"
+          className="py-20 md:py-40 bg-charcoal text-bone/85 relative overflow-hidden"
         >
-          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-bone/5 rounded-full blur-[150px] animate-pulse-soft" />
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <span className="text-sm tracking-[0.3em] uppercase text-bone/70 mb-6 block">Booking</span>
-              <h2 className="font-serif text-3xl md:text-4xl font-light mb-8 text-bone">
+              <span className="t-caption text-bone/60 mb-6 block">Booking</span>
+              <h2 className="t-h1 mb-8 text-bone">
                 Customised to your organisation
               </h2>
-              <p className="text-bone max-w-xl mx-auto mb-8 leading-relaxed">
+              <p className="t-body text-bone/85 max-w-xl mx-auto mb-8">
                 Sessions can be customised based on your organisation's needs:
               </p>
-              <ul className="text-bone space-y-3 max-w-xl mx-auto mb-12 text-left">
+              <ul className="t-body text-bone/85 space-y-3 max-w-xl mx-auto mb-12 text-left">
                 <li className="flex gap-3">
-                  <span className="text-bone">·</span> Online or in-person
+                  <span className="text-bone/70">·</span> Online or in-person
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-bone">·</span> Small teams or large groups
+                  <span className="text-bone/70">·</span> Small teams or large groups
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-bone">·</span> One-time sessions or ongoing programs for sustained corporate
+                  <span className="text-bone/70">·</span> One-time sessions or ongoing programs for sustained corporate
                   wellness
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-bone">·</span> Sessions can also be positioned as part of leadership development
+                  <span className="text-bone/70">·</span> Sessions can also be positioned as part of leadership development
                   or performance optimisation programs
                 </li>
               </ul>
 
               <div className="flex flex-col items-center gap-4">
-                <span className="text-[11px] tracking-[0.3em] uppercase text-bone/70">Schedule a Consultation</span>
+                <span className="t-caption text-bone/60">Schedule a Consultation</span>
                 <a
                   href="https://wa.me/917400361681?text=Hi%2C%20I%20wanted%20to%20enquire%20about%20Corporate%20Events."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 bg-bone text-brand-purple border border-bone text-sm tracking-wide transition-all duration-500 hover:bg-transparent hover:text-bone"
+                  className="group relative inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 bg-bone text-charcoal border border-bone t-btn transition-all duration-500 hover:bg-transparent hover:text-bone"
                 >
                   <span className="relative z-10">WhatsApp · +91 7400361681</span>
                 </a>
