@@ -65,9 +65,8 @@ const EventsPrivate = () => {
             >
               <div className="w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-brand-purple to-brand-purple/30 mb-6 md:mb-8" />
 
-              <h1 className="t-h1 mb-5 md:mb-6">
-                A Souful Way
-                <span className="block mt-2 text-clay">to Gather</span>
+              <h1 className="text-[clamp(1.7rem,5.9vw,4rem)] leading-tight mb-5 md:mb-6">
+                A Souful Way <span className="text-clay">to Gather</span>
               </h1>
               <p className="t-body max-w-xl whitespace-pre-line text-body">
                 More and more people are opting for a mindful way to celebrate or come together&nbsp;for social
@@ -97,15 +96,13 @@ const EventsPrivate = () => {
         <AboutSection />
 
         {/* Credentials — editorial list + video */}
-        <section className="py-24 md:py-32 relative overflow-hidden bg-charcoal text-bone/85">
+        <section className="py-24 md:py-32 relative overflow-hidden bg-black text-[#E7E3DE]">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
               <Reveal>
                 <div className="flex flex-col h-full">
                   <span className="t-caption text-bone/60">{"\n"}</span>
-                  <h2 className="mt-4 t-h1 text-bone">
-                    Credentials
-                  </h2>
+                  <h2 className="mt-4 t-h1 text-clay">Credentials</h2>
                   <div className="mt-6 h-px w-16 bg-bone/40" />
                   <ul className="mt-8 flex-1 flex flex-col justify-between divide-y divide-bone/15">
                     {CREDENTIALS.map((c) => (
@@ -178,7 +175,7 @@ const EventsPrivate = () => {
                     {/* Editorial closing statement */}
                     <div>
                       <p className="t-body text-body">
-                        <span className="italic">
+                        <span className="font-display font-light italic text-[1.75rem] md:text-[2rem] leading-[1.2] text-foreground">
                           Soothing aromas, soft lighting and cozy pillows and blankets
                         </span>{" "}
                         are put together aesthetically, to make this journey truly special and unforgettable.
@@ -208,10 +205,7 @@ const EventsPrivate = () => {
         </section>
 
         {/* CTA */}
-        <section
-          id="enquire"
-          className="py-28 md:py-40 bg-charcoal text-bone/85 relative overflow-hidden"
-        >
+        <section id="enquire" className="py-28 md:py-40 bg-black text-bone/85 relative overflow-hidden">
           <div className="container mx-auto px-6 text-center relative z-10">
             <span className="t-caption text-bone/60 mb-6 block">{"\n"}</span>
             <h2 className="t-h1 mb-8 text-bone">
