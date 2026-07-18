@@ -65,11 +65,11 @@ const EventsPrivate = () => {
             >
               <div className="w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-brand-purple to-brand-purple/30 mb-6 md:mb-8" />
 
-              <h1 className="t-h1 mb-5 md:mb-6">
+              <h1 className="font-display text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl font-light leading-[1.15] mb-5 md:mb-6 tracking-tight">
                 A Souful Way
                 <span className="block mt-2 text-clay">to Gather</span>
               </h1>
-              <p className="t-body max-w-xl whitespace-pre-line text-body">
+              <p className="hero-body max-w-xl whitespace-pre-line">
                 More and more people are opting for a mindful way to celebrate or come together&nbsp;for social
                 gatherings. We live in a stimulated world and Sound Healing has become&nbsp;a meaningful way to pause
                 and connect with one another in an emotionally intimate&nbsp;way, between all the laughter and high
@@ -81,7 +81,7 @@ const EventsPrivate = () => {
               <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                 <a
                   href="#enquire"
-                  className="group relative inline-block w-auto text-center px-8 sm:px-10 py-4 bg-foreground text-background t-btn overflow-hidden transition-all duration-500 hover:shadow-2xl"
+                  className="group relative inline-block w-auto text-center px-8 sm:px-10 py-4 bg-foreground text-background text-sm tracking-wide overflow-hidden transition-all duration-500 hover:shadow-2xl"
                 >
                   <span className="relative z-10 group-hover:text-background transition-colors duration-500">
                     Enquire for Private Events
@@ -97,19 +97,19 @@ const EventsPrivate = () => {
         <AboutSection />
 
         {/* Credentials — editorial list + video */}
-        <section className="py-24 md:py-32 relative overflow-hidden bg-charcoal text-bone/85">
+        <section className="py-24 md:py-32 relative overflow-hidden border-t border-foreground/5">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
               <Reveal>
                 <div className="flex flex-col h-full">
-                  <span className="t-caption text-bone/60">{"\n"}</span>
-                  <h2 className="mt-4 t-h1 text-bone">
+                  <span className="text-sm tracking-[0.3em] uppercase text-clay">{"\n"}</span>
+                  <h2 className="mt-4 font-display text-3xl md:text-4xl lg:text-5xl font-light leading-tight text-clay">
                     Credentials
                   </h2>
-                  <div className="mt-6 h-px w-16 bg-bone/40" />
-                  <ul className="mt-8 flex-1 flex flex-col justify-between divide-y divide-bone/15">
+                  <div className="mt-6 h-px w-16 bg-clay" />
+                  <ul className="mt-8 flex-1 flex flex-col justify-between divide-y divide-foreground/10">
                     {CREDENTIALS.map((c) => (
-                      <li key={c} className="py-5 t-small text-bone/85">
+                      <li key={c} className="py-5 text-sm md:text-[15px] text-foreground/85 leading-relaxed">
                         {c}
                       </li>
                     ))}
@@ -145,7 +145,7 @@ const EventsPrivate = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="t-caption text-clay">The Experience</span>
+                  <span className="text-sm tracking-[0.3em] uppercase text-clay">The Experience</span>
                 </Reveal>
                 <Reveal delay={0.1}>
                   <div className="mt-8 h-px w-16 bg-clay" />
@@ -154,10 +154,10 @@ const EventsPrivate = () => {
                   <div className="mt-10 space-y-6">
                     {/* Editorial lead statement */}
                     <div>
-                      <p className="t-h2 text-foreground">
+                      <p className="font-display text-2xl md:text-3xl lg:text-[2rem] font-light leading-[1.35] text-foreground">
                         Sound healing can be experienced seated or laying down in a calm environment.
                       </p>
-                      <p className="t-body text-body mt-3">
+                      <p className="text-foreground leading-[1.9] text-base md:text-[17px] mt-2">
                         Participants are guided through deep breathing and relaxation techniques to be able to let go
                         and absorb the subtle vibrations of sound.
                       </p>
@@ -165,8 +165,8 @@ const EventsPrivate = () => {
 
                     {/* Editorial heading */}
                     <div>
-                      <p className="t-body text-body">
-                        <span className="font-display font-light text-[1.75rem] md:text-[2rem] leading-[1.2] text-foreground">
+                      <p className="text-foreground leading-[1.9] text-base md:text-[17px]">
+                        <span className="font-display text-2xl md:text-3xl lg:text-[2rem] font-light leading-[1.35] text-foreground">
                           The Crystal Singing Bowls
                         </span>{" "}
                         used are tuned to a healing frequency, <span className="text-clay">435 Hz</span>, and instantly
@@ -177,8 +177,8 @@ const EventsPrivate = () => {
 
                     {/* Editorial closing statement */}
                     <div>
-                      <p className="t-body text-body">
-                        <span className="italic">
+                      <p className="text-foreground leading-[1.9] text-base md:text-[17px]">
+                        <span className="font-display italic text-xl md:text-2xl font-normal leading-[1.5]">
                           Soothing aromas, soft lighting and cozy pillows and blankets
                         </span>{" "}
                         are put together aesthetically, to make this journey truly special and unforgettable.
@@ -196,7 +196,7 @@ const EventsPrivate = () => {
             <div className="max-w-5xl mx-auto">
               <Reveal>
                 <div className="text-center mb-10 md:mb-14">
-                  <h2 className="t-h1">Experiences</h2>
+                  <h2 className="font-serif text-2xl md:text-4xl font-light leading-tight">Experiences</h2>
                   <div className="mt-6 w-12 h-px bg-brand-purple/60 mx-auto" />
                 </div>
               </Reveal>
@@ -210,25 +210,27 @@ const EventsPrivate = () => {
         {/* CTA */}
         <section
           id="enquire"
-          className="py-28 md:py-40 bg-charcoal text-bone/85 relative overflow-hidden"
+          className="py-28 md:py-40 bg-gradient-to-b from-brand-purple to-brand-purple-deep text-bone relative overflow-hidden"
         >
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-bone/5 rounded-full blur-[150px] animate-pulse-soft" />
+
           <div className="container mx-auto px-6 text-center relative z-10">
-            <span className="t-caption text-bone/60 mb-6 block">{"\n"}</span>
-            <h2 className="t-h1 mb-8 text-bone">
+            <span className="text-sm tracking-[0.3em] uppercase text-bone/70 mb-6 block">{"\n"}</span>
+            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-light mb-8 leading-tight text-bone">
               Let's discuss how we can
               <span className="block italic">organise one for you.</span>
             </h2>
-            <p className="t-body text-bone/85 max-w-2xl mx-auto mb-10">
+            <p className="text-bone max-w-2xl mx-auto mb-10 text-lg leading-relaxed">
               Om Shala has organised beautiful sound healing experiences for weddings, birthdays, Diwali parties,
               women's forums and baby showers.
             </p>
             <div className="flex flex-col items-center gap-4">
-              <span className="t-caption text-bone/60">Schedule a Call</span>
+              <span className="text-[11px] tracking-[0.3em] uppercase text-bone/70">Schedule a Call</span>
               <a
                 href="https://wa.me/917400361681?text=Hi%2C%20I%20wanted%20to%20enquire%20about%20Private%20Events."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center gap-2 px-10 py-4 bg-bone text-charcoal border border-bone t-btn overflow-hidden transition-all duration-500 hover:bg-transparent hover:text-bone"
+                className="group relative inline-flex items-center gap-2 px-10 py-4 bg-bone text-brand-purple border border-bone text-sm tracking-wide overflow-hidden transition-all duration-500 hover:bg-transparent hover:text-bone"
               >
                 <span className="relative z-10">WhatsApp +91 74003 61681</span>
               </a>
