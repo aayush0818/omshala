@@ -103,9 +103,7 @@ const EventsPublic = () => {
             >
               <div className="w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-brand-purple to-brand-purple/30 mb-6 md:mb-8" />
 
-              <span className="t-caption text-clay mb-4 md:mb-6 block">
-                Corporate Wellness
-              </span>
+              <span className="t-caption text-clay mb-4 md:mb-6 block">Corporate Wellness</span>
               <h1 className="t-h1 mb-5 md:mb-6">
                 Deep Relaxation
                 <span className="block mt-2 text-clay">
@@ -147,9 +145,7 @@ const EventsPublic = () => {
               <Reveal>
                 <div className="flex flex-col h-full">
                   <span className="t-caption text-bone/60">{"\n"}</span>
-                  <h2 className="mt-4 t-h1 text-[#CEBFB5]">
-                    Credentials
-                  </h2>
+                  <h2 className="mt-4 t-h1 text-[#CEBFB5]">Credentials</h2>
 
                   <div className="mt-6 h-px w-16 bg-bone/40" />
                   <ul className="mt-8 flex-1 flex flex-col justify-between divide-y divide-bone/15">
@@ -188,13 +184,9 @@ const EventsPublic = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <h2 className="t-h1 text-clay">
-    WHAT THIS IS
-</h2>
+                  <h2 className="t-h1 text-clay">WHAT THIS IS</h2>
 
-<h3 className="mt-6 t-h2">
-    Sound Baths for Corporate Wellness
-</h3>
+                  <h3 className="mt-6 t-h2">Sound Baths for Corporate Wellness</h3>
                 </Reveal>
                 <Reveal delay={0.1}>
                   <p className="t-body mt-8 max-w-xl text-body">
@@ -267,31 +259,26 @@ const EventsPublic = () => {
           <div className="absolute top-1/4 right-1/4 w-48 h-48 bg-brand-purple/10 rounded-full blur-[40px] animate-float" />
 
           <div className="container mx-auto px-6 relative z-10">
-            <h2 className="t-h1 text-bone">
-    HOW A SESSION WORKS
-</h2>
+            <h2 className="t-h1 text-bone">HOW A SESSION WORKS</h2>
 
-<h3 className="mt-6 t-h2 text-bone">
-    Fully guided. Accessible to everyone.
-</h3>
-              <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto" />
-            </div>
+            <h3 className="mt-6 t-h2 text-bone">Fully guided. Accessible to everyone.</h3>
+            <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto" />
+          </div>
 
-            <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
-              {sessionFlow.map((s) => (
-                <div key={s.title} className="flex gap-4 sm:gap-6">
-                  <div className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center">
-                    <span className="text-5xl sm:text-6xl leading-none text-bone">•</span>
-                  </div>
-                  <div className="pt-2 sm:pt-3">
-                    <h3 className="t-h3 !text-bone mb-3">
-                      {s.title}
-                    </h3>
-                    <p className="t-body !text-bone">{s.desc}</p>
-                  </div>
+          <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
+            {sessionFlow.map((s) => (
+              <div key={s.title} className="flex gap-4 sm:gap-6">
+                <div className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center">
+                  <span className="text-5xl sm:text-6xl leading-none text-bone">•</span>
                 </div>
-              ))}
-            </div>
+
+                <div className="pt-2 sm:pt-3">
+                  <h3 className="t-h3 !text-bone mb-3">{s.title}</h3>
+
+                  <p className="t-body !text-bone">{s.desc}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -318,13 +305,8 @@ const EventsPublic = () => {
             <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               <div>
                 {" "}
-                <h2 className="t-h1 text-clay whitespace-nowrap">
-    THE RISE OF ONLINE SOUND BATHS
-</h2>
-
-<h3 className="t-h2 mt-6 whitespace-nowrap">
-    Felt deeply, even from your desk
-</h3>
+                <h2 className="t-h1 text-clay whitespace-nowrap">THE RISE OF ONLINE SOUND BATHS</h2>
+                <h3 className="t-h2 mt-6 whitespace-nowrap">Felt deeply, even from your desk</h3>
                 <div className="space-y-6 t-body text-body">
                   <p>
                     Online sound healing is increasingly preferred for corporate wellness because of the ease of
@@ -374,19 +356,12 @@ const EventsPublic = () => {
         </section>
 
         {/* Booking */}
-        <section
-          id="enquire"
-          className="py-20 md:py-40 bg-black text-[#E7E3DE]"
-        >
+        <section id="enquire" className="py-20 md:py-40 bg-black text-[#E7E3DE]">
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="t-h1 text-[#CEBFB5]">
-    BOOKING
-</h2>
+              <h2 className="t-h1 text-[#CEBFB5]">BOOKING</h2>
 
-<h3 className="mt-6 t-h2 text-bone">
-    Customised to your organisation
-</h3>
+              <h3 className="mt-6 t-h2 text-bone">Customised to your organisation</h3>
               <p className="t-body text-bone/85 max-w-xl mx-auto mb-8">
                 Sessions can be customised based on your organisation's needs:
               </p>
@@ -402,8 +377,8 @@ const EventsPublic = () => {
                   wellness
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-bone/70">·</span> Sessions can also be positioned as part of leadership development
-                  or performance optimisation programs
+                  <span className="text-bone/70">·</span> Sessions can also be positioned as part of leadership
+                  development or performance optimisation programs
                 </li>
               </ul>
 
