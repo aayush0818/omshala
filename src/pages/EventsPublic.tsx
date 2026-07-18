@@ -184,11 +184,11 @@ const EventsPublic = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="uppercase tracking-[0.28em] font-sans font-medium text-[1.05rem] text-clay">
+                  <span className="uppercase tracking-[0.28em] font-sans font-medium text-[1.2rem] text-clay">
                     WHAT THIS IS
                   </span>
 
-                  <h2 className="mt-6 font-sans font-medium text-[0.9rem] tracking-[0.1em] uppercase text-foreground">
+                  <h2 className="mt-6 font-display font-light text-[clamp(1.3rem,4.2vw,4rem)] leading-tight tracking-tight whitespace-nowrap sm:whitespace-normal">
                     Sound Baths for Corporate Wellness
                   </h2>
                 </Reveal>
@@ -317,7 +317,7 @@ const EventsPublic = () => {
               <div>
                 {" "}
                 <span className="t-caption text-clay uppercase tracking-[0.28em]">THE RISE OF ONLINE SOUND BATHS</span>
-                <h2 className="mt-6 mb-6 font-sans font-medium text-[0.75rem] tracking-[0.1em] uppercase leading-tight">
+                <h2 className="mt-6 mb-6 text-[clamp(1.8rem,5.3vw,3.3rem)] leading-tight">
                   Felt deeply, even from your desk
                 </h2>
                 <div className="space-y-6 t-body text-body">
