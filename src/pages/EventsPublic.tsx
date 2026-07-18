@@ -368,7 +368,7 @@ const EventsPublic = () => {
             <div className="max-w-3xl mx-auto text-center">
               <span className="t-caption text-[#CEBFB5] uppercase tracking-[0.28em]">BOOKING</span>
 
-              <h2 className="mt-6 mb-6 text-[clamp(1.4rem,4.8vw,3.3rem)] leading-tight text-bone whitespace-nowrap sm:whitespace-normal">
+              <h2 className="font-sans mt-6 mb-6 text-[clamp(1.4rem,4.8vw,3.3rem)] leading-tight text-bone whitespace-nowrap sm:whitespace-normal">
                 Customised to your organisation
               </h2>
               <p className="text-[1.0625rem] md:text-[1.2rem] font-sans leading-relaxed text-bone/85 max-w-xl mx-auto mb-8">
