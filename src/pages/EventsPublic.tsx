@@ -184,7 +184,9 @@ const EventsPublic = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="t-caption text-clay text-[6.6rem]">WHAT THIS IS</span>
+                  <span className="uppercase font-sans font-medium tracking-[0.28em] text-clay text-[2.2rem]">
+                    WHAT THIS IS
+                  </span>
 
                   <h2 className="mt-6 font-serif text-[1.6rem] tracking-tight leading-tight text-foreground">
                     Sound Baths
@@ -264,7 +266,9 @@ const EventsPublic = () => {
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-12">
-              <span className="t-caption text-bone/70 text-[2.0rem]">HOW A SESSION WORKS</span>
+              <span className="uppercase font-sans font-medium tracking-[0.28em] text-bone/70 text-[2rem]">
+                HOW A SESSION WORKS
+              </span>
 
               <h2 className="mt-6 font-serif tracking-tight text-[1.6rem] leading-tight text-bone">
                 Fully guided. Accessible to everyone.
@@ -370,7 +374,9 @@ const EventsPublic = () => {
         <section id="enquire" className="py-20 md:py-40 bg-black text-[#E7E3DE]">
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <span className="t-caption text-[#CEBFB5] text-[2.2rem]">BOOKING</span>
+              <span className="uppercase font-sans font-medium tracking-[0.28em] text-[#CEBFB5] text-[2.2rem]">
+                BOOKING
+              </span>
 
               <h2 className="mt-6 mb-6 font-serif tracking-tight text-[clamp(1.4rem,4.8vw,1.6rem)] leading-tight text-bone whitespace-nowrap sm:whitespace-normal">
                 Customised to your organisation
