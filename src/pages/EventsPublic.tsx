@@ -188,7 +188,7 @@ const EventsPublic = () => {
                     WHAT THIS IS
                   </span>
 
-                  <h2 className="mt-6 font-sans font-medium text-[0.9rem] tracking-[0.1em] uppercase text-foreground">
+                  <h2 className="mt-6 font-sans font-medium text-[0.8rem] tracking-[0.1em] uppercase text-foreground whitespace-nowrap">
                     Sound Baths for Corporate Wellness
                   </h2>
                 </Reveal>
