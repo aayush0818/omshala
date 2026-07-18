@@ -53,10 +53,10 @@ const benefits = [
 ];
 
 const sessionFlow = [
-  { title: "Gentle breathwork", desc: "To settle the nervous system." },
-  { title: "Guided relaxation", desc: "To release mental and physical tension." },
-  { title: "Sound immersion", desc: "Using crystal singing bowls that align brain waves." },
-  { title: "Optional voice", desc: "Live Indian classical ragas or mantras, when suitable for the group." },
+  { title: "GENTLE BREATHWORK", desc: "To settle the nervous system." },
+  { title: "GUIDED RELAXATION", desc: "To release mental and physical tension." },
+  { title: "SOUND IMMERSION", desc: "Using crystal singing bowls that align brain waves." },
+  { title: "OPTIONAL VOICE", desc: "Live Indian classical ragas or mantras, when suitable for the group." },
 ];
 
 const formats = [
@@ -141,13 +141,13 @@ const EventsPublic = () => {
         <AboutSection />
 
         {/* Credentials — editorial list + video */}
-        <section className="py-24 md:py-32 relative overflow-hidden bg-charcoal text-bone/85">
+        <section className="py-24 md:py-32 relative overflow-hidden bg-black text-[#E7E3DE]">
           <div className="container mx-auto px-6">
             <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
               <Reveal>
                 <div className="flex flex-col h-full">
                   <span className="t-caption text-bone/60">{"\n"}</span>
-                  <h2 className="mt-4 t-h1 text-bone">
+                  <h2 className="mt-4 t-h1 text-[#CEBFB5]">
                     Credentials
                   </h2>
 
@@ -188,10 +188,13 @@ const EventsPublic = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="t-caption text-clay">What This Is</span>
-                  <h2 className="mt-6 t-h1">
-                    Sound Baths for Corporate Wellness
-                  </h2>
+                  <h2 className="t-h1 text-clay">
+    WHAT THIS IS
+</h2>
+
+<h3 className="mt-6 t-h2">
+    Sound Baths for Corporate Wellness
+</h3>
                 </Reveal>
                 <Reveal delay={0.1}>
                   <p className="t-body mt-8 max-w-xl text-body">
@@ -264,9 +267,13 @@ const EventsPublic = () => {
           <div className="absolute top-1/4 right-1/4 w-48 h-48 bg-brand-purple/10 rounded-full blur-[40px] animate-float" />
 
           <div className="container mx-auto px-6 relative z-10">
-            <div className="text-center mb-20">
-              <span className="t-caption text-ash">How a Session Works</span>
-              <h2 className="mt-6 t-h1">Fully guided. Accessible to everyone.</h2>
+            <h2 className="t-h1 text-bone">
+    HOW A SESSION WORKS
+</h2>
+
+<h3 className="mt-6 t-h2 text-bone">
+    Fully guided. Accessible to everyone.
+</h3>
               <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto" />
             </div>
 
@@ -311,12 +318,13 @@ const EventsPublic = () => {
             <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               <div>
                 {" "}
-                <span className="t-caption text-clay mb-6 block">
-                  The Rise of Online Sound Baths
-                </span>
-                <h2 className="t-h1 mb-8">
-                  Felt deeply, even from your desk
-                </h2>
+                <h2 className="t-h1 text-clay whitespace-nowrap">
+    THE RISE OF ONLINE SOUND BATHS
+</h2>
+
+<h3 className="t-h2 mt-6 whitespace-nowrap">
+    Felt deeply, even from your desk
+</h3>
                 <div className="space-y-6 t-body text-body">
                   <p>
                     Online sound healing is increasingly preferred for corporate wellness because of the ease of
@@ -368,14 +376,17 @@ const EventsPublic = () => {
         {/* Booking */}
         <section
           id="enquire"
-          className="py-20 md:py-40 bg-charcoal text-bone/85 relative overflow-hidden"
+          className="py-20 md:py-40 bg-black text-[#E7E3DE]"
         >
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <span className="t-caption text-bone/60 mb-6 block">Booking</span>
-              <h2 className="t-h1 mb-8 text-bone">
-                Customised to your organisation
-              </h2>
+              <h2 className="t-h1 text-[#CEBFB5]">
+    BOOKING
+</h2>
+
+<h3 className="mt-6 t-h2 text-bone">
+    Customised to your organisation
+</h3>
               <p className="t-body text-bone/85 max-w-xl mx-auto mb-8">
                 Sessions can be customised based on your organisation's needs:
               </p>
