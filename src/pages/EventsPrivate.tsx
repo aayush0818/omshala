@@ -166,10 +166,10 @@ const EventsPrivate = () => {
                     {/* Editorial heading */}
                     <div>
                       <p className="t-body text-body">
-                        <span className="block t-h2 text-foreground mb-3">
+                        <span className="font-display font-light text-[1.75rem] md:text-[2rem] leading-[1.2] text-foreground">
                           The Crystal Singing Bowls
-                        </span>
-                        Used are tuned to a healing frequency, <span className="text-clay">435 Hz</span>, and instantly
+                        </span>{" "}
+                        used are tuned to a healing frequency, <span className="text-clay">435 Hz</span>, and instantly
                         dissolve mental and emotional tensions, sometimes even putting people off to sleep. Ragas are
                         sung live in the Indian classical style, like lullabies for the soul.
                       </p>
