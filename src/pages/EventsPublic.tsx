@@ -184,7 +184,7 @@ const EventsPublic = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="t-caption text-clay text-[2.2rem]">WHAT THIS IS</span>
+                  <span className="t-caption text-clay text-[6.6rem]">WHAT THIS IS</span>
 
                   <h2 className="mt-6 font-serif text-[1.6rem] tracking-tight leading-tight text-foreground">
                     Sound Baths
