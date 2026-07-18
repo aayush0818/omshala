@@ -368,10 +368,10 @@ const EventsPublic = () => {
             <div className="max-w-3xl mx-auto text-center">
               <span className="t-caption text-[#CEBFB5] uppercase tracking-[0.28em]">BOOKING</span>
 
-              <h2 className="mt-6 mb-6 text-[clamp(1.5rem,5.2vw,3.3rem)] leading-tight text-bone">
+              <h2 className="mt-6 mb-6 text-[clamp(1.15rem,4.8vw,3.3rem)] leading-tight text-bone whitespace-nowrap sm:whitespace-normal">
                 Customised to your organisation
               </h2>
-              <p className="text-[1.3rem] md:text-[1.4rem] font-sans leading-relaxed text-bone/85 max-w-xl mx-auto mb-8">
+              <p className="text-[1.0625rem] md:text-[1.2rem] font-sans leading-relaxed text-bone/85 max-w-xl mx-auto mb-8">
                 Sessions can be customised based on your organisation's needs:
               </p>
               <ul className="t-body text-bone/85 space-y-3 max-w-xl mx-auto mb-12 text-left">
