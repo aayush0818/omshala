@@ -184,9 +184,13 @@ const EventsPublic = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="t-caption text-clay uppercase tracking-[0.28em]">WHAT THIS IS</span>
+                  <span className="uppercase tracking-[0.28em] font-sans font-medium text-[1.05rem] text-clay">
+                    WHAT THIS IS
+                  </span>
 
-                  <h2 className="mt-6 t-h1">Sound Baths for Corporate Wellness</h2>
+                  <h2 className="mt-6 font-sans font-medium text-[0.9rem] tracking-[0.1em] uppercase text-foreground">
+                    Sound Baths for Corporate Wellness
+                  </h2>
                 </Reveal>
                 <Reveal delay={0.1}>
                   <p className="t-body mt-8 max-w-xl text-body">
@@ -259,10 +263,12 @@ const EventsPublic = () => {
           <div className="absolute top-1/4 right-1/4 w-48 h-48 bg-brand-purple/10 rounded-full blur-[40px] animate-float" />
 
           <div className="container mx-auto px-6 relative z-10">
-            <div className="text-center mb-20">
-              <span className="t-caption text-bone/70 uppercase tracking-[0.28em]">HOW A SESSION WORKS</span>
+            <div className="text-center mb-12">
+              <span className="uppercase tracking-[0.28em] font-sans font-medium text-[1.05rem] text-bone/70">
+                HOW A SESSION WORKS
+              </span>
 
-              <h2 className="mt-6 text-[clamp(2.3rem,7vw,4rem)] leading-tight text-bone">
+              <h2 className="mt-6 font-sans font-medium text-[0.9rem] tracking-[0.1em] uppercase text-bone">
                 Fully guided. Accessible to everyone.
               </h2>
 
@@ -311,7 +317,7 @@ const EventsPublic = () => {
               <div>
                 {" "}
                 <span className="t-caption text-clay uppercase tracking-[0.28em]">THE RISE OF ONLINE SOUND BATHS</span>
-                <h2 className="mt-6 mb-6 text-[clamp(1.8rem,5.3vw,3.3rem)] leading-tight">
+                <h2 className="mt-6 mb-6 font-sans font-medium text-[0.75rem] tracking-[0.1em] uppercase leading-tight">
                   Felt deeply, even from your desk
                 </h2>
                 <div className="space-y-6 t-body text-body">
@@ -368,7 +374,7 @@ const EventsPublic = () => {
             <div className="max-w-3xl mx-auto text-center">
               <span className="t-caption text-[#CEBFB5] uppercase tracking-[0.28em]">BOOKING</span>
 
-              <h2 className="font-sans mt-6 mb-6 text-[clamp(1.4rem,4.8vw,3.3rem)] leading-tight text-bone whitespace-nowrap sm:whitespace-normal">
+              <h2 className="mt-6 mb-6 font-sans font-medium text-[0.9rem] tracking-[0.1em] uppercase text-bone whitespace-nowrap sm:whitespace-normal">
                 Customised to your organisation
               </h2>
               <p className="text-[1.0625rem] md:text-[1.2rem] font-sans leading-relaxed text-bone/85 max-w-xl mx-auto mb-8">
