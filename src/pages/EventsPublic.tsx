@@ -270,7 +270,7 @@ const EventsPublic = () => {
                 HOW A SESSION WORKS
               </span>
 
-              <h2 className="mt-6 font-serif tracking-tight text-[1.5rem] leading-tight text-bone">
+              <h2 className="mt-6 font-serif tracking-tight text-[1.3rem] leading-tight text-bone">
                 Fully guided. Accessible to everyone.
               </h2>
 
