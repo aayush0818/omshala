@@ -145,7 +145,12 @@ const EventsPublic = () => {
               <Reveal>
                 <div className="flex flex-col h-full">
                   <span className="t-caption text-bone/60">{"\n"}</span>
-                  <h2 className="mt-4 t-h1 text-clay">Credentials</h2>
+                  <h2
+                    className="mt-4 font-display tracking-tight text-clay text-[clamp(2rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+                    style={{ fontWeight: 300 }}
+                  >
+                    Credentials
+                  </h2>
 
                   <div className="mt-6 h-px w-16 bg-bone/40" />
                   <ul className="mt-8 flex-1 flex flex-col justify-between divide-y divide-bone/15">
@@ -184,7 +189,7 @@ const EventsPublic = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="uppercase font-sans font-medium tracking-[0.20em] text-clay text-[1.1rem]">
+                  <span className="uppercase font-sans font-medium tracking-[0.28em] text-clay text-[2.2rem]">
                     WHAT THIS IS
                   </span>
 
@@ -232,23 +237,28 @@ const EventsPublic = () => {
             <div
               className={`text-center mb-16 transition-all duration-700 ${eventsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
             >
-              <h2 className="t-h1">Benefits for the team</h2>
+              <h2
+                className="font-display tracking-tight text-[clamp(2rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+                style={{ fontWeight: 300 }}
+              >
+                Benefits for the team
+              </h2>
               <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-[#CEBFB5] to-transparent mx-auto" />
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
               {benefits.map((b, i) => (
                 <div
                   key={b.text}
-                  className={`group p-8 bg-[#F6F0EA] border border-[#CEBFB5]/20 hover:border-[#CEBFB5]/40 transition-all duration-500 ${
+                  className={`group p-5 bg-[#F6F0EA] border border-[#CEBFB5]/20 hover:border-[#CEBFB5]/40 transition-all duration-500 ${
                     eventsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
                   }`}
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-[#CEBFB5]/50 group-hover:border-[#CEBFB5]/50 mb-5 transition-colors duration-500">
-                    <b.icon className="w-5 h-5 text-foreground" />
+                  <div className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#CEBFB5]/50 group-hover:border-[#CEBFB5]/50 mb-3 transition-colors duration-500">
+                    <b.icon className="w-4 h-4 text-foreground" />
                   </div>
-                  <p className="t-body text-foreground">{b.text}</p>
+                  <p className="t-body text-foreground text-[0.95rem] leading-snug">{b.text}</p>
                 </div>
               ))}
             </div>
@@ -266,11 +276,11 @@ const EventsPublic = () => {
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-12">
-              <span className="uppercase font-sans font-medium tracking-[0.20em] text-bone/70 text-[1.2rem]">
+              <span className="uppercase font-sans font-medium tracking-[0.28em] text-[#4A4A4A] text-[2rem]">
                 HOW A SESSION WORKS
               </span>
 
-              <h2 className="mt-6 font-serif tracking-tight text-[1.3rem] leading-tight text-bone">
+              <h2 className="mt-6 font-serif tracking-tight text-[1.6rem] leading-tight text-bone">
                 Fully guided. Accessible to everyone.
               </h2>
 
@@ -301,7 +311,12 @@ const EventsPublic = () => {
             <div className="max-w-5xl mx-auto">
               <Reveal>
                 <div className="text-center mb-10 md:mb-14">
-                  <h2 className="t-h1">Experiences</h2>
+                  <h2
+                    className="font-display tracking-tight text-[clamp(2rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+                    style={{ fontWeight: 300 }}
+                  >
+                    Experiences
+                  </h2>
                   <div className="mt-6 w-12 h-px bg-brand-purple/60 mx-auto" />
                 </div>
               </Reveal>
@@ -319,7 +334,7 @@ const EventsPublic = () => {
               <div>
                 {" "}
                 <span className="t-caption text-clay uppercase tracking-[0.28em]">THE RISE OF ONLINE SOUND BATHS</span>
-                <h2 className="mt-6 mb-6 text-[clamp(1.5rem,5.3vw,3.3rem)] leading-tight">
+                <h2 className="mt-6 mb-6 text-[clamp(1.8rem,5.3vw,3.3rem)] leading-tight">
                   Felt deeply, even from your desk
                 </h2>
                 <div className="space-y-6 t-body text-body">
@@ -374,14 +389,11 @@ const EventsPublic = () => {
         <section id="enquire" className="py-20 md:py-40 bg-black text-[#E7E3DE]">
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <span className="uppercase font-sans font-medium tracking-[0.20em] text-[#CEBFB5] text-[1.3rem]">
+              <span className="uppercase font-sans font-medium tracking-[0.28em] text-[#CEBFB5] text-[2.2rem]">
                 BOOKING
               </span>
 
-              <h2 className="mt-6 mb-6 font-serif tracking-tight text-[clamp(1.4rem,4.8vw,1.6rem)] leading-tight text-bone whitespace-nowrap sm:whitespace-normal">
-                Customised to your organisation
-              </h2>
-              <p className="text-[1.0625rem] md:text-[1.2rem] font-sans leading-relaxed text-bone/85 max-w-xl mx-auto mb-8">
+              <p className="mt-6 text-[1.0625rem] md:text-[1.2rem] font-sans leading-relaxed text-bone/85 max-w-xl mx-auto mb-8">
                 Sessions can be customised based on your organisation's needs:
               </p>
               <ul className="t-body text-bone/85 space-y-3 max-w-xl mx-auto mb-12 text-left">
