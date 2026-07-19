@@ -306,7 +306,7 @@ const EventsPublic = () => {
         </section>
 
         {/* Experience */}
-        <section className="py-20 md:py-32 relative overflow-hidden">
+        <section className="py-20 md:pt-32 md:pb-12 relative overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="max-w-5xl mx-auto">
               <Reveal>
@@ -342,7 +342,7 @@ const EventsPublic = () => {
         </section>
 
         {/* Online Sound Baths Explainer */}
-        <section className="py-20 md:py-40 relative overflow-hidden">
+        <section className="pt-8 pb-20 md:pt-14 md:pb-40 relative overflow-hidden">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               <div>
