@@ -189,7 +189,7 @@ const EventsPublic = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="uppercase font-sans font-medium tracking-[0.28em] text-clay text-[2.2rem]">
+                  <span className="uppercase font-sans font-medium tracking-[0.20em] text-clay text-[1.1rem]">
                     WHAT THIS IS
                   </span>
 
@@ -276,7 +276,7 @@ const EventsPublic = () => {
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-12">
-              <span className="uppercase font-sans font-medium tracking-[0.28em] text-[#4A4A4A] text-[2rem]">
+              <span className="uppercase font-sans font-medium tracking-[0.20em] text-black text-[1.2rem]">
                 HOW A SESSION WORKS
               </span>
 
@@ -389,7 +389,7 @@ const EventsPublic = () => {
         <section id="enquire" className="py-20 md:py-40 bg-black text-[#E7E3DE]">
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <span className="uppercase font-sans font-medium tracking-[0.28em] text-[#CEBFB5] text-[2.2rem]">
+              <span className="uppercase font-sans font-medium tracking-[0.20em] text-[#CEBFB5] text-[1.3rem]">
                 BOOKING
               </span>
 
