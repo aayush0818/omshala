@@ -323,6 +323,20 @@ const EventsPublic = () => {
               <Reveal delay={0.1}>
                 <ExperienceCarousel items={experienceItems} />
               </Reveal>
+              <Reveal delay={0.2}>
+                <div className="mt-12 flex flex-col items-center gap-3">
+                  <a
+                    href="https://www.instagram.com/omshala.official?igsh=cnBqbTV6bWMyZHBu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Explore more on Om Shala Instagram"
+                    className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-foreground/20 text-foreground hover:text-brand-purple hover:border-brand-purple transition-colors duration-300"
+                  >
+                    <Instagram className="w-5 h-5" />
+                  </a>
+                  <span className="t-caption text-muted-foreground">explore for more</span>
+                </div>
+              </Reveal>
             </div>
           </div>
         </section>
