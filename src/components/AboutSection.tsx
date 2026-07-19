@@ -20,7 +20,7 @@ const AboutSection = () => {
 
           <div className="lg:col-span-7">
             <Reveal delay={0.05}>
-              <span className="text-[13px] tracking-[0.35em] uppercase text-clay">About Om Shala</span>
+              <span className="text-[13px] tracking-[0.35em] uppercase text-clay">FOUNDER OF OM SHALA</span>
             </Reveal>
             <div className="mt-8 space-y-6 text-muted-foreground leading-relaxed max-w-xl">
               <Reveal delay={0.1}>
