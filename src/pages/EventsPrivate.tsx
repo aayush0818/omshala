@@ -147,7 +147,7 @@ const EventsPrivate = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="uppercase tracking-[0.28em] font-sans font-medium text-[1.3rem] text-clay">
+                  <span className="uppercase tracking-[0.28em] font-sans font-medium text-[1.1rem] text-clay">
                     The Experience
                   </span>
                 </Reveal>
