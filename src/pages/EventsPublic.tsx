@@ -319,7 +319,7 @@ const EventsPublic = () => {
               <div>
                 {" "}
                 <span className="t-caption text-clay uppercase tracking-[0.28em]">THE RISE OF ONLINE SOUND BATHS</span>
-                <h2 className="mt-6 mb-6 text-[clamp(1.8rem,5.3vw,3.3rem)] leading-tight">
+                <h2 className="mt-6 mb-6 text-[clamp(1.5rem,5.3vw,3.3rem)] leading-tight">
                   Felt deeply, even from your desk
                 </h2>
                 <div className="space-y-6 t-body text-body">
