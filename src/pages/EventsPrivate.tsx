@@ -102,7 +102,12 @@ const EventsPrivate = () => {
               <Reveal>
                 <div className="flex flex-col h-full">
                   <span className="t-caption text-bone/60">{"\n"}</span>
-                  <h2 className="mt-4 t-h1 text-clay">Credentials</h2>
+                  <h2
+                    className="mt-4 font-display tracking-tight text-clay text-[clamp(2rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+                    style={{ fontWeight: 300 }}
+                  >
+                    Credentials
+                  </h2>
                   <div className="mt-6 h-px w-16 bg-bone/40" />
                   <ul className="mt-8 flex-1 flex flex-col justify-between divide-y divide-bone/15">
                     {CREDENTIALS.map((c) => (
@@ -142,7 +147,7 @@ const EventsPrivate = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="uppercase tracking-[0.28em] font-sans font-medium text-[1.05rem] text-clay">
+                  <span className="uppercase tracking-[0.28em] font-sans font-medium text-[1.3rem] text-clay">
                     The Experience
                   </span>
                 </Reveal>
@@ -153,7 +158,10 @@ const EventsPrivate = () => {
                   <div className="mt-10 space-y-6">
                     {/* Editorial lead statement */}
                     <div>
-                      <p className="t-h2 text-foreground">
+                      <p
+                        className="font-display tracking-tight text-foreground text-[clamp(1.6rem,2.6vw,2.3rem)] leading-[1.2]"
+                        style={{ fontWeight: 300 }}
+                      >
                         Sound healing can be experienced seated or laying down in a calm environment.
                       </p>
                       <p className="t-body text-body mt-3">
@@ -165,7 +173,7 @@ const EventsPrivate = () => {
                     {/* Editorial heading */}
                     <div>
                       <p className="t-body text-body">
-                        <span className="font-display font-light text-[1.75rem] md:text-[2rem] leading-[1.2] text-foreground">
+                        <span className="font-display font-light text-[1.6rem] md:text-[1.85rem] leading-[1.2] text-foreground">
                           The Crystal Singing Bowls
                         </span>{" "}
                         used are tuned to a healing frequency, <span className="text-clay">435 Hz</span>, and instantly
@@ -177,7 +185,7 @@ const EventsPrivate = () => {
                     {/* Editorial closing statement */}
                     <div>
                       <p className="t-body text-body">
-                        <span className="font-display font-light italic text-[1.75rem] md:text-[2rem] leading-[1.2] text-foreground">
+                        <span className="font-display font-light italic text-[1.6rem] md:text-[1.85rem] leading-[1.2] text-foreground">
                           Soothing aromas, soft lighting and cozy pillows and blankets
                         </span>{" "}
                         are put together aesthetically, to make this journey truly special and unforgettable.
@@ -195,7 +203,12 @@ const EventsPrivate = () => {
             <div className="max-w-5xl mx-auto">
               <Reveal>
                 <div className="text-center mb-10 md:mb-14">
-                  <h2 className="t-h1">Experiences</h2>
+                  <h2
+                    className="font-display tracking-tight text-[clamp(2rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+                    style={{ fontWeight: 300 }}
+                  >
+                    Experiences
+                  </h2>
                   <div className="mt-6 w-12 h-px bg-brand-purple/60 mx-auto" />
                 </div>
               </Reveal>
@@ -210,7 +223,10 @@ const EventsPrivate = () => {
         <section id="enquire" className="py-28 md:py-40 bg-black text-bone/85 relative overflow-hidden">
           <div className="container mx-auto px-6 text-center relative z-10">
             <span className="t-caption text-bone/60 mb-6 block">{"\n"}</span>
-            <h2 className="t-h1 mb-8 text-bone">
+            <h2
+              className="mb-8 font-display tracking-tight text-bone text-[clamp(1.9rem,4.2vw,3.47rem)] leading-[1.1] -tracking-[0.01em]"
+              style={{ fontWeight: 300 }}
+            >
               Let's discuss how we can
               <span className="block italic">organise one for you.</span>
             </h2>
