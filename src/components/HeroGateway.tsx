@@ -7,7 +7,7 @@ const TEXT = "#CEBFB5";
 const DIVIDER = "#4A4A4A";
 
 const Arrow = () => (
-  <svg width="56" height="14" viewBox="0 0 56 14" fill="none" aria-hidden style={{ color: TEXT }}>
+  <svg width="42" height="11" viewBox="0 0 56 14" fill="none" aria-hidden style={{ color: TEXT }}> aria-hidden style={{ color: TEXT }}>
     <line x1="0" y1="7" x2="52" y2="7" stroke="currentColor" strokeWidth="1" />
     <polyline
       points="44,1 54,7 44,13"
