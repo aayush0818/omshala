@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Instagram } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
