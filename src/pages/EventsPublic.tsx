@@ -17,7 +17,7 @@ import homeVideoAsset from "@/assets/home-intro.mp4.asset.json";
 import privateVideoAsset from "@/assets/private-carousel.mp4.asset.json";
 import corporateVideoAsset from "@/assets/corporate-experience.mp4.asset.json";
 import exp6 from "@/assets/experience-6.png.asset.json";
-import exp7 from "@/assets/experience-7.png.asset.json";
+
 import exp8 from "@/assets/experience-8.png.asset.json";
 import exp9 from "@/assets/experience-9.png.asset.json";
 import exp10 from "@/assets/experience-10.png.asset.json";
