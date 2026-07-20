@@ -18,13 +18,13 @@ import privateVideoAsset from "@/assets/private-carousel.mp4.asset.json";
 import corporateVideoAsset from "@/assets/corporate-experience.mp4.asset.json";
 import exp6 from "@/assets/experience-6.png.asset.json";
 
-import exp8 from "@/assets/experience-8.png.asset.json";
 import exp9 from "@/assets/experience-9.png.asset.json";
 import exp10 from "@/assets/experience-10.png.asset.json";
 import exp11 from "@/assets/experience-11.png.asset.json";
 import exp12 from "@/assets/experience-12.png.asset.json";
 import exp13 from "@/assets/experience-13.png.asset.json";
 import corporateStageEvent from "@/assets/corporate-stage-event.png.asset.json";
+import outdoorShavasanaGroup from "@/assets/outdoor-shavasana-group.png.asset.json";
 
 const whatThisIsImg = whatThisIsAsset.url;
 const heroImg = heroImgAsset.url;
