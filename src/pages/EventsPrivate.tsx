@@ -24,7 +24,7 @@ const credentialsVideo = homeVideoAsset.url;
 
 const experienceItems: ExperienceItem[] = [
   { type: "image", src: exp14.url, alt: "Candlelit private sound healing session in a Mumbai studio" },
-  { type: "image", src: exp16, alt: "Private candlelit sound bath with skyline view" },
+  { type: "image", src: experienceImg, alt: "Private candlelit sound bath with skyline view" },
   { type: "image", src: exp17.url, alt: "Intimate private setup with crystal singing bowls at dusk" },
   { type: "image", src: exp15.url, alt: "Private outdoor gathering with meditation on the lawn" },
 ];
