@@ -17,13 +17,14 @@ import homeVideoAsset from "@/assets/home-intro.mp4.asset.json";
 import privateVideoAsset from "@/assets/private-carousel.mp4.asset.json";
 import corporateVideoAsset from "@/assets/corporate-experience.mp4.asset.json";
 import exp6 from "@/assets/experience-6.png.asset.json";
-import exp7 from "@/assets/experience-7.png.asset.json";
+
 import exp8 from "@/assets/experience-8.png.asset.json";
 import exp9 from "@/assets/experience-9.png.asset.json";
 import exp10 from "@/assets/experience-10.png.asset.json";
 import exp11 from "@/assets/experience-11.png.asset.json";
 import exp12 from "@/assets/experience-12.png.asset.json";
 import exp13 from "@/assets/experience-13.png.asset.json";
+import corporateStageEvent from "@/assets/corporate-stage-event.png.asset.json";
 
 const whatThisIsImg = whatThisIsAsset.url;
 const heroImg = heroImgAsset.url;
@@ -33,7 +34,7 @@ const credentialsVideo = homeVideoAsset.url;
 const experienceItems: ExperienceItem[] = [
   { type: "video", src: corporateVideoAsset.url, alt: "A moment from a corporate Om Shala sound bath" },
   { type: "image", src: exp6.url, alt: "Crystal singing bowls setup by the lake at sunrise" },
-  { type: "image", src: exp7.url, alt: "Sound bath performance on stage at a corporate event" },
+  { type: "image", src: corporateStageEvent.url, alt: "Sound bath performance on stage at a corporate event" },
   { type: "image", src: exp8.url, alt: "Large group in shavasana at an outdoor wellness event" },
   { type: "image", src: exp9.url, alt: "Om Shala team receiving a Yogathon recognition" },
   { type: "image", src: exp10.url, alt: "Sound healing on stage at a large outdoor yoga gathering" },
