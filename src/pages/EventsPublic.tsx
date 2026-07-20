@@ -194,7 +194,7 @@ const EventsPublic = () => {
                     WHAT THIS IS
                   </span>
 
-                  <h2 className="mt-6 font-serif text-[1.2rem] tracking-tight leading-tight text-foreground">
+                  <h2 className="mt-6 font-serif text-[1.3rem] tracking-tight leading-tight text-foreground">
                     Sound Baths
                     <br />
                     for Corporate Wellness
@@ -281,7 +281,7 @@ const EventsPublic = () => {
                 HOW A SESSION WORKS
               </span>
 
-              <h2 className="mt-6 font-serif tracking-tight text-[1.1rem] leading-tight text-bone">
+              <h2 className="mt-6 font-serif tracking-tight text-[1.2rem] leading-tight text-bone">
                 Fully guided. Accessible to everyone.
               </h2>
 
