@@ -190,11 +190,11 @@ const EventsPublic = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="uppercase font-sans font-medium tracking-[0.20em] text-clay text-[1.2rem]">
+                  <span className="uppercase font-sans font-medium tracking-[0.20em] text-clay text-[1.1rem]">
                     WHAT THIS IS
                   </span>
 
-                  <h2 className="mt-6 font-serif text-[1.4rem] tracking-tight leading-tight text-foreground">
+                  <h2 className="mt-6 font-serif text-[1.2rem] tracking-tight leading-tight text-foreground">
                     Sound Baths
                     <br />
                     for Corporate Wellness
@@ -277,11 +277,11 @@ const EventsPublic = () => {
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-12">
-              <span className="uppercase font-sans font-medium tracking-[0.20em] text-black text-[1.1rem]">
+              <span className="uppercase font-sans font-medium tracking-[0.20em] text-black text-[1.0rem]">
                 HOW A SESSION WORKS
               </span>
 
-              <h2 className="mt-6 font-serif tracking-tight text-[1.3rem] leading-tight text-bone">
+              <h2 className="mt-6 font-serif tracking-tight text-[1.1rem] leading-tight text-bone">
                 Fully guided. Accessible to everyone.
               </h2>
 
@@ -349,7 +349,7 @@ const EventsPublic = () => {
               <div>
                 {" "}
                 <span className="t-caption text-clay uppercase tracking-[0.28em]">THE RISE OF ONLINE SOUND BATHS</span>
-                <h2 className="mt-6 mb-6 text-[clamp(1.4rem,5.3vw,3.3rem)] leading-tight">
+                <h2 className="mt-6 mb-6 text-[clamp(1.2rem,5.3vw,3.3rem)] leading-tight">
                   Felt deeply, even from your desk
                 </h2>
                 <div className="space-y-6 t-body text-body">
