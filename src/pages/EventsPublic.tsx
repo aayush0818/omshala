@@ -147,7 +147,7 @@ const EventsPublic = () => {
                 <div className="flex flex-col h-full">
                   <span className="t-caption text-bone/60">{"\n"}</span>
                   <h2
-                    className="mt-4 font-display tracking-tight text-clay text-[clamp(2rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+                    className="mt-4 font-display tracking-tight text-clay text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
                     style={{ fontWeight: 300 }}
                   >
                     Credentials
@@ -239,7 +239,7 @@ const EventsPublic = () => {
               className={`text-center mb-16 transition-all duration-700 ${eventsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
             >
               <h2
-                className="font-display tracking-tight text-[clamp(2rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+                className="font-display tracking-tight text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
                 style={{ fontWeight: 300 }}
               >
                 Benefits for the team
@@ -313,7 +313,7 @@ const EventsPublic = () => {
               <Reveal>
                 <div className="text-center mb-10 md:mb-14">
                   <h2
-                    className="font-display tracking-tight text-[clamp(2rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+                    className="font-display tracking-tight text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
                     style={{ fontWeight: 300 }}
                   >
                     Experiences
