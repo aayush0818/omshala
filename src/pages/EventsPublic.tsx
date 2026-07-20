@@ -34,7 +34,7 @@ const credentialsVideo = homeVideoAsset.url;
 const experienceItems: ExperienceItem[] = [
   { type: "video", src: corporateVideoAsset.url, alt: "A moment from a corporate Om Shala sound bath" },
   { type: "image", src: exp6.url, alt: "Crystal singing bowls setup by the lake at sunrise" },
-  { type: "image", src: exp7.url, alt: "Sound bath performance on stage at a corporate event" },
+  { type: "image", src: corporateStageEvent.url, alt: "Sound bath performance on stage at a corporate event" },
   { type: "image", src: exp8.url, alt: "Large group in shavasana at an outdoor wellness event" },
   { type: "image", src: exp9.url, alt: "Om Shala team receiving a Yogathon recognition" },
   { type: "image", src: exp10.url, alt: "Sound healing on stage at a large outdoor yoga gathering" },
