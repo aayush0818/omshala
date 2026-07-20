@@ -11,20 +11,19 @@ import { CREDENTIALS } from "@/components/CredentialCards";
 import heroImgAsset from "@/assets/img5-studio-night.webp.asset.json";
 import heroDesktopAsset from "@/assets/hero-desktop.png.asset.json";
 import homeVideoAsset from "@/assets/home-intro.mp4.asset.json";
-import experienceImgAsset from "@/assets/private-experience-v4.png.asset.json";
+import experienceImg from "@/assets/private-experience-v4-cropped.png";
 import exp14 from "@/assets/experience-14.png.asset.json";
 import exp15 from "@/assets/experience-15.png.asset.json";
-import exp16 from "@/assets/experience-16.png.asset.json";
+import exp16 from "@/assets/private-experience-v4-cropped.png";
 import exp17 from "@/assets/experience-17.png.asset.json";
 
 const heroImg = heroImgAsset.url;
 const heroDesktopImg = heroDesktopAsset.url;
 const credentialsVideo = homeVideoAsset.url;
-const experienceImg = experienceImgAsset.url;
 
 const experienceItems: ExperienceItem[] = [
   { type: "image", src: exp14.url, alt: "Candlelit private sound healing session in a Mumbai studio" },
-  { type: "image", src: exp16.url, alt: "Private candlelit sound bath with skyline view" },
+  { type: "image", src: exp16, alt: "Private candlelit sound bath with skyline view" },
   { type: "image", src: exp17.url, alt: "Intimate private setup with crystal singing bowls at dusk" },
   { type: "image", src: exp15.url, alt: "Private outdoor gathering with meditation on the lawn" },
 ];
