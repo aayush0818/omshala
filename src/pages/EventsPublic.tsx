@@ -147,7 +147,7 @@ const EventsPublic = () => {
                 <div className="flex flex-col h-full">
                   <span className="t-caption text-bone/60">{"\n"}</span>
                   <h2
-                    className="mt-4 font-display tracking-tight text-clay text-[clamp(1.7rem,3.9vw,3.4rem)] leading-[1.1] -tracking-[0.01em]"
+                    className="mt-4 font-display tracking-tight text-clay text-[clamp(1.15rem,3.2vw,2.7rem)] leading-[1.1] -tracking-[0.01em]"
                     style={{ fontWeight: 300 }}
                   >
                     Credentials
@@ -190,7 +190,7 @@ const EventsPublic = () => {
               <div className="lg:col-span-6">
                 <Reveal>
                   <h2
-                    className="font-display tracking-tight text-clay text-[clamp(1.7rem,3.9vw,3.4rem)] leading-[1.1] -tracking-[0.01em]"
+                    className="font-display tracking-tight text-clay text-[clamp(1.15rem,3.2vw,2.7rem)] leading-[1.1] -tracking-[0.01em]"
                     style={{ fontWeight: 300 }}
                   >
                     Sound Baths
@@ -237,7 +237,7 @@ const EventsPublic = () => {
               className={`text-center mb-16 transition-all duration-700 ${eventsVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
             >
               <h2
-                className="font-display tracking-tight text-[clamp(1.7rem,3.9vw,3.4rem)] leading-[1.1] -tracking-[0.01em]"
+                className="font-display tracking-tight text-[clamp(1.15rem,3.2vw,2.7rem)] leading-[1.1] -tracking-[0.01em]"
                 style={{ fontWeight: 300 }}
               >
                 Benefits
@@ -256,7 +256,7 @@ const EventsPublic = () => {
                   <div className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#CEBFB5]/50 group-hover:border-[#CEBFB5]/50 mb-3 transition-colors duration-500">
                     <b.icon className="w-4 h-4 text-foreground" />
                   </div>
-                  <p className="t-body text-foreground text-[0.85rem] leading-snug">{b.text}</p>
+                  <p className="t-body text-foreground text-[0.65rem] leading-snug">{b.text}</p>
                 </div>
               ))}
             </div>
@@ -275,7 +275,7 @@ const EventsPublic = () => {
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-12">
               <h2
-                className="font-display tracking-tight text-clay text-[clamp(1.7rem,3.9vw,3.4rem)] leading-[1.1] -tracking-[0.01em]"
+                className="font-display tracking-tight text-clay text-[clamp(1.15rem,3.2vw,2.7rem)] leading-[1.1] -tracking-[0.01em]"
                 style={{ fontWeight: 300 }}
               >
                 The Om Shala Experience
@@ -287,7 +287,7 @@ const EventsPublic = () => {
             {sessionFlow.map((s) => (
               <div key={s.title} className="text-center max-w-2xl mx-auto py-6">
                 <div>
-                  <h3 className="font-sans uppercase tracking-[0.12em] text-[0.9rem] md:text-[1.05rem] font-medium text-foreground mb-3">
+                  <h3 className="font-sans uppercase tracking-[0.12em] text-[0.68rem] md:text-[0.85rem] font-medium text-foreground mb-3">
                     {s.title}
                   </h3>
 
@@ -305,7 +305,7 @@ const EventsPublic = () => {
               <Reveal>
                 <div className="text-center mb-10 md:mb-14">
                   <h2
-                    className="font-display tracking-tight text-[clamp(1.7rem,3.9vw,3.4rem)] leading-[1.1] -tracking-[0.01em]"
+                    className="font-display tracking-tight text-[clamp(1.15rem,3.2vw,2.7rem)] leading-[1.1] -tracking-[0.01em]"
                     style={{ fontWeight: 300 }}
                   >
                     Gallery
@@ -340,7 +340,7 @@ const EventsPublic = () => {
               <div>
                 {" "}
                 <h2
-                  className="font-display tracking-tight text-clay text-[clamp(1.7rem,3.9vw,3.4rem)] leading-[1.1] -tracking-[0.01em]"
+                  className="font-display tracking-tight text-clay text-[clamp(1.15rem,3.2vw,2.7rem)] leading-[1.1] -tracking-[0.01em]"
                   style={{ fontWeight: 300 }}
                 >
                   The Rise
@@ -400,13 +400,13 @@ const EventsPublic = () => {
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <h2
-                className="font-display tracking-tight text-clay text-[clamp(1.7rem,3.9vw,3.4rem)] leading-[1.1] -tracking-[0.01em]"
+                className="font-display tracking-tight text-clay text-[clamp(1.15rem,3.2vw,2.7rem)] leading-[1.1] -tracking-[0.01em]"
                 style={{ fontWeight: 300 }}
               >
                 Booking
               </h2>
 
-              <p className="font-sans uppercase tracking-[0.14em] text-[0.7rem] md:text-[0.8rem] font-medium text-[#CEBFB5] mt-8 mb-8 max-w-xl mx-auto">
+              <p className="font-sans uppercase tracking-[0.14em] text-[0.55rem] md:text-[0.65rem] font-medium text-[#CEBFB5] mt-8 mb-8 max-w-xl mx-auto">
                 Sessions can be customised based on your organisation's needs:
               </p>
               <ul className="t-body text-[#CEBFB5] space-y-3 max-w-xl mx-auto mb-12 text-left">
