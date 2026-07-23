@@ -239,13 +239,13 @@ const EventsPrivate = () => {
           <div className="container mx-auto px-6 text-center relative z-10">
             <span className="t-caption text-bone/60 mb-6 block">{"\n"}</span>
             <h2
-              className="mb-8 font-display tracking-tight text-bone text-[clamp(1.9rem,4.2vw,3.47rem)] leading-[1.1] -tracking-[0.01em]"
+              className="mb-8 font-display tracking-tight text-clay text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
               style={{ fontWeight: 300 }}
             >
               Let's discuss how we can
               <span className="block italic">organise one for you.</span>
             </h2>
-            <p className="t-body text-bone/85 max-w-2xl mx-auto mb-10">
+            <p className="t-body text-[#CEBFB5] max-w-2xl mx-auto mb-10">
               Om Shala has organised beautiful sound healing experiences for weddings, birthdays, Diwali parties,
               women's forums and baby showers.
             </p>
@@ -255,7 +255,7 @@ const EventsPrivate = () => {
                 href="https://wa.me/917400361681?text=Hi%2C%20I%20wanted%20to%20enquire%20about%20Private%20Events."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative inline-flex items-center gap-2 px-10 py-4 bg-bone text-charcoal border border-bone t-btn overflow-hidden transition-all duration-500 hover:bg-transparent hover:text-bone"
+                className="group relative inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 bg-[#322E4F] text-white border border-[#322E4F] t-btn transition-all duration-500 hover:bg-transparent hover:text-bone"
               >
                 <span className="relative z-10">WhatsApp +91 74003 61681</span>
               </a>
