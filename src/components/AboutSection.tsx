@@ -22,7 +22,7 @@ const AboutSection = () => {
             <Reveal delay={0.05}>
               <span className="text-[13px] tracking-[0.35em] uppercase text-clay">FOUNDER OF OM SHALA</span>
             </Reveal>
-            <div className="mt-8 space-y-6 text-muted-foreground leading-relaxed max-w-xl">
+            <div className="mt-8 space-y-5 text-muted-foreground leading-relaxed max-w-xl">
               <Reveal delay={0.1}>
                 <p>
                   Shrutika is a Meditation Teacher and Indian Classical Singer practicing Nada Yoga, the yoga of sound
