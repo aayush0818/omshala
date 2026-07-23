@@ -148,9 +148,7 @@ const EventsPrivate = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="uppercase tracking-[0.28em] font-sans font-medium text-[1.0rem] text-clay">
-                    The Experience
-                  </span>
+                  <span className="t-caption text-clay">The Experience</span>
                 </Reveal>
                 <Reveal delay={0.1}>
                   <div className="mt-8 h-px w-16 bg-clay" />
@@ -159,10 +157,7 @@ const EventsPrivate = () => {
                   <div className="mt-10 space-y-6">
                     {/* Editorial lead statement */}
                     <div>
-                      <p
-                        className="font-display tracking-tight text-foreground text-[clamp(1.6rem,2.6vw,2.3rem)] leading-[1.2]"
-                        style={{ fontWeight: 300 }}
-                      >
+                      <p className="t-body text-body" style={{ fontWeight: 300 }}>
                         Sound healing can be experienced seated or laying down in a calm environment.
                       </p>
                       <p className="t-body text-body mt-3">
@@ -174,7 +169,7 @@ const EventsPrivate = () => {
                     {/* Editorial heading */}
                     <div>
                       <p className="t-body text-body">
-                        <span className="font-display font-light text-[1.6rem] md:text-[1.85rem] leading-[1.2] text-foreground">
+                        <span className="font-display font-light text-[1.35rem] md:text-[1.55rem] leading-[1.2] text-foreground">
                           The Crystal Singing Bowls
                         </span>{" "}
                         used are tuned to a healing frequency, <span className="text-clay">435 Hz</span>, and instantly
@@ -186,7 +181,7 @@ const EventsPrivate = () => {
                     {/* Editorial closing statement */}
                     <div>
                       <p className="t-body text-body">
-                        <span className="font-display font-light italic text-[1.6rem] md:text-[1.85rem] leading-[1.2] text-foreground">
+                        <span className="font-display font-light italic text-[1.35rem] md:text-[1.55rem] leading-[1.2] text-foreground">
                           Soothing aromas, soft lighting and cozy pillows and blankets
                         </span>{" "}
                         are put together aesthetically, to make this journey truly special and unforgettable.
@@ -208,7 +203,7 @@ const EventsPrivate = () => {
                     className="font-display tracking-tight text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
                     style={{ fontWeight: 300 }}
                   >
-                    Experiences
+                    Gallery
                   </h2>
                   <div className="mt-6 w-12 h-px bg-brand-purple/60 mx-auto" />
                 </div>
@@ -217,17 +212,16 @@ const EventsPrivate = () => {
                 <ExperienceCarousel items={experienceItems} />
               </Reveal>
               <Reveal delay={0.2}>
-                <div className="mt-12 flex flex-col items-center gap-3">
+                <div className="mt-12 flex justify-center">
                   <a
                     href="https://www.instagram.com/omshala.official?igsh=cnBqbTV6bWMyZHBu"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Explore more on Om Shala Instagram"
-                    className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-foreground/20 text-foreground hover:text-brand-purple hover:border-brand-purple transition-colors duration-300"
+                    className="inline-flex items-center gap-3"
                   >
-                    <Instagram className="w-5 h-5" />
+                    <Instagram className="w-5 h-5 text-foreground" />
+                    <span className="t-caption text-foreground">Explore More</span>
                   </a>
-                  <span className="t-caption text-muted-foreground">explore for more</span>
                 </div>
               </Reveal>
             </div>
