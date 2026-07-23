@@ -83,8 +83,8 @@ const EventsPrivate = () => {
                   href="#enquire"
                   className="group relative inline-block w-auto text-center px-8 sm:px-10 py-4 bg-foreground text-background t-btn overflow-hidden transition-all duration-500 hover:shadow-2xl"
                 >
-                  <span className="relative z-10 group-hover:text-background transition-colors duration-500">
-                    Enquire for Private Events
+                  <span className="relative z-10 t-caption uppercase tracking-[0.18em] group-hover:text-background transition-colors duration-500">
+                    ENQUIRE NOW
                   </span>
                   <div className="absolute inset-0 bg-brand-purple translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                 </a>
@@ -109,8 +109,8 @@ const EventsPrivate = () => {
                   >
                     Credentials
                   </h2>
-                  <div className="mt-6 h-px w-16 bg-bone/40" />
-                  <ul className="mt-8 flex-1 flex flex-col justify-between divide-y divide-bone/15">
+
+                  <ul className="mt-10 flex-1 flex flex-col justify-between divide-y divide-bone/15">
                     {CREDENTIALS.map((c) => (
                       <li key={c} className="py-5 t-small text-bone/85">
                         {c}
@@ -148,13 +148,16 @@ const EventsPrivate = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="t-caption text-clay">The Experience</span>
+                  <h2
+                    className="font-display tracking-tight text-clay text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+                    style={{ fontWeight: 300 }}
+                  >
+                    The Omshala Experience
+                  </h2>
                 </Reveal>
-                <Reveal delay={0.1}>
-                  <div className="mt-8 h-px w-16 bg-clay" />
-                </Reveal>
+                <Reveal delay={0.1}></Reveal>
                 <Reveal delay={0.15}>
-                  <div className="mt-10 space-y-6">
+                  <div className="mt-8 space-y-6">
                     {/* Editorial lead statement */}
                     <div>
                       <p className="t-body text-body" style={{ fontWeight: 300 }}>
@@ -205,7 +208,6 @@ const EventsPrivate = () => {
                   >
                     Gallery
                   </h2>
-                  <div className="mt-6 w-12 h-px bg-brand-purple/60 mx-auto" />
                 </div>
               </Reveal>
               <Reveal delay={0.1}>
@@ -219,8 +221,8 @@ const EventsPrivate = () => {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-3"
                   >
-                    <Instagram className="w-5 h-5 text-foreground" />
                     <span className="t-caption text-foreground">Explore More</span>
+                    <Instagram className="w-5 h-5 text-foreground" />
                   </a>
                 </div>
               </Reveal>
