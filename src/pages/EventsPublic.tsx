@@ -126,8 +126,8 @@ const EventsPublic = () => {
                   href="#enquire"
                   className="group relative inline-block w-auto text-center px-8 sm:px-10 py-4 bg-foreground text-background t-btn overflow-hidden transition-all duration-500 hover:shadow-2xl"
                 >
-                  <span className="relative z-10 group-hover:text-background transition-colors duration-500">
-                    Enquire for Corporate Sessions
+                  <span className="relative z-10 t-caption uppercase tracking-[0.18em] group-hover:text-background transition-colors duration-500">
+                    ENQUIRE NOW
                   </span>
                   <div className="absolute inset-0 bg-brand-purple translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                 </a>
