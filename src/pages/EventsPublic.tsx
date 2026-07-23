@@ -153,7 +153,6 @@ const EventsPublic = () => {
                     Credentials
                   </h2>
 
-                  
                   <ul className="mt-8 flex-1 flex flex-col justify-between divide-y divide-bone/15">
                     {CREDENTIALS.map((c) => (
                       <li key={c} className="py-5 t-small text-bone/85">
@@ -243,7 +242,6 @@ const EventsPublic = () => {
               >
                 Benefits
               </h2>
-              
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
@@ -282,8 +280,6 @@ const EventsPublic = () => {
               >
                 The Om Shala Experience
               </h2>
-
-              
             </div>
           </div>
 
@@ -291,7 +287,9 @@ const EventsPublic = () => {
             {sessionFlow.map((s) => (
               <div key={s.title} className="text-center max-w-2xl mx-auto py-6">
                 <div>
-                  <h3 className="font-sans uppercase tracking-[0.12em] text-[1rem] md:text-[1.15rem] font-medium text-foreground mb-3">{s.title}</h3>
+                  <h3 className="font-sans uppercase tracking-[0.12em] text-[1rem] md:text-[1.15rem] font-medium text-foreground mb-3">
+                    {s.title}
+                  </h3>
 
                   <p className="t-body text-body">{s.desc}</p>
                 </div>
@@ -312,7 +310,6 @@ const EventsPublic = () => {
                   >
                     Gallery
                   </h2>
-                  
                 </div>
               </Reveal>
               <Reveal delay={0.1}>
@@ -320,23 +317,17 @@ const EventsPublic = () => {
               </Reveal>
               <Reveal delay={0.2}>
                 <div className="mt-12 flex justify-center">
-  <a
-    href="https://www.instagram.com/omshala.official?igsh=cnBqbTV6bWMyZHBu"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-3"
-  >
-    <span className="t-caption text-foreground">
-      Explore More
-    </span>
+                  <a
+                    href="https://www.instagram.com/omshala.official?igsh=cnBqbTV6bWMyZHBu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-3"
+                  >
+                    <span className="t-caption text-foreground">Explore More</span>
 
-    <img
-      src="/instagram-color.png"
-      alt="Instagram"
-      className="w-5 h-5"
-    />
-  </a>
-</div>
+                    <img src="/instagram-color.png" alt="Instagram" className="w-5 h-5" />
+                  </a>
+                </div>
               </Reveal>
             </div>
           </div>
@@ -348,16 +339,15 @@ const EventsPublic = () => {
             <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               <div>
                 {" "}
-<h2
-  className="font-display tracking-tight text-clay text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
-  style={{ fontWeight: 300 }}
->
-  The Rise
-  <br />
-  of Online Sound Baths
-</h2>
-                
-               <div className="mt-8 space-y-6 t-body text-body">
+                <h2
+                  className="font-display tracking-tight text-clay text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+                  style={{ fontWeight: 300 }}
+                >
+                  The Rise
+                  <br />
+                  of Online Sound Baths
+                </h2>
+                <div className="mt-8 space-y-6 t-body text-body">
                   <p>
                     Online sound healing is increasingly preferred for corporate wellness because of the ease of
                     organising, accessibility and time efficiency. Participants can experience it from their desk, or
@@ -410,13 +400,13 @@ const EventsPublic = () => {
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <h2
-  className="font-display tracking-tight text-clay text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
-  style={{ fontWeight: 300 }}
->
-  Booking
-</h2>
+                className="font-display tracking-tight text-clay text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+                style={{ fontWeight: 300 }}
+              >
+                Booking
+              </h2>
 
-             <p className="t-caption text-bone uppercase tracking-[0.12em] mt-8 mb-8 max-w-xl mx-auto">
+              <p className="font-sans uppercase tracking-[0.12em] text-[1rem] md:text-[1.15rem] font-medium text-[#CEBFB5] mt-8 mb-8 max-w-xl mx-auto">
                 Sessions can be customised based on your organisation's needs:
               </p>
               <ul className="t-body text-bone/85 space-y-3 max-w-xl mx-auto mb-12 text-left">
