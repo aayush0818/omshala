@@ -153,7 +153,7 @@ const EventsPublic = () => {
                     Credentials
                   </h2>
 
-                  <div className="mt-6 h-px w-16 bg-bone/40" />
+                  
                   <ul className="mt-8 flex-1 flex flex-col justify-between divide-y divide-bone/15">
                     {CREDENTIALS.map((c) => (
                       <li key={c} className="py-5 t-small text-bone/85">
@@ -243,7 +243,7 @@ const EventsPublic = () => {
               >
                 Benefits
               </h2>
-              <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-[#CEBFB5] to-transparent mx-auto" />
+              
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
@@ -283,7 +283,7 @@ const EventsPublic = () => {
                 The Om Shala Experience
               </h2>
 
-              <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto" />
+              
             </div>
           </div>
 
@@ -291,7 +291,7 @@ const EventsPublic = () => {
             {sessionFlow.map((s) => (
               <div key={s.title} className="text-center max-w-2xl mx-auto py-6">
                 <div>
-                  <h3 className="t-caption text-foreground mb-3">{s.title}</h3>
+                  <h3 className="font-sans uppercase tracking-[0.12em] text-[1rem] md:text-[1.15rem] font-medium text-foreground mb-3">{s.title}</h3>
 
                   <p className="t-body text-body">{s.desc}</p>
                 </div>
@@ -310,27 +310,33 @@ const EventsPublic = () => {
                     className="font-display tracking-tight text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
                     style={{ fontWeight: 300 }}
                   >
-                    Experiences
+                    Gallery
                   </h2>
-                  <div className="mt-6 w-12 h-px bg-brand-purple/60 mx-auto" />
+                  
                 </div>
               </Reveal>
               <Reveal delay={0.1}>
                 <ExperienceCarousel items={experienceItems} />
               </Reveal>
               <Reveal delay={0.2}>
-                <div className="mt-12 flex flex-col items-center gap-3">
-                  <a
-                    href="https://www.instagram.com/omshala.official?igsh=cnBqbTV6bWMyZHBu"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Explore more on Om Shala Instagram"
-                    className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-foreground/20 text-foreground hover:text-brand-purple hover:border-brand-purple transition-colors duration-300"
-                  >
-                    <Instagram className="w-5 h-5" />
-                  </a>
-                  <span className="t-caption text-muted-foreground">explore for more</span>
-                </div>
+                <div className="mt-12 flex justify-center">
+  <a
+    href="https://www.instagram.com/omshala.official?igsh=cnBqbTV6bWMyZHBu"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex items-center gap-3"
+  >
+    <span className="t-caption text-foreground">
+      Explore More
+    </span>
+
+    <img
+      src="/instagram-color.png"
+      alt="Instagram"
+      className="w-5 h-5"
+    />
+  </a>
+</div>
               </Reveal>
             </div>
           </div>
@@ -342,11 +348,16 @@ const EventsPublic = () => {
             <div className="max-w-4xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
               <div>
                 {" "}
-                <span className="t-caption text-clay uppercase tracking-[0.28em]">THE RISE OF ONLINE SOUND BATHS</span>
-                <h2 className="mt-6 mb-6 text-[clamp(1.2rem,5.3vw,3.3rem)] leading-tight">
-                  Felt deeply, even from your desk
-                </h2>
-                <div className="space-y-6 t-body text-body">
+<h2
+  className="font-display tracking-tight text-clay text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+  style={{ fontWeight: 300 }}
+>
+  The Rise
+  <br />
+  of Online Sound Baths
+</h2>
+                
+               <div className="mt-8 space-y-6 t-body text-body">
                   <p>
                     Online sound healing is increasingly preferred for corporate wellness because of the ease of
                     organising, accessibility and time efficiency. Participants can experience it from their desk, or
@@ -398,11 +409,14 @@ const EventsPublic = () => {
         <section id="enquire" className="py-20 md:py-40 bg-black text-[#E7E3DE]">
           <div className="container mx-auto px-6 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
-              <span className="uppercase font-sans font-medium tracking-[0.20em] text-[#CEBFB5] text-[1.3rem]">
-                BOOKING
-              </span>
+              <h2
+  className="font-display tracking-tight text-clay text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+  style={{ fontWeight: 300 }}
+>
+  Booking
+</h2>
 
-              <p className="mt-6 text-[1.0625rem] md:text-[1.2rem] font-sans leading-relaxed text-bone/85 max-w-xl mx-auto mb-8">
+             <p className="t-caption text-bone uppercase tracking-[0.12em] mt-8 mb-8" text-bone/85 max-w-xl mx-auto mb-8">
                 Sessions can be customised based on your organisation's needs:
               </p>
               <ul className="t-body text-bone/85 space-y-3 max-w-xl mx-auto mb-12 text-left">
@@ -428,7 +442,7 @@ const EventsPublic = () => {
                   href="https://wa.me/917400361681?text=Hi%2C%20I%20wanted%20to%20enquire%20about%20Corporate%20Events."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 bg-bone text-charcoal border border-bone t-btn transition-all duration-500 hover:bg-transparent hover:text-bone"
+                  className="group relative inline-flex items-center justify-center gap-2 px-8 sm:px-10 py-4 bg-[#322E4F] text-white border border-[#322E4F] t-btn transition-all duration-500 hover:bg-transparent hover:text-bone"
                 >
                   <span className="relative z-10">WhatsApp · +91 7400361681</span>
                 </a>
