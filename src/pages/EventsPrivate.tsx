@@ -155,7 +155,6 @@ const EventsPrivate = () => {
                     The Omshala Experience
                   </h2>
                 </Reveal>
-                <Reveal delay={0.1}></Reveal>
                 <Reveal delay={0.15}>
                   <div className="mt-8 space-y-6">
                     {/* Editorial lead statement */}
