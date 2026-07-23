@@ -416,7 +416,7 @@ const EventsPublic = () => {
   Booking
 </h2>
 
-             <p className="t-caption text-bone uppercase tracking-[0.12em] mt-8 mb-8" text-bone/85 max-w-xl mx-auto mb-8">
+             <p className="t-caption text-bone uppercase tracking-[0.12em] mt-8 mb-8 max-w-xl mx-auto">
                 Sessions can be customised based on your organisation's needs:
               </p>
               <ul className="t-body text-bone/85 space-y-3 max-w-xl mx-auto mb-12 text-left">
