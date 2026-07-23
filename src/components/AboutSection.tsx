@@ -31,16 +31,16 @@ const AboutSection = () => {
                 </p>
               </Reveal>
               <Reveal delay={0.15}>
-                <p className="italic text-foreground/80 pl-6 border-l border-brand-purple/40 mt-10">
+                <p className="italic text-foreground/80 pl-6 border-l border-brand-purple/40 mt-6">
                   "Pure sound pulls you inward and brings deep relaxation. In this state, the body is grounded, mind is
                   open and emotions are free. Everything feels perfect, as it is."
                 </p>
               </Reveal>
               <Reveal delay={0.2}>
-                <p className="pl-6 text-sm text-foreground/70">– Shrutika</p>
+                <p className="pl-6 mt-2 text-sm text-foreground/70">– Shrutika</p>
               </Reveal>
               <Reveal delay={0.25}>
-                <p>
+                <p className="mt-2">
                   Her sessions are designed to be simple, effective, and accessible, without requiring effort, belief
                   systems, or prior practice.
                 </p>
