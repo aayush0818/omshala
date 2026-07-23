@@ -54,10 +54,10 @@ const benefits = [
 ];
 
 const sessionFlow = [
-  { title: "GENTLE BREATHWORK", desc: "To settle the nervous system." },
-  { title: "GUIDED RELAXATION", desc: "To release mental and physical tension." },
-  { title: "SOUND IMMERSION", desc: "Using crystal singing bowls that align brain waves." },
-  { title: "OPTIONAL VOICE", desc: "Live Indian classical ragas or mantras, when suitable for the group." },
+  { title: "BREATHWORK", desc: "To settle the nervous system." },
+  { title: "GUIDED MEDITATION", desc: "To release mental and physical tension." },
+  { title: "SOUND THERAPY", desc: "Using crystal singing bowls that align brain waves." },
+  { title: "INSTRUMENT OF VOICE", desc: "Live Indian classical ragas or mantras, when suitable for the group." },
 ];
 
 const formats = [
@@ -289,15 +289,11 @@ const EventsPublic = () => {
 
           <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
             {sessionFlow.map((s) => (
-              <div key={s.title} className="flex gap-4 sm:gap-6">
-                <div className="flex-shrink-0 w-14 h-14 sm:w-16 sm:h-16 flex items-center justify-center">
-                  <span className="text-5xl sm:text-6xl leading-none text-bone">•</span>
-                </div>
+              <div key={s.title} className="text-center max-w-2xl mx-auto py-6">
+                <div>
+                  <h3 className="t-caption text-foreground mb-3">{s.title}</h3>
 
-                <div className="pt-2 sm:pt-3">
-                  <h3 className="font-sans text-lg md:text-xl font-medium text-bone mb-2">{s.title}</h3>
-
-                  <p className="text-base leading-8 text-bone/90">{s.desc}</p>
+                  <p className="t-body text-body">{s.desc}</p>
                 </div>
               </div>
             ))}
