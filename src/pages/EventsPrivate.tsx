@@ -247,7 +247,7 @@ const EventsPrivate = () => {
             </h2>
             <p className="t-body text-[#CEBFB5] max-w-2xl mx-auto mb-10">
               Om Shala has organised beautiful sound healing experiences for weddings, birthdays, Diwali parties,
-              women's forums and baby showers.
+              women's forums, baby showers and more.
             </p>
             <div className="flex flex-col items-center gap-4">
               <span className="t-caption text-bone/60">Schedule a Call</span>
