@@ -160,7 +160,7 @@ const EventsPrivate = () => {
                   <div className="mt-8 space-y-6">
                     {/* Editorial lead statement */}
                     <div>
-                      <p className="t-body text-body" style={{ fontWeight: 300 }}>
+                      <p className="t-body text-body"></p> 
                         Sound healing can be experienced seated or laying down in a calm environment.
                       </p>
                       <p className="t-body text-body mt-3">
