@@ -406,22 +406,22 @@ const EventsPublic = () => {
                 Booking
               </h2>
 
-              <p className="font-sans uppercase tracking-[0.12em] text-[1rem] md:text-[1.15rem] font-medium text-[#CEBFB5] mt-8 mb-8 max-w-xl mx-auto">
+              className="font-sans uppercase tracking-[0.14em] text-[0.8rem] md:text-[0.9rem] font-medium text-[#CEBFB5] mt-8 mb-8 max-w-xl mx-auto"
                 Sessions can be customised based on your organisation's needs:
               </p>
               <ul className="t-body text-bone/85 space-y-3 max-w-xl mx-auto mb-12 text-left">
                 <li className="flex gap-3">
-                  <span className="text-bone/70">·</span> Online or in-person
+                  <span className="text-[#CEBFB5]">·</span> Online or in-person
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-bone/70">·</span> Small teams or large groups
+                  <span className="text-[#CEBFB5]">·</span>·</span> Small teams or large groups
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-bone/70">·</span> One-time sessions or ongoing programs for sustained corporate
+                  <span className="text-[#CEBFB5]">·</span>·</span> One-time sessions or ongoing programs for sustained corporate
                   wellness
                 </li>
                 <li className="flex gap-3">
-                  <span className="text-bone/70">·</span> Sessions can also be positioned as part of leadership
+                  <span className="text-[#CEBFB5]">·</span>·</span> Sessions can also be positioned as part of leadership
                   development or performance optimisation programs
                 </li>
               </ul>
