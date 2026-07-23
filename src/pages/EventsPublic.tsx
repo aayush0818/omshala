@@ -190,11 +190,10 @@ const EventsPublic = () => {
               </Reveal>
               <div className="lg:col-span-6">
                 <Reveal>
-                  <span className="uppercase font-sans font-medium tracking-[0.20em] text-clay text-[1.1rem]">
-                    WHAT THIS IS
-                  </span>
-
-                  <h2 className="mt-6 font-serif text-[1.3rem] tracking-tight leading-tight text-foreground">
+                  <h2
+                    className="font-display tracking-tight text-clay text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+                    style={{ fontWeight: 300 }}
+                  >
                     Sound Baths
                     <br />
                     for Corporate Wellness
@@ -242,7 +241,7 @@ const EventsPublic = () => {
                 className="font-display tracking-tight text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
                 style={{ fontWeight: 300 }}
               >
-                Benefits for the team
+                Benefits
               </h2>
               <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-[#CEBFB5] to-transparent mx-auto" />
             </div>
@@ -267,7 +266,7 @@ const EventsPublic = () => {
         </section>
 
         {/* How a Session Works */}
-        <section className="py-20 md:py-40 bg-[#58527E] text-bone relative overflow-hidden">
+        <section className="py-20 md:py-40 bg-[#F6F0EA] text-foreground relative overflow-hidden">
           <div className="absolute top-20 -right-32 w-64 h-64 rounded-full border border-bone/5 animate-pulse-soft" />
           <div
             className="absolute bottom-20 -left-32 w-96 h-96 rounded-full border border-bone/5 animate-pulse-soft"
@@ -277,12 +276,11 @@ const EventsPublic = () => {
 
           <div className="container mx-auto px-6 relative z-10">
             <div className="text-center mb-12">
-              <span className="uppercase font-sans font-medium tracking-[0.20em] text-black text-[1.0rem]">
-                HOW A SESSION WORKS
-              </span>
-
-              <h2 className="mt-6 font-serif tracking-tight text-[1.2rem] leading-tight text-bone">
-                Fully guided. Accessible to everyone.
+              <h2
+                className="font-display tracking-tight text-clay text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+                style={{ fontWeight: 300 }}
+              >
+                The Om Shala Experience
               </h2>
 
               <div className="mt-8 w-16 h-px bg-gradient-to-r from-transparent via-brand-purple to-transparent mx-auto" />
