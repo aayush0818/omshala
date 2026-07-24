@@ -221,7 +221,7 @@ const EventsPrivate = () => {
                     className="inline-flex items-center gap-3"
                   >
                     <span className="t-caption text-foreground">Explore More</span>
-                    <Instagram className="w-5 h-5 text-foreground" />
+                    <InstagramColorIcon className="w-5 h-5" />
                   </a>
                 </div>
               </Reveal>
