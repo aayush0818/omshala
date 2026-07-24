@@ -66,7 +66,7 @@ const EventsPrivate = () => {
             >
               <div className="w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-brand-purple to-brand-purple/30 mb-6 md:mb-8" />
 
-              <h1 className="text-[clamp(2rem,6.2vw,4rem)] leading-tight mb-5 md:mb-6">
+              <h1 className="text-[clamp(1.5rem,6.2vw,4rem)] leading-tight mb-5 md:mb-6">
                 A Souful Way <span className="text-clay">to Gather</span>
               </h1>
               <p className="t-body max-w-xl whitespace-pre-line text-body">
