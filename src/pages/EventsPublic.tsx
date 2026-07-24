@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Users, Sparkles, Brain, Heart, Focus, Activity, Headphones, Building2, Instagram } from "lucide-react";
+import { Users, Sparkles, Brain, Heart, Focus, Activity, Headphones, Building2 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -10,6 +10,7 @@ import ExperienceCarousel, { type ExperienceItem } from "@/components/Experience
 import AboutSection from "@/components/AboutSection";
 import { CREDENTIALS } from "@/components/CredentialCards";
 import useScrollAnimation from "@/hooks/useScrollAnimation";
+import InstagramColorIcon from "@/components/InstagramColorIcon";
 import heroImgAsset from "@/assets/img5-studio-night.webp.asset.json";
 import heroDesktopAsset from "@/assets/hero-desktop.png.asset.json";
 import whatThisIsAsset from "@/assets/img8-sunset-circle.webp.asset.json";
@@ -324,8 +325,7 @@ const EventsPublic = () => {
                     className="inline-flex items-center gap-3"
                   >
                     <span className="t-caption text-foreground">Explore More</span>
-
-                    <img src="/instagram-color.png" alt="Instagram" className="w-5 h-5" />
+                    <InstagramColorIcon className="w-5 h-5" />
                   </a>
                 </div>
               </Reveal>
