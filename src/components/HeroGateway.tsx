@@ -7,7 +7,7 @@ const TEXT = "#CEBFB5";
 const DIVIDER = "#4A4A4A";
 
 const Arrow = () => (
-  <svg width="42" height="11" viewBox="0 0 56 14" fill="none" aria-hidden style={{ color: TEXT }}>
+  <svg width="26" height="7" viewBox="0 0 56 14" fill="none" aria-hidden style={{ color: TEXT, opacity: 0.55 }}>
     <line x1="0" y1="7" x2="52" y2="7" stroke="currentColor" strokeWidth="1" />
     <polyline
       points="44,1 54,7 44,13"
@@ -27,7 +27,7 @@ const Panel = ({ to, w1, w2, label }: { to: string; w1: string; w2: string; labe
     className="group flex flex-col items-center justify-center px-4 sm:px-6 h-full w-full transition-opacity duration-500 hover:opacity-90"
   >
     <h2
-      className="w-full min-w-0 uppercase text-center leading-[1.1] tracking-[0.04em] text-[1.6rem] sm:text-[2rem] md:text-[2.5rem] lg:text-[2.9rem] xl:text-[3.3rem] 2xl:text-[3.7rem]"
+      className="w-full min-w-0 uppercase text-center leading-[1.1] tracking-[0.04em] text-[1.47rem] sm:text-[1.87rem] md:text-[2.37rem] lg:text-[2.77rem] xl:text-[3.17rem] 2xl:text-[3.57rem]"
       style={{
         color: TEXT,
         fontFamily: '"Passenger Display", "Playfair Display", Georgia, serif',
