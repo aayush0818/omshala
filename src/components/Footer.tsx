@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
+import { Instagram } from "lucide-react";
 import wordmarkAsset from "@/assets/omshala-wordmark.png.asset.json";
-import InstagramColorIcon from "@/components/InstagramColorIcon";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -84,7 +84,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-foreground/80 hover:text-brand-purple transition-colors duration-300"
                 >
-                  <InstagramColorIcon className="w-4 h-4" />
+                  <Instagram className="w-4 h-4" />
                   <span>@omshala.official</span>
                 </a>
                 <Link

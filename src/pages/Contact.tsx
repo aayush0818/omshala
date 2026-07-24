@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Mail, Phone } from "lucide-react";
-import InstagramColorIcon from "@/components/InstagramColorIcon";
+import { Mail, Phone, Instagram } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -9,7 +8,7 @@ import Reveal from "@/components/Reveal";
 const contactMethods = [
   { icon: Mail, label: "Email", value: "omshala.official@gmail.com", href: "mailto:omshala.official@gmail.com" },
   { icon: Phone, label: "WhatsApp", value: "+91 74003 61681", href: "https://wa.me/917400361681" },
-  { icon: InstagramColorIcon, label: "Instagram", value: "@omshala.official", href: "https://www.instagram.com/omshala.official" },
+  { icon: Instagram, label: "Instagram", value: "@omshala.official", href: "https://www.instagram.com/omshala.official" },
 ];
 
 const Contact = () => {
@@ -49,7 +48,7 @@ const Contact = () => {
                     className="group block p-10 border border-foreground/10 hover:border-brand-purple/60 hover:bg-brand-purple/[0.04] transition-all duration-500 h-full"
                   >
                     <div className="inline-flex items-center justify-center w-12 h-12 rounded-full border border-foreground/10 group-hover:border-brand-purple/60 group-hover:bg-brand-purple/10 mb-6 transition-all duration-500">
-                      <m.icon className="w-5 h-5 text-brand-purple" />
+                      <m.icon className="w-4 h-4 text-brand-purple" />
                     </div>
                     <p className="text-[10px] tracking-[0.3em] uppercase text-muted-foreground mb-3">{m.label}</p>
                     <p className="text-foreground group-hover:text-brand-purple transition-colors duration-300">{m.value}</p>
