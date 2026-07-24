@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Instagram } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageTransition from "@/components/PageTransition";
@@ -8,6 +7,7 @@ import MediaVideo from "@/components/MediaVideo";
 import ExperienceCarousel, { type ExperienceItem } from "@/components/ExperienceCarousel";
 import AboutSection from "@/components/AboutSection";
 import { CREDENTIALS } from "@/components/CredentialCards";
+import InstagramColorIcon from "@/components/InstagramColorIcon";
 import heroImgAsset from "@/assets/img5-studio-night.webp.asset.json";
 import heroDesktopAsset from "@/assets/hero-desktop.png.asset.json";
 import homeVideoAsset from "@/assets/home-intro.mp4.asset.json";
