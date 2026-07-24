@@ -18,9 +18,7 @@ const CredentialsEditorial = ({ className }: Props) => {
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-32">
               <Reveal>
-                <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-[1.05]">
-                  Credentials
-                </h2>
+                <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-light leading-[1.05]">Credentials</h2>
                 <div className="mt-10 h-px w-16 bg-brand-purple/60" />
               </Reveal>
             </div>
@@ -33,7 +31,7 @@ const CredentialsEditorial = ({ className }: Props) => {
                   <span className="font-serif text-2xl md:text-3xl text-clay/70 leading-none pt-1 tabular-nums">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="font-serif text-xl md:text-2xl leading-snug text-foreground/90 font-light group-hover:text-foreground transition-colors duration-500">
+                  <p className="t-body leading-snug text-foreground/90 group-hover:text-foreground transition-colors duration-500">
                     {c}
                   </p>
                 </div>
