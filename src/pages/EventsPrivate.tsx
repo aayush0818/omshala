@@ -104,7 +104,7 @@ const EventsPrivate = () => {
                 <div className="flex flex-col h-full">
                   <span className="t-caption text-bone/60">{"\n"}</span>
                   <h2
-                    className="mt-4 font-display tracking-tight text-clay text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+                    className="mt-4 font-display tracking-tight text-clay text-[clamp(1.55rem,3.6vw,3.1rem)] leading-[1.1] -tracking-[0.01em]"
                     style={{ fontWeight: 300 }}
                   >
                     Credentials
@@ -149,7 +149,7 @@ const EventsPrivate = () => {
               <div className="lg:col-span-6">
                 <Reveal>
                   <h2
-                    className="font-display tracking-tight text-clay text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+                    className="font-display tracking-tight text-clay text-[clamp(1.55rem,3.6vw,3.1rem)] leading-[1.1] -tracking-[0.01em]"
                     style={{ fontWeight: 300 }}
                   >
                     The Omshala Experience
@@ -202,7 +202,7 @@ const EventsPrivate = () => {
               <Reveal>
                 <div className="text-center mb-10 md:mb-14">
                   <h2
-                    className="font-display tracking-tight text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+                    className="font-display tracking-tight text-[clamp(1.55rem,3.6vw,3.1rem)] leading-[1.1] -tracking-[0.01em]"
                     style={{ fontWeight: 300 }}
                   >
                     Gallery
@@ -234,7 +234,7 @@ const EventsPrivate = () => {
           <div className="container mx-auto px-6 text-center relative z-10">
             <span className="t-caption text-bone/60 mb-6 block">{"\n"}</span>
             <h2
-              className="mb-8 font-display tracking-tight text-clay text-[clamp(1.8rem,4.2vw,3.7rem)] leading-[1.1] -tracking-[0.01em]"
+              className="mb-8 font-display tracking-tight text-clay text-[clamp(1.55rem,3.6vw,3.1rem)] leading-[1.1] -tracking-[0.01em]"
               style={{ fontWeight: 300 }}
             >
               Let's discuss how we can
