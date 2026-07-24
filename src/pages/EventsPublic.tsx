@@ -325,8 +325,7 @@ const EventsPublic = () => {
                     className="inline-flex items-center gap-3"
                   >
                     <span className="t-caption text-foreground">Explore More</span>
-
-                    <img src="/instagram-color.png" alt="Instagram" className="w-5 h-5" />
+                    <InstagramColorIcon className="w-5 h-5" />
                   </a>
                 </div>
               </Reveal>
