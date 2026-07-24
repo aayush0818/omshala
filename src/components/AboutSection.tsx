@@ -20,9 +20,9 @@ const AboutSection = () => {
 
           <div className="lg:col-span-7">
             <Reveal delay={0.05}>
-              <span className="text-[13px] tracking-[0.35em] uppercase text-clay">FOUNDER OF OM SHALA</span>
+              <span className="text-[13px] tracking-[0.35em] uppercase text-clay">About Om Shala</span>
             </Reveal>
-            <div className="mt-8 space-y-5 text-muted-foreground leading-relaxed max-w-xl">
+            <div className="mt-8 space-y-6 t-body text-muted-foreground max-w-xl">
               <Reveal delay={0.1}>
                 <p>
                   Shrutika is a Meditation Teacher and Indian Classical Singer practicing Nada Yoga, the yoga of sound
@@ -31,16 +31,16 @@ const AboutSection = () => {
                 </p>
               </Reveal>
               <Reveal delay={0.15}>
-                <p className="italic text-foreground/80 pl-6 border-l border-brand-purple/40 mt-6">
+                <p className="italic text-foreground/80 pl-6 border-l border-brand-purple/40 mt-10">
                   "Pure sound pulls you inward and brings deep relaxation. In this state, the body is grounded, mind is
                   open and emotions are free. Everything feels perfect, as it is."
                 </p>
               </Reveal>
               <Reveal delay={0.2}>
-                <p className="pl-6 mt-2 text-sm text-foreground/70">– Shrutika</p>
+                <p className="pl-6 text-sm text-foreground/70">– Shrutika</p>
               </Reveal>
               <Reveal delay={0.25}>
-                <p className="mt-2">
+                <p>
                   Her sessions are designed to be simple, effective, and accessible, without requiring effort, belief
                   systems, or prior practice.
                 </p>
