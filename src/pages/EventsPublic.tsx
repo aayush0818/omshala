@@ -106,7 +106,7 @@ const EventsPublic = () => {
               <div className="w-px h-10 md:h-12 bg-gradient-to-b from-transparent via-brand-purple to-brand-purple/30 mb-6 md:mb-8" />
 
               <span className="t-caption text-clay mb-4 md:mb-6 block">Corporate Wellness</span>
-              <h1 className="text-[clamp(1.5rem,5.9vw,4.5rem)] leading-tight mb-5 md:mb-6">
+              <h1 className="text-[clamp(1.7rem,5.9vw,4.5rem)] leading-tight mb-5 md:mb-6">
                 Deep Relaxation
                 <span className="block mt-2 text-clay">
                   for High<span className="font-sans">-</span>Performance Teams
