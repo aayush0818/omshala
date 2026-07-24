@@ -285,7 +285,7 @@ const EventsPublic = () => {
 
           <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
             {sessionFlow.map((s) => (
-              <div key={s.title} className="text-center max-w-md mx-auto py-6">
+              <div key={s.title} className="text-center max-w-md mx-auto px-6 py-6">
                 <div>
                   <h3 className="font-sans uppercase tracking-[0.12em] text-[0.95rem] md:text-[1.1rem] font-medium text-foreground mb-3">
                     {s.title}
@@ -410,11 +410,11 @@ const EventsPublic = () => {
                 Sessions can be customised based on your organisation's needs:
               </p>
               <ul className="t-body text-[#CEBFB5] space-y-3 max-w-xl mx-auto mb-8 text-center">
-                <li className="flex justify-center gap-3">
-                  <span className="text-[#CEBFB5]">·</span> Online or in-person
+                <li>
+                  <span className="text-[#CEBFB5]">· </span>Online or in-person
                 </li>
-                <li className="flex justify-center gap-3">
-                  <span className="text-[#CEBFB5]">·</span> One-time sessions or ongoing programs for sustained
+                <li>
+                  <span className="text-[#CEBFB5]">· </span>One-time sessions or ongoing programs for sustained
                   corporate wellness
                 </li>
               </ul>
